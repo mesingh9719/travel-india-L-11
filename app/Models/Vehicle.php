@@ -1,0 +1,31 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+
+class Vehicle extends Model
+{
+    use HasFactory;
+
+    protected $fillable = [
+        'user_id',
+        'vehicle_number',
+        'vehicle_type',
+        'vehicle_model',
+        'fuel_type',
+        'rc_number',
+        'rc_image_front',
+        'rc_image_back',
+        'insurance_number',
+        'insurance_image',
+        'fitness_certificate_number',
+        'seat_capacity',
+        'vehicle_name',
+        'vehicle_color',
+        'vehicle_permit_image',
+        'vehicle_permit_number',
+        'is_verified',
+    ];
+}
