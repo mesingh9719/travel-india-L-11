@@ -1,8 +1,5 @@
 <?php
 
-use App\Http\Controllers\Admin\Auth\AdminAuthController;
-use App\Http\Controllers\Admin\DashboardController;
-use App\Http\Controllers\Frontend\HomeController;
 use App\Http\Controllers\Frontend\CarContoller;
 use App\Http\Controllers\Frontend\UserController;
 use App\Http\Controllers\Frontend\RideController;
@@ -33,11 +30,5 @@ Route::get('/ride-detail',[RideController::class,"rideDetail"])->name('ride.deta
 Route::get('/ride-requests-list',[RideController::class,"rideRequestsList"])->name('ride.requests.list');
 
 //End frontend route
-//admin routes
 
-Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
-    Route::get('/login',[AdminAuthController::class,"login"])->name('login');
-    Route::middleware('admin.auth')->group(function () {
-        Route::get('/dashboard',[DashboardController::class,"index"])->name('dashboard');
-    });
-});
+include __DIR__.'/admin.php';

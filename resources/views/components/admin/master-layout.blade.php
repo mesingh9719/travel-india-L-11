@@ -1,3 +1,7 @@
+@props([
+    'pageTitle' => 'Dashboard',
+    'pageSubTitle' => '',
+])
 <!doctype html>
 <html lang="en" dir="ltr">
 
@@ -33,7 +37,7 @@
 
     <!-- endinject -->
 
-    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('admin-assets/img/favicon.png') }}">
 
     <!-- Fonts -->
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
@@ -43,7 +47,7 @@
 <body class="layout-light side-menu">
 <div class="mobile-search">
     <form action="/" class="search-form">
-        <img src="img/svg/search.svg" alt="search" class="svg">
+        <img src="{{ asset('admin-assets/img/svg/search.svg') }}" alt="search" class="svg">
         <input class="form-control me-sm-2 box-shadow-none" type="search" placeholder="Search..." aria-label="Search">
     </form>
 </div>
@@ -57,6 +61,7 @@
 
         <div class="crm mb-25">
             <div class="container-fluid">
+                <x-bread-crumb pageTitle="{{ $pageTitle ?? '' }}" pageSubTitle="{{ $pageSubTitle ?? '' }}"/>
                 {{ $slot }}
                 <!-- ends: .row -->
             </div>
