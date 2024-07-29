@@ -13,7 +13,7 @@
                 </li>
                 <li class="has-child">
                     <a href="#" class="">
-                        <span class="nav-icon uil uil-envelope"></span>
+                        <span class="nav-icon uil uil-user"></span>
                         <span class="menu-text">Users</span>
                         <span class="toggle-icon"></span>
                     </a>
@@ -31,13 +31,13 @@
                 </li>
                 <li>
                     <a href="chat.html" class="">
-                        <span class="nav-icon uil uil-chat"></span>
-                        <span class="menu-text">Rides</span>
+                        <span class="nav-icon uil uil-map"></span>
+                        <span class="menu-text">Trips</span>
                     </a>
                 </li>
                 <li>
                     <a href="chat.html" class="">
-                        <span class="nav-icon uil uil-chat"></span>
+                        <span class="nav-icon uil uil-car"></span>
                         <span class="menu-text">Vehicle Types</span>
                     </a>
                 </li>

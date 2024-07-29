@@ -1,4 +1,4 @@
-<x-admin.master-layout pageTitle="Dashboard">
+<x-admin.master-layout pageTitle="Dashboard" title="Admin Dashboard | Travel India">
     <div class="row">
         <div class="col-xxl-6">
             <x-admin-dashboard-widgets/>

@@ -14,10 +14,10 @@ return new class extends Migration
         Schema::create('vehicles', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->index()->constrained()->onDelete('cascade');
+            $table->foreignId('vehicle_type_id')->constrained();
             $table->string('vehicle_number');
-            $table->string('vehicle_type');
             $table->string('vehicle_model');
-            $table->string('fuel_type');
+            $table->enum('fuel_type', ['petrol', 'diesel', 'cng', 'electric']);
             $table->string('rc_number')->nullable();
             $table->string('rc_image_front');
             $table->string('rc_image_back')->nullable();

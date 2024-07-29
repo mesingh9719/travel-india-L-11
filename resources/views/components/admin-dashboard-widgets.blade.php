@@ -6,7 +6,7 @@
                 <div class=" ap-po-details-content d-flex flex-wrap justify-content-between">
                     <div class="ap-po-details__titlebar">
                         <h1>100+</h1>
-                        <p>Total Completed Rides</p>
+                        <p>Total Completed Trips</p>
                     </div>
                     <div class="ap-po-details__icon-area">
                         <div class="svg-icon order-bg-opacity-primary color-primary">
@@ -31,7 +31,7 @@
                 <div class=" ap-po-details-content d-flex flex-wrap justify-content-between">
                     <div class="ap-po-details__titlebar">
                         <h1>30,825</h1>
-                        <p>Total Orders</p>
+                        <p>Total Trip</p>
                     </div>
                     <div class="ap-po-details__icon-area">
                         <div class="svg-icon order-bg-opacity-info color-info">
@@ -63,7 +63,7 @@
                     <div class="ap-po-details__icon-area">
                         <div class="svg-icon order-bg-opacity-secondary color-secondary">
 
-                            <i class="uil uil-usd-circle"></i>
+                            <i class="uil uil-user-circle"></i>
                         </div>
                     </div>
                 </div>
@@ -85,12 +85,12 @@
                 <div class=" ap-po-details-content d-flex flex-wrap justify-content-between">
                     <div class="ap-po-details__titlebar">
                         <h1>30,825</h1>
-                        <p>New Customers</p>
+                        <p>Total Vehicles</p>
                     </div>
                     <div class="ap-po-details__icon-area">
                         <div class="svg-icon order-bg-opacity-warning color-warning">
 
-                            <i class="uil uil-users-alt"></i>
+                            <i class="uil uil-car"></i>
                         </div>
                     </div>
                 </div>

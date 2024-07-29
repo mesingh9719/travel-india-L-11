@@ -4,8 +4,8 @@
             <div class="edit-profile">
                 <div class="edit-profile__logos">
                     <a href="{{ route('admin.login') }}">
-                        <img class="dark" src="{{ asset('admin-assets/img/logo-dark.png') }}" alt="">
-                        <img class="light" src="{{ asset('admin-assets/img/logo-white.png') }}" alt="">
+                        <img class="dark" src="{{ asset('frontend-assets/images/ti-temp-logo.png') }}" alt="">
+                        <img class="light" src="{{ asset('frontend-assets/images/ti-temp-logo.png') }}" alt="">
                     </a>
                 </div>
                 <div class="card border-0">
