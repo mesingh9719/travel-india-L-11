@@ -41,6 +41,15 @@
                         <span class="menu-text">Vehicle Types</span>
                     </a>
                 </li>
+                <li class="menu-title mt-30">
+                    <span>Settings</span>
+                </li>
+                <li>
+                    <a href="chat.html" class="">
+                        <img class="nav-icon" src="{{ asset('admin-assets/img/setting.png') }}" alt="General Settings">
+                        <span class="menu-text">General Settings</span>
+                    </a>
+                </li>
             </ul>
         </div>
     </div>
