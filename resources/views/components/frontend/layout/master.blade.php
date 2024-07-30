@@ -44,9 +44,6 @@
 	<script src="{{asset('frontend-assets/js/revolution/revolution.extension.slideanims.min.js')}}"></script>
 	<script src="{{asset('frontend-assets/js/revolution/revolution.extension.video.min.js')}}"></script>
 	<script src="{{asset('frontend-assets/js/revolution/revolution.initialize.js')}}"></script>
-	<script src="{{asset('frontend-assets/js/wizard-script.js')}}"></script>
-    <script src="{{asset('frontend-assets/js/map-init.js')}}"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA8c55_YHLvDHGACkQscgbGLtLRdxBDCfI"></script>   
 
 </body>
 
