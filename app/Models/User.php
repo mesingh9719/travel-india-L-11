@@ -7,11 +7,9 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
-use Spatie\Activitylog\Traits\LogsActivity;
-use Spatie\Activitylog\LogOptions;
 class User extends Authenticatable
 {
-    use HasFactory, Notifiable, HasApiTokens, LogsActivity;
+    use HasFactory, Notifiable, HasApiTokens;
 
     /**
      * The attributes that are mass assignable.
@@ -43,7 +41,6 @@ class User extends Authenticatable
         'voter_id_back',
     ];
 
- 
     /**
      * The attributes that should be hidden for serialization.
      *
@@ -66,22 +63,4 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
-
-
-
-  
-    
-    // Optionally, customize the log name or log description
-    // protected static $logName = 'default_log_name';
-
-
-    public function getActivitylogOptions(): LogOptions
-    {
-        return LogOptions::defaults()
-        ->logOnly($this->fillable)
-        ->useLogName('use log');
-        // Chain fluent methods for configuration options
-    }
-
-    
 }
