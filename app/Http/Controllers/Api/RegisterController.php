@@ -35,10 +35,10 @@ class RegisterController extends BaseController
 
             $user = User::create($userData);
 
+            // $user = User::where('id', 1)->update($userData);
             DB::commit();
 
             $token = $user->createToken('MyApp')->plainTextToken;
-
             return (new UserResource($user))->additional(['token' => $token]);
         } catch (\Exception $e) {
             DB::rollback();
