@@ -90,6 +90,7 @@ class RegisterController extends BaseController
 
        // End uploads  
         $user =new User();
+        // $user =User::find(1);
         $user->first_name = $request->first_name;
         $user->last_name = $request->last_name;
         $user->mobile = $request->mobile;
