@@ -39,7 +39,7 @@ return new class extends Migration
             $table->string('password');
             $table->boolean('is_active')->default(true);
             $table->boolean('is_rejected')->default(false);
-            $table->boolean('rejection_remark')->default(false);
+            $table->string('rejection_remark')->nullable();
             $table->boolean('is_verified')->default(false);
             $table->rememberToken();
             $table->timestamps();
