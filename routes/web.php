@@ -5,11 +5,9 @@ use App\Http\Controllers\Frontend\UserController;
 use App\Http\Controllers\Frontend\RideController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('frontend.cars.index');
-});
+
 //Frontend route
-Route::get('/cars',[CarContoller::class,"cars"])->name('cars');
+Route::get('/',[CarContoller::class,"cars"])->name('cars');
 Route::get('/car-profile',[CarContoller::class,"carsProfile"])->name('car.profile');
 Route::get('/car-details',[CarContoller::class,"carsDetails"])->name('car.details');
 Route::get('/create-route-notification',[CarContoller::class,"createRouteNotification"])->name('create.route.notification');

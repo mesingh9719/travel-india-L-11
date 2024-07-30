@@ -31,8 +31,15 @@ return new class extends Migration
             $table->string('address')->nullable();
             $table->string('dob')->nullable();
             $table->string('gender')->nullable();
+            $table->string('rc_number')->nullable();
+            $table->string('rc_image')->nullable();
+            $table->string('voter_id_front')->nullable();
+            $table->string('voter_id_back')->nullable();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+            $table->boolean('is_active')->default(true);
+            $table->boolean('is_rejected')->default(false);
+            $table->boolean('rejection_remark')->default(false);
             $table->boolean('is_verified')->default(false);
             $table->rememberToken();
             $table->timestamps();
