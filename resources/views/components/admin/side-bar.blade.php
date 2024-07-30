@@ -41,6 +41,12 @@
                         <span class="menu-text">Vehicle Types</span>
                     </a>
                 </li>
+                <li>
+                    <a href="{{ route('admin.plans.index') }}" class="{{ request()->is('admin/plans*') ? 'active' : '' }}">
+                        <span class="nav-icon uil uil-package"></span>
+                        <span class="menu-text">Plans</span>
+                    </a>
+                </li>
                 <li class="menu-title mt-30">
                     <span>Settings</span>
                 </li>

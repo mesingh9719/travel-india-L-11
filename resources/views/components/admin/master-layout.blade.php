@@ -160,6 +160,7 @@
 <script src="{{ asset('admin-assets/assets/theme_assets/js/leaflet-init.js') }}"></script>
 <script src="{{ asset('admin-assets/assets/theme_assets/js/main.js') }}"></script>
 
+{{ $js ?? '' }}
 <!-- endinject-->
 </body>
 
