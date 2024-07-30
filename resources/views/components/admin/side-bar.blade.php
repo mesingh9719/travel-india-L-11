@@ -36,7 +36,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="chat.html" class="">
+                    <a href="{{ route('admin.vehicle-types') }}" class="{{ request()->is('admin/vehicle-types') ? 'active' : '' }}">
                         <span class="nav-icon uil uil-car"></span>
                         <span class="menu-text">Vehicle Types</span>
                     </a>
