@@ -35,7 +35,6 @@ class RegisterController extends BaseController
 
             $user = User::create($userData);
 
-            // $user = User::where('id', 1)->update($userData);
             DB::commit();
 
             $token = $user->createToken('MyApp')->plainTextToken;
