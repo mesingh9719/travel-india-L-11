@@ -1,259 +1,243 @@
 <x-frontend.layout.master>
-<div class="sub-head blackish ext-low-opacity">
-			<div class="bg-image" style="background-image: url(frontend-assets/images/resources/subhead-bg.jpg)"></div>
-			<div class="container">
-				<div class="row">
-					<div class="col-md-12">
-						<div class="cola-head">
-							<div class="head-meta">
-								<h4>Andrew.</h4>
-								<p>( Cambridge )</p>
-							</div>
-							<a href="#" title="" class="theme-btn"><i class="fa fa-share-alt"></i>share profile</a>
-							<div class="info-links">
-								<a href="#" title="">how does this work</a>
-								<a href="#" title="">submit your car</a>
-								<span><i class="fa fa-phone"></i>call (012) 345 - 6789</span>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div><!-- subhead -->
+<section class="promo-sec" style="background: url('frontend-assets/images/promo-bg.jpg')no-repeat center center / cover;">
+<div class="container">
+<div class="row">
+<div class="col-lg-12">
+<div class="promo-wrap text-center">
+<h2 class="fw-bold text-white text-uppercase">Car Details</h2>
+<nav aria-label="breadcrumb w-75 mx-auto">
+<ol class="breadcrumb">
+<li class="breadcrumb-item"><a href="#">Home</a></li>
+<li class="breadcrumb-item"><a href="#">All Cars</a></li>
+<li class="breadcrumb-item active" aria-current="page">Toyota</li>
+</ol>
+</nav>
+</div>
+</div>
+</div>
+</div>
+</section>
 
-		<section>
-			<div class="space top-space50">
-				<div class="container">
-					<div class="row">
-						<div class="col-lg-7">
-							<div class="detail-sec">
-								<div class="detail-head">
-									<h1>Citroen C5 2.0 HDI 110 EXCLUSIVE 5dr <span>2012</span></h1>
-									<ul class="stars-rating">
-										<li><i class="fa fa-star checked"></i></li>
-										<li><i class="fa fa-star checked"></i></li>
-										<li><i class="fa fa-star checked"></i></li>
-										<li><i class="fa fa-star checked"></i></li>
-										<li><i class="fa fa-star checked"></i></li>
-									</ul>
-									<a href="#" title="" class="theme-btn"><i class="fa fa-heart-o"></i>save</a>
-									<a href="#" title="" class="theme-btn"><i class="fa fa-share-alt"></i>share</a>
-									<span>Property of <a href="#" title="">Andrew</a> from <a href="#" title="">01000
-											New York.</a></span>
-									<span class="viewrz"><i class="fa fa-eye"></i>125 people saw this.</span>
-								</div>
-								<ul class="detail-caro">
-									<li>
-										<img src="{{asset('frontend-assets/images/resources/detailcaro-1.jpg')}}" alt="">
-										<span><i class="fa fa-list-alt"></i>Posibility to long term rental</span>
-									</li>
-									<li>
-										<img src="{{asset('frontend-assets/images/resources/detailcaro-2.jpg')}}" alt="">
-										<span><i class="fa fa-list-alt"></i>Posibility to long term rental</span>
-									</li>
-									<li>
-										<img src="{{asset('frontend-assets/images/resources/detailcaro-3.jpg')}}" alt="">
-										<span><i class="fa fa-list-alt"></i>Posibility to long term rental</span>
-									</li>
-								</ul>
-								<h5 class="little-title">Description:</h5>
-								<span>My car is very clean, so I would like to keep it that way!</span>
-								<p>
-									This car comes with Anti-Lock Brakes, Automatic Air Conditioning, Power-Assisted
-									Steering,
-									Driver, Passenger, Front Side And Side Air Bags, 16In Alloy Wheels, Cruise Control,
-									Satellite
-									Navigation, Trip Computer, Electric Door Mirrors, Immobiliser.
-								</p>
-								<p>
-									I also have Front Fog Lights, Seats Split Rear, Front Electric Windows, Deadlocks,
-									Audio Steering Wheel Mounted Controls, Front/Rear Head Restraints, Bluetooth
-									Interface Telephone Equipment, Centre Rear Seat Belt.
-								</p>
-								<div class="profile-list">
-									<ul>
-										<li class="complete"><i class="fa fa-check-circle-o"></i>Name and email</li>
-										<li class="complete"><i class="fa fa-check-circle-o"></i>Profile picture</li>
-										<li class="incomplete"><i class="fa fa-ban"></i>Training</li>
-										<li class="incomplete"><i class="fa fa-ban"></i>Profession</li>
-										<li class="incomplete"><i class="fa fa-ban"></i>Complete address</li>
-										<li class="incomplete"><i class="fa fa-ban"></i>About me</li>
-									</ul>
-								</div>
-								<div class="Characteristics">
-									<h5 class="little-title">Characteristics:</h5>
-									<ul class="featurez">
-										<li><i>Model</i><span>Citroen C5 2.0 HDI 110 EXCLUSIVE 5dr</span></li>
-										<li><i>year</i><span>2012</span></li>
-										<li><i>Fuel</i><span>Diesel</span></li>
-										<li><i>km</i><span>100.000 - 125.000</span></li>
-										<li><i>Fuel</i><span>Diesel</span></li>
-										<li><i>Registration number</i><span>5678FCD</span></li>
-										<li><i>Seats</i><span>5</span></li>
-										<li><i>Insurance</i><span>Best Boy Insurance</span></li>
-									</ul>
-								</div>
-								<div class="features-list">
-									<h5 class="little-title">Features:</h5>
-									<ul class="feature-list">
-										<li><i class="flaticon-checked"></i>abs</li>
-										<li><i class="flaticon-checked"></i>Cruise control</li>
-										<li><i class="flaticon-checked"></i>Audio remote control</li>
-										<li><i class="flaticon-checked"></i>Alarm</li>
-										<li><i class="flaticon-checked"></i>Electric door mirrors</li>
-										<li><i class="flaticon-checked"></i>Bluetooth connection</li>
-									</ul>
-								</div>
 
-								<div class="reviewers">
-									<h5 class="little-title">reviews</h5>
-									<ul class="reviewer">
-										<li>
-											<figure>
-												<img src="{{asset('frontend-assets/images/resources/reviewer-3.jpg')}}" alt="">
-											</figure>
-											<div class="activity-meta">
-												<span><a href="#" title="">Derrick H.</a> 02 Oct 2017</span>
-												<p>Very cozy and welcoming in Jessica’s car!</p>
-												<ul class="stars-rating">
-													<li><i class="fa fa-star checked"></i></li>
-													<li><i class="fa fa-star checked"></i></li>
-													<li><i class="fa fa-star checked"></i></li>
-													<li><i class="fa fa-star checked"></i></li>
-													<li><i class="fa fa-star checked"></i></li>
-												</ul>
-
-											</div>
-										</li>
-										<li>
-											<figure>
-												<img src="{{asset('frontend-assets/images/resources/reviewer-4.jpg')}}" alt="">
-											</figure>
-											<div class="activity-meta">
-												<span><a href="#" title="">Mia J.</a> 28 Sept 2017</span>
-												<p>Jessica is very outgoing and peaceful. I had such a great time on the
-													full ride with here. 100% recommended!</p>
-												<ul class="stars-rating">
-													<li><i class="fa fa-star checked"></i></li>
-													<li><i class="fa fa-star checked"></i></li>
-													<li><i class="fa fa-star checked"></i></li>
-													<li><i class="fa fa-star checked"></i></li>
-													<li><i class="fa fa-star checked"></i></li>
-												</ul>
-											</div>
-										</li>
-										<li>
-											<figure>
-												<img src="{{asset('frontend-assets/images/resources/reviewer-5.jpg')}}" alt="">
-											</figure>
-											<div class="activity-meta">
-												<span><a href="#" title="">Janet Y.</a> 24 Sept 2017</span>
-												<p>Jessica is punctual, which I really appreciate at someone, especially
-													when they are getting picked up. </p>
-												<ul class="stars-rating">
-													<li><i class="fa fa-star checked"></i></li>
-													<li><i class="fa fa-star checked"></i></li>
-													<li><i class="fa fa-star checked"></i></li>
-													<li><i class="fa fa-star checked"></i></li>
-													<li><i class="fa fa-star checked"></i></li>
-												</ul>
-											</div>
-										</li>
-
-									</ul>
-								</div>
-							</div>
-						</div>
-						<div class="col-lg-5">
-							<div class="sidebar right">
-								<div class="pickup-time">
-									<div class="date-n-time">
-										<p>
-											<label><i class="fa fa-calendar"></i></label>
-											<input id="datetimepicker1" type="text">
-										</p>
-										<p>
-											<label><i class="fa fa-clock-o"></i></label>
-											<input id="datetimepicker2" type="text">
-										</p>
-										<p>
-											<label><i class="fa fa-calendar"></i></label>
-											<input id="datetimepicker3" type="text">
-										</p>
-										<p>
-											<label><i class="fa fa-clock-o"></i></label>
-											<input id="datetimepicker4" type="text">
-										</p>
-									</div>
-									<ins>$21</ins>
-									<span>Price per day</span>
-
-									<a href="#" title="" class="theme-btn">+ rent this car today</a>
-									<p>
-										Have a great ride with our 100km / day. In case you need more you can always ask
-										for extra.
-										<i class="fa fa-info-circle"></i>
-									</p>
-								</div>
-							</div>
-							<div class="point-promo">
-								<p>
-									Rent this car and get <em>100</em> Car East points. Use your points for promos &
-									discounts.
-								</p>
-							</div>
-							<div class="owner-sec">
-								<div class="owner-pic">
-									<img src="{{asset('frontend-assets/images/resources/owner.jpg')}}" alt="">
-									<i><img src="{{asset('frontend-assets/images/icon-13.png')}}" alt=""></i>
-									<span>
-										<em>Andrew</em>
-										<i>Owner</i>
-									</span>
-								</div>
-								<ul>
-									<li>
-										<i class="flaticon-handshake"></i>
-										<div class="owner-info">
-											<span>89%</span>
-											<p>acceptance rate</p>
-										</div>
-									</li>
-									<li>
-										<i class="flaticon-time"></i>
-										<div class="owner-info">
-											<span>60mins</span>
-											<p>replies within 1hr</p>
-										</div>
-									</li>
-									<li>
-										<i class="flaticon-calendar"></i>
-										<div class="owner-info">
-											<span>1 day ago</span>
-											<p>updated the calendar</p>
-										</div>
-									</li>
-								</ul>
-							</div>
-							<div class="owner-detail">
-								<ul class="verification">
-									<li><i class="flaticon-world"></i>Online on 4 Oct 2017 at 08:36</li>
-									<li><i class="flaticon-checked"></i>Account connected on Facebook</li>
-									<li><i class="flaticon-checked"></i>Phone number verified</li>
-								</ul>
-								<p>
-									You will be able to see the phone number of the owner of the car, in the moment he
-									accepts your request.
-								</p>
-								<a href="#" title="" class="theme-btn long">send message</a>
-							</div>
-							<div class="g-map">
-								<h5 class="little-title">Location:</h5>
-								<div id="map-canvas"></div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section><!-- points section -->
+<main class="main sec-padding">
+<div class="container">
+<div class="row">
+<div class="col-xl-8">
+<article class="single-car">
+<img src="{{asset('frontend-assets/images/car-lg.jpg')}}" alt="Car">
+<div class="car-header mt-5">
+<h2 class="fw-bold text-no-wrap">Toyota - Camry</h2>
+<div class="d-sm-flex justify-content-between align-items-center my-5">
+<div class="rider-info d-sm-flex">
+<div class="d-flex">
+<div class="avatar position-relative">
+<img src="{{asset('frontend-assets/images/rider-sm.png')}}" class="rounded-circle" alt>
+<div class="verified position-absolute"><i class="fa-solid fa-circle-check"></i></div>
+</div>
+<div class="avatar-info ms-3">
+<h4 class="fw-bold mb-0 h5">Esther Howard</h4>
+<span class="text-mute">02 years with rideMates</span>
+</div>
+</div>
+<div class="ratings ms-sm-5">
+<h4 class="fw-bold mb-0 h5">Ratings:</h4>
+<div class="d-flex">
+<div class="rate">
+<i class="fa-solid fa-star"></i>
+<i class="fa-solid fa-star"></i>
+<i class="fa-solid fa-star"></i>
+<i class="fa-solid fa-star"></i>
+<i class="fa-solid fa-star"></i>
+</div>
+<div class="rate-points text-mute">
+(4.9)
+</div>
+</div>
+</div> 
+</div> 
+<a href="#" class="btn btn-primary align-self-start">Confirm Ride</a>
+</div>
+</div>
+<h3>specification</h3>
+<div class="spec-list mt-4">
+<ul class="car-specfication">
+<li><span>Brand</span> Toyota</li>
+<li><span>Year</span> 2020</li>
+<li><span>Door</span> 04 Doors</li>
+<li><span>Color</span> Green</li>
+<li><span>Mileage</span> 60km</li>
+<li><span>Brake</span> ABS</li>
+<li><span>Person</span> 04</li>
+<li><span>VIN</span> L-290209</li>
+<li><span>Fuel</span> Octane</li>
+<li><span>Engine</span> 292092</li>
+<li><span>Origin</span> USA</li>
+<li><span>Fuel</span> Octane</li>
+</ul>
+</div>
+<div class="my-5">
+<h3>car features</h3>
+<div class="features mt-4">
+<ul class="d-flex g-3 justify-conetent-between list-unstyled">
+<li>air consitioning</li>
+<li>gPS navigation</li>
+<li>cruise control</li>
+<li>keyless entry</li>
+<li>Bluetooth connectivity</li>
+<li>child safety locks</li>
+<li>rearview camera</li>
+<li>adjustable seats</li>
+<li>aM/PM radio</li>
+<li>power windows</li>
+<li>automatic transmission</li>
+<li>heated seats</li>
+</ul>
+</div>
+</div>
+<div class="description">
+<h3 class="mb-4">description</h3>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+labore et dolore magna
+aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+commodo consequat aute
+irure dolor in reprehenderit.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+labore et dolore magna
+aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+commodo consequat aute
+irure dolor in reprehenderit.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+labore et dolore magna
+aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+commodo consequat aute
+irure dolor in reprehenderit.</p>
+</div>
+<div class="reviews mt-5">
+<h3>reviews</h3>
+<div class="review-entry p-4 border">
+<div class="rider-info d-sm-flex justify-content-between align-items-center mb-4">
+<div class="d-flex align-items-center">
+<div class="avatar">
+<img src="{{asset('frontend-assets/images/review1.png')}}" alt>
+</div>
+<div class="avatar-info ms-4">
+<h4 class="fw-bold mb-0 h5">Esther Howard</h4>
+<span class="text-mute">19 June 2023</span>
+</div>
+</div>
+<div class="ratings ms-sm-5">
+<h4 class="fw-bold mb-0 h5">Ratings:</h4>
+<div class="d-flex">
+<div class="rate">
+<i class="fa-solid fa-star"></i>
+<i class="fa-solid fa-star"></i>
+<i class="fa-solid fa-star"></i>
+<i class="fa-solid fa-star"></i>
+<i class="fa-solid fa-star"></i>
+</div>
+<div class="rate-points text-mute">
+(4.9)
+</div>
+</div>
+</div> 
+</div>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+labore et dolore magna
+aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+ea commodo consequat aute
+irure dolor in reprehenderit.</p>
+</div> 
+<div class="review-entry p-4 border">
+<div class="rider-info d-sm-flex justify-content-between align-items-center mb-4">
+<div class="d-flex align-items-center">
+<div class="avatar">
+<img src="{{asset('frontend-assets/images/review2.png')}}" alt>
+</div>
+<div class="avatar-info ms-4">
+<h4 class="fw-bold mb-0 h5">Esther Howard</h4>
+<span class="text-mute">19 June 2023</span>
+</div>
+</div>
+<div class="ratings ms-sm-5">
+<h4 class="fw-bold mb-0 h5">Ratings:</h4>
+<div class="d-flex">
+<div class="rate">
+<i class="fa-solid fa-star"></i>
+<i class="fa-solid fa-star"></i>
+<i class="fa-solid fa-star"></i>
+<i class="fa-solid fa-star"></i>
+<i class="fa-solid fa-star"></i>
+</div>
+<div class="rate-points text-mute">
+(4.9)
+</div>
+</div>
+</div> 
+</div>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+labore et dolore magna
+aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+ea commodo consequat aute
+irure dolor in reprehenderit.</p>
+</div> 
+<div class="write-review mt-5">
+<h3>Leave a Review</h3>
+<form action="#">
+<div class="form-group half-form">
+<input class="form-control" type="text" placeholder="First Name:">
+</div>
+<div class="form-group half-form">
+<input class="form-control" type="text" placeholder="First Name:">
+</div>
+<div class="form-group half-form">
+<input class="form-control" type="text" placeholder="First Name:">
+</div>
+<div class="form-group half-form">
+<input class="form-control" type="text" placeholder="First Name:">
+</div>
+<div class="form-group">
+<textarea class="form-control" name id rows="5"></textarea>
+</div>
+<button class="btn btn-primary mt-4 rounded-2">submit review</button>
+</form>
+</div>
+</div>
+</article> 
+</div>
+<div class="col-xl-4">
+<aside class="sidebar">
+<div class="widget search-widget">
+<form action="#" class="position-relative">
+<input type="search" placeholder="Search here..">
+<button><i class="fa fa-search"></i></button>
+</form>
+</div>
+<div class="widget">
+<h3 class="widget-title">Service Category</h3>
+<ul>
+<li><a href="#">ride sharing</a></li>
+<li><a href="#">Family Trip</a></li>
+<li><a href="#">shuttle trip</a></li>
+<li><a href="#">Intercity service</a></li>
+</ul>
+</div> 
+<div class="widget location-widget">
+<h3 class="widget-title">view location</h3>
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d99370.29950629402!2d-77.01457599999999!3d38.8937545!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89b7c6de5af6e45b%3A0xc2524522d4885d2a!2sWashington%2C%20DC%2C%20USA!5e0!3m2!1sen!2sbd!4v1699429602966!5m2!1sen!2sbd" width="100%" height="400" style="border:0;" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+</div>
+<div class="widget">
+<h3 class="widget-title"> Share the taxi</h3>
+<div class="social-share2">
+<a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+<a href="#"><i class="fa-brands fa-twitter"></i></a>
+<a href="#"><i class="fa-brands fa-skype"></i></a>
+<a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+<a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+</div>
+</div>
+</aside>
+</div>
+</div>
+</div>
+</main>
 </x-frontend.layout.master>

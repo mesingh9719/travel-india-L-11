@@ -1,52 +1,39 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zxx">
 
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="" />
-	<meta name="keywords" content="" />
-	<title>{{ $title ?? 'Travel India' }}</title>
-	<link rel="icon" type="image/png" href="{{asset('frontend-assets/images/fav.png')}}">
+<meta charset="utf-8">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<title>HTML5 Template</title>
+<meta name="description" content>
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="apple-touch-icon" href="images/favicon.html">
+<link rel="shortcut icon" href="images/favicon.ico">
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@600;700&amp;family=Sora:wght@400;500;700&amp;display=swap" rel="stylesheet">
 
-	<link rel="stylesheet" href="{{asset('frontend-assets/css/apps.css')}}">
-	<link rel="stylesheet" href="{{asset('frontend-assets/css/style.css')}}">
-	<link rel="stylesheet" href="{{asset('frontend-assets/css/color.css')}}">
-	<link rel="stylesheet" href="{{asset('frontend-assets/css/responsive.css')}}">
+<link rel="stylesheet" href="{{asset('frontend-assets/font-awesome/css/all.min.css')}}">
 
-	<link rel="stylesheet" type="text/css" href="{{asset('frontend-assets/css/revolution/settings.css')}}" />
-	<link rel="stylesheet" type="text/css" href="{{asset('frontend-assets/css/revolution/navigation.css')}}" />
-	<link rel="stylesheet" type="text/css" href="{{asset('frontend-assets/css/revolution/pe-icon-7-stroke/pe-icon-7-stroke.css')}}">
+<link rel="stylesheet" href="{{asset('frontend-assets/css/swiper-bundle.min.css')}}">
+<link rel="stylesheet" href="{{asset('frontend-assets/css/nice-select2.css')}}">
+<link rel="stylesheet" href="{{asset('frontend-assets/css/venobox.min.css')}}">
+<link rel="stylesheet" href="{{asset('frontend-assets/css/style.css')}}">
 
 </head>
-
 <body>
 	<div class="site-layout">
 	<x-frontend.layout.header/>
 	{{ $slot }}
 	<x-frontend.layout.footer/>
 	</div>
-	<script src="{{asset('frontend-assets/js/apps.min.js')}}"></script>
-	<script src="{{asset('frontend-assets/js/script.js')}}"></script>
 
-	<!-- REVOLUTION JS FILES -->
-	<script type="text/javascript" src="{{asset('frontend-assets/js/revolution/jquery.themepunch.tools.min.js')}}"></script>
-	<script type="text/javascript" src="{{asset('frontend-assets/js/revolution/jquery.themepunch.revolution.min.js')}}"></script>
+<div class="back-top"><i class="fa-solid fa-chevron-up"></i></div>
 
-	<!-- SLIDER REVOLUTION 5.0 EXTENSIONS  -->
-	<script src="{{asset('frontend-assets/js/revolution/revolution.extension.actions.min.js')}}"></script>
-	<script src="{{asset('frontend-assets/js/revolution/revolution.extension.carousel.min.js')}}"></script>
-	<script src="{{asset('frontend-assets/js/revolution/revolution.extension.kenburn.min.js')}}"></script>
-	<script src="{{asset('frontend-assets/js/revolution/revolution.extension.layeranimation.min.js')}}"></script>
-	<script src="{{asset('frontend-assets/js/revolution/revolution.extension.migration.min.js')}}"></script>
-	<script src="{{asset('frontend-assets/js/revolution/revolution.extension.navigation.min.js')}}"></script>
-	<script src="{{asset('frontend-assets/js/revolution/revolution.extension.parallax.min.js')}}"></script>
-	<script src="{{asset('frontend-assets/js/revolution/revolution.extension.slideanims.min.js')}}"></script>
-	<script src="{{asset('frontend-assets/js/revolution/revolution.extension.video.min.js')}}"></script>
-	<script src="{{asset('frontend-assets/js/revolution/revolution.initialize.js')}}"></script>
-	<script src="{{asset('frontend-assets/js/wizard-script.js')}}"></script>
-    <script src="{{asset('frontend-assets/js/map-init.js')}}"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA8c55_YHLvDHGACkQscgbGLtLRdxBDCfI"></script>   
+<script src="{{asset('frontend-assets/js/bootstrap.bundle.min.js')}}"></script>
+<script src="{{asset('frontend-assets/js/swiper-bundle.min.js')}}"></script>
+<script src="{{asset('frontend-assets/js/purecounter_vanilla.js')}}"></script>
+<script src="{{asset('frontend-assets/js/venobox.min.js')}}"></script>
+<script src="{{asset('frontend-assets/js/nice-select2.js')}}"></script>
+<script src="{{asset('frontend-assets/js/custom.js')}}"></script>
 
 </body>
 

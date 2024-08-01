@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Route;
 
 //Frontend route
 Route::get('/',[CarContoller::class,"cars"])->name('cars');
-Route::get('/car-profile',[CarContoller::class,"carsProfile"])->name('car.profile');
+Route::get('/car-list',[CarContoller::class,"carsProfile"])->name('car.profile');
 Route::get('/car-details',[CarContoller::class,"carsDetails"])->name('car.details');
 Route::get('/create-route-notification',[CarContoller::class,"createRouteNotification"])->name('create.route.notification');
 Route::get('/submit-car-intro',[CarContoller::class,"submitCarIntro"])->name('submit.car.intro');

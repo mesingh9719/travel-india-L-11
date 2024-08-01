@@ -1,1680 +1,336 @@
 <x-frontend.layout.master>
-<div class="sub-head blackish ext-low-opacity">
-			<div class="bg-image" style="background-image: url(frontend-assets/images/resources/subhead-bg.jpg)"></div>
-			<div class="container">
-				<div class="row">
-					<div class="col-md-12">
-						<div class="cola-head">
-							<div class="head-meta">
-								<h4>Register</h4>
-								<p>( Create an account today. )</p>
-							</div>
 
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
+<link rel="stylesheet" href="{{asset('frontend-assets/css/wizard-form.css')}}">
+<section class="promo-sec" style="background: url('frontend-assets/images/promo-bg.jpg')no-repeat center center / cover;">
+<div class="container">
+<div class="row">
+<div class="col-lg-12">
+<div class="promo-wrap text-center">
+<h2 class="fw-7 text-white text-uppercase">create account</h2>
+<nav aria-label="breadcrumb w-75 mx-auto">
+<ol class="breadcrumb">
+<li class="breadcrumb-item"><a href="#">Home</a></li>
+<li class="breadcrumb-item active" aria-current="page">sign up</li>
+</ol>
+</nav>
+</div>
+</div>
+</div>
+</div>
+</section>
 
-		<section class="pt-5">
-			<div class="container">
-				<div class="main-section">
-					<ul class="nav nav-tabs" id="myTab" role="tablist">
-						<li class="nav-item">
-						  <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true"><img class="tab-imags" src="{{asset('frontend-assets/./images/car-tab.png')}}" alt=""></a>
-						</li>
-						<li class="nav-item">
-						  <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false"><img class="tab-imags" src="{{asset('frontend-assets/./images/bus-tab.png')}}" alt=""></a>
-						</li>
-						<li class="nav-item">
-						  <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false"><img class="tab-imags" src="{{asset('frontend-assets/./images/truck-tab.png')}}" alt=""></a>
-						</li>
-						<li class="nav-item">
-						  <a class="nav-link" id="auto-tav" data-toggle="tab" href="#auto-tav" role="tab" aria-controls="auto" aria-selected="false"><img class="tab-imags" src="{{asset('frontend-assets/./images/auto-tab.png')}}" alt=""></a>
-						</li>
-						<li class="nav-item">
-						  <a class="nav-link" id="bike-tav" data-toggle="tab" href="#bike-tav" role="tab" aria-controls="bike" aria-selected="false"><img class="tab-imags" src="{{asset('frontend-assets/./images/bike-tab.png')}}" alt=""></a>
-						</li>
-					  </ul>
-					  
-					  <div class="tab-content" id="myTabContent">
-						<div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab"><section>
-							<div class="container-reges">
-								<div class="row justify-content-center">
-									<div class="col-11 col-sm-10 col-md-10 col-lg-6 col-xl-5 text-center p-0 mt-3 mb-2">
-										<div class="card px-0 pt-4 pb-0 mt-3 mb-3">
-											<h2 id="heading">Sign Up Your vehicle Account</h2>
-											<form id="msform">
-												<!-- progressbar -->
-												<ul id="progressbar">
-													<li class="active" id="account"><strong>Owner Details</strong></li>
-													<li id="personal"><strong>Owner Documants</strong></li>
-													<li id="payment"><strong>Driver Details</strong></li>
-													<li id="confirm"><strong>Driver Documants</strong></li>
-												</ul> <!-- fieldsets -->
-												<fieldset>
-													<div class="form-card">
-														<div class="row">
-															<div class="col-7">
-																<h2 class="fs-title">Owner Information:</h2>
-															</div>
-														</div>
-														<div class="row">
-															<div class="col-md-6">
-																<label class="fieldlabels">Enter Your no: *</label>
-																<input type="text" name="phone no" placeholder="+91 000 000 0000" />
-															</div>
-															<div class="col-md-6">
-																<label class="fieldlabels">OTP:*</label>
-																<input type="text" name="uname" placeholder="Enter your OTP" />
-															</div>
-															<div class="col-md-6">
-																<div class="upload-file-main">
-																	<label class="fieldlabels">upload your RC*</label>
-																	<input type="file" name="uname" placeholder="Enter your RC no" />
-																</div>
-															</div>
-															<div class="col-md-6">
-																<label class="fieldlabels">Enter your vehicle RC no:*</label>
-																<input type="text" name="uname" placeholder="Enter your RC no" />
-															</div>
-															<div class="col-md-6">
-																<label class="fieldlabels"> Your Name: *</label>
-																<input type="text" name="phone no" placeholder=" your Name" />
-															</div>
-															<div class="col-md-6">
-																<label class="fieldlabels"> Your Address:*</label>
-																<input type="text" name="uname" placeholder=" your Address" />
-															</div>
-															<div class="col-md-6">
-																<label class="fieldlabels"> Your Vehicle Class:*</label>
-																<input type="text" name="uname" placeholder=" your Vehicle Class" />
-															</div>
-															<div class="col-md-6">
-																<label class="fieldlabels"> Your Vehicle Fitness certificate :*</label>
-																<input type="text" name="uname"
-																	placeholder=" your Vehicle Fitness certificate" />
-															</div>
-															<div class="col-md-6">
-																<label class="fieldlabels"> Your PVC:*</label>
-																<input type="text" name="uname" placeholder=" your PVC" />
-															</div>
-															<div class="col-md-6">
-																<label class="fieldlabels"> Your Insurance certificate:*</label>
-																<input type="text" name="uname"
-																	placeholder=" your Insurance certificate" />
-															</div>
-															<div class="col-md-6">
-																<label class="fieldlabels"> Your Fule Type:*</label>
-																<input type="text" name="uname" placeholder=" your Fule Type" />
-															</div>
-															<div class="col-md-6">
-																<label class="fieldlabels"> Your Vehicle seats:*</label>
-																<input type="text" name="uname" placeholder=" your Fule Type" />
-															</div>
-															<div class="col-md-6">
-																<label class="fieldlabels"> Your Vehicle color:*</label>
-																<input type="text" name="uname" placeholder=" your Fule Type" />
-															</div>
-															<div class="col-md-6">
-																<label class="fieldlabels"> Your Vehicle Name:*</label>
-																<input type="text" name="uname" placeholder=" your Fule Type" />
-															</div>
-															<div class="col-md-6">
-																<label class="fieldlabels"> Your Vehicle Parmit validate:*</label>
-																<input type="text" name="uname" placeholder=" your Fule Type" />
-															</div>
-															<div class="col-md-6">
-																<label class="fieldlabels"> Your Vehicle Parmit upload:*</label>
-																<input type="file" name="uname" placeholder=" your Fule Type" />
-															</div>
-														</div>
-													</div>
-													<input type="button" name="next" class="next action-button" value="Next" />
-													<a class="btn btn-loggg" href="./login.html">Back to login</a>
-						
-												</fieldset>
-												<fieldset>
-													<div class="form-card">
-														<div class="row">
-															<div class="col-7">
-																<h2 class="fs-title">Personal Information:</h2>
-															</div>
-														</div>
-														<div class="row">
-															<div class="col-md-6">
-																<label class="fieldlabels"> Enter your Whatsapp no *</label>
-																<input type="text" name="fname" placeholder="Enter your Whatsapp no" />
-															</div>
-															<div class="col-md-6">
-																<label class="fieldlabels"> Enter your Email ID*</label>
-																<input type="email" name="fname" placeholder="Enter your Email Id" />
-															</div>
-															<div class="col-md-6">
-																<label class="fieldlabels"> Upload your Aadhhar(Front/Back) *</label>
-																<input type="text" name="fname" placeholder="Enter your Aadhaar" />
-															</div>
-															<div class="col-md-6">
-																<label class="fieldlabels"> Enter your Aadhhar *</label>
-																<input type="text" name="fname" placeholder="Enter your Aadhaar" />
-															</div>
-															<div class="col-md-12">
-																<div class="aadhar-img">
-																	<img src="{{asset('frontend-assets/./images/user-icn.png')}}" alt="">
-																	<label class="fieldlabels"> <strong>Name as/addhaar</strong></label>
-																</div>
-															</div>
-															<div class="col-md-6">
-																<label class="fieldlabels"> Your Father Name *</label>
-																<input type="text" name="fname" placeholder="Your Address" />
-															</div>
-															<div class="col-md-6">
-																<label class="fieldlabels"> Your Address *</label>
-																<input type="text" name="fname" placeholder="Your Address" />
-															</div>
-															<div class="col-md-6">
-																<label class="fieldlabels"> Your D.O.B *</label>
-																<input type="text" name="fname" placeholder="Your D.O.B" />
-															</div>
-						
-															<div class="col-md-12">
-																<h2 class="fs-title">Enter Your Banking Details:</h2>
-																<div class="row">
-																	<div class="col-md-6">
-																		<label class="fieldlabels"> Enter Your GST no.*</label>
-																		<input type="text" name="fname"
-																			placeholder="Enter Your GST no." />
-																	</div>
-																	<div class="col-md-6">
-																		<label class="fieldlabels"> Enter Your PAN no.*</label>
-																		<input type="text" name="fname"
-																			placeholder="Enter Your PAN no." />
-																	</div>
-																	<div class="col-md-6">
-																		<label class="fieldlabels"> Enter Your Bank Name *</label>
-																		<input type="password" name="fname"
-																			placeholder="Enter Your Account Name." />
-																	</div>
-																	<div class="col-md-6">
-																		<label class="fieldlabels"> Enter Your Account NO *</label>
-																		<input type="password" name="fname"
-																			placeholder="Enter Your Account no." />
-																	</div>
-																	<div class="col-md-6">
-																		<label class="fieldlabels"> Re enter Your Account NO *</label>
-																		<input type="text" name="fname"
-																			placeholder="Enter Your Account no." />
-																	</div>
-																	<div class="col-md-6">
-																		<label class="fieldlabels"> Enter Your IFSC Code *</label>
-																		<input type="text" name="fname"
-																			placeholder="Enter Your IFSC Code " />
-																	</div>
-																</div>
-															</div>
-															<div class="col-md-12">
-																<p class="main-head-frmm">Please capture Your selfi image with your
-																	Aadhaar and RC</p>
-																<div class="row">
-																	<div class="col-md-6">
-																		<div class="selfe-docc">
-																			<img src="{{asset('frontend-assets/./images/doc-selfe.webp')}}" alt="">
-																		</div>
-																	</div>
-																	<div class="col-md-6">
-																		<div class="avatar-upload">
-																			<div class="avatar-edit">
-																				<input type='file' id="imageUpload"
-																					accept=".png, .jpg, .jpeg" />
-																				<label for="imageUpload"></label>
-																			</div>
-																			<div class="avatar-preview">
-																				<div id="imagePreview"
-																					style="background-image: url(./images/user-icn.png);">
-																				</div>
-																			</div>
-																		</div>
-																	</div>
-																</div>
-															</div>
-						
-														</div>
-													</div>
-													<input type="button" name="next" class="next action-button" value="Next" />
-													<input type="button" name="previous" class="previous action-button-previous"
-														value="Previous" />
-												</fieldset>
-												<fieldset>
-													<div class="form-card">
-														<div class="row">
-															<div class="col-7">
-																<h2 class="fs-title">Driver Details:</h2>
-															</div>
-														</div>
-														<div class="row">
-															<div class="col-md-6">
-																<label class="fieldlabels"> Enter Your Phone no. *</label>
-																<input type="text" name="fname" placeholder="Enter Your Phone no. " />
-															</div>
-															<div class="col-md-6">
-																<label class="fieldlabels"> Enter Your DL No*</label>
-																<input type="text" name="fname" placeholder="Enter Your DL No" />
-															</div>
-															<div class="col-md-6">
-																<label class="fieldlabels"> Your Name *</label>
-																<input type="text" name="fname" placeholder=" Your Name " />
-															</div>
-															<div class="col-md-6">
-																<label class="fieldlabels"> Your Address *</label>
-																<input type="text" name="fname" placeholder=" Your Address " />
-															</div>
-															<div class="col-md-6">
-																<label class="fieldlabels"> Your Validity *</label>
-																<input type="text" name="fname" placeholder=" Your Validity " />
-															</div>
-															<div class="col-md-6">
-																<label class="fieldlabels"> Your Auth to Drive *</label>
-																<input type="text" name="fname" placeholder=" Your Auth to Drive " />
-															</div>
-						
-						
-														</div>
-													</div>
-													<input type="button" name="next" class="next action-button" value="Submit" />
-													<input type="button" name="previous" class="previous action-button-previous"
-														value="Previous" />
-												</fieldset>
-												<fieldset>
-													<div class="form-card">
-														<div class="row">
-															<div class="col-7">
-																<h2 class="fs-title">Driver Documants:</h2>
-															</div>
-														</div>
-														<div class="row">
-															<div class="col-md-6">
-																<label class="fieldlabels"> Enter your Whatsapp no *</label>
-																<input type="text" name="fname" placeholder="Enter your Whatsapp no" />
-															</div>
-															<div class="col-md-6">
-																<label class="fieldlabels"> Enter your Email ID*</label>
-																<input type="email" name="fname" placeholder="Enter your Email Id" />
-															</div>
-						
-															<div class="col-md-12">
-																<div class="aadhar-img">
-																	<img src="{{asset('frontend-assets/./images/user-icn.png')}}" alt="">
-																</div>
-															</div>
-															<div class="col-md-6">
-																<label class="fieldlabels"> Enter your Aadhhar *</label>
-																<input type="text" name="fname" placeholder="Enter your Aadhaar" />
-															</div>
-															<div class="col-md-6">
-																<label class="fieldlabels"> Your Name *</label>
-																<input type="text" name="fname" placeholder="Your Name" />
-															</div>
-															<div class="col-md-6">
-																<label class="fieldlabels"> Your Address *</label>
-																<input type="text" name="fname" placeholder="Your Address" />
-															</div>
-															<div class="col-md-6">
-																<label class="fieldlabels"> Your D.O.B *</label>
-																<input type="text" name="fname" placeholder="Your D.O.B" />
-															</div>
-															<div class="col-md-6">
-																<label class="fieldlabels"> Enter Your GST no.*</label>
-																<input type="text" name="fname" placeholder="Enter Your GST no." />
-															</div>
-															<div class="col-md-6">
-																<label class="fieldlabels"> Enter Your PAN no.*</label>
-																<input type="text" name="fname" placeholder="Enter Your PAN no." />
-															</div>
-															<div class="col-md-12">
-																<p class="main-head-frmm">Please capture Your selfi image with your
-																	Aadhaar and DL</p>
-																<div class="row">
-																	<div class="col-md-6">
-																		<div class="selfe-docc">
-																			<img src="{{asset('frontend-assets/./images/doc-selfe.webp')}}" alt="">
-																		</div>
-																	</div>
-																	<div class="col-md-6">
-																		<div class="avatar-upload">
-																			<div class="avatar-edit">
-																				<input type='file' id="imageUpload"
-																					accept=".png, .jpg, .jpeg" />
-																				<label for="imageUpload"></label>
-																			</div>
-																			<div class="avatar-preview">
-																				<div id="imagePreview"
-																					style="background-image: url(frontend-assets/./images/user-icn.png);">
-																				</div>
-																			</div>
-																		</div>
-																	</div>
-																</div>
-															</div>
-						
-														</div>
-													</div>
-												</fieldset>
-											</form>
-										</div>
-									</div>
+
+<main class="main sec-padding my-account">
+<div class="container">
+<div class="row">
+<div class="col-lg-5 bg-cover" style="background-image: url('frontend-assets/images/account.jpg');">
+</div>
+                    <div class="col-lg-7 ct-bg signup-form col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3 form-wizard">
+					
+						<!-- Form Wizard -->
+                    	<form role="form" action="" method="post">
+
+                    		<h3>Owner/Driver Registration</h3>
+                    		<p>Fill all form field to go next step</p>
+							
+							<!-- Form progress -->
+                    		<div class="form-wizard-steps form-wizard-tolal-steps-4">
+                    			<div class="form-wizard-progress">
+                    			    <div class="form-wizard-progress-line" data-now-value="12.25" data-number-of-steps="4" style="width: 12.25%;"></div>
+                    			</div>
+								<!-- Step 1 -->
+                    			<div class="form-wizard-step active">
+                    				<div class="form-wizard-step-icon"><i class="fa fa-user" aria-hidden="true"></i></div>
+                    				<p>Personal</p>
+                    			</div>
+								<!-- Step 1 -->
+								
+								<!-- Step 2 -->
+                    			<div class="form-wizard-step">
+                    				<div class="form-wizard-step-icon"><i class="fa fa-location-arrow" aria-hidden="true"></i></div>
+                    				<p>Contact</p>
+                    			</div>
+								<!-- Step 2 -->
+								
+								<!-- Step 3 -->
+								<div class="form-wizard-step">
+                    				<div class="form-wizard-step-icon"><i class="fa fa-address-book" aria-hidden="true"></i></div>
+                    				<p>Driver Details</p>
+                    			</div>
+								<!-- Step 3 -->
+								
+								<!-- Step 4 -->
+								<div class="form-wizard-step">
+                    				<div class="form-wizard-step-icon"><i class="fa fa-money" aria-hidden="true"></i></div>
+                    				<p>Vehicle Details</p>
+                    			</div>
+								<!-- Step 4 -->
+                    		</div>
+							<!-- Form progress -->
+                    		
+							
+							<!-- Form Step 1 -->
+                    		<fieldset>
+
+                    		    <h4>Personal Information: <span>Step 1 - 4</span></h4>
+								<div class="form-group">
+                    			    <label>First Name: <span>*</span></label>
+                                    <input type="text" name="First Name" placeholder="First Name" class="form-control required">
+                                </div>
+                                <div class="form-group">
+                    			    <label>Last Name: <span>*</span></label>
+                                    <input type="text" name="Last Name" placeholder="Last Name" class="form-control required">
+                                </div>
+								
+								<div class="container-fluid">
+								<div class="row form-inline">
+								<div class="form-group col-md-3 col-xs-3">
+                                    <label>Date Of Birth: </label>
 								</div>
-							</div>
-						</section></div>
-						<div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab"><section>
-							<div class="container-reges">
-								<div class="row justify-content-center">
-									<div class="col-11 col-sm-10 col-md-10 col-lg-6 col-xl-5 text-center p-0 mt-3 mb-2">
-										<div class="card px-0 pt-4 pb-0 mt-3 mb-3">
-											<h2 id="heading">Sign Up Your vehicle Account</h2>
-											<form id="msform">
-												<!-- progressbar -->
-												<ul id="progressbar">
-													<li class="active" id="account"><strong>Owner Details</strong></li>
-													<li id="personal"><strong>Owner Documants</strong></li>
-													<li id="payment"><strong>Driver Details</strong></li>
-													<li id="confirm"><strong>Driver Documants</strong></li>
-												</ul> <!-- fieldsets -->
-												<fieldset>
-													<div class="form-card">
-														<div class="row">
-															<div class="col-7">
-																<h2 class="fs-title">Owner Information:</h2>
-															</div>
-														</div>
-														<div class="row">
-															<div class="col-md-6">
-																<label class="fieldlabels">Enter Your no: *</label>
-																<input type="text" name="phone no" placeholder="+91 000 000 0000" />
-															</div>
-															<div class="col-md-6">
-																<label class="fieldlabels">OTP:*</label>
-																<input type="text" name="uname" placeholder="Enter your OTP" />
-															</div>
-															<div class="col-md-6">
-																<div class="upload-file-main">
-																	<label class="fieldlabels">upload your RC*</label>
-																	<input type="file" name="uname" placeholder="Enter your RC no" />
-																</div>
-															</div>
-															<div class="col-md-6">
-																<label class="fieldlabels">Enter your vehicle RC no:*</label>
-																<input type="text" name="uname" placeholder="Enter your RC no" />
-															</div>
-															<div class="col-md-6">
-																<label class="fieldlabels"> Your Name: *</label>
-																<input type="text" name="phone no" placeholder=" your Name" />
-															</div>
-															<div class="col-md-6">
-																<label class="fieldlabels"> Your Address:*</label>
-																<input type="text" name="uname" placeholder=" your Address" />
-															</div>
-															<div class="col-md-6">
-																<label class="fieldlabels"> Your Vehicle Class:*</label>
-																<input type="text" name="uname" placeholder=" your Vehicle Class" />
-															</div>
-															<div class="col-md-6">
-																<label class="fieldlabels"> Your Vehicle Fitness certificate :*</label>
-																<input type="text" name="uname"
-																	placeholder=" your Vehicle Fitness certificate" />
-															</div>
-															<div class="col-md-6">
-																<label class="fieldlabels"> Your PVC:*</label>
-																<input type="text" name="uname" placeholder=" your PVC" />
-															</div>
-															<div class="col-md-6">
-																<label class="fieldlabels"> Your Insurance certificate:*</label>
-																<input type="text" name="uname"
-																	placeholder=" your Insurance certificate" />
-															</div>
-															<div class="col-md-6">
-																<label class="fieldlabels"> Your Fule Type:*</label>
-																<input type="text" name="uname" placeholder=" your Fule Type" />
-															</div>
-															<div class="col-md-6">
-																<label class="fieldlabels"> Your Vehicle seats:*</label>
-																<input type="text" name="uname" placeholder=" your Fule Type" />
-															</div>
-															<div class="col-md-6">
-																<label class="fieldlabels"> Your Vehicle color:*</label>
-																<input type="text" name="uname" placeholder=" your Fule Type" />
-															</div>
-															<div class="col-md-6">
-																<label class="fieldlabels"> Your Vehicle Name:*</label>
-																<input type="text" name="uname" placeholder=" your Fule Type" />
-															</div>
-															<div class="col-md-6">
-																<label class="fieldlabels"> Your Vehicle Parmit validate:*</label>
-																<input type="text" name="uname" placeholder=" your Fule Type" />
-															</div>
-															<div class="col-md-6">
-																<label class="fieldlabels"> Your Vehicle Parmit upload:*</label>
-																<input type="file" name="uname" placeholder=" your Fule Type" />
-															</div>
-														</div>
-													</div>
-													<input type="button" name="next" class="next action-button" value="Next" />
-													<a class="btn btn-loggg" href="./login.html">Back to login</a>
-						
-												</fieldset>
-												<fieldset>
-													<div class="form-card">
-														<div class="row">
-															<div class="col-7">
-																<h2 class="fs-title">Personal Information:</h2>
-															</div>
-														</div>
-														<div class="row">
-															<div class="col-md-6">
-																<label class="fieldlabels"> Enter your Whatsapp no *</label>
-																<input type="text" name="fname" placeholder="Enter your Whatsapp no" />
-															</div>
-															<div class="col-md-6">
-																<label class="fieldlabels"> Enter your Email ID*</label>
-																<input type="email" name="fname" placeholder="Enter your Email Id" />
-															</div>
-															<div class="col-md-6">
-																<label class="fieldlabels"> Upload your Aadhhar(Front/Back) *</label>
-																<input type="text" name="fname" placeholder="Enter your Aadhaar" />
-															</div>
-															<div class="col-md-6">
-																<label class="fieldlabels"> Enter your Aadhhar *</label>
-																<input type="text" name="fname" placeholder="Enter your Aadhaar" />
-															</div>
-															<div class="col-md-12">
-																<div class="aadhar-img">
-																	<img src="{{asset('frontend-assets/./images/user-icn.png')}}" alt="">
-																	<label class="fieldlabels"> <strong>Name as/addhaar</strong></label>
-																</div>
-															</div>
-															<div class="col-md-6">
-																<label class="fieldlabels"> Your Father Name *</label>
-																<input type="text" name="fname" placeholder="Your Address" />
-															</div>
-															<div class="col-md-6">
-																<label class="fieldlabels"> Your Address *</label>
-																<input type="text" name="fname" placeholder="Your Address" />
-															</div>
-															<div class="col-md-6">
-																<label class="fieldlabels"> Your D.O.B *</label>
-																<input type="text" name="fname" placeholder="Your D.O.B" />
-															</div>
-						
-															<div class="col-md-12">
-																<h2 class="fs-title">Enter Your Banking Details:</h2>
-																<div class="row">
-																	<div class="col-md-6">
-																		<label class="fieldlabels"> Enter Your GST no.*</label>
-																		<input type="text" name="fname"
-																			placeholder="Enter Your GST no." />
-																	</div>
-																	<div class="col-md-6">
-																		<label class="fieldlabels"> Enter Your PAN no.*</label>
-																		<input type="text" name="fname"
-																			placeholder="Enter Your PAN no." />
-																	</div>
-																	<div class="col-md-6">
-																		<label class="fieldlabels"> Enter Your Bank Name *</label>
-																		<input type="password" name="fname"
-																			placeholder="Enter Your Account Name." />
-																	</div>
-																	<div class="col-md-6">
-																		<label class="fieldlabels"> Enter Your Account NO *</label>
-																		<input type="password" name="fname"
-																			placeholder="Enter Your Account no." />
-																	</div>
-																	<div class="col-md-6">
-																		<label class="fieldlabels"> Re enter Your Account NO *</label>
-																		<input type="text" name="fname"
-																			placeholder="Enter Your Account no." />
-																	</div>
-																	<div class="col-md-6">
-																		<label class="fieldlabels"> Enter Your IFSC Code *</label>
-																		<input type="text" name="fname"
-																			placeholder="Enter Your IFSC Code " />
-																	</div>
-																</div>
-															</div>
-															<div class="col-md-12">
-																<p class="main-head-frmm">Please capture Your selfi image with your
-																	Aadhaar and RC</p>
-																<div class="row">
-																	<div class="col-md-6">
-																		<div class="selfe-docc">
-																			<img src="{{asset('frontend-assets/./images/doc-selfe.webp')}}" alt="">
-																		</div>
-																	</div>
-																	<div class="col-md-6">
-																		<div class="avatar-upload">
-																			<div class="avatar-edit">
-																				<input type='file' id="imageUpload"
-																					accept=".png, .jpg, .jpeg" />
-																				<label for="imageUpload"></label>
-																			</div>
-																			<div class="avatar-preview">
-																				<div id="imagePreview"
-																					style="background-image: url(./images/user-icn.png);">
-																				</div>
-																			</div>
-																		</div>
-																	</div>
-																</div>
-															</div>
-						
-														</div>
-													</div>
-													<input type="button" name="next" class="next action-button" value="Next" />
-													<input type="button" name="previous" class="previous action-button-previous"
-														value="Previous" />
-												</fieldset>
-												<fieldset>
-													<div class="form-card">
-														<div class="row">
-															<div class="col-7">
-																<h2 class="fs-title">Driver Details:</h2>
-															</div>
-														</div>
-														<div class="row">
-															<div class="col-md-6">
-																<label class="fieldlabels"> Enter Your Phone no. *</label>
-																<input type="text" name="fname" placeholder="Enter Your Phone no. " />
-															</div>
-															<div class="col-md-6">
-																<label class="fieldlabels"> Enter Your DL No*</label>
-																<input type="text" name="fname" placeholder="Enter Your DL No" />
-															</div>
-															<div class="col-md-6">
-																<label class="fieldlabels"> Your Name *</label>
-																<input type="text" name="fname" placeholder=" Your Name " />
-															</div>
-															<div class="col-md-6">
-																<label class="fieldlabels"> Your Address *</label>
-																<input type="text" name="fname" placeholder=" Your Address " />
-															</div>
-															<div class="col-md-6">
-																<label class="fieldlabels"> Your Validity *</label>
-																<input type="text" name="fname" placeholder=" Your Validity " />
-															</div>
-															<div class="col-md-6">
-																<label class="fieldlabels"> Your Auth to Drive *</label>
-																<input type="text" name="fname" placeholder=" Your Auth to Drive " />
-															</div>
-						
-						
-														</div>
-													</div>
-													<input type="button" name="next" class="next action-button" value="Submit" />
-													<input type="button" name="previous" class="previous action-button-previous"
-														value="Previous" />
-												</fieldset>
-												<fieldset>
-													<div class="form-card">
-														<div class="row">
-															<div class="col-7">
-																<h2 class="fs-title">Driver Documants:</h2>
-															</div>
-														</div>
-														<div class="row">
-															<div class="col-md-6">
-																<label class="fieldlabels"> Enter your Whatsapp no *</label>
-																<input type="text" name="fname" placeholder="Enter your Whatsapp no" />
-															</div>
-															<div class="col-md-6">
-																<label class="fieldlabels"> Enter your Email ID*</label>
-																<input type="email" name="fname" placeholder="Enter your Email Id" />
-															</div>
-						
-															<div class="col-md-12">
-																<div class="aadhar-img">
-																	<img src="{{asset('frontend-assets/./images/user-icn.png')}}" alt="">
-																</div>
-															</div>
-															<div class="col-md-6">
-																<label class="fieldlabels"> Enter your Aadhhar *</label>
-																<input type="text" name="fname" placeholder="Enter your Aadhaar" />
-															</div>
-															<div class="col-md-6">
-																<label class="fieldlabels"> Your Name *</label>
-																<input type="text" name="fname" placeholder="Your Name" />
-															</div>
-															<div class="col-md-6">
-																<label class="fieldlabels"> Your Address *</label>
-																<input type="text" name="fname" placeholder="Your Address" />
-															</div>
-															<div class="col-md-6">
-																<label class="fieldlabels"> Your D.O.B *</label>
-																<input type="text" name="fname" placeholder="Your D.O.B" />
-															</div>
-															<div class="col-md-6">
-																<label class="fieldlabels"> Enter Your GST no.*</label>
-																<input type="text" name="fname" placeholder="Enter Your GST no." />
-															</div>
-															<div class="col-md-6">
-																<label class="fieldlabels"> Enter Your PAN no.*</label>
-																<input type="text" name="fname" placeholder="Enter Your PAN no." />
-															</div>
-															<div class="col-md-12">
-																<p class="main-head-frmm">Please capture Your selfi image with your
-																	Aadhaar and DL</p>
-																<div class="row">
-																	<div class="col-md-6">
-																		<div class="selfe-docc">
-																			<img src="{{asset('frontend-assets/./images/doc-selfe.webp')}}" alt="">
-																		</div>
-																	</div>
-																	<div class="col-md-6">
-																		<div class="avatar-upload">
-																			<div class="avatar-edit">
-																				<input type='file' id="imageUpload"
-																					accept=".png, .jpg, .jpeg" />
-																				<label for="imageUpload"></label>
-																			</div>
-																			<div class="avatar-preview">
-																				<div id="imagePreview"
-																					style="background-image: url(./images/user-icn.png);">
-																				</div>
-																			</div>
-																		</div>
-																	</div>
-																</div>
-															</div>
-						
-														</div>
-													</div>
-												</fieldset>
-											</form>
-										</div>
-									</div>
+								<div class="form-group col-md-3 col-xs-3">
+									<label>Date: </label>
+                                    <select class="form-control">
+									  <option>01</option>
+									  <option>02</option>
+									  <option>03</option>
+									  <option>04</option>
+									  <option>05</option>
+									</select>
 								</div>
-							</div>
-						</section></div>
-						<div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab"><section>
-							<div class="container-reges">
-								<div class="row justify-content-center">
-									<div class="col-11 col-sm-10 col-md-10 col-lg-6 col-xl-5 text-center p-0 mt-3 mb-2">
-										<div class="card px-0 pt-4 pb-0 mt-3 mb-3">
-											<h2 id="heading">Sign Up Your vehicle Account</h2>
-											<form id="msform">
-												<!-- progressbar -->
-												<ul id="progressbar">
-													<li class="active" id="account"><strong>Owner Details</strong></li>
-													<li id="personal"><strong>Owner Documants</strong></li>
-													<li id="payment"><strong>Driver Details</strong></li>
-													<li id="confirm"><strong>Driver Documants</strong></li>
-												</ul> <!-- fieldsets -->
-												<fieldset>
-													<div class="form-card">
-														<div class="row">
-															<div class="col-7">
-																<h2 class="fs-title">Owner Information:</h2>
-															</div>
-														</div>
-														<div class="row">
-															<div class="col-md-6">
-																<label class="fieldlabels">Enter Your no: *</label>
-																<input type="text" name="phone no" placeholder="+91 000 000 0000" />
-															</div>
-															<div class="col-md-6">
-																<label class="fieldlabels">OTP:*</label>
-																<input type="text" name="uname" placeholder="Enter your OTP" />
-															</div>
-															<div class="col-md-6">
-																<div class="upload-file-main">
-																	<label class="fieldlabels">upload your RC*</label>
-																	<input type="file" name="uname" placeholder="Enter your RC no" />
-																</div>
-															</div>
-															<div class="col-md-6">
-																<label class="fieldlabels">Enter your vehicle RC no:*</label>
-																<input type="text" name="uname" placeholder="Enter your RC no" />
-															</div>
-															<div class="col-md-6">
-																<label class="fieldlabels"> Your Name: *</label>
-																<input type="text" name="phone no" placeholder=" your Name" />
-															</div>
-															<div class="col-md-6">
-																<label class="fieldlabels"> Your Address:*</label>
-																<input type="text" name="uname" placeholder=" your Address" />
-															</div>
-															<div class="col-md-6">
-																<label class="fieldlabels"> Your Vehicle Class:*</label>
-																<input type="text" name="uname" placeholder=" your Vehicle Class" />
-															</div>
-															<div class="col-md-6">
-																<label class="fieldlabels"> Your Vehicle Fitness certificate :*</label>
-																<input type="text" name="uname"
-																	placeholder=" your Vehicle Fitness certificate" />
-															</div>
-															<div class="col-md-6">
-																<label class="fieldlabels"> Your PVC:*</label>
-																<input type="text" name="uname" placeholder=" your PVC" />
-															</div>
-															<div class="col-md-6">
-																<label class="fieldlabels"> Your Insurance certificate:*</label>
-																<input type="text" name="uname"
-																	placeholder=" your Insurance certificate" />
-															</div>
-															<div class="col-md-6">
-																<label class="fieldlabels"> Your Fule Type:*</label>
-																<input type="text" name="uname" placeholder=" your Fule Type" />
-															</div>
-															<div class="col-md-6">
-																<label class="fieldlabels"> Your Vehicle seats:*</label>
-																<input type="text" name="uname" placeholder=" your Fule Type" />
-															</div>
-															<div class="col-md-6">
-																<label class="fieldlabels"> Your Vehicle color:*</label>
-																<input type="text" name="uname" placeholder=" your Fule Type" />
-															</div>
-															<div class="col-md-6">
-																<label class="fieldlabels"> Your Vehicle Name:*</label>
-																<input type="text" name="uname" placeholder=" your Fule Type" />
-															</div>
-															<div class="col-md-6">
-																<label class="fieldlabels"> Your Vehicle Parmit validate:*</label>
-																<input type="text" name="uname" placeholder=" your Fule Type" />
-															</div>
-															<div class="col-md-6">
-																<label class="fieldlabels"> Your Vehicle Parmit upload:*</label>
-																<input type="file" name="uname" placeholder=" your Fule Type" />
-															</div>
-														</div>
-													</div>
-													<input type="button" name="next" class="next action-button" value="Next" />
-													<a class="btn btn-loggg" href="./login.html">Back to login</a>
-						
-												</fieldset>
-												<fieldset>
-													<div class="form-card">
-														<div class="row">
-															<div class="col-7">
-																<h2 class="fs-title">Personal Information:</h2>
-															</div>
-														</div>
-														<div class="row">
-															<div class="col-md-6">
-																<label class="fieldlabels"> Enter your Whatsapp no *</label>
-																<input type="text" name="fname" placeholder="Enter your Whatsapp no" />
-															</div>
-															<div class="col-md-6">
-																<label class="fieldlabels"> Enter your Email ID*</label>
-																<input type="email" name="fname" placeholder="Enter your Email Id" />
-															</div>
-															<div class="col-md-6">
-																<label class="fieldlabels"> Upload your Aadhhar(Front/Back) *</label>
-																<input type="text" name="fname" placeholder="Enter your Aadhaar" />
-															</div>
-															<div class="col-md-6">
-																<label class="fieldlabels"> Enter your Aadhhar *</label>
-																<input type="text" name="fname" placeholder="Enter your Aadhaar" />
-															</div>
-															<div class="col-md-12">
-																<div class="aadhar-img">
-																	<img src="{{asset('frontend-assets/./images/user-icn.png')}}" alt="">
-																	<label class="fieldlabels"> <strong>Name as/addhaar</strong></label>
-																</div>
-															</div>
-															<div class="col-md-6">
-																<label class="fieldlabels"> Your Father Name *</label>
-																<input type="text" name="fname" placeholder="Your Address" />
-															</div>
-															<div class="col-md-6">
-																<label class="fieldlabels"> Your Address *</label>
-																<input type="text" name="fname" placeholder="Your Address" />
-															</div>
-															<div class="col-md-6">
-																<label class="fieldlabels"> Your D.O.B *</label>
-																<input type="text" name="fname" placeholder="Your D.O.B" />
-															</div>
-						
-															<div class="col-md-12">
-																<h2 class="fs-title">Enter Your Banking Details:</h2>
-																<div class="row">
-																	<div class="col-md-6">
-																		<label class="fieldlabels"> Enter Your GST no.*</label>
-																		<input type="text" name="fname"
-																			placeholder="Enter Your GST no." />
-																	</div>
-																	<div class="col-md-6">
-																		<label class="fieldlabels"> Enter Your PAN no.*</label>
-																		<input type="text" name="fname"
-																			placeholder="Enter Your PAN no." />
-																	</div>
-																	<div class="col-md-6">
-																		<label class="fieldlabels"> Enter Your Bank Name *</label>
-																		<input type="password" name="fname"
-																			placeholder="Enter Your Account Name." />
-																	</div>
-																	<div class="col-md-6">
-																		<label class="fieldlabels"> Enter Your Account NO *</label>
-																		<input type="password" name="fname"
-																			placeholder="Enter Your Account no." />
-																	</div>
-																	<div class="col-md-6">
-																		<label class="fieldlabels"> Re enter Your Account NO *</label>
-																		<input type="text" name="fname"
-																			placeholder="Enter Your Account no." />
-																	</div>
-																	<div class="col-md-6">
-																		<label class="fieldlabels"> Enter Your IFSC Code *</label>
-																		<input type="text" name="fname"
-																			placeholder="Enter Your IFSC Code " />
-																	</div>
-																</div>
-															</div>
-															<div class="col-md-12">
-																<p class="main-head-frmm">Please capture Your selfi image with your
-																	Aadhaar and RC</p>
-																<div class="row">
-																	<div class="col-md-6">
-																		<div class="selfe-docc">
-																			<img src="{{asset('frontend-assets/./images/doc-selfe.webp')}}" alt="">
-																		</div>
-																	</div>
-																	<div class="col-md-6">
-																		<div class="avatar-upload">
-																			<div class="avatar-edit">
-																				<input type='file' id="imageUpload"
-																					accept=".png, .jpg, .jpeg" />
-																				<label for="imageUpload"></label>
-																			</div>
-																			<div class="avatar-preview">
-																				<div id="imagePreview"
-																					style="background-image: url(./images/user-icn.png);">
-																				</div>
-																			</div>
-																		</div>
-																	</div>
-																</div>
-															</div>
-						
-														</div>
-													</div>
-													<input type="button" name="next" class="next action-button" value="Next" />
-													<input type="button" name="previous" class="previous action-button-previous"
-														value="Previous" />
-												</fieldset>
-												<fieldset>
-													<div class="form-card">
-														<div class="row">
-															<div class="col-7">
-																<h2 class="fs-title">Driver Details:</h2>
-															</div>
-														</div>
-														<div class="row">
-															<div class="col-md-6">
-																<label class="fieldlabels"> Enter Your Phone no. *</label>
-																<input type="text" name="fname" placeholder="Enter Your Phone no. " />
-															</div>
-															<div class="col-md-6">
-																<label class="fieldlabels"> Enter Your DL No*</label>
-																<input type="text" name="fname" placeholder="Enter Your DL No" />
-															</div>
-															<div class="col-md-6">
-																<label class="fieldlabels"> Your Name *</label>
-																<input type="text" name="fname" placeholder=" Your Name " />
-															</div>
-															<div class="col-md-6">
-																<label class="fieldlabels"> Your Address *</label>
-																<input type="text" name="fname" placeholder=" Your Address " />
-															</div>
-															<div class="col-md-6">
-																<label class="fieldlabels"> Your Validity *</label>
-																<input type="text" name="fname" placeholder=" Your Validity " />
-															</div>
-															<div class="col-md-6">
-																<label class="fieldlabels"> Your Auth to Drive *</label>
-																<input type="text" name="fname" placeholder=" Your Auth to Drive " />
-															</div>
-						
-						
-														</div>
-													</div>
-													<input type="button" name="next" class="next action-button" value="Submit" />
-													<input type="button" name="previous" class="previous action-button-previous"
-														value="Previous" />
-												</fieldset>
-												<fieldset>
-													<div class="form-card">
-														<div class="row">
-															<div class="col-7">
-																<h2 class="fs-title">Driver Documants:</h2>
-															</div>
-														</div>
-														<div class="row">
-															<div class="col-md-6">
-																<label class="fieldlabels"> Enter your Whatsapp no *</label>
-																<input type="text" name="fname" placeholder="Enter your Whatsapp no" />
-															</div>
-															<div class="col-md-6">
-																<label class="fieldlabels"> Enter your Email ID*</label>
-																<input type="email" name="fname" placeholder="Enter your Email Id" />
-															</div>
-						
-															<div class="col-md-12">
-																<div class="aadhar-img">
-																	<img src="{{asset('frontend-assets/./images/user-icn.png')}}" alt="">
-																</div>
-															</div>
-															<div class="col-md-6">
-																<label class="fieldlabels"> Enter your Aadhhar *</label>
-																<input type="text" name="fname" placeholder="Enter your Aadhaar" />
-															</div>
-															<div class="col-md-6">
-																<label class="fieldlabels"> Your Name *</label>
-																<input type="text" name="fname" placeholder="Your Name" />
-															</div>
-															<div class="col-md-6">
-																<label class="fieldlabels"> Your Address *</label>
-																<input type="text" name="fname" placeholder="Your Address" />
-															</div>
-															<div class="col-md-6">
-																<label class="fieldlabels"> Your D.O.B *</label>
-																<input type="text" name="fname" placeholder="Your D.O.B" />
-															</div>
-															<div class="col-md-6">
-																<label class="fieldlabels"> Enter Your GST no.*</label>
-																<input type="text" name="fname" placeholder="Enter Your GST no." />
-															</div>
-															<div class="col-md-6">
-																<label class="fieldlabels"> Enter Your PAN no.*</label>
-																<input type="text" name="fname" placeholder="Enter Your PAN no." />
-															</div>
-															<div class="col-md-12">
-																<p class="main-head-frmm">Please capture Your selfi image with your
-																	Aadhaar and DL</p>
-																<div class="row">
-																	<div class="col-md-6">
-																		<div class="selfe-docc">
-																			<img src="{{asset('frontend-assets/./images/doc-selfe.webp')}}" alt="">
-																		</div>
-																	</div>
-																	<div class="col-md-6">
-																		<div class="avatar-upload">
-																			<div class="avatar-edit">
-																				<input type='file' id="imageUpload"
-																					accept=".png, .jpg, .jpeg" />
-																				<label for="imageUpload"></label>
-																			</div>
-																			<div class="avatar-preview">
-																				<div id="imagePreview"
-																					style="background-image: url(./images/user-icn.png);">
-																				</div>
-																			</div>
-																		</div>
-																	</div>
-																</div>
-															</div>
-						
-														</div>
-													</div>
-												</fieldset>
-											</form>
-										</div>
-									</div>
+								<div class="form-group col-md-3 col-xs-3">
+									<label>Month: </label>
+                                    <select class="form-control">
+									  <option>Jan</option>
+									  <option>Feb</option>
+									  <option>Mar</option>
+									  <option>Apr</option>
+									  <option>May</option>
+									</select>
 								</div>
-							</div>
-						</section></div>
-						<div class="tab-pane fade" id="auto-tav" role="tabpanel" aria-labelledby="auto-tab"><section>
-							<div class="container-reges">
-								<div class="row justify-content-center">
-									<div class="col-11 col-sm-10 col-md-10 col-lg-6 col-xl-5 text-center p-0 mt-3 mb-2">
-										<div class="card px-0 pt-4 pb-0 mt-3 mb-3">
-											<h2 id="heading">Sign Up Your vehicle Account</h2>
-											<form id="msform">
-												<!-- progressbar -->
-												<ul id="progressbar">
-													<li class="active" id="account"><strong>Owner Details</strong></li>
-													<li id="personal"><strong>Owner Documants</strong></li>
-													<li id="payment"><strong>Driver Details</strong></li>
-													<li id="confirm"><strong>Driver Documants</strong></li>
-												</ul> <!-- fieldsets -->
-												<fieldset>
-													<div class="form-card">
-														<div class="row">
-															<div class="col-7">
-																<h2 class="fs-title">Owner Information:</h2>
-															</div>
-														</div>
-														<div class="row">
-															<div class="col-md-6">
-																<label class="fieldlabels">Enter Your no: *</label>
-																<input type="text" name="phone no" placeholder="+91 000 000 0000" />
-															</div>
-															<div class="col-md-6">
-																<label class="fieldlabels">OTP:*</label>
-																<input type="text" name="uname" placeholder="Enter your OTP" />
-															</div>
-															<div class="col-md-6">
-																<div class="upload-file-main">
-																	<label class="fieldlabels">upload your RC*</label>
-																	<input type="file" name="uname" placeholder="Enter your RC no" />
-																</div>
-															</div>
-															<div class="col-md-6">
-																<label class="fieldlabels">Enter your vehicle RC no:*</label>
-																<input type="text" name="uname" placeholder="Enter your RC no" />
-															</div>
-															<div class="col-md-6">
-																<label class="fieldlabels"> Your Name: *</label>
-																<input type="text" name="phone no" placeholder=" your Name" />
-															</div>
-															<div class="col-md-6">
-																<label class="fieldlabels"> Your Address:*</label>
-																<input type="text" name="uname" placeholder=" your Address" />
-															</div>
-															<div class="col-md-6">
-																<label class="fieldlabels"> Your Vehicle Class:*</label>
-																<input type="text" name="uname" placeholder=" your Vehicle Class" />
-															</div>
-															<div class="col-md-6">
-																<label class="fieldlabels"> Your Vehicle Fitness certificate :*</label>
-																<input type="text" name="uname"
-																	placeholder=" your Vehicle Fitness certificate" />
-															</div>
-															<div class="col-md-6">
-																<label class="fieldlabels"> Your PVC:*</label>
-																<input type="text" name="uname" placeholder=" your PVC" />
-															</div>
-															<div class="col-md-6">
-																<label class="fieldlabels"> Your Insurance certificate:*</label>
-																<input type="text" name="uname"
-																	placeholder=" your Insurance certificate" />
-															</div>
-															<div class="col-md-6">
-																<label class="fieldlabels"> Your Fule Type:*</label>
-																<input type="text" name="uname" placeholder=" your Fule Type" />
-															</div>
-															<div class="col-md-6">
-																<label class="fieldlabels"> Your Vehicle seats:*</label>
-																<input type="text" name="uname" placeholder=" your Fule Type" />
-															</div>
-															<div class="col-md-6">
-																<label class="fieldlabels"> Your Vehicle color:*</label>
-																<input type="text" name="uname" placeholder=" your Fule Type" />
-															</div>
-															<div class="col-md-6">
-																<label class="fieldlabels"> Your Vehicle Name:*</label>
-																<input type="text" name="uname" placeholder=" your Fule Type" />
-															</div>
-															<div class="col-md-6">
-																<label class="fieldlabels"> Your Vehicle Parmit validate:*</label>
-																<input type="text" name="uname" placeholder=" your Fule Type" />
-															</div>
-															<div class="col-md-6">
-																<label class="fieldlabels"> Your Vehicle Parmit upload:*</label>
-																<input type="file" name="uname" placeholder=" your Fule Type" />
-															</div>
-														</div>
-													</div>
-													<input type="button" name="next" class="next action-button" value="Next" />
-													<a class="btn btn-loggg" href="./login.html">Back to login</a>
-						
-												</fieldset>
-												<fieldset>
-													<div class="form-card">
-														<div class="row">
-															<div class="col-7">
-																<h2 class="fs-title">Personal Information:</h2>
-															</div>
-														</div>
-														<div class="row">
-															<div class="col-md-6">
-																<label class="fieldlabels"> Enter your Whatsapp no *</label>
-																<input type="text" name="fname" placeholder="Enter your Whatsapp no" />
-															</div>
-															<div class="col-md-6">
-																<label class="fieldlabels"> Enter your Email ID*</label>
-																<input type="email" name="fname" placeholder="Enter your Email Id" />
-															</div>
-															<div class="col-md-6">
-																<label class="fieldlabels"> Upload your Aadhhar(Front/Back) *</label>
-																<input type="text" name="fname" placeholder="Enter your Aadhaar" />
-															</div>
-															<div class="col-md-6">
-																<label class="fieldlabels"> Enter your Aadhhar *</label>
-																<input type="text" name="fname" placeholder="Enter your Aadhaar" />
-															</div>
-															<div class="col-md-12">
-																<div class="aadhar-img">
-																	<img src="{{asset('frontend-assets/./images/user-icn.png')}}" alt="">
-																	<label class="fieldlabels"> <strong>Name as/addhaar</strong></label>
-																</div>
-															</div>
-															<div class="col-md-6">
-																<label class="fieldlabels"> Your Father Name *</label>
-																<input type="text" name="fname" placeholder="Your Address" />
-															</div>
-															<div class="col-md-6">
-																<label class="fieldlabels"> Your Address *</label>
-																<input type="text" name="fname" placeholder="Your Address" />
-															</div>
-															<div class="col-md-6">
-																<label class="fieldlabels"> Your D.O.B *</label>
-																<input type="text" name="fname" placeholder="Your D.O.B" />
-															</div>
-						
-															<div class="col-md-12">
-																<h2 class="fs-title">Enter Your Banking Details:</h2>
-																<div class="row">
-																	<div class="col-md-6">
-																		<label class="fieldlabels"> Enter Your GST no.*</label>
-																		<input type="text" name="fname"
-																			placeholder="Enter Your GST no." />
-																	</div>
-																	<div class="col-md-6">
-																		<label class="fieldlabels"> Enter Your PAN no.*</label>
-																		<input type="text" name="fname"
-																			placeholder="Enter Your PAN no." />
-																	</div>
-																	<div class="col-md-6">
-																		<label class="fieldlabels"> Enter Your Bank Name *</label>
-																		<input type="password" name="fname"
-																			placeholder="Enter Your Account Name." />
-																	</div>
-																	<div class="col-md-6">
-																		<label class="fieldlabels"> Enter Your Account NO *</label>
-																		<input type="password" name="fname"
-																			placeholder="Enter Your Account no." />
-																	</div>
-																	<div class="col-md-6">
-																		<label class="fieldlabels"> Re enter Your Account NO *</label>
-																		<input type="text" name="fname"
-																			placeholder="Enter Your Account no." />
-																	</div>
-																	<div class="col-md-6">
-																		<label class="fieldlabels"> Enter Your IFSC Code *</label>
-																		<input type="text" name="fname"
-																			placeholder="Enter Your IFSC Code " />
-																	</div>
-																</div>
-															</div>
-															<div class="col-md-12">
-																<p class="main-head-frmm">Please capture Your selfi image with your
-																	Aadhaar and RC</p>
-																<div class="row">
-																	<div class="col-md-6">
-																		<div class="selfe-docc">
-																			<img src="{{asset('frontend-assets/./images/doc-selfe.webp')}}" alt="">
-																		</div>
-																	</div>
-																	<div class="col-md-6">
-																		<div class="avatar-upload">
-																			<div class="avatar-edit">
-																				<input type='file' id="imageUpload"
-																					accept=".png, .jpg, .jpeg" />
-																				<label for="imageUpload"></label>
-																			</div>
-																			<div class="avatar-preview">
-																				<div id="imagePreview"
-																					style="background-image: url(./images/user-icn.png);">
-																				</div>
-																			</div>
-																		</div>
-																	</div>
-																</div>
-															</div>
-						
-														</div>
-													</div>
-													<input type="button" name="next" class="next action-button" value="Next" />
-													<input type="button" name="previous" class="previous action-button-previous"
-														value="Previous" />
-												</fieldset>
-												<fieldset>
-													<div class="form-card">
-														<div class="row">
-															<div class="col-7">
-																<h2 class="fs-title">Driver Details:</h2>
-															</div>
-														</div>
-														<div class="row">
-															<div class="col-md-6">
-																<label class="fieldlabels"> Enter Your Phone no. *</label>
-																<input type="text" name="fname" placeholder="Enter Your Phone no. " />
-															</div>
-															<div class="col-md-6">
-																<label class="fieldlabels"> Enter Your DL No*</label>
-																<input type="text" name="fname" placeholder="Enter Your DL No" />
-															</div>
-															<div class="col-md-6">
-																<label class="fieldlabels"> Your Name *</label>
-																<input type="text" name="fname" placeholder=" Your Name " />
-															</div>
-															<div class="col-md-6">
-																<label class="fieldlabels"> Your Address *</label>
-																<input type="text" name="fname" placeholder=" Your Address " />
-															</div>
-															<div class="col-md-6">
-																<label class="fieldlabels"> Your Validity *</label>
-																<input type="text" name="fname" placeholder=" Your Validity " />
-															</div>
-															<div class="col-md-6">
-																<label class="fieldlabels"> Your Auth to Drive *</label>
-																<input type="text" name="fname" placeholder=" Your Auth to Drive " />
-															</div>
-						
-						
-														</div>
-													</div>
-													<input type="button" name="next" class="next action-button" value="Submit" />
-													<input type="button" name="previous" class="previous action-button-previous"
-														value="Previous" />
-												</fieldset>
-												<fieldset>
-													<div class="form-card">
-														<div class="row">
-															<div class="col-7">
-																<h2 class="fs-title">Driver Documants:</h2>
-															</div>
-														</div>
-														<div class="row">
-															<div class="col-md-6">
-																<label class="fieldlabels"> Enter your Whatsapp no *</label>
-																<input type="text" name="fname" placeholder="Enter your Whatsapp no" />
-															</div>
-															<div class="col-md-6">
-																<label class="fieldlabels"> Enter your Email ID*</label>
-																<input type="email" name="fname" placeholder="Enter your Email Id" />
-															</div>
-						
-															<div class="col-md-12">
-																<div class="aadhar-img">
-																	<img src="{{asset('frontend-assets/./images/user-icn.png')}}" alt="">
-																</div>
-															</div>
-															<div class="col-md-6">
-																<label class="fieldlabels"> Enter your Aadhhar *</label>
-																<input type="text" name="fname" placeholder="Enter your Aadhaar" />
-															</div>
-															<div class="col-md-6">
-																<label class="fieldlabels"> Your Name *</label>
-																<input type="text" name="fname" placeholder="Your Name" />
-															</div>
-															<div class="col-md-6">
-																<label class="fieldlabels"> Your Address *</label>
-																<input type="text" name="fname" placeholder="Your Address" />
-															</div>
-															<div class="col-md-6">
-																<label class="fieldlabels"> Your D.O.B *</label>
-																<input type="text" name="fname" placeholder="Your D.O.B" />
-															</div>
-															<div class="col-md-6">
-																<label class="fieldlabels"> Enter Your GST no.*</label>
-																<input type="text" name="fname" placeholder="Enter Your GST no." />
-															</div>
-															<div class="col-md-6">
-																<label class="fieldlabels"> Enter Your PAN no.*</label>
-																<input type="text" name="fname" placeholder="Enter Your PAN no." />
-															</div>
-															<div class="col-md-12">
-																<p class="main-head-frmm">Please capture Your selfi image with your
-																	Aadhaar and DL</p>
-																<div class="row">
-																	<div class="col-md-6">
-																		<div class="selfe-docc">
-																			<img src="{{asset('frontend-assets/./images/doc-selfe.webp')}}" alt="">
-																		</div>
-																	</div>
-																	<div class="col-md-6">
-																		<div class="avatar-upload">
-																			<div class="avatar-edit">
-																				<input type='file' id="imageUpload"
-																					accept=".png, .jpg, .jpeg" />
-																				<label for="imageUpload"></label>
-																			</div>
-																			<div class="avatar-preview">
-																				<div id="imagePreview"
-																					style="background-image: url(./images/user-icn.png);">
-																				</div>
-																			</div>
-																		</div>
-																	</div>
-																</div>
-															</div>
-						
-														</div>
-													</div>
-												</fieldset>
-											</form>
-										</div>
-									</div>
+								<div class="form-group col-md-3 col-xs-3">
+									<label>Year: </label>
+                                    <select class="form-control">
+									  <option>2017</option>
+									  <option>2018</option>
+									  <option>2019</option>
+									  <option>2020</option>
+									  <option>2021</option>
+									</select>
 								</div>
-							</div>
-						</section></div>
-						<div class="tab-pane fade" id="bike-tav" role="tabpanel" aria-labelledby="bike-tab"><section>
-							<div class="container-reges">
-								<div class="row justify-content-center">
-									<div class="col-11 col-sm-10 col-md-10 col-lg-6 col-xl-5 text-center p-0 mt-3 mb-2">
-										<div class="card px-0 pt-4 pb-0 mt-3 mb-3">
-											<h2 id="heading">Sign Up Your vehicle Account</h2>
-											<form id="msform">
-												<!-- progressbar -->
-												<ul id="progressbar">
-													<li class="active" id="account"><strong>Owner Details</strong></li>
-													<li id="personal"><strong>Owner Documants</strong></li>
-													<li id="payment"><strong>Driver Details</strong></li>
-													<li id="confirm"><strong>Driver Documants</strong></li>
-												</ul> <!-- fieldsets -->
-												<fieldset>
-													<div class="form-card">
-														<div class="row">
-															<div class="col-7">
-																<h2 class="fs-title">Owner Information:</h2>
-															</div>
-														</div>
-														<div class="row">
-															<div class="col-md-6">
-																<label class="fieldlabels">Enter Your no: *</label>
-																<input type="text" name="phone no" placeholder="+91 000 000 0000" />
-															</div>
-															<div class="col-md-6">
-																<label class="fieldlabels">OTP:*</label>
-																<input type="text" name="uname" placeholder="Enter your OTP" />
-															</div>
-															<div class="col-md-6">
-																<div class="upload-file-main">
-																	<label class="fieldlabels">upload your RC*</label>
-																	<input type="file" name="uname" placeholder="Enter your RC no" />
-																</div>
-															</div>
-															<div class="col-md-6">
-																<label class="fieldlabels">Enter your vehicle RC no:*</label>
-																<input type="text" name="uname" placeholder="Enter your RC no" />
-															</div>
-															<div class="col-md-6">
-																<label class="fieldlabels"> Your Name: *</label>
-																<input type="text" name="phone no" placeholder=" your Name" />
-															</div>
-															<div class="col-md-6">
-																<label class="fieldlabels"> Your Address:*</label>
-																<input type="text" name="uname" placeholder=" your Address" />
-															</div>
-															<div class="col-md-6">
-																<label class="fieldlabels"> Your Vehicle Class:*</label>
-																<input type="text" name="uname" placeholder=" your Vehicle Class" />
-															</div>
-															<div class="col-md-6">
-																<label class="fieldlabels"> Your Vehicle Fitness certificate :*</label>
-																<input type="text" name="uname"
-																	placeholder=" your Vehicle Fitness certificate" />
-															</div>
-															<div class="col-md-6">
-																<label class="fieldlabels"> Your PVC:*</label>
-																<input type="text" name="uname" placeholder=" your PVC" />
-															</div>
-															<div class="col-md-6">
-																<label class="fieldlabels"> Your Insurance certificate:*</label>
-																<input type="text" name="uname"
-																	placeholder=" your Insurance certificate" />
-															</div>
-															<div class="col-md-6">
-																<label class="fieldlabels"> Your Fule Type:*</label>
-																<input type="text" name="uname" placeholder=" your Fule Type" />
-															</div>
-															<div class="col-md-6">
-																<label class="fieldlabels"> Your Vehicle seats:*</label>
-																<input type="text" name="uname" placeholder=" your Fule Type" />
-															</div>
-															<div class="col-md-6">
-																<label class="fieldlabels"> Your Vehicle color:*</label>
-																<input type="text" name="uname" placeholder=" your Fule Type" />
-															</div>
-															<div class="col-md-6">
-																<label class="fieldlabels"> Your Vehicle Name:*</label>
-																<input type="text" name="uname" placeholder=" your Fule Type" />
-															</div>
-															<div class="col-md-6">
-																<label class="fieldlabels"> Your Vehicle Parmit validate:*</label>
-																<input type="text" name="uname" placeholder=" your Fule Type" />
-															</div>
-															<div class="col-md-6">
-																<label class="fieldlabels"> Your Vehicle Parmit upload:*</label>
-																<input type="file" name="uname" placeholder=" your Fule Type" />
-															</div>
-														</div>
-													</div>
-													<input type="button" name="next" class="next action-button" value="Next" />
-													<a class="btn btn-loggg" href="./login.html">Back to login</a>
-						
-												</fieldset>
-												<fieldset>
-													<div class="form-card">
-														<div class="row">
-															<div class="col-7">
-																<h2 class="fs-title">Personal Information:</h2>
-															</div>
-														</div>
-														<div class="row">
-															<div class="col-md-6">
-																<label class="fieldlabels"> Enter your Whatsapp no *</label>
-																<input type="text" name="fname" placeholder="Enter your Whatsapp no" />
-															</div>
-															<div class="col-md-6">
-																<label class="fieldlabels"> Enter your Email ID*</label>
-																<input type="email" name="fname" placeholder="Enter your Email Id" />
-															</div>
-															<div class="col-md-6">
-																<label class="fieldlabels"> Upload your Aadhhar(Front/Back) *</label>
-																<input type="text" name="fname" placeholder="Enter your Aadhaar" />
-															</div>
-															<div class="col-md-6">
-																<label class="fieldlabels"> Enter your Aadhhar *</label>
-																<input type="text" name="fname" placeholder="Enter your Aadhaar" />
-															</div>
-															<div class="col-md-12">
-																<div class="aadhar-img">
-																	<img src="{{asset('frontend-assets/./images/user-icn.png')}}" alt="">
-																	<label class="fieldlabels"> <strong>Name as/addhaar</strong></label>
-																</div>
-															</div>
-															<div class="col-md-6">
-																<label class="fieldlabels"> Your Father Name *</label>
-																<input type="text" name="fname" placeholder="Your Address" />
-															</div>
-															<div class="col-md-6">
-																<label class="fieldlabels"> Your Address *</label>
-																<input type="text" name="fname" placeholder="Your Address" />
-															</div>
-															<div class="col-md-6">
-																<label class="fieldlabels"> Your D.O.B *</label>
-																<input type="text" name="fname" placeholder="Your D.O.B" />
-															</div>
-						
-															<div class="col-md-12">
-																<h2 class="fs-title">Enter Your Banking Details:</h2>
-																<div class="row">
-																	<div class="col-md-6">
-																		<label class="fieldlabels"> Enter Your GST no.*</label>
-																		<input type="text" name="fname"
-																			placeholder="Enter Your GST no." />
-																	</div>
-																	<div class="col-md-6">
-																		<label class="fieldlabels"> Enter Your PAN no.*</label>
-																		<input type="text" name="fname"
-																			placeholder="Enter Your PAN no." />
-																	</div>
-																	<div class="col-md-6">
-																		<label class="fieldlabels"> Enter Your Bank Name *</label>
-																		<input type="password" name="fname"
-																			placeholder="Enter Your Account Name." />
-																	</div>
-																	<div class="col-md-6">
-																		<label class="fieldlabels"> Enter Your Account NO *</label>
-																		<input type="password" name="fname"
-																			placeholder="Enter Your Account no." />
-																	</div>
-																	<div class="col-md-6">
-																		<label class="fieldlabels"> Re enter Your Account NO *</label>
-																		<input type="text" name="fname"
-																			placeholder="Enter Your Account no." />
-																	</div>
-																	<div class="col-md-6">
-																		<label class="fieldlabels"> Enter Your IFSC Code *</label>
-																		<input type="text" name="fname"
-																			placeholder="Enter Your IFSC Code " />
-																	</div>
-																</div>
-															</div>
-															<div class="col-md-12">
-																<p class="main-head-frmm">Please capture Your selfi image with your
-																	Aadhaar and RC</p>
-																<div class="row">
-																	<div class="col-md-6">
-																		<div class="selfe-docc">
-																			<img src="{{asset('frontend-assets/./images/doc-selfe.webp')}}" alt="">
-																		</div>
-																	</div>
-																	<div class="col-md-6">
-																		<div class="avatar-upload">
-																			<div class="avatar-edit">
-																				<input type='file' id="imageUpload"
-																					accept=".png, .jpg, .jpeg" />
-																				<label for="imageUpload"></label>
-																			</div>
-																			<div class="avatar-preview">
-																				<div id="imagePreview"
-																					style="background-image: url(./images/user-icn.png);">
-																				</div>
-																			</div>
-																		</div>
-																	</div>
-																</div>
-															</div>
-						
-														</div>
-													</div>
-													<input type="button" name="next" class="next action-button" value="Next" />
-													<input type="button" name="previous" class="previous action-button-previous"
-														value="Previous" />
-												</fieldset>
-												<fieldset>
-													<div class="form-card">
-														<div class="row">
-															<div class="col-7">
-																<h2 class="fs-title">Driver Details:</h2>
-															</div>
-														</div>
-														<div class="row">
-															<div class="col-md-6">
-																<label class="fieldlabels"> Enter Your Phone no. *</label>
-																<input type="text" name="fname" placeholder="Enter Your Phone no. " />
-															</div>
-															<div class="col-md-6">
-																<label class="fieldlabels"> Enter Your DL No*</label>
-																<input type="text" name="fname" placeholder="Enter Your DL No" />
-															</div>
-															<div class="col-md-6">
-																<label class="fieldlabels"> Your Name *</label>
-																<input type="text" name="fname" placeholder=" Your Name " />
-															</div>
-															<div class="col-md-6">
-																<label class="fieldlabels"> Your Address *</label>
-																<input type="text" name="fname" placeholder=" Your Address " />
-															</div>
-															<div class="col-md-6">
-																<label class="fieldlabels"> Your Validity *</label>
-																<input type="text" name="fname" placeholder=" Your Validity " />
-															</div>
-															<div class="col-md-6">
-																<label class="fieldlabels"> Your Auth to Drive *</label>
-																<input type="text" name="fname" placeholder=" Your Auth to Drive " />
-															</div>
-						
-						
-														</div>
-													</div>
-													<input type="button" name="next" class="next action-button" value="Submit" />
-													<input type="button" name="previous" class="previous action-button-previous"
-														value="Previous" />
-												</fieldset>
-												<fieldset>
-													<div class="form-card">
-														<div class="row">
-															<div class="col-7">
-																<h2 class="fs-title">Driver Documants:</h2>
-															</div>
-														</div>
-														<div class="row">
-															<div class="col-md-6">
-																<label class="fieldlabels"> Enter your Whatsapp no *</label>
-																<input type="text" name="fname" placeholder="Enter your Whatsapp no" />
-															</div>
-															<div class="col-md-6">
-																<label class="fieldlabels"> Enter your Email ID*</label>
-																<input type="email" name="fname" placeholder="Enter your Email Id" />
-															</div>
-						
-															<div class="col-md-12">
-																<div class="aadhar-img">
-																	<img src="{{asset('frontend-assets/./images/user-icn.png')}}" alt="">
-																</div>
-															</div>
-															<div class="col-md-6">
-																<label class="fieldlabels"> Enter your Aadhhar *</label>
-																<input type="text" name="fname" placeholder="Enter your Aadhaar" />
-															</div>
-															<div class="col-md-6">
-																<label class="fieldlabels"> Your Name *</label>
-																<input type="text" name="fname" placeholder="Your Name" />
-															</div>
-															<div class="col-md-6">
-																<label class="fieldlabels"> Your Address *</label>
-																<input type="text" name="fname" placeholder="Your Address" />
-															</div>
-															<div class="col-md-6">
-																<label class="fieldlabels"> Your D.O.B *</label>
-																<input type="text" name="fname" placeholder="Your D.O.B" />
-															</div>
-															<div class="col-md-6">
-																<label class="fieldlabels"> Enter Your GST no.*</label>
-																<input type="text" name="fname" placeholder="Enter Your GST no." />
-															</div>
-															<div class="col-md-6">
-																<label class="fieldlabels"> Enter Your PAN no.*</label>
-																<input type="text" name="fname" placeholder="Enter Your PAN no." />
-															</div>
-															<div class="col-md-12">
-																<p class="main-head-frmm">Please capture Your selfi image with your
-																	Aadhaar and DL</p>
-																<div class="row">
-																	<div class="col-md-6">
-																		<div class="selfe-docc">
-																			<img src="{{asset('frontend-assets/./images/doc-selfe.webp')}}" alt="">
-																		</div>
-																	</div>
-																	<div class="col-md-6">
-																		<div class="avatar-upload">
-																			<div class="avatar-edit">
-																				<input type='file' id="imageUpload"
-																					accept=".png, .jpg, .jpeg" />
-																				<label for="imageUpload"></label>
-																			</div>
-																			<div class="avatar-preview">
-																				<div id="imagePreview"
-																					style="background-image: url(./images/user-icn.png);">
-																				</div>
-																			</div>
-																		</div>
-																	</div>
-																</div>
-															</div>
-						
-														</div>
-													</div>
-												</fieldset>
-											</form>
-										</div>
-									</div>
+                                </div>
 								</div>
-							</div>
-						</section></div>
-					  </div>
-				</div>
-			</div>
-		</section>
+								<div class="form-group">
+                    			    <label>Maratial Status: </label>
+                                    <select class="form-control">
+										<option value="">Select Status ...</option>
+										<option value="Married">Married</option>
+										<option value="Divorced">Divorced</option>
+										<option value="Un-Married">Un-Married</option>
+										<option value="Widowed">Widowed</option>
+									</select>
+                                </div>
+                                <div class="form-group">
+                    			    <label>User Name: <span>*</span></label>
+                                    <input type="text" name="Username" placeholder="User Name" class="form-control required">
+                                </div>
+								<div class="form-group">
+                    			    <label>Password: <span>*</span></label>
+                                    <input type="password" name="Password" placeholder="User Password" class="form-control required">
+                                </div>
+                                <div class="form-wizard-buttons">
+                                    <button type="button" class="btn btn-next mt-2">Next <i class="fa fa-arrow-right"></i></button>
+                                </div>
+                            </fieldset>
+							<!-- Form Step 1 -->
+
+							<!-- Form Step 2 -->
+                            <fieldset>
+
+                                <h4>Contact Information : <span>Step 2 - 4</span></h4>
+								<div class="form-group">
+                    			    <label>Email: <span>*</span></label>
+                                    <input type="email" name="Email" placeholder="Email" class="form-control required">
+                                </div>
+								<div class="form-group">
+                    			    <label>Phone: <span>*</span></label>
+                                    <input type="text" name="Phone" placeholder="Phone" class="form-control required">
+                                </div>
+                                <div class="form-group">
+                    			    <label>Address: <span>*</span></label>
+                                    <input type="text" name="Address" placeholder="Address" class="form-control required">
+                                </div>
+								<div class="form-group">
+                    			    <label>Zip Code: <span>*</span></label>
+                                    <input type="text" name="Zip Code" placeholder="Zip Code" class="form-control required">
+                                </div>
+								<div class="form-group">
+                    			    <label>City: <span>*</span></label>
+                                    <input type="text" name="City" placeholder="City" class="form-control required">
+                                </div>
+								<div class="form-group">
+                    			    <label>State: <span>*</span></label>
+                                    <input type="text" name="State" placeholder="State" class="form-control required">
+                                </div>
+								<div class="form-group">
+                    			    <label>Country: </label>
+                                    <select class="form-control">
+									  <option>Australia</option>
+									  <option>America</option>
+									  <option>Bangladesh</option>
+									  <option>Canada</option>
+									  <option>England</option>
+									</select>
+                                </div>
+								
+                                <div class="form-wizard-buttons">
+                                    <button type="button" class="btn btn-previous mt-2"><i class="fa fa-arrow-left"></i> Previous</button>
+                                    <button type="button" class="btn btn-next mt-2">Next <i class="fa fa-arrow-right"></i></button>
+                                </div>
+                            </fieldset>
+							<!-- Form Step 2 -->
+
+							<!-- Form Step 3 -->
+                            <fieldset>
+
+                                <h4>Official Information: <span>Step 3 - 4</span></h4>
+								<div class="form-group">
+                    			    <label>Employee ID: <span>*</span></label>
+                                    <input type="text" name="Employee ID" placeholder="Employee ID" class="form-control required">
+                                </div>
+                                <div class="form-group">
+                    			    <label>Designation: <span>*</span></label>
+                                    <input type="text" name="Designation" placeholder="Designation" class="form-control required">
+                                </div>
+								<div class="form-group">
+                    			    <label>Department: <span>*</span></label>
+                                    <input type="text" name="Department" placeholder="Department" class="form-control required">
+                                </div>
+								<div class="form-group">
+                    			    <label>Working Hours: <span>*</span></label>
+                                    <input type="text" name="Working Hours" placeholder="Working Hours" class="form-control required">
+                                </div>
+								<div class="container-fluid">
+								<div class="row form-inline">
+								<div class="form-group col-md-3 col-xs-3">
+									<label>Joining Date: </label>
+								</div>
+								<div class="form-group col-md-3 col-xs-3">
+									<label>Day: </label>
+                                    <select class="form-control">
+									  <option>01</option>
+									  <option>02</option>
+									  <option>03</option>
+									  <option>04</option>
+									  <option>05</option>
+									</select>
+								</div>
+								<div class="form-group col-md-3 col-xs-3">
+									<label>Month: </label>
+                                    <select class="form-control">
+									  <option>Jan</option>
+									  <option>Feb</option>
+									  <option>Mar</option>
+									  <option>Apr</option>
+									  <option>May</option>
+									</select>
+								</div>
+								<div class="form-group col-md-3 col-xs-3">
+									<label>Year: </label>
+                                    <select class="form-control">
+									  <option>2017</option>
+									  <option>2018</option>
+									  <option>2019</option>
+									  <option>2020</option>
+									  <option>2021</option>
+									</select>
+								</div>
+                                </div>
+								</div>
+								<br/>
+                                <div class="form-wizard-buttons">
+                                    <button type="button" class="btn btn-previous mt-2"><i class="fa fa-arrow-left"></i> Previous</button>
+                                    <button type="button" class="btn btn-next mt-2">Next <i class="fa fa-arrow-right"></i></button>
+                                </div>
+                            </fieldset>
+							<!-- Form Step 3 -->
+							
+							<!-- Form Step 4 -->
+							<fieldset>
+
+                                <h4>Payment Information: <span>Step 4 - 4</span></h4>
+								<div style="clear:both;"></div>
+								<div class="form-group">
+                    			    <label>Bank Name: <span>*</span></label>
+                                    <input type="text" name="Bank Name" placeholder="Bank Name" class="form-control required">
+                                </div>
+                    			<div class="form-group">
+                    			    <label>Payment Type : </label>
+                                    <label class="radio-inline">
+									  <input type="radio" name="Payment" value="option1" checked="checked"> Master Card
+									</label>
+									<label class="radio-inline">
+									  <input type="radio" name="Payment" value="option2"> Visa Card
+									</label>
+                                </div>
+                                <div class="form-group">
+                    			    <label>Holder Name: <span>*</span></label>
+                                    <input type="text" name="Holder Name" placeholder="Holder Name" class="form-control required">
+                                </div>
+								<div class="container-fluid">
+								<div class="row form-inline">
+								<div class="form-group col-md-6 col-xs-6">
+									<label>Card Number: <span>*</span></label>
+                                    <input type="text" name="Card Number" placeholder="Card Number" class="form-control required">
+								</div>
+								<div class="form-group col-md-6 col-xs-6">
+									<label>CVC: <span>*</span></label>
+                                    <input type="text" name="CVC" placeholder="CVC" class="form-control required">
+								</div>
+                                </div>
+								</div>
+								<br/>
+								<div class="container-fluid">
+								<div class="row form-inline">
+								<div class="form-group col-md-3 col-xs-3">
+									<label>Expiry Date: </label>
+								</div>
+								<div class="form-group col-md-3 col-xs-3">
+									<label>Month: </label>
+                                    <select class="form-control">
+									  <option>Jan</option>
+									  <option>Feb</option>
+									  <option>Mar</option>
+									  <option>Apr</option>
+									  <option>May</option>
+									</select>
+								</div>
+								<div class="form-group col-md-3 col-xs-3">
+									<label>Year: </label>
+                                    <select class="form-control">
+									  <option>2017</option>
+									  <option>2018</option>
+									  <option>2019</option>
+									  <option>2020</option>
+									  <option>2021</option>
+									</select>
+								</div>
+                                </div>
+								</div>
+								<br/>
+                                <div class="form-wizard-buttons">
+                                    <button type="button" class="btn btn-previous">Previous</button>
+                                    <button type="submit" class="btn btn-submit">Submit</button>
+                                </div>
+                            </fieldset>
+							<!-- Form Step 4 -->
+                    	
+                    	</form>
+						<!-- Form Wizard -->
+                    </div>
+                </div>
+
+
+</main>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="{{asset('frontend-assets/js/wizard-form.js')}}"></script>
 </x-frontend.layout.master>

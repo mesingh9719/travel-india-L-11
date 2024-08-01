@@ -11,7 +11,7 @@ class CarContoller extends Controller
         return view('frontend.cars.index');
     }
     public function carsProfile(){
-        return view('frontend.cars.car-profile');
+        return view('frontend.cars.cars');
     }
 
     public function carsDetails(){
