@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Vehicle extends Model
 {
@@ -12,7 +13,7 @@ class Vehicle extends Model
     protected $fillable = [
         'user_id',
         'vehicle_number',
-        'vehicle_type',
+        'vehicle_type_id',
         'vehicle_model',
         'fuel_type',
         'rc_number',
@@ -28,4 +29,9 @@ class Vehicle extends Model
         'vehicle_permit_number',
         'is_verified',
     ];
+
+    public function user(): BelongsTo
+    {
+        return $this->belongsTo(User::class);
+    }
 }

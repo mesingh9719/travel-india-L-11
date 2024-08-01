@@ -21,6 +21,8 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
         Route::resource('users', UsersController::class);
 
         //Vehicles
+        Route::resource('vehicles', VehicleController::class);
+
         Route::get('vehicle-types',[VehicleController::class,"vehicleTypes"])->name('vehicle-types');
 
         // plans

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Api;
 
+use App\Helpers\CommonHelper;
 use App\Http\Requests\User\RegistrationRequest;
 use App\Http\Resources\UserResource;
 use Illuminate\Http\Request;
@@ -29,7 +30,7 @@ class RegisterController extends BaseController
 
             // Handling file uploads
             $fileFields = ['aadhar_image_front', 'aadhar_image_back', 'dl_image', 'profile_image', 'rc_image', 'voter_id_front', 'voter_id_back'];
-            $uploadedFiles = $this->handleFileUploads($request, $fileFields);
+            $uploadedFiles = CommonHelper::handleFileUploads($request, $fileFields);
 
             $userData = array_merge($validator, $uploadedFiles);
 
@@ -46,30 +47,6 @@ class RegisterController extends BaseController
         }
     }
 
-
-    private function handleFileUploads(Request $request, array $fileFields): array
-    {
-        $uploadedFiles = [];
-
-        foreach ($fileFields as $field) {
-            if ($request->hasFile($field)) {
-                $uploadedFiles[$field] = $this->upload($request->file($field));
-            } else {
-                $uploadedFiles[$field] = "";
-            }
-        }
-
-        return $uploadedFiles;
-    }
-
-    //upload file
-    public function upload($img){
-        $path = public_path().'/images';
-        File::isDirectory($path) or File::makeDirectory($path, 0777, true, true);
-        $images =$img->getClientOriginalName().time().'.'.$img->extension();
-        $img->move(public_path('images'), $images);
-        return $images;
-    }
 
     /**
      * Login api

@@ -12,4 +12,9 @@ class VehicleController extends Controller
         $vehicleTypes = VehicleType::all();
         return view('admin.vehicle_types.index',compact('vehicleTypes'));
     }
+
+    public function index()
+    {
+        return view('admin.vehicles.index');
+    }
 }
