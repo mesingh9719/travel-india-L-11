@@ -27,13 +27,7 @@
 </div>
 <div class="col-lg-5">
 <div class="search-bar ms-lg-3">
-<form class="form position-relative">
-<span class="location-icon"><i class="fas fa-map-marker-alt text-primary"></i></span>
-<input class="form-control" type="search" name="search-bar" placeholder="Your location" id="search-bar" aria-label="search-bar">
-<button class="btn-link" type="submit" aria-label="search-btn">
-<i class="fa fa-arrow-right"></i>
-</button>
-</form>
+
 </div>
 </div>
 </div>
@@ -41,10 +35,9 @@
 <div class="language-select d-none d-sm-block">
 <select id="select">
 <option value="1">English</option>
-<option value="2">Spanish</option>
 </select>
 </div>
-<a href="driver-dashboard.html" class="ms-3"><i class="fa fa-users me-2"></i>Driver Dashboard</a>
+
 </div>
 </div>
 </div>
