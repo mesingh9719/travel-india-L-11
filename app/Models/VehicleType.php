@@ -8,4 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class VehicleType extends Model
 {
     use HasFactory;
+    public $timestamps = false;
+    protected $fillable = [
+        'name',
+        'description',
+        'is_active',
+    ];
 }
