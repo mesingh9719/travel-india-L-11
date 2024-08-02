@@ -22,8 +22,8 @@ class TripController extends Controller
      */
     public function create()
     {
-        
-        
+
+
     }
 
     /**
@@ -31,9 +31,22 @@ class TripController extends Controller
      */
     public function store(TripRequestStore $tripRequestStore)
     {
-     
+
         $validated = $tripRequestStore->validated();
-        // dd($validated);
+
+        $start_latitude_longitude = [
+            'latitude' => $validated['start_latitude'],
+            'longitude' => $validated['start_longitude']
+        ];
+
+        $end_latitude_longitude = [
+            'latitude' => $validated['end_latitude'],
+            'longitude' => $validated['end_longitude']
+        ];
+
+        $validated['start_latitude_longitude'] = json_encode($start_latitude_longitude);
+        $validated['end_latitude_longitude'] = json_encode($end_latitude_longitude);
+
         $trip =Trip::create($validated);
         return (new TripResource($trip))->additional(['message' => 'Trip added successfully.']);
     }
