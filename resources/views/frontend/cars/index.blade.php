@@ -1,6 +1,5 @@
 
 <x-frontend.layout.master>
-
 <section class="banner" style="background-image: url('frontend-assets/images/taxi-banner.jpg');">
 <div class="container">
 <div class="row">
@@ -18,13 +17,33 @@
 </div>
 <a href="{{url('/car-list')}}" class="btn btn-primary rounded-2">Find a Taxi <i class="fa fa-arrow-right"></i></a>
 </div>
+<div class="d-sm-flex align-items-center justify-content-between mt-4">
+<div class="pickup-lc form-group">
+<input type="search" placeholder="Pickup location">
+</div>
+<div class="drop-lc form-group">
+<input type="search" placeholder="Drop location">
+</div>
+<a href="{{url('/car-list')}}" class="btn btn-primary rounded-2">Find a Taxi <i class="fa fa-arrow-right"></i></a>
+</div>
 </form>
 </div>
 </div>
 </div>
 </div>
-</section>
 
+</section>
+<section class="">
+<div class="road-bg position-relative" style="background-image: url('frontend-assets/images/road-run.png')">
+<div class="container">
+<div class="d-flex justify-content-between position-relative">
+<img src="{{asset('frontend-assets/images/icons/taxi-r2.png')}}" alt class="img-fluid anim-move move-3">
+<img src="{{asset('frontend-assets/images/icons/taxi-r1.png')}}" alt class="img-fluid anim-move">
+<img src="{{asset('frontend-assets/images/icons/taxi-r1.png')}}" alt class="img-fluid anim-move">
+</div>
+</div>
+</div>
+</section>
 
 <section class="how-start how-start-3 sec-padding">
 <div class="container">
@@ -84,6 +103,7 @@ ultricies integer quis.</p>
 </div>
 </div>
 </div>
+
 </section>
 
 

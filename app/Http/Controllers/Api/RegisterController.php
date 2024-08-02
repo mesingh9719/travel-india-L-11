@@ -13,12 +13,13 @@ use Illuminate\Support\Str;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\DB;
+
 class RegisterController extends BaseController
 {
 
     public  function index(){
-        $userType= User::all();
-        return $this->sendResponse($userType, 'User register successfully.');
+        $user= User::all();
+        return $this->sendResponse($user, 'User register successfully.');
     }
     public function register(RegistrationRequest $request)
     {
@@ -33,9 +34,8 @@ class RegisterController extends BaseController
             $uploadedFiles = CommonHelper::handleFileUploads($request, $fileFields);
 
             $userData = array_merge($validator, $uploadedFiles);
-
             $user = User::create($userData);
-
+ 
             DB::commit();
 
             $token = $user->createToken('MyApp')->plainTextToken;
@@ -55,14 +55,15 @@ class RegisterController extends BaseController
      */
     public function login(Request $request): JsonResponse
     {
+       
         try{
             if(Auth::attempt(['email' => $request->email, 'password' => $request->password])){
                 $user = Auth::user();
-                $success['token'] =  $user->createToken('MyApp')->plainTextToken;
+                $success['token'] =  $user->createToken('login')->plainTextToken;
                 return $this->sendResponse($success, 'User login successfully.');
             }
         }catch(\Exception $e){
-            return $this->sendError('Unauthorised.', ['error'=>'Unauthorised']);
+            return $this->sendError('Unauthorised.', ['error'=>'Unauthorised'. $e->getMessage]);
         }
 
     }

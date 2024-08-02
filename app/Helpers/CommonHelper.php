@@ -14,6 +14,7 @@ class CommonHelper
         foreach ($fileFields as $field) {
             if ($request->hasFile($field)) {
                 $uploadedFiles[$field] = self::upload($request->file($field));
+                
             } else {
                 $uploadedFiles[$field] = "";
             }

@@ -1,5 +1,4 @@
 <x-frontend.layout.master>
-
 <link rel="stylesheet" href="{{asset('frontend-assets/css/wizard-form.css')}}">
 <section class="promo-sec" style="background: url('frontend-assets/images/promo-bg.jpg')no-repeat center center / cover;">
 <div class="container">
@@ -18,12 +17,10 @@
 </div>
 </div>
 </section>
-
-
 <main class="main sec-padding my-account">
 <div class="container">
 <div class="row">
-<div class="col-lg-5 bg-cover" style="background-image: url('frontend-assets/images/account.jpg');">
+<div class="col-lg-5 bg-cover  col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3" style="background-image: url('frontend-assets/images/account.jpg');">
 </div>
                     <div class="col-lg-7 ct-bg signup-form col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3 form-wizard">
 					

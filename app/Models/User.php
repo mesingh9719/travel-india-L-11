@@ -11,7 +11,8 @@ use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 use Spatie\Activitylog\Traits\LogsActivity;
 use Spatie\Activitylog\LogOptions;
-class User extends Authenticatable
+
+class User extends Authenticatable 
 {
     use HasFactory, Notifiable, HasApiTokens, LogsActivity;
 
@@ -84,4 +85,5 @@ class User extends Authenticatable
     {
         return $this->hasMany(Vehicle::class);
     }
+
 }
