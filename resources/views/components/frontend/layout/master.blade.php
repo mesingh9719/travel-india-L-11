@@ -17,7 +17,8 @@
 <link rel="stylesheet" href="{{asset('frontend-assets/css/nice-select2.css')}}">
 <link rel="stylesheet" href="{{asset('frontend-assets/css/venobox.min.css')}}">
 <link rel="stylesheet" href="{{asset('frontend-assets/css/style.css')}}">
-
+    <link rel="stylesheet" href="{{ asset('frontend-assets/datetime-picker/jquery.datetimepicker.min.css') }}"/>
+{{ $styles ?? '' }}
 </head>
 <body>
 	<div class="site-layout">
@@ -27,14 +28,15 @@
 	</div>
 
 <div class="back-top"><i class="fa-solid fa-chevron-up"></i></div>
-
+<script src="{{asset('frontend-assets/js/jquery-3.7.1.min.js')}}"></script>
 <script src="{{asset('frontend-assets/js/bootstrap.bundle.min.js')}}"></script>
 <script src="{{asset('frontend-assets/js/swiper-bundle.min.js')}}"></script>
 <script src="{{asset('frontend-assets/js/purecounter_vanilla.js')}}"></script>
 <script src="{{asset('frontend-assets/js/venobox.min.js')}}"></script>
 <script src="{{asset('frontend-assets/js/nice-select2.js')}}"></script>
 <script src="{{asset('frontend-assets/js/custom.js')}}"></script>
-
+<script src="{{ asset('frontend-assets/datetime-picker/jquery.datetimepicker.full.min.js') }}"></script>
+{{ $scripts ?? '' }}
 </body>
 
 </html>

@@ -1,5 +1,7 @@
-
 <x-frontend.layout.master>
+    <x-slot:styles>
+        <link rel="stylesheet" href="{{ asset('frontend-assets/css/custom-style.css') }}"/>
+    </x-slot:styles>
     <x-ride-search/>
     <section class="how-start how-start-3 sec-padding">
         <div class="container">
@@ -241,5 +243,17 @@ ride</span>-sharing.</h2>
             </div>
         </div>
     </section>
-
+    <x-slot:scripts>
+        <script>
+            jQuery('#datetimepicker').datetimepicker();
+            jQuery.datetimepicker.setLocale('en');
+            // set default date
+            jQuery('#datetimepicker').datetimepicker({
+                format: 'Y-m-d H:i',
+                value: new Date(),
+                minDate: new Date(),
+                step: 15
+            });
+        </script>
+    </x-slot:scripts>
 </x-frontend.layout.master>

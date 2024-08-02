@@ -2,6 +2,7 @@
 
 namespace App\View\Components;
 
+use App\Models\VehicleType;
 use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
@@ -21,6 +22,7 @@ class RideSearch extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.ride-search');
+        $vehicleTypes = VehicleType::all();
+        return view('components.ride-search',compact('vehicleTypes'));
     }
 }
