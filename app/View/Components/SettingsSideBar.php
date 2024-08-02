@@ -1,12 +1,12 @@
 <?php
 
-namespace App\View\Components\Frontend;
+namespace App\View\Components;
 
 use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
-class Index extends Component
+class SettingsSideBar extends Component
 {
     /**
      * Create a new component instance.
@@ -21,7 +21,6 @@ class Index extends Component
      */
     public function render(): View|Closure|string
     {
-        $test = "test by comp";
-        return view('components.frontend.index',compact('test'));
+        return view('components.settings-side-bar');
     }
 }

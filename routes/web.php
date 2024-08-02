@@ -1,19 +1,22 @@
 <?php
 
 use App\Http\Controllers\Frontend\CarContoller;
+use App\Http\Controllers\Frontend\HomeController;
 use App\Http\Controllers\Frontend\UserController;
 use App\Http\Controllers\Frontend\RideController;
 use Illuminate\Support\Facades\Route;
 
 
 //Frontend route
-Route::get('/',[CarContoller::class,"cars"])->name('cars');
+Route::get('/',[HomeController::class,"index"])->name('index');
+
 Route::get('/car-list',[CarContoller::class,"carsProfile"])->name('car.profile');
 Route::get('/car-details',[CarContoller::class,"carsDetails"])->name('car.details');
 Route::get('/create-route-notification',[CarContoller::class,"createRouteNotification"])->name('create.route.notification');
 Route::get('/submit-car-intro',[CarContoller::class,"submitCarIntro"])->name('submit.car.intro');
 Route::get('/submit-car-for-rent',[CarContoller::class,"submitCarForRent"])->name('submit.car.for.rent');
 Route::get('/submit-route',[CarContoller::class,"submitRoute"])->name('submit.route');
+
 //User routes
 Route::get('/register',[UserController::class,"register"])->name('register');
 Route::get('/login',[UserController::class,"login"])->name('login');

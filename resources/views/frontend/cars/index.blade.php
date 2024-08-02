@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 <x-frontend.layout.master>
 <section class="banner" style="background-image: url('frontend-assets/images/taxi-banner.jpg');">
@@ -288,3 +289,5 @@ augue ut lectus arcu bibendum at varius vel.</p>
 </section>
 
 </x-frontend.layout.master>
+=======
+>>>>>>> f565ef2b975e10a0e6d7e0318bdacde07019e2a3

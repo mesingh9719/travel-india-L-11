@@ -11,8 +11,8 @@
                 <li class="menu-title mt-30">
                     <span>User Management</span>
                 </li>
-                <li class="has-child">
-                    <a href="#" class="">
+                <li class="has-child {{ request()->is('admin/users*') ? 'open' : '' }}">
+                    <a href="#" class="{{ request()->is('admin/users*') ? 'active' : '' }}">
                         <span class="nav-icon uil uil-user"></span>
                         <span class="menu-text">Users</span>
                         <span class="toggle-icon"></span>
@@ -57,9 +57,9 @@
                     <span>Settings</span>
                 </li>
                 <li>
-                    <a href="chat.html" class="">
+                    <a href="{{ route('admin.general-settings') }}" class="{{ request()->is('admin/general-settings') ? 'active' : '' }}">
                         <img class="nav-icon" src="{{ asset('admin-assets/img/setting.png') }}" alt="General Settings">
-                        <span class="menu-text">General Settings</span>
+                        <span class="menu-text">Settings</span>
                     </a>
                 </li>
             </ul>
