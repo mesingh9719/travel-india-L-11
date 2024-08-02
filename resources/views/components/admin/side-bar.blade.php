@@ -11,8 +11,8 @@
                 <li class="menu-title mt-30">
                     <span>User Management</span>
                 </li>
-                <li class="has-child">
-                    <a href="#" class="">
+                <li class="has-child {{ request()->is('admin/users*') ? 'open' : '' }}">
+                    <a href="#" class="{{ request()->is('admin/users*') ? 'active' : '' }}">
                         <span class="nav-icon uil uil-user"></span>
                         <span class="menu-text">Users</span>
                         <span class="toggle-icon"></span>

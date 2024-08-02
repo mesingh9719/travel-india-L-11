@@ -14,18 +14,22 @@
                         <table class="table mb-0 table-borderless table-rounded">
                             <thead>
                             <tr>
-                                <th scope="col">Owner</th>
-                                <th scope="col">Driver</th>
                                 <th scope="col">ID</th>
+                                <th scope="col">Owner</th>
                                 <th scope="col">Name</th>
                                 <th scope="col">Type</th>
+                                <th scope="col">Brand</th>
                                 <th scope="col">Model</th>
-                                <th scope="col">Status</th>
+                                <th scope="col">Number</th>
+                                <th scope="col">Fuel Type</th>
+                                <th scope="col">Seats</th>
+                                <th scope="col">Verification</th>
+                                <th scope="col">Created At</th>
                                 <th>Action</th>
                             </tr>
                             </thead>
                             <tbody>
-
+                                @include('admin.vehicles.vehicles-list')
                             </tbody>
                         </table>
                     </div>

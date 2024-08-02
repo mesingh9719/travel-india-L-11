@@ -80,7 +80,7 @@ class User extends Authenticatable
         return $this->belongsTo(UserType::class);
     }
 
-    public function vehicle(): HasMany
+    public function vehicles(): HasMany
     {
         return $this->hasMany(Vehicle::class);
     }

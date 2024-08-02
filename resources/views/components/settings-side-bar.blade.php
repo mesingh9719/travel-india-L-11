@@ -9,10 +9,10 @@
                 <a href="{{ route('admin.general-settings') }}" class="{{ request()->is('admin/general-settings') ? 'active' : '' }}">General Settings</a>
             </li>
             <li class="list-group-item border-0">
-                <a href="" class="{{ request()->is('admin/email-settings') ? 'active' : '' }}">Email Settings</a>
+                <a href="{{ route('admin.email-settings.index') }}" class="{{ request()->is('admin/email-settings') ? 'active' : '' }}">Email Settings</a>
             </li>
             <li class="list-group-item border-0">
-                <a href="" class="{{ request()->is('admin/payment-settings') ? 'active' : '' }}">Payment Settings</a>
+                <a href="{{ route('admin.payment-settings.index') }}" class="{{ request()->is('admin/payment-settings') ? 'active' : '' }}">Payment Settings</a>
             </li>
         </ul>
     </div>
