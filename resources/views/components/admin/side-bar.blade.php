@@ -42,7 +42,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="{{ route('admin.vehicles.index') }}" class="{{ request()->is('admin/vehicles') ? 'active' : '' }}">
+                    <a href="{{ route('admin.vehicles.index') }}" class="{{ request()->is('admin/vehicles*') ? 'active' : '' }}">
                         <span class="nav-icon uil uil-car"></span>
                         <span class="menu-text">Vehicles</span>
                     </a>

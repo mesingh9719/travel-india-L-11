@@ -38,4 +38,8 @@ class VehicleController extends Controller
 
         return view('admin.vehicles.index', compact('vehicles'));
     }
+
+    public function show(Vehicle $vehicle){
+        return view('admin.vehicles.show',compact('vehicle'));
+    }
 }
