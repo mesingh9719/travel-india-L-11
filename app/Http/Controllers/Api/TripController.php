@@ -33,6 +33,7 @@ class TripController extends Controller
     {
      
         $validated = $tripRequestStore->validated();
+        
         // dd($validated);
         $trip =Trip::create($validated);
         return (new TripResource($trip))->additional(['message' => 'Trip added successfully.']);
