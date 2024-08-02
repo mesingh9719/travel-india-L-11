@@ -33,7 +33,7 @@
     <link rel="stylesheet" href="{{ asset('admin-assets/assets/vendor_assets/css/trumbowyg.min.css') }}">
     <link rel="stylesheet" href="{{ asset('admin-assets/assets/vendor_assets/css/wickedpicker.min.css') }}">
     <link rel="stylesheet" href="{{ asset('admin-assets/style.css') }}">
-
+    <link rel="stylesheet" href="{{ asset('admin-assets/css/custom-style.css') }}"/>
 
     <!-- endinject -->
 

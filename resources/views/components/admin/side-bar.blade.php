@@ -57,9 +57,9 @@
                     <span>Settings</span>
                 </li>
                 <li>
-                    <a href="chat.html" class="">
+                    <a href="{{ route('admin.general-settings') }}" class="{{ request()->is('admin/general-settings') ? 'active' : '' }}">
                         <img class="nav-icon" src="{{ asset('admin-assets/img/setting.png') }}" alt="General Settings">
-                        <span class="menu-text">General Settings</span>
+                        <span class="menu-text">Settings</span>
                     </a>
                 </li>
             </ul>
