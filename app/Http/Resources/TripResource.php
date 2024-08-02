@@ -22,7 +22,7 @@ class TripResource extends JsonResource
         'end_trip'=>$this->end_trip,
         'start_latitude_longitude' => json_decode($this->start_latitude_longitude),
         'end_latitude_longitude' => json_decode($this->end_latitude_longitude),
-        'date'=>Carbon::createFromFormat('Y-m-d', $this->date),
+         'date' => Carbon::createFromFormat('Y-m-d', $this->date)->format('d-m-Y'),
         'time'=>Carbon::createFromFormat('H:i:s', $this->time),
     ];
     }
