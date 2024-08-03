@@ -22,7 +22,7 @@
         <div class="container">
             <div class="row">
                 <div
-                    class="col-lg-10 mx-auto ct-bg signup-form col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3 form-wizard">
+                    class="col-lg-8 mx-auto ct-bg signup-form col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3 form-wizard">
 
                     <!-- Form Wizard -->
                     <form role="form" action="" method="post">
@@ -51,18 +51,10 @@
                             </div>
                             <!-- Step 2 -->
 
-                            <!-- Step 3 -->
-                            <div class="form-wizard-step">
-                                <div class="form-wizard-step-icon"><i class="fa fa-address-book" aria-hidden="true"></i>
-                                </div>
-                                <p>Driver Details</p>
-                            </div>
-                            <!-- Step 3 -->
-
                             <!-- Step 4 -->
                             <div class="form-wizard-step">
-                                <div class="form-wizard-step-icon"><i class="fa fa-money" aria-hidden="true"></i></div>
-                                <p>Vehicle Details</p>
+                                <div class="form-wizard-step-icon"><i class="fa fa-file" aria-hidden="true"></i></div>
+                                <p>Document</p>
                             </div>
                             <!-- Step 4 -->
                         </div>
@@ -70,113 +62,108 @@
 
 
                         <!-- Form Step 1 -->
-                        <fieldset>
+                         <fieldset>
 
-                            <h4>Personal Information: <span>Step 1 - 4</span></h4>
-                            <div class="form-group">
-                                <label>First Name: <span>*</span></label>
-                                <input type="text" name="First Name" placeholder="First Name"
-                                       class="form-control required">
-                            </div>
-                            <div class="form-group">
-                                <label>Last Name: <span>*</span></label>
-                                <input type="text" name="Last Name" placeholder="Last Name"
-                                       class="form-control required">
-                            </div>
-
-                            <div class="container-fluid">
-                                <div class="row form-inline">
-                                    <div class="form-group col-md-3 col-xs-3">
-                                        <label>Date Of Birth: </label>
-                                    </div>
-                                    <div class="form-group col-md-3 col-xs-3">
-                                        <label>Date: </label>
-                                        <select class="form-control">
-                                            <option>01</option>
-                                            <option>02</option>
-                                            <option>03</option>
-                                            <option>04</option>
-                                            <option>05</option>
-                                        </select>
-                                    </div>
-                                    <div class="form-group col-md-3 col-xs-3">
-                                        <label>Month: </label>
-                                        <select class="form-control">
-                                            <option>Jan</option>
-                                            <option>Feb</option>
-                                            <option>Mar</option>
-                                            <option>Apr</option>
-                                            <option>May</option>
-                                        </select>
-                                    </div>
-                                    <div class="form-group col-md-3 col-xs-3">
-                                        <label>Year: </label>
-                                        <select class="form-control">
-                                            <option>2017</option>
-                                            <option>2018</option>
-                                            <option>2019</option>
-                                            <option>2020</option>
-                                            <option>2021</option>
-                                        </select>
-                                    </div>
+                            <h4>Personal Information: <span></span></h4>
+                            <div class="row">
+                                <div class="form-group col-lg-6">
+                                    <label>First Name: <span>*</span></label>
+                                    <input type="text" name="First Name" placeholder="First Name"
+                                        class="form-control required">
+                                </div>
+                                <div class="form-group col-lg-6">
+                                    <label>Last Name: <span>*</span></label>
+                                    <input type="text" name="Last Name" placeholder="Last Name"
+                                        class="form-control required">
                                 </div>
                             </div>
-                            <div class="form-group">
-                                <label>Maratial Status: </label>
-                                <select class="form-control">
-                                    <option value="">Select Status ...</option>
-                                    <option value="Married">Married</option>
-                                    <option value="Divorced">Divorced</option>
-                                    <option value="Un-Married">Un-Married</option>
-                                    <option value="Widowed">Widowed</option>
-                                </select>
+                            <div class="row">
+                                <div class="form-group col-lg-6">
+                                    <label>Father Name: <span>*</span></label>
+                                    <input type="text" name="Father Name" placeholder="Last Name" class="form-control required">
+                                </div>
+                                <div class="form-group col-lg-6">
+                                    <label>Maratial Status: </label>
+                                    <select class="form-control">
+                                        <option value="">Select Status ...</option>
+                                        <option value="Married">Married</option>
+                                        <option value="Divorced">Divorced</option>
+                                        <option value="Un-Married">Un-Married</option>
+                                        <option value="Widowed">Widowed</option>
+                                    </select>
+                                </div>
                             </div>
-                            <div class="form-group">
-                                <label>User Name: <span>*</span></label>
-                                <input type="text" name="Username" placeholder="User Name"
-                                       class="form-control required">
+                          
+                            
+                        
+                            <div class="row">
+                            <div class="form-group col-lg-6">
+                            <label> Gender: <span>*</span></label><br >
+                                <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="gender" id="inlineRadio1" value="male" checked>
+                                <label class="form-check-label" for="inlineRadio1">
+                                     Male</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="gender" id="inlineRadio2" value="female">
+                                    <label class="form-check-label" for="inlineRadio2">
+                                         Female</label>
+                                </div>
                             </div>
-                            <div class="form-group">
-                                <label>Password: <span>*</span></label>
-                                <input type="password" name="Password" placeholder="User Password"
-                                       class="form-control required">
+                            <div class="form-group col-lg-6">
+                            <label>Date of Birth: <span>*</span></label>
+                            <input class="form-control" type="date" placeholder="Your Name">
                             </div>
+                            </div>
+                        
+                            <div class="row">
+                                <div class="form-group col-lg-6">
+                                    <label>Aadher Card: <span>*</span></label>
+                                    <input type="text" name="aadher_number" placeholder="Aadher Number" class="form-control required">
+                                </div>
+                                <div class="form-group col-lg-6">
+                                    <label>Pan Card: <span>*</span></label>
+                                    <input type="text" name="pan_number" placeholder="Pan Number" class="form-control required">
+                                </div>
+                            </div>
+                            
                             <div class="form-wizard-buttons">
                                 <button type="button" class="btn btn-next mt-2">Next <i class="fa fa-arrow-right"></i>
                                 </button>
                             </div>
-                        </fieldset>
+                        </fieldset> 
                         <!-- Form Step 1 -->
 
                         <!-- Form Step 2 -->
                         <fieldset>
 
-                            <h4>Contact Information : <span>Step 2 - 4</span></h4>
-                            <div class="form-group">
-                                <label>Email: <span>*</span></label>
-                                <input type="email" name="Email" placeholder="Email" class="form-control required">
+                            <h4>Contact Information : <span></span></h4>
+                            <div class="row">
+                                <div class="form-group col-lg-6">
+                                    <label>Email: <span>*</span></label>
+                                    <input type="email" name="Email" placeholder="Email" class="form-control required">
+                                </div>
+                                <div class="form-group col-lg-6">
+                                    <label>Phone: <span>*</span></label>
+                                    <input type="text" name="Phone" placeholder="Phone" class="form-control required">
+                                </div>
                             </div>
-                            <div class="form-group">
-                                <label>Phone: <span>*</span></label>
-                                <input type="text" name="Phone" placeholder="Phone" class="form-control required">
+                            <div class="row">
+                                <div class="form-group col-lg-6">
+                                    <label>Whatsapp Number: <span>*</span></label>
+                                    <input type="text" name="whatsapp_number" placeholder="Whatsapp Number" class="form-control required">
+                                </div>
+                                <div class="form-group col-lg-6">
+                                    <label>City: <span>*</span></label>
+                                    <input type="text" name="City" placeholder="City" class="form-control required">
+                                </div>
                             </div>
-                            <div class="form-group">
-                                <label>Address: <span>*</span></label>
-                                <input type="text" name="Address" placeholder="Address" class="form-control required">
-                            </div>
-                            <div class="form-group">
-                                <label>Zip Code: <span>*</span></label>
-                                <input type="text" name="Zip Code" placeholder="Zip Code" class="form-control required">
-                            </div>
-                            <div class="form-group">
-                                <label>City: <span>*</span></label>
-                                <input type="text" name="City" placeholder="City" class="form-control required">
-                            </div>
-                            <div class="form-group">
+                            <div class="row">
+                            <div class="form-group col-lg-6">
                                 <label>State: <span>*</span></label>
                                 <input type="text" name="State" placeholder="State" class="form-control required">
                             </div>
-                            <div class="form-group">
+                            <div class="form-group col-lg-6">
                                 <label>Country: </label>
                                 <select class="form-control">
                                     <option>Australia</option>
@@ -186,157 +173,63 @@
                                     <option>England</option>
                                 </select>
                             </div>
-
-                            <div class="form-wizard-buttons">
-                                <button type="button" class="btn btn-previous mt-2"><i class="fa fa-arrow-left"></i>
-                                    Previous
-                                </button>
-                                <button type="button" class="btn btn-next mt-2">Next <i class="fa fa-arrow-right"></i>
-                                </button>
                             </div>
-                        </fieldset>
-                        <!-- Form Step 2 -->
-
-                        <!-- Form Step 3 -->
-                        <fieldset>
-
-                            <h4>Official Information: <span>Step 3 - 4</span></h4>
-                            <div class="form-group">
-                                <label>Employee ID: <span>*</span></label>
-                                <input type="text" name="Employee ID" placeholder="Employee ID"
-                                       class="form-control required">
-                            </div>
-                            <div class="form-group">
-                                <label>Designation: <span>*</span></label>
-                                <input type="text" name="Designation" placeholder="Designation"
-                                       class="form-control required">
-                            </div>
-                            <div class="form-group">
-                                <label>Department: <span>*</span></label>
-                                <input type="text" name="Department" placeholder="Department"
-                                       class="form-control required">
-                            </div>
-                            <div class="form-group">
-                                <label>Working Hours: <span>*</span></label>
-                                <input type="text" name="Working Hours" placeholder="Working Hours"
-                                       class="form-control required">
-                            </div>
-                            <div class="container-fluid">
-                                <div class="row form-inline">
-                                    <div class="form-group col-md-3 col-xs-3">
-                                        <label>Joining Date: </label>
-                                    </div>
-                                    <div class="form-group col-md-3 col-xs-3">
-                                        <label>Day: </label>
-                                        <select class="form-control">
-                                            <option>01</option>
-                                            <option>02</option>
-                                            <option>03</option>
-                                            <option>04</option>
-                                            <option>05</option>
-                                        </select>
-                                    </div>
-                                    <div class="form-group col-md-3 col-xs-3">
-                                        <label>Month: </label>
-                                        <select class="form-control">
-                                            <option>Jan</option>
-                                            <option>Feb</option>
-                                            <option>Mar</option>
-                                            <option>Apr</option>
-                                            <option>May</option>
-                                        </select>
-                                    </div>
-                                    <div class="form-group col-md-3 col-xs-3">
-                                        <label>Year: </label>
-                                        <select class="form-control">
-                                            <option>2017</option>
-                                            <option>2018</option>
-                                            <option>2019</option>
-                                            <option>2020</option>
-                                            <option>2021</option>
-                                        </select>
-                                    </div>
+                            <div class="row">
+                                <div class="form-group col-lg-12">
+                                    <label>Zip Code: <span>*</span></label>
+                                    <input type="text" name="Zip Code" placeholder="Zip Code" class="form-control required">
+                                </div>
+                                <div class="form-group col-lg-12">
+                                    <label>Address: <span>*</span></label>
+                                    <textarea id="w3review" name="w3review" rows="4" cols="50"></textarea>
                                 </div>
                             </div>
-                            <br/>
                             <div class="form-wizard-buttons">
-                                <button type="button" class="btn btn-previous mt-2"><i class="fa fa-arrow-left"></i>
-                                    Previous
-                                </button>
+                                <button type="button" class="btn btn-previous mt-2"><i class="fa fa-arrow-left"></i> Previous</button>
                                 <button type="button" class="btn btn-next mt-2">Next <i class="fa fa-arrow-right"></i>
                                 </button>
                             </div>
-                        </fieldset>
+                        </fieldset> 
+                       
+
                         <!-- Form Step 3 -->
+                      
 
                         <!-- Form Step 4 -->
                         <fieldset>
-
-                            <h4>Payment Information: <span>Step 4 - 4</span></h4>
-                            <div style="clear:both;"></div>
-                            <div class="form-group">
-                                <label>Bank Name: <span>*</span></label>
-                                <input type="text" name="Bank Name" placeholder="Bank Name"
-                                       class="form-control required">
+                        <h4>Upload Documents: <span></span></h4>
+                            <div class="row">
+                                <div class="form-group col-lg-6">
+                                    <label>Upload front side of Aadhar Card: <span>*</span></label>
+                                    <input class="input file" type="file" name="aadhar_image_front" aria-label="File browser" accept="image*/, .jpg, .png, .bmp, .heif, .svg" required>
+                                </div>
+                                <div class="form-group col-lg-6">
+                                <label>Upload Back side of Aadhar Card: <span>*</span></label>
+	                            <input class="input file" type="file" name="aadhar_image_back" aria-label="File browser" accept="image*/, .jpg, .png, .bmp, .heif, .svg" required>
                             </div>
-                            <div class="form-group">
-                                <label>Payment Type : </label>
-                                <label class="radio-inline">
-                                    <input type="radio" name="Payment" value="option1" checked="checked"> Master Card
-                                </label>
-                                <label class="radio-inline">
-                                    <input type="radio" name="Payment" value="option2"> Visa Card
-                                </label>
                             </div>
-                            <div class="form-group">
-                                <label>Holder Name: <span>*</span></label>
-                                <input type="text" name="Holder Name" placeholder="Holder Name"
-                                       class="form-control required">
-                            </div>
-                            <div class="container-fluid">
-                                <div class="row form-inline">
-                                    <div class="form-group col-md-6 col-xs-6">
-                                        <label>Card Number: <span>*</span></label>
-                                        <input type="text" name="Card Number" placeholder="Card Number"
-                                               class="form-control required">
-                                    </div>
-                                    <div class="form-group col-md-6 col-xs-6">
-                                        <label>CVC: <span>*</span></label>
-                                        <input type="text" name="CVC" placeholder="CVC" class="form-control required">
-                                    </div>
+                            <div class="row">
+                                <div class="form-group col-lg-6">
+                                    <label>Upload Front side of Pan Card: <span>*</span></label>
+                                    <input class="input file" type="file" name="pan_image_front" aria-label="File browser" accept="image*/, .jpg, .png, .bmp, .heif, .svg" required>
+                                </div>
+                                <div class="form-group col-lg-6">
+                                    <label>Upload Profile Picture: <span>*</span></label>
+                                    <input class="input file" type="file" name="profile_picture" aria-label="File browser" accept="image*/, .jpg, .png, .bmp, .heif, .svg" required>
                                 </div>
                             </div>
-                            <br/>
-                            <div class="container-fluid">
-                                <div class="row form-inline">
-                                    <div class="form-group col-md-3 col-xs-3">
-                                        <label>Expiry Date: </label>
-                                    </div>
-                                    <div class="form-group col-md-3 col-xs-3">
-                                        <label>Month: </label>
-                                        <select class="form-control">
-                                            <option>Jan</option>
-                                            <option>Feb</option>
-                                            <option>Mar</option>
-                                            <option>Apr</option>
-                                            <option>May</option>
-                                        </select>
-                                    </div>
-                                    <div class="form-group col-md-3 col-xs-3">
-                                        <label>Year: </label>
-                                        <select class="form-control">
-                                            <option>2017</option>
-                                            <option>2018</option>
-                                            <option>2019</option>
-                                            <option>2020</option>
-                                            <option>2021</option>
-                                        </select>
-                                    </div>
+                            <div class="row">
+                                <div class="form-group col-lg-12">
+                                    <label>Upload Driving Licence: <span>*</span></label>
+                                    <input class="input file" type="file" name="dl_image" aria-label="File browser" accept="image*/, .jpg, .png, .bmp, .heif, .svg" required>
                                 </div>
+                            
                             </div>
                             <br/>
                             <div class="form-wizard-buttons">
-                                <button type="button" class="btn btn-previous">Previous</button>
+                                <button type="button" class="btn btn-previous">
+                                <i class="fa fa-arrow-left"></i>     
+                                Previous</button>
                                 <button type="submit" class="btn btn-submit">Submit</button>
                             </div>
                         </fieldset>
