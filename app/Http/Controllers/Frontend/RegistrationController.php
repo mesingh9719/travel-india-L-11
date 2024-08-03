@@ -29,7 +29,8 @@ class RegistrationController extends Controller
      */
     public function store(Request $request)
     {
-            $reponse =Http::post(env('APP_URL'). '/register');
+        dd($request);
+            // $reponse =Http::post(env('APP_URL'). '/register');
     }
 
     /**

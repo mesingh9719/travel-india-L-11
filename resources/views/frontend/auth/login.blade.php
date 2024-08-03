@@ -37,7 +37,7 @@
                                         <input class="form-control" type="number" name="mobile" placeholder="Mobile *">
                                     </div>
                                     <button class="btn btn-primary mt-3">Login</button>
-                                    <p>Create an account? <a href="{{ route('register') }}">Sign Up</a></p>
+                                    <p>Create an account? <a href="{{ url('register/create') }}">Sign Up</a></p>
                                 </form>
                             </div>
                         </div>
