@@ -48,7 +48,7 @@
                 <span class="toggle-inner"></span>
             </button>
             <div class="nav-cta d-none d-sm-block order-lg-3">
-                <a href="{{url('/login')}}" class="btn btn-outline-dark">Book Now</a>
+                <a href="{{url('/login')}}" class="btn btn-outline-dark">Login</a>
                 <a href="{{url('/register')}}" class="btn btn-primary ms-2">Get Started</a>
             </div>
             <div class="collapse navbar-collapse oder-lg-2" id="navbarSupportedContent">

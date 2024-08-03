@@ -1,7 +1,4 @@
 <x-frontend.layout.master>
-    <x-slot:styles>
-        <link rel="stylesheet" href="{{ asset('frontend-assets/css/custom-style.css') }}"/>
-    </x-slot:styles>
     <x-ride-search/>
     <section class="how-start how-start-3 sec-padding">
         <div class="container">

@@ -30,7 +30,7 @@
                                 <div class="flex-fill m-2">
                                     <label for="select_vehicle" class="text-white">Select Vehicle</label>
                                     <select name="select_vehicle" id="select_vehicle" class="form-control custom-input">
-                                        <option value="1">Select Vehicle</option>
+                                        <option value="">Select Vehicle</option>
                                         @foreach($vehicleTypes as $vehicleType)
                                             <option value="{{ $vehicleType->id }}">{{ $vehicleType->name }}</option>
                                         @endforeach
