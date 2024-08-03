@@ -164,7 +164,7 @@ background: #f7b401;
 .form-wizard .btn.btn-previous:focus,
 .form-wizard .btn.btn-previous:active:focus, 
 .form-wizard .btn.btn-previous.active:focus { 
-background: #bbb;
+background: #333931;
 }
 
 .form-wizard .success h3{
@@ -194,7 +194,7 @@ margin-top: 20px;
 .form-wizard-step{
 padding-top:10px !important;
 border:2px solid #fff;
-background:#ccc;
+background:#333931;
 -ms-transform: skewX(-30deg); /* IE 9 */
 -webkit-transform: skewX(-30deg); /* Safari */
 transform: skewX(-30deg); /* Standard syntax */

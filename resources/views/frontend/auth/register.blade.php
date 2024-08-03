@@ -51,14 +51,6 @@
                             </div>
                             <!-- Step 2 -->
 
-                            <!-- Step 3 -->
-                            <!-- <div class="form-wizard-step">
-                                <div class="form-wizard-step-icon"><i class="fa fa-address-book" aria-hidden="true"></i>
-                                </div>
-                                <p>Driver Details</p>
-                            </div> -->
-                            <!-- Step 3 -->
-
                             <!-- Step 4 -->
                             <div class="form-wizard-step">
                                 <div class="form-wizard-step-icon"><i class="fa fa-file" aria-hidden="true"></i></div>
@@ -110,16 +102,16 @@
                                 <div class="form-check form-check-inline">
                                 <input class="form-check-input" type="radio" name="gender" id="inlineRadio1" value="male" checked>
                                 <label class="form-check-label" for="inlineRadio1">
-                                    Male</label>
+                                     Male</label>
                                 </div>
                                 <div class="form-check form-check-inline">
                                     <input class="form-check-input" type="radio" name="gender" id="inlineRadio2" value="female">
                                     <label class="form-check-label" for="inlineRadio2">
-                                        Female</label>
+                                         Female</label>
                                 </div>
                             </div>
                             <div class="form-group col-lg-6">
-                            <label>Date Of Birth: <span>*</span></label>
+                            <label>Date of Birth: <span>*</span></label>
                             <input class="form-control" type="date" placeholder="Your Name">
                             </div>
                             </div>
@@ -189,14 +181,11 @@
                                 </div>
                                 <div class="form-group col-lg-12">
                                     <label>Address: <span>*</span></label>
-                                    <textarea id="w3review" name="w3review" rows="4" cols="50">
-                                    </textarea>
+                                    <textarea id="w3review" name="w3review" rows="4" cols="50"></textarea>
                                 </div>
                             </div>
                             <div class="form-wizard-buttons">
-                                <button type="button" class="btn btn-previous mt-2"><i class="fa fa-arrow-left"></i>
-                                    Previous
-                                </button>
+                                <button type="button" class="btn btn-previous mt-2"><i class="fa fa-arrow-left"></i> Previous</button>
                                 <button type="button" class="btn btn-next mt-2">Next <i class="fa fa-arrow-right"></i>
                                 </button>
                             </div>
@@ -204,20 +193,7 @@
                        
 
                         <!-- Form Step 3 -->
-                        <!-- <fieldset>
-
-                           
-                           
-                            <br/>
-                            <div class="form-wizard-buttons">
-                                <button type="button" class="btn btn-previous mt-2"><i class="fa fa-arrow-left"></i>
-                                    Previous
-                                </button>
-                                <button type="button" class="btn btn-next mt-2">Next <i class="fa fa-arrow-right"></i>
-                                </button>
-                            </div>
-                        </fieldset>  -->
-                        <!-- Form Step 3 -->
+                      
 
                         <!-- Form Step 4 -->
                         <fieldset>
