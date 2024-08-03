@@ -34,10 +34,7 @@
                 </div>
             </div>
             <div class="car-cta mt-3">
-                <a href="single-car.html" class="btn">
-                    Taxi Details
-                </a>
-                <a href="book-ride.html" class="btn btn-primary">Confirm Ride</a>
+                <a href="book-ride.html" class="btn btn-primary bg-primary">Ride Details</a>
             </div>
         </div>
     </article>

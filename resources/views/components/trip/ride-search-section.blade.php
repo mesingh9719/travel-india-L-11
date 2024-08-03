@@ -7,12 +7,12 @@
             <div class="col-sm-3">
                 <label for="pickup" class="text-white">Pickup Location</label>
                 <input name="pickup" type="text" id="pickup" placeholder="Enter Pickup Location"
-                       class="form-control custom-input" value="{{ $_GET['pickup'] ?? '' }}">
+                       class="form-control custom-input" value="{{ ucfirst($_GET['pickup']) ?? '' }}">
             </div>
             <div class="col-sm-3">
                 <label for="dropoff" class="text-white">Dropoff Location</label>
                 <input name="dropoff" type="text" id="dropoff" placeholder="Enter Dropoff Location"
-                       class="form-control custom-input" value="{{ $_GET['dropoff'] ?? '' }}">
+                       class="form-control custom-input" value="{{ ucfirst($_GET['dropoff']) ?? '' }}">
             </div>
             <div class="col-sm-3">
                 <label for="datetimepicker" class="text-white
