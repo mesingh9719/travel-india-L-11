@@ -21,7 +21,7 @@
                         <a href="#"><i class="fa-brands fa-skype"></i></a>
                         <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
                     </div>
-                    <a href="tel:(568) 367-987-237"><i class="fa fa-phone-volume me-3"></i>(568) 367-987-237</a>
+                    <a href="tel:{{ $basicInfo['site_phone'] ?? '' }}"><i class="fa fa-phone-volume me-3"></i>{{ $basicInfo['site_phone'] ?? '' }}</a>
                 </div>
                 <div class="col-lg-5">
                     <div class="search-bar ms-lg-3">
@@ -40,8 +40,8 @@
     </div>
     <nav class="navbar navbar-expand-lg bg-white">
         <div class="container bg-info">
-            <a class="navbar-brand" href="index.html"><img src="{{asset('frontend-assets/images/logo-alt.png')}}"
-                                                           style="max-width:29%" alt="Logo"></a>
+            <a class="navbar-brand" href="index.html"><img src="{{asset('images/'.$basicInfo['site_logo'])}}"
+                                                           style="width: 150px;" alt="Logo"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle navigation">

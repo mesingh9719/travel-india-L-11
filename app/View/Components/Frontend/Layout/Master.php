@@ -1,12 +1,12 @@
 <?php
 
-namespace App\View\Components\Frontend\layout;
+namespace App\View\Components\Frontend\Layout;
 
 use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
-class Footer extends Component
+class Master extends Component
 {
     /**
      * Create a new component instance.
@@ -21,6 +21,6 @@ class Footer extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.frontend.layout.footer');
+        return view('components.frontend.layout.master');
     }
 }
