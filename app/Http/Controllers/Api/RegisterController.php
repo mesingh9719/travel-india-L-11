@@ -35,9 +35,8 @@ class RegisterController extends BaseController
 
             $userData = array_merge($validator, $uploadedFiles);
             $user = User::create($userData);
- 
-            DB::commit();
 
+            DB::commit();
             $token = $user->createToken('MyApp')->plainTextToken;
             return (new UserResource($user))->additional(['token' => $token]);
         } catch (\Exception $e) {
