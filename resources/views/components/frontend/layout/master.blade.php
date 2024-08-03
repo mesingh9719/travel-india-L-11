@@ -38,6 +38,17 @@
 <script src="{{asset('frontend-assets/js/nice-select2.js')}}"></script>
 <script src="{{asset('frontend-assets/js/custom.js')}}"></script>
 <script src="{{ asset('frontend-assets/datetime-picker/jquery.datetimepicker.full.min.js') }}"></script>
+<script>
+    jQuery('#datetimepicker').datetimepicker();
+    jQuery.datetimepicker.setLocale('en');
+    // set default date
+    jQuery('#datetimepicker').datetimepicker({
+        format: 'Y-m-d H:i',
+        value: new Date(),
+        minDate: new Date(),
+        step: 15
+    });
+</script>
 {{ $scripts ?? '' }}
 </body>
 

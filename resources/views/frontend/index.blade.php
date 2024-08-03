@@ -268,17 +268,4 @@ ride</span>-sharing.</h2>
             </div>
         </div>
     </section>
-    <x-slot:scripts>
-        <script>
-            jQuery('#datetimepicker').datetimepicker();
-            jQuery.datetimepicker.setLocale('en');
-            // set default date
-            jQuery('#datetimepicker').datetimepicker({
-                format: 'Y-m-d H:i',
-                value: new Date(),
-                minDate: new Date(),
-                step: 15
-            });
-        </script>
-    </x-slot:scripts>
 </x-frontend.layout.master>

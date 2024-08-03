@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Frontend\CarContoller;
 use App\Http\Controllers\Frontend\HomeController;
+use App\Http\Controllers\Frontend\TripController;
 use App\Http\Controllers\Frontend\UserController;
 use App\Http\Controllers\Frontend\RideController;
 use Illuminate\Support\Facades\Route;
@@ -10,7 +11,8 @@ use Illuminate\Support\Facades\Route;
 //Frontend route
 Route::get('/',[HomeController::class,"index"])->name('index');
 
-Route::get('/car-list',[CarContoller::class,"carsProfile"])->name('car.profile');
+Route::get('/trip',[TripController::class,"trip"])->name('trip');
+
 Route::get('/car-details',[CarContoller::class,"carsDetails"])->name('car.details');
 Route::get('/create-route-notification',[CarContoller::class,"createRouteNotification"])->name('create.route.notification');
 Route::get('/submit-car-intro',[CarContoller::class,"submitCarIntro"])->name('submit.car.intro');

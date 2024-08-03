@@ -40,7 +40,7 @@
     </div>
     <nav class="navbar navbar-expand-lg bg-white">
         <div class="container bg-info">
-            <a class="navbar-brand" href="index.html"><img src="{{asset('images/'.$basicInfo['site_logo'])}}"
+            <a class="navbar-brand" href="index.html"><img src="{{ $basicInfo['site_logo'] ? asset('images/'.$basicInfo['site_logo']) : asset('frontend-assets/images/logo.png') }}"
                                                            style="width: 150px;" alt="Logo"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
