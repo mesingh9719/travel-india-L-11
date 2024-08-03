@@ -20,6 +20,7 @@
     <link rel="stylesheet" href="{{asset('frontend-assets/css/venobox.min.css')}}">
     <link rel="stylesheet" href="{{asset('frontend-assets/css/style.css')}}">
     <link rel="stylesheet" href="{{ asset('frontend-assets/datetime-picker/jquery.datetimepicker.min.css') }}"/>
+    <link rel="stylesheet" href="{{ asset('frontend-assets/css/custom-style.css') }}"/>
     {{ $styles ?? '' }}
 </head>
 <body>

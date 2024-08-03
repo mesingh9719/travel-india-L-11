@@ -1,70 +1,49 @@
 <x-frontend.layout.master>
-<section>
-			<div class="container-login" id="container-login">
-				<div class="form-container sign-in-container">
-					<form action="#">
-						<h1>Sign in</h1>
-						<div class="social-container">
-							<a href="#" class="social"><img src="{{asset('frontend-assets/./images/icn-socil/317752_facebook_social media_social_icon.png')}}" alt=""></a>
-							<a href="#" class="social"><img src="{{asset('frontend-assets/./images/icn-socil/png-clipart-logo-icon-instagram-logo-instagram-logo-purple-violet.png
-                        ')}}" alt=""></a>
-							<a href="#" class="social"><img src="{{asset('frontend-assets/./images/icn-socil/png-clipart-whatsapp-application-software-message-icon-whatsapp-logo-whats-app-logo-logo-grass.png')}}" alt=""></a>
-						</div>
-						<span>or use your account</span>
-						<input type="email" placeholder="Email" />
-						<input type="password" placeholder="Password" />
-						<a href="#">Forgot your password?</a>
-						<button>Sign In</button>
-					</form>
-					<span class="cmmn-imgg"><img src="{{asset('frontend-assets/./images/resources/footer-mockup.png')}}" alt=""></span>
-				</div>
-				<div class="overlay-container">
-					<div class="overlay">
-						<div class="overlay-panel overlay-right sifn-rajis">
-							<h1>Hello, Friend!</h1>
-							<p>Enter your personal details and start journey with us</p>
-							<a href="{{url('/register')}}" class="ghost"  >Sign Up</a>
 
-						</div>
-					</div>
-					<span class="cmmn-imgg2"><img src="{{asset('frontend-assets/./images/resources/footer-mockup.png')}}" alt=""></span>
-				</div>
-			</div>
-		</section>
+    <section class="promo-sec" style="background: url('{{ asset('frontend-assets/images/promo-bg.jpg') }}')no-repeat center center / cover;">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="promo-wrap text-center">
+                        <h2 class="fw-7 text-white text-uppercase">Login</h2>
+                        <nav aria-label="breadcrumb w-75 mx-auto">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">Login</li>
+                            </ol>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-		<section>
-			<div class="space no-space dark-bg">
-				<div class="container">
-					<div class="row">
-						<div class="col-lg-4 col-sm-4">
-							<div class="servize">
-								<i class="flaticon-placeholder"></i>
-								<div class="serviz-meta">
-									<span>Tucson, AZ 80210: 501 Lane</span>
-									<i>Canada</i>
-								</div>
-							</div>
-						</div>
-						<div class="col-lg-4 col-sm-4">
-							<div class="servize">
-								<i class="flaticon-24-hours-1"></i>
-								<div class="serviz-meta">
-									<span>Tool free number 24/7</span>
-									<i>+1-111-222-333</i>
-								</div>
-							</div>
-						</div>
-						<div class="col-lg-4 col-sm-4">
-							<div class="servize">
-								<i class="flaticon-24-hours"></i>
-								<div class="serviz-meta">
-									<span>Full time services</span>
-									<i>24/7</i>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section><!-- footer top -->
+
+    <main class="main sec-padding my-account">
+        <div class="container">
+            <div class="row g-0 ct-bg">
+                <div class="col-lg-6 bg-cover" style="background-image: url('{{ asset('frontend-assets/images/account.jpg') }}');">
+                </div>
+                <div class="col-lg-6">
+                    <div class="signup-form">
+                        <h2 class="sub-title border-bottom pb-4">Login</h2>
+
+                        <div class="tab-content pt-4" id="pills-tabContent">
+                            <div class="tab-pane fade show active" id="pills-rider" role="tabpanel"
+                                 aria-labelledby="pills-rider-tab">
+                                <form action="#">
+                                    <div class="mb-3">
+                                        <label for="mobile" class="form-label">Mobile</label>
+                                        <input class="form-control" type="number" name="mobile" placeholder="Mobile *">
+                                    </div>
+                                    <button class="btn btn-primary mt-3">Login</button>
+                                    <p>Create an account? <a href="{{ route('register') }}">Sign Up</a></p>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
 </x-frontend.layout.master>
