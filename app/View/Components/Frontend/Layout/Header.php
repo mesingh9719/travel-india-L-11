@@ -1,12 +1,13 @@
 <?php
 
-namespace App\View\Components\Frontend\layout;
+namespace App\View\Components\Frontend\Layout;
 
+use App\Models\GeneralSetting;
 use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
-class Master extends Component
+class Header extends Component
 {
     /**
      * Create a new component instance.
@@ -21,6 +22,7 @@ class Master extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.frontend.layout.master');
+        $basicInfo = GeneralSetting::pluck('value', 'key')->toArray();
+        return view('components.frontend.layout.header',compact('basicInfo'));
     }
 }
