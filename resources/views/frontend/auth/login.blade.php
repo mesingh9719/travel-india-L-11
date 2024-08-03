@@ -22,7 +22,7 @@
     <main class="main sec-padding my-account">
         <div class="container">
             <div class="row g-0 ct-bg">
-                <div class="col-lg-6 bg-cover" style="background-image: url('{{ asset('frontend-assets/images/account.jpg') }}');">
+                <div class="col-lg-6 bg-cover" style="background-image: url('{{ asset('frontend-assets/images/reg-svg.svg') }}');">
                 </div>
                 <div class="col-lg-6">
                     <div class="signup-form">
@@ -36,8 +36,8 @@
                                         <label for="mobile" class="form-label">Mobile</label>
                                         <input class="form-control" type="number" name="mobile" placeholder="Mobile *">
                                     </div>
-                                    <button class="btn btn-primary mt-3">Login</button>
-                                    <p>Create an account? <a href="{{ route('register') }}">Sign Up</a></p>
+                                    <button class="btn btn-primary mt-3">Send OTP</button>
+                                    <p>Create an account? <a href="{{ route('register.create') }}">Sign Up</a></p>
                                 </form>
                             </div>
                         </div>

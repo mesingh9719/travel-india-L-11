@@ -59,65 +59,9 @@
                     <li class="nav-item">
                         <a class="nav-link" href="about.html">About Us</a>
                     </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Services</a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="services.html">All Services</a></li>
-                            <li><a class="dropdown-item" href="single-service.html">Service Details</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" data-bs-auto-close="outside">Pages</a>
-                        <ul class="dropdown-menu">
-                            <li class="dropdown">
-                                <a class="dropdown-item dropdown-toggle" href="#" data-bs-toggle="dropdown">Car List</a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="car-listing.html" class="dropdown-item">All Car Lists</a></li>
-                                    <li><a class="dropdown-item" href="single-car.html">Car Details</a></li>
-                                </ul>
-                            </li>
-                            <li class="dropdown">
-                                <a class="dropdown-item dropdown-toggle" href="#" data-bs-toggle="dropdown">All Riders</a>
-                                <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="riders.html">All Riders</a></li>
-                                    <li><a class="dropdown-item" href="single-rider.html">Rider Details</a></li>
-                                </ul>
-                            </li>
-                            <li><a class="dropdown-item" href="about.html">About Us</a></li>
-                            <li><a class="dropdown-item" href="sign-up.html">Create Account</a></li>
-                            <li><a class="dropdown-item" href="sign-in.html">Sign In</a></li>
-                            <li><a class="dropdown-item" href="pricing.html">Pricing</a></li>
-                            <li><a class="dropdown-item" href="404.html">404 Error</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" data-bs-auto-close="outside">Blog</a>
-                        <ul class="dropdown-menu">
-                            <li class="dropdown">
-                                <a class="dropdown-item dropdown-toggle" href="#" data-bs-toggle="dropdown">Blog List</a>
-                                <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="blog-list-sidebar.html">Blog List with Sidebar</a></li>
-                                    <li><a class="dropdown-item" href="blog-list.html">Blog List no Sidebar</a></li>
-                                </ul>
-                            </li>
-                            <li class="dropdown">
-                                <a class="dropdown-item dropdown-toggle" href="#" data-bs-toggle="dropdown">Blog Grid</a>
-                                <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="blog-grid-sidebar.html">Blog Grid with Sidebar</a></li>
-                                    <li><a class="dropdown-item" href="blog-grid.html">Blog Grid no Sidebar</a></li>
-                                </ul>
-                            </li>
-                            <li class="dropdown">
-                                <a class="dropdown-item dropdown-toggle" href="#" data-bs-toggle="dropdown">Blog Details</a>
-                                <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="single-post-sidebar.html">Article with Sidebar</a></li>
-                                    <li><a class="dropdown-item" href="single-post.html">Article no Sidebar</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </li>
+
                     <li class="nav-item">
-                        <a class="nav-link" href="contact.html">Contact</a>
+                        <a class="nav-link" href="contact.html">Contact us</a>
                     </li>
                 </ul>
             </div>
