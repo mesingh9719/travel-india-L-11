@@ -5,6 +5,8 @@ use App\Http\Controllers\Frontend\HomeController;
 use App\Http\Controllers\Frontend\TripController;
 use App\Http\Controllers\Frontend\UserController;
 use App\Http\Controllers\Frontend\RideController;
+use App\Http\Controllers\Frontend\RegistrationController;
+
 use Illuminate\Support\Facades\Route;
 
 
@@ -20,7 +22,7 @@ Route::get('/submit-car-for-rent',[CarContoller::class,"submitCarForRent"])->nam
 Route::get('/submit-route',[CarContoller::class,"submitRoute"])->name('submit.route');
 
 //User routes
-Route::get('/register',[UserController::class,"register"])->name('register');
+Route::resource('/register', RegistrationController::class);
 Route::get('/login',[UserController::class,"login"])->name('login');
 Route::get('/user-profile',[UserController::class,"userProfile"])->name('user.profile');
 Route::get('/profile-balance',[UserController::class,"profileBalance"])->name('profile.balance');
@@ -33,5 +35,7 @@ Route::get('/ride-detail',[RideController::class,"rideDetail"])->name('ride.deta
 Route::get('/ride-requests-list',[RideController::class,"rideRequestsList"])->name('ride.requests.list');
 
 //End frontend route
+
+
 
 include __DIR__.'/admin.php';

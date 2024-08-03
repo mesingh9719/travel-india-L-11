@@ -11,9 +11,9 @@ class UserController extends Controller
         return view('frontend.users.user-profile');
     }
 
-    public function register(){
-        return view('frontend.auth.register'); 
-    }
+    // public function register(){
+    //     return view('frontend.auth.register'); 
+    // }
     
     public function login(){
         return view('frontend.auth.login');

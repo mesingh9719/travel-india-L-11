@@ -49,7 +49,7 @@
             </button>
             <div class="nav-cta d-none d-sm-block order-lg-3">
                 <a href="{{url('/login')}}" class="btn btn-outline-dark">Login</a>
-                <a href="{{url('/register')}}" class="btn btn-primary ms-2">Get Started</a>
+                <a href="{{url('/register/create ')}}" class="btn btn-primary ms-2">Get Started</a>
             </div>
             <div class="collapse navbar-collapse oder-lg-2" id="navbarSupportedContent">
                 <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
