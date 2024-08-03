@@ -37,28 +37,13 @@
                     </select>
                 </div>
 
-<<<<<<< HEAD
-</div>
-</div>
-</div>
-<nav class="navbar navbar-expand-lg">
-<div class="container bg-info">
-<a class="navbar-brand" href="index.html"><img src="{{asset('frontend-assets/images/logo-alt.png')}}" alt="Logo"></a>
-<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-<span class="toggle-inner"></span>
-</button>
-<div class="nav-cta d-none d-sm-block order-lg-3">
-<a href="{{url('/login')}}" class="btn btn-outline-dark">Book Now</a>
-<a href="{{url('/register')}}" class="btn btn-primary ms-2">Get Started</a>
-</div>
-=======
             </div>
         </div>
     </div>
     <nav class="navbar navbar-expand-lg">
         <div class="container bg-info">
             <a class="navbar-brand" href="index.html"><img src="{{asset('frontend-assets/images/logo-alt.png')}}"
-                                                           style='max-width:29%' alt="Logo"></a>
+                                                            alt="Logo"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle navigation">
@@ -68,7 +53,6 @@
                 <a href="{{url('/login')}}" class="btn btn-outline-dark">Book Now</a>
                 <a href="{{url('/register')}}" class="btn btn-primary ms-2">Get Started</a>
             </div>
->>>>>>> f565ef2b975e10a0e6d7e0318bdacde07019e2a3
 
             <div class="collapse navbar-collapse oder-lg-2" id="navbarSupportedContent">
                 <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
