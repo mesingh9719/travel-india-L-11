@@ -2,6 +2,8 @@
 
 namespace App\Services;
 
+use Illuminate\Support\Carbon;
+
 class TripFilterService
 {
     public function filter($trips, $request)
@@ -15,7 +17,12 @@ class TripFilterService
         }
 
         if ($request->has('date') && $request->date) {
-            $date = explode(' ', $request->date)[0]; // Extracting only the date part
+            try {
+                $date = Carbon::createFromFormat('d-m-Y', $request->date)->format('Y-m-d');
+            } catch (\Exception $e) {
+                return response()->json(['error' => 'Invalid date format'], 400);
+            }
+
             $trips = $trips->whereDate('date', $date);
         }
 

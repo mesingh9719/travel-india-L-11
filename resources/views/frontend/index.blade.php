@@ -5,10 +5,8 @@
             <div class="row">
                 <div class="col-xl-5 col-sm-9 mx-auto mb-5">
                     <div class="sec-intro text-center">
-                        <h2 class="sec-title">how to get started</h2>
-                        <p>Suspendisse ultrice gravida dictum fusce placerat ultricies fusce integer quis auctor elit
-                            sed
-                            vulputate mi sit.</p>
+                        <h2 class="sec-title">How to Get Started</h2>
+                        <p>Follow these simple steps to book your ride and enjoy a seamless travel experience with our service.</p>
                     </div>
                 </div>
             </div>
@@ -16,51 +14,43 @@
                 <div class="col-lg-3 col-sm-6">
                     <div class="step-card text-center">
                         <div class="card-icon">
-                            <img class="img-fluid" src="{{asset('frontend-assets/images/icons/user.png')}}" alt="user">
+                            <img class="img-fluid" src="{{ asset('frontend-assets/images/icons/user.png') }}" alt="Create Account">
                         </div>
-                        <h3 class="h5 text-capitalize">create your account</h3>
-                        <p>Suspendisse ultrice
-                            gravida fusce placerat
-                            ultricies integer quis.</p>
+                        <h3 class="h5 text-capitalize">Create Your Account</h3>
+                        <p>Sign up on our platform to get started. It's quick and easy!</p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-sm-6">
                     <div class="step-card text-center">
                         <div class="card-icon">
-                            <img class="img-fluid" src="{{asset('frontend-assets/images/icons/taxi3.png')}}" alt="user">
+                            <img class="img-fluid" src="{{ asset('frontend-assets/images/icons/taxi3.png') }}" alt="Find a Ride">
                         </div>
-                        <h3 class="h5 text-capitalize">Find a Taxi</h3>
-                        <p>Suspendisse ultrice
-                            gravida fusce placerat
-                            ultricies integer quis.</p>
+                        <h3 class="h5 text-capitalize">Find a Ride</h3>
+                        <p>Enter your pickup and dropoff locations, date, and time to see available rides.</p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-sm-6">
                     <div class="step-card text-center">
                         <div class="card-icon">
-                            <img class="img-fluid" src="{{asset('frontend-assets/images/icons/driver2.png')}}"
-                                 alt="user">
+                            <img class="img-fluid" src="{{ asset('frontend-assets/images/icons/driver2.png') }}" alt="Contact Driver">
                         </div>
-                        <h3 class="h5 text-capitalize">meet your driver</h3>
-                        <p>Suspendisse ultrice
-                            gravida fusce placerat
-                            ultricies integer quis.</p>
+                        <h3 class="h5 text-capitalize">Contact the Driver</h3>
+                        <p>Get in touch with the driver directly to finalize the details of your ride.</p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-sm-6">
                     <div class="step-card text-center">
                         <div class="card-icon">
-                            <img class="img-fluid" src="{{asset('frontend-assets/images/icons/trip.png')}}" alt="user">
+                            <img class="img-fluid" src="{{ asset('frontend-assets/images/icons/trip.png') }}" alt="Enjoy Trip">
                         </div>
-                        <h3 class="h5 text-capitalize">enjoy your trip</h3>
-                        <p>Suspendisse ultrice
-                            gravida fusce placerat
-                            ultricies integer quis.</p>
+                        <h3 class="h5 text-capitalize">Enjoy Your Trip</h3>
+                        <p>Sit back, relax, and enjoy your journey with our reliable service.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
 
 
     <section class="choose-3 bg-light sec-padding">
@@ -115,10 +105,8 @@
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-xl-5 col-sm-8">
-                    <h2 class="sec-title">our popular services</h2>
-                    <p>Suspendisse ultrice gravida dictum fusce placerat ultricies integer quis auctor elit sed
-                        vulputate mi
-                        sit.</p>
+                    <h2 class="sec-title">Our Popular Services</h2>
+                    <p>Discover our top-rated services designed to meet all your long-distance travel and transportation needs.</p>
                 </div>
                 <div class="col-xl-7 text-end col-sm-4">
                     <a href="#" class="btn btn-dark">All Services <i class="fa fa-arrow-right ms-2"></i></a>
@@ -127,43 +115,49 @@
             <div class="row pt-2 mt-5">
                 <div class="col-lg-3 col-sm-6">
                     <div class="service-card rounded-3 text-center">
-                        <div class="icon icon-sm"><img src="{{asset('frontend-assets/images/icons/ride-w.svg')}}" alt>
+                        <div class="icon icon-sm">
+                            <img src="{{ asset('frontend-assets/images/icons/taxi-r-w.png') }}" alt="Outstation Taxi">
                         </div>
-                        <h3>Ride Sharing</h3>
-                        <p>In pellentesque massa vida placerat duis. Cursus sit amet dictum sit amet.</p>
+                        <h3>Outstation Taxi</h3>
+                        <p>Book reliable and comfortable taxis for your long-distance travel needs.</p>
                         <a href="#" class="btn btn-dark mt-3">View Details <i class="fa fa-arrow-right ms-2"></i></a>
                     </div>
                 </div>
                 <div class="col-lg-3 col-sm-6">
                     <div class="service-card rounded-3 text-center">
-                        <div class="icon icon-sm"><img src="{{asset('frontend-assets/images/icons/taxi-r-w.png')}}" alt>
+                        <div class="icon icon-sm">
+                            <img src="{{ asset('frontend-assets/images/icons/taxi-w.png') }}" alt="Cab Booking">
                         </div>
-                        <h3>taxi reserve</h3>
-                        <p>In pellentesque massa vida placerat duis. Cursus sit amet dictum sit amet.</p>
+                        <h3>Cab Booking</h3>
+                        <p>Find and book cabs for long-distance travel at competitive prices.</p>
                         <a href="#" class="btn btn-dark mt-3">View Details <i class="fa fa-arrow-right ms-2"></i></a>
                     </div>
                 </div>
                 <div class="col-lg-3 col-sm-6">
                     <div class="service-card rounded-3 text-center">
-                        <div class="icon icon-sm"><img src="{{asset('frontend-assets/images/icons/taxi-w.png')}}" alt>
+                        <div class="icon icon-sm">
+                            <img src="{{ asset('frontend-assets/images/icons/intercity-w.png') }}" alt="Intercity Service">
                         </div>
-                        <h3>taxi reserve</h3>
-                        <p>In pellentesque massa vida placerat duis. Cursus sit amet dictum sit amet.</p>
+                        <h3>Intercity Service</h3>
+                        <p>Enjoy hassle-free travel between cities with our long-distance intercity cab services.</p>
                         <a href="#" class="btn btn-dark mt-3">View Details <i class="fa fa-arrow-right ms-2"></i></a>
                     </div>
                 </div>
                 <div class="col-lg-3 col-sm-6">
                     <div class="service-card rounded-3 text-center">
-                        <div class="icon icon-sm"><img src="{{asset('frontend-assets/images/icons/intercity-w.png')}}"
-                                                       alt></div>
-                        <h3>intercity service</h3>
-                        <p>In pellentesque massa vida placerat duis. Cursus sit amet dictum sit amet.</p>
+                        <div class="icon icon-sm">
+                            <img src="{{ asset('frontend-assets/images/truck.png') }}" alt="Truck Booking">
+                        </div>
+                        <h3>Truck Booking</h3>
+                        <p>Book trucks for long-distance goods transportation with ease and reliability.</p>
                         <a href="#" class="btn btn-dark mt-3">View Details <i class="fa fa-arrow-right ms-2"></i></a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
+
 
 
     <section class="feature-sec sec-padding">
@@ -171,32 +165,24 @@
             <div class="row">
                 <div class="col-lg-6 order-lg-2 order-1 col-sm-9">
                     <div class="feat-img">
-                        <img class="img-fluid" src="{{asset('frontend-assets/images/choose-s4.png')}}" alt="Feature">
+                        <img class="img-fluid" src="{{ asset('frontend-assets/images/choose-s4.png') }}" alt="Feature">
                     </div>
                 </div>
                 <div class="col-lg-6 order-lg-1 order-2">
                     <div class="feat-txt pe-lg-5 me-lg-3">
-                        <h2 class="sec-title mb-4">elevate your taxi experience <span class="highlighted">with
-ride</span>-sharing.</h2>
-                        <p>Suspendisse ultrice gravida dictum fusce placerat ultricies integer quis auctor elit sed
-                            vulputate
-                            mi sit. Auctor eu
-                            augue ut lectus arcu bibendum at varius vel.</p>
+                        <h2 class="sec-title mb-4">Elevate Your Travel Experience with <br/>Travel India</h2>
+                        <p>Experience unparalleled comfort and convenience with Travel India's long-distance travel services. We prioritize your safety and satisfaction, ensuring a smooth journey every time.</p>
                         <div class="row mt-5">
                             <div class="col-lg-6 col-sm-6">
                                 <div class="card bg-light rounded-3">
-                                    <h4><i class="fa-solid fa-circle-check fa-lg text-primary me-3"></i>safety first
-                                    </h4>
-                                    <p class="text-xs mb-0">Gravida dictum fusce placerat ultricies integer quis auctor
-                                        elit.</p>
+                                    <h4><i class="fa-solid fa-circle-check fa-lg text-primary me-3"></i>Safety First</h4>
+                                    <p class="text-xs mb-0">Your safety is our top priority. Travel with peace of mind knowing you're in good hands.</p>
                                 </div>
                             </div>
                             <div class="col-lg-6 col-sm-6">
                                 <div class="card bg-light rounded-3">
-                                    <h4><i class="fa-solid fa-circle-check fa-lg text-primary me-3"></i>affordable
-                                        prices</h4>
-                                    <p class="text-xs mb-0">Gravida dictum fusce placerat ultricies integer quis auctor
-                                        elit.</p>
+                                    <h4><i class="fa-solid fa-circle-check fa-lg text-primary me-3"></i>Affordable Prices</h4>
+                                    <p class="text-xs mb-0">Enjoy competitive pricing for all our long-distance travel services without compromising on quality.</p>
                                 </div>
                             </div>
                         </div>
@@ -205,6 +191,7 @@ ride</span>-sharing.</h2>
             </div>
         </div>
     </section>
+
 
 
     <section class="fact-sec fact-sec2 mb-3">

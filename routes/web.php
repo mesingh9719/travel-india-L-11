@@ -15,6 +15,9 @@ Route::get('/',[HomeController::class,"index"])->name('index');
 
 Route::get('/trip',[TripController::class,"trip"])->name('trip');
 
+//about us
+Route::get('/about-us',[HomeController::class,"aboutUs"])->name('about.us');
+
 Route::get('/car-details',[CarContoller::class,"carsDetails"])->name('car.details');
 Route::get('/create-route-notification',[CarContoller::class,"createRouteNotification"])->name('create.route.notification');
 Route::get('/submit-car-intro',[CarContoller::class,"submitCarIntro"])->name('submit.car.intro');

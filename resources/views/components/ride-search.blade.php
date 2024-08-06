@@ -22,10 +22,15 @@
                                 </div>
                             </div>
                             <div class="d-flex justify-content-between align-items-center mb-3">
-                                <div class="flex-fill m-2" style="width: 147px;">
+                                <div class="flex-fill m-2">
                                     <label for="datetimepicker" class="text-white">Date</label>
-                                    <input name="date" id="datetimepicker" type="text" class="form-control custom-input"
+                                    <input name="date" id="datepicker" type="text" class="form-control custom-input"
                                            placeholder="Select Date">
+                                </div>
+                                <div class="flex-fill m-2">
+                                    <label for="timepicker" class="text-white">Time</label>
+                                    <input name="time" id="timepicker" type="text" class="form-control custom-input"
+                                           placeholder="Select Time">
                                 </div>
                                 <div class="flex-fill m-2">
                                     <label for="select_vehicle" class="text-white">Select Vehicle</label>
@@ -35,6 +40,11 @@
                                             <option value="{{ $vehicleType->id }}">{{ $vehicleType->name }}</option>
                                         @endforeach
                                     </select>
+                                </div>
+                                <div class="flex-fill m-2" style="width: 100px;">
+                                    <label for="seats" class="text-white">Seats</label>
+                                    <input name="seats" type="number" id="seats" class="form-control custom-input"
+                                           placeholder="Enter Number of Seats" value="1">
                                 </div>
                             </div>
                             <div class="text-center p-2">

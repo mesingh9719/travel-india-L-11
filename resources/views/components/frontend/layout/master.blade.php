@@ -50,6 +50,33 @@
         minDate: new Date(),
         step: 15
     });
+
+    // datepicker
+    jQuery('#datepicker').datetimepicker({
+        timepicker: false,
+        format: 'd-m-Y',
+        value: new Date(),
+        minDate: new Date(),
+    });
+
+    // timepicker
+    // Function to get query parameter by name
+    function getQueryParameterByName(name) {
+        const urlParams = new URLSearchParams(window.location.search);
+        return urlParams.get(name);
+    }
+
+    // Get the time value from the query parameters
+    const timeQueryParam = getQueryParameterByName('time');
+
+    // timepicker
+    jQuery('#timepicker').datetimepicker({
+        datepicker: false,
+        format: 'H:i',
+        value: timeQueryParam ? timeQueryParam : new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
+        step: 15
+    });
+
 </script>
 {{ $scripts ?? '' }}
 </body>
