@@ -16,19 +16,20 @@ use Illuminate\Support\Facades\DB;
 
 class RegisterController extends BaseController
 {
-
+  
     public  function index(){
         $user= User::all();
-        return $this->sendResponse($user, 'User register successfully.');
+        return $this->sendResponse($user, 'Success!.');
     }
-    public function register(RegistrationRequest $request)
+    public function register(RegistrationRequest  $request)
     {
+        dd($request);
+        
         DB::beginTransaction();
         try {
             $validator = $request->validated();
 
             $validator['password'] = bcrypt(Str::random(8));
-
             // Handling file uploads
             $fileFields = ['aadhar_image_front', 'aadhar_image_back', 'dl_image', 'profile_image', 'rc_image', 'voter_id_front', 'voter_id_back'];
             $uploadedFiles = CommonHelper::handleFileUploads($request, $fileFields);
@@ -78,4 +79,7 @@ class RegisterController extends BaseController
         }
 
     }
+
+
+   
 }

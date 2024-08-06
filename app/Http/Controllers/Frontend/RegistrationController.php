@@ -5,7 +5,8 @@ namespace App\Http\Controllers\Frontend;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
-
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Api\RegisterController as Api;
 class RegistrationController extends Controller
 {
     /**
@@ -13,7 +14,12 @@ class RegistrationController extends Controller
      */
     public function index()
     {
-        //
+            try {
+                $response =Http::get('https://jsonplaceholder.typicode.com/todos/1');
+                return $response->json();
+            } catch (\Exception $e) {
+                return $e->getMessage();
+            }  
     }
 
     /**
@@ -29,8 +35,11 @@ class RegistrationController extends Controller
      */
     public function store(Request $request)
     {
-        dd($request);
-            // $reponse =Http::post(env('APP_URL'). '/register');
+  
+        // return Http::get('http://localhost/api/test');
+        // $register = new Api();
+        // $data = $register->register();
+        // dd($data);
     }
 
     /**

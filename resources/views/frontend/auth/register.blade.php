@@ -26,7 +26,7 @@
 
                     <!-- Form Wizard -->
                     <form role="form" action="{{url('/register')}}" method="post" enctype= multipart/form-data>
-    
+                    @csrf
                         <h3>Owner/Driver Registration</h3>
                         <p>Fill all form field to go next step</p>
 
