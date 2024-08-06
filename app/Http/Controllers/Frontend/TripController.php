@@ -28,4 +28,9 @@ class TripController extends Controller
 
         return view('frontend.trips.index', compact('trips'));
     }
+
+    public function tripDetail($id){
+        $trip = Trip::find($id);
+        return view('frontend.trips.trip-detail',compact('trip'));
+    }
 }

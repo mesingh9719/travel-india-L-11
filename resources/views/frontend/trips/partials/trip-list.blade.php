@@ -34,7 +34,7 @@
                 </div>
             </div>
             <div class="car-cta mt-3">
-                <a href="book-ride.html" class="btn btn-primary bg-primary">Ride Details</a>
+                <a href="{{ route('trip.detail',$trip->id) }}" class="btn btn-primary bg-primary">Ride Details</a>
             </div>
         </div>
     </article>

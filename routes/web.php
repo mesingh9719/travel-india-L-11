@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/',[HomeController::class,"index"])->name('index');
 
 Route::get('/trip',[TripController::class,"trip"])->name('trip');
+Route::get('/trip-detail/{id}',[TripController::class,"tripDetail"])->name('trip.detail');
 
 //about us
 Route::get('/about-us',[HomeController::class,"aboutUs"])->name('about.us');
