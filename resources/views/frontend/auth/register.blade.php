@@ -21,12 +21,15 @@
     <main class="main sec-padding my-account">
         <div class="container">
             <div class="row">
-                <div
-                    class="col-lg-8 mx-auto ct-bg signup-form col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3 form-wizard">
-
+                <div class="col-lg-8 mx-auto ct-bg signup-form col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3 form-wizard">
+                    @if (session('success'))
+                        <div class="alert alert-success">
+                            {{ session('success') }}
+                        </div>
+                    @endif
                     <!-- Form Wizard -->
                     <form role="form" action="{{url('/register')}}" method="post" enctype= multipart/form-data>
-    
+                    @csrf
                         <h3>Owner/Driver Registration</h3>
                         <p>Fill all form field to go next step</p>
 
@@ -47,14 +50,14 @@
                             <div class="form-wizard-step">
                                 <div class="form-wizard-step-icon"><i class="fa fa-location-arrow"
                                                                       aria-hidden="true"></i></div>
-                                <p>Contact</p>
+                                <p>Vehicle</p>
                             </div>
                             <!-- Step 2 -->
 
                             <!-- Step 4 -->
                             <div class="form-wizard-step">
                                 <div class="form-wizard-step-icon"><i class="fa fa-file" aria-hidden="true"></i></div>
-                                <p>Document</p>
+                                <p>Bank</p>
                             </div>
                             <!-- Step 4 -->
                         </div>
@@ -65,65 +68,76 @@
                          <fieldset>
 
                             <h4>Personal Information: <span></span></h4>
-                            <div class="row">
+                             <div class="row">
                                 <div class="form-group col-lg-6">
-                                    <label>First Name: <span>*</span></label>
-                                    <input type="text" name="First Name" placeholder="First Name"
+                                    <label>Full Name: <span>*</span></label>
+                                    <input type="text" name="full_Name" placeholder="Full Name"
                                         class="form-control required">
                                 </div>
                                 <div class="form-group col-lg-6">
-                                    <label>Last Name: <span>*</span></label>
-                                    <input type="text" name="Last Name" placeholder="Last Name"
+                                    <label>Mobile Number: <span>*</span></label>
+                                    <input type="text" name="mobile_number" placeholder="Mobile Number"
+                                        class="form-control required">
+                                </div>
+                                <div class="form-group col-lg-6">
+                                    <label>Alternate Mobile Number: <span>*</span></label>
+                                    <input type="text" name="full_Name" placeholder="Alternate Mobile Number"
+                                        class="form-control required">
+                                </div>
+                                <div class="form-group col-lg-6">
+                                    <label>Business Name: <span>*</span></label>
+                                    <input type="text" name="Last Name" placeholder="Business Name"
                                         class="form-control required">
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="form-group col-lg-6">
-                                    <label>Father Name: <span>*</span></label>
-                                    <input type="text" name="Father Name" placeholder="Last Name" class="form-control required">
+                                <div class="form-group col-lg-12">
+                                    <label>Business Address: <span>*</span></label>
+                                    <textarea id="business_address" name="business_address" rows="2" cols="50"></textarea>
                                 </div>
-                                <div class="form-group col-lg-6">
-                                    <label>Maratial Status: </label>
-                                    <select class="form-control">
-                                        <option value="">Select Status ...</option>
-                                        <option value="Married">Married</option>
-                                        <option value="Divorced">Divorced</option>
-                                        <option value="Un-Married">Un-Married</option>
-                                        <option value="Widowed">Widowed</option>
-                                    </select>
+                                <div class="form-group col-lg-12">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="" id="same_as_business" onchange="getCheckboxValue()">
+                                        <label class="form-check-label" for="same_as_business">
+                                            Same as Business Address
+                                        </label>
+                                    </div>
                                 </div>
-                            </div>
-                          
-                            
-                        
-                            <div class="row">
-                            <div class="form-group col-lg-6">
-                            <label> Gender: <span>*</span></label>
-                                <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="gender" id="inlineRadio1" value="male" checked>
-                                <label class="form-check-label" for="inlineRadio1">
-                                     Male</label>
-                                </div>
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="gender" id="inlineRadio2" value="female">
-                                    <label class="form-check-label" for="inlineRadio2">
-                                         Female</label>
+                                <div class="form-group col-lg-12">
+                                    <label>Home Address: <span>*</span></label>
+                                    <textarea id="home_address" name="home_address" rows="2" cols="50"></textarea>
                                 </div>
                             </div>
-                            <div class="form-group col-lg-6">
-                            <label>Date of Birth: <span>*</span></label>
-                            <input class="form-control" type="date" placeholder="Your Name">
-                            </div>
-                            </div>
-                        
                             <div class="row">
                                 <div class="form-group col-lg-6">
-                                    <label>Aadher Card: <span>*</span></label>
-                                    <input type="text" name="aadher_number" placeholder="Aadher Number" class="form-control required">
+                                    <label>GST Number: <span>*</span></label>
+                                    <input type="text" name="gst_number" placeholder="GST Number" class="form-control required">
                                 </div>
                                 <div class="form-group col-lg-6">
                                     <label>Pan Card: <span>*</span></label>
                                     <input type="text" name="pan_number" placeholder="Pan Number" class="form-control required">
+                                 </div>
+                            </div>
+                            <div class="row">
+                              <div class="form-group col-lg-6">
+                                    <label>Upload Pan Card: <span>*</span></label>
+                                    <input class="input file" type="file" name="pan_image" aria-label="File browser" accept="image*/, .jpg, .png, .bmp, .heif, .svg" required>
+                                </div>
+                                <div class="form-group col-lg-6">
+                                    <label>Aadher Card: <span>*</span></label>
+                                    <input type="text" name="aadher_number" placeholder="Aadher Number" class="form-control required">
+                                </div>
+                                 <div class="form-group col-lg-6">
+                                    <label>Upload front side of Aadhar Card: <span>*</span></label>
+                                    <input class="input file" type="file" name="aadhar_image_front" aria-label="File browser" accept="image*/, .jpg, .png, .bmp, .heif, .svg" required>
+                                </div>
+                                <div class="form-group col-lg-6">
+                                <label>Upload Back side of Aadhar Card: <span>*</span></label>
+	                            <input class="input file" type="file" name="aadhar_image_back" aria-label="File browser" accept="image*/, .jpg, .png, .bmp, .heif, .svg" required>
+                                </div>
+                                <div class="form-group col-lg-12">
+                                <label>Upload profile Picture: <span>*</span></label>
+	                            <input class="input file" type="file" name="profie_image" aria-label="File browser" accept="image*/, .jpg, .png, .bmp, .heif, .svg" required>
                                 </div>
                             </div>
                             
@@ -136,55 +150,20 @@
 
                         <!-- Form Step 2 -->
                         <fieldset>
-
-                            <h4>Contact Information : <span></span></h4>
-                            <div class="row">
-                                <div class="form-group col-lg-6">
-                                    <label>Email: <span>*</span></label>
-                                    <input type="email" name="Email" placeholder="Email" class="form-control required">
+                            <h4>Vehicle Details : <span></span></h4>
+                            <div class="row" id="dynamic_field">
+                                <div class="form-group col-lg-5">
+                                    <label>RC Number: <span>*</span></label>
+                                    <input type="text" name="rc_number[]" placeholder="RC Number" class="form-control required">
                                 </div>
-                                <div class="form-group col-lg-6">
-                                    <label>Phone: <span>*</span></label>
-                                    <input type="text" name="Phone" placeholder="Phone" class="form-control required">
+                                <div class="form-group col-lg-5">
+                                    <label>Upload RC: <span>*</span></label>
+                                    <input class="input file" type="file" name="rc_image[]" aria-label="File browser" accept="image*/, .jpg, .png, .bmp, .heif, .svg" required>
                                 </div>
+                                <div class="form-group col-lg-2 mt-4">
+                                <button type="button" name="add" id="add" class="btn btn-primary mt-4">+</button></div>
                             </div>
-                            <div class="row">
-                                <div class="form-group col-lg-6">
-                                    <label>Whatsapp Number: <span>*</span></label>
-                                    <input type="text" name="whatsapp_number" placeholder="Whatsapp Number" class="form-control required">
-                                </div>
-                                <div class="form-group col-lg-6">
-                                    <label>City: <span>*</span></label>
-                                    <input type="text" name="City" placeholder="City" class="form-control required">
-                                </div>
-                            </div>
-                            <div class="row">
-                            <div class="form-group col-lg-6">
-                                <label>State: <span>*</span></label>
-                                <input type="text" name="State" placeholder="State" class="form-control required">
-                            </div>
-                            <div class="form-group col-lg-6">
-                                <label>Country: </label>
-                                <select class="form-control">
-                                    <option>Australia</option>
-                                    <option>America</option>
-                                    <option>Bangladesh</option>
-                                    <option>Canada</option>
-                                    <option>England</option>
-                                </select>
-                            </div>
-                            </div>
-                            <div class="row">
-                                <div class="form-group col-lg-12">
-                                    <label>Zip Code: <span>*</span></label>
-                                    <input type="text" name="Zip Code" placeholder="Zip Code" class="form-control required">
-                                </div>
-                                <div class="form-group col-lg-12">
-                                    <label>Address: <span>*</span></label>
-                                    <textarea id="w3review" name="w3review" rows="4" cols="50"></textarea>
-                                </div>
-                            </div>
-                            <div class="form-wizard-buttons">
+                            <div class="form-wizard-buttons mt-2">
                                 <button type="button" class="btn btn-previous mt-2"><i class="fa fa-arrow-left"></i> Previous</button>
                                 <button type="button" class="btn btn-next mt-2">Next <i class="fa fa-arrow-right"></i>
                                 </button>
@@ -197,33 +176,29 @@
 
                         <!-- Form Step 4 -->
                         <fieldset>
-                        <h4>Upload Documents: <span></span></h4>
+                        <h4>Bank Details: <span></span></h4>
+                           
                             <div class="row">
-                                <div class="form-group col-lg-6">
-                                    <label>Upload front side of Aadhar Card: <span>*</span></label>
-                                    <input class="input file" type="file" name="aadhar_image_front" aria-label="File browser" accept="image*/, .jpg, .png, .bmp, .heif, .svg" required>
-                                </div>
-                                <div class="form-group col-lg-6">
-                                <label>Upload Back side of Aadhar Card: <span>*</span></label>
-	                            <input class="input file" type="file" name="aadhar_image_back" aria-label="File browser" accept="image*/, .jpg, .png, .bmp, .heif, .svg" required>
+                            <div class="form-group col-lg-6">
+                                <label for="accountHolderName" class="form-label">Account Holder Name</label>
+                                <input type="text" class="form-control" id="account_holder_name" placeholder="Account Holder Name" required>
                             </div>
+                            <div class="form-group col-lg-6">
+                                <label for="accountNumber" class="form-label">Account Number</label>
+                                <input type="text" class="form-control" id="account_number" placeholder="Account Number" required>
                             </div>
-                            <div class="row">
-                                <div class="form-group col-lg-6">
-                                    <label>Upload Front side of Pan Card: <span>*</span></label>
-                                    <input class="input file" type="file" name="pan_image_front" aria-label="File browser" accept="image*/, .jpg, .png, .bmp, .heif, .svg" required>
-                                </div>
-                                <div class="form-group col-lg-6">
-                                    <label>Upload Profile Picture: <span>*</span></label>
-                                    <input class="input file" type="file" name="profile_picture" aria-label="File browser" accept="image*/, .jpg, .png, .bmp, .heif, .svg" required>
-                                </div>
+                            <div class="form-group col-lg-6">
+                                <label for="routingNumber" class="form-label">IFSC Code</label>
+                                <input type="text" class="form-control" id="ifsc_code" placeholder="IFSC Code" required>
                             </div>
-                            <div class="row">
-                                <div class="form-group col-lg-12">
-                                    <label>Upload Driving Licence: <span>*</span></label>
-                                    <input class="input file" type="file" name="dl_image" aria-label="File browser" accept="image*/, .jpg, .png, .bmp, .heif, .svg" required>
-                                </div>
-                            
+                            <div class="form-group col-lg-6">
+                                <label for="bankName" class="form-label">Bank Name</label>
+                                <input type="text" class="form-control" name="bank_name" placeholder="Bank Name" required>
+                            </div>
+                            <div class="form-group col-lg-6">
+                                <label for="bankName" class="form-label">Branch Name</label>
+                                <input type="text" class="form-control" name="branch_name" placeholder="Branch Name" required>
+                            </div>
                             </div>
                             <br/>
                             <div class="form-wizard-buttons">

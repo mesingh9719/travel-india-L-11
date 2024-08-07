@@ -166,3 +166,66 @@ $('.image_title input').blur(function () {
 });
 
 // image uploader scripts
+  //get checkbox value
+
+  function getCheckboxValue() {
+   
+    // Get the checkbox element
+    var checkbox = document.getElementById('same_as_business');
+    var business = document.getElementById('business_address').value;
+    // alert(business);
+    // Check if the checkbox is checked
+    if (checkbox.checked) {
+        console.log('Checkbox is checked');
+        console.log('Value:', checkbox.value);
+        var business = document.getElementById('home_address').value = business;
+    } else {
+        var business = document.getElementById('home_address').value = "";
+    }
+}
+
+
+
+//add more
+$(document).ready(function(){
+   
+    var i = 1;
+      var length;
+      //var addamount = 0;
+     var addamount = 10;
+  
+    $("#add").click(function(){
+       addamount += 10;
+       console.log('amount: ' + addamount);
+     i++;
+           $('#dynamic_field').after('<div class="row dynamic_field" id="dynamic_field'+i+'"><div class="form-group col-lg-5"><label>RC Number:<span>*</span></label><input type="text" name="rc_number[]" placeholder="RC Number" class="form-control required"></div><div class="form-group col-lg-5"><label>Upload RC:<span>*</span></label><input class="input file" type="file" name="rc_image[]" aria-label="File browser" accept="image*/, .jpg, .png, .bmp, .heif, .svg" required></div><div class="form-group col-lg-2 mt-4"><button type="button" name="remove" id="'+i+'" class="btn btn-danger btn_remove mt-4" style="background: #333931;">X</button></div></div>');
+      });
+  
+    $(document).on('click', '.btn_remove', function(){  
+      addamount -= 10;
+      console.log('amount: ' + addamount);
+        var button_id = $(this).attr("id");     
+        $('#dynamic_field'+button_id+'').remove();  
+      });
+      
+  
+  
+      $("#submit").on('click',function(event){
+      var formdata = $("#add_name").serialize();
+        console.log(formdata);
+        
+        event.preventDefault()
+        
+        $.ajax({
+          url   :"action.php",
+          type  :"POST",
+          data  :formdata,
+          cache :false,
+          success:function(result){
+            alert(result);
+            $("#add_name")[0].reset();
+          }
+        });
+        
+      });
+    });
