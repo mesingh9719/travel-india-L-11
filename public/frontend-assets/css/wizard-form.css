@@ -109,7 +109,7 @@ border: 1px solid #ccc;
 
 
 .form-wizard .btn {
-min-width: 105px;
+min-width: auto;
 height: 40px;
 margin: 0;
 padding: 0 20px;

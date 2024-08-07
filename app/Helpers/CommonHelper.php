@@ -4,7 +4,9 @@ namespace App\Helpers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
-
+use App\Helpers\CommonHelper;
+use App\Http\Requests\User\RegistrationRequest;
+use App\Http\Resources\UserResource;
 class CommonHelper
 {
     public static function handleFileUploads(Request $request, array $fileFields): array
