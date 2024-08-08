@@ -1,46 +1,53 @@
-<div>
-    <div>
-        <h2 class="fw-7 text-white text-uppercase">Find A Ride</h2>
+<div class="booking-area">
+    <div class="container">
+        <div class="booking-form">
+            <h4 class="booking-title">Find Your Ride</h4>
+            <form action="{{ route('trip') }}" method="GET">
+                <div class="row">
+                    <div class="col-lg-4">
+                        <div class="form-group">
+                            <label>Pick Up Location</label>
+                            <input type="text" class="form-control" placeholder="Type Location" name="pickup">
+                            <i class="far fa-location-dot"></i>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="form-group">
+                            <label>Drop Off Location</label>
+                            <input type="text" class="form-control" placeholder="Type Location" name="dropoff">
+                            <i class="far fa-location-dot"></i>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                       <x-select-vehicle/>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="form-group">
+                            <label>Pick Up Date</label>
+                            <input type="text" class="form-control date-picker" placeholder="MM/DD/YY" name="date">
+                            <i class="far fa-calendar-days"></i>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="form-group">
+                            <label>Pick Up Time</label>
+                            <input type="text" class="form-control time-picker" placeholder="00:00 AM" name="time">
+                            <i class="far fa-clock"></i>
+                        </div>
+                    </div>
+                    <div class="col-lg-2">
+                        <div class="form-group">
+                            <label>Seats</label>
+                            <input type="number" class="form-control" placeholder="1" name="seats">
+                        </div>
+                    </div>
+                    <div class="col-lg-2 align-self-end">
+                        <button class="theme-btn" type="submit">
+                            Find Now
+                            <i class="fas fa-arrow-right"></i></button>
+                    </div>
+                </div>
+            </form>
+        </div>
     </div>
-    <form action="{{ route('trip') }}" class="mt-4 pickup-form mt-1">
-        <div class="row">
-            <div class="col-sm-4 mb-2">
-                <label for="pickup" class="text-white">Pickup Location</label>
-                <input name="pickup" type="text" id="pickup" placeholder="Enter Pickup Location"
-                       class="form-control custom-input" value="{{ ucfirst($_GET['pickup']) ?? '' }}">
-            </div>
-            <div class="col-sm-4 mb-2">
-                <label for="dropoff" class="text-white">Dropoff Location</label>
-                <input name="dropoff" type="text" id="dropoff" placeholder="Enter Dropoff Location"
-                       class="form-control custom-input" value="{{ ucfirst($_GET['dropoff']) ?? '' }}">
-            </div>
-            <div class="col-sm-4 mb-2">
-                <label for="datetimepicker" class="text-white
-            ">Date</label>
-                <input name="date" id="datepicker" type="text" class="form-control custom-input"
-                       placeholder="Select Date">
-            </div>
-            <div class="col-sm-4 mb-2">
-                <label for="timepicker" class="text-white">Time</label>
-                <input name="time" id="timepicker" type="text" class="form-control custom-input"
-                       placeholder="Select Time" value="{{ request()->get('time', '') }}">
-
-
-            </div>
-            <div class="col-sm-4">
-                <x-select-vehicle/>
-            </div>
-            <div class="col-sm-4 mb-2">
-                <label for="seats" class="text-white">Seats</label>
-                <input name="seats" type="number" id="seats" class="form-control custom-input"
-                       placeholder="Enter Number of Seats" value="{{ request()->get('seats', 1) }}">
-            </div>
-        </div>
-        <div class="d-flex justify-content-end mt-2">
-            <div>
-                <button class="btn btn-primary">Find A Ride <i
-                        class="fa fa-arrow-right"></i></button>
-            </div>
-        </div>
-    </form>
 </div>

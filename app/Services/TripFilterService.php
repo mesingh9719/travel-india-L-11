@@ -18,7 +18,7 @@ class TripFilterService
 
         if ($request->has('date') && $request->date) {
             try {
-                $date = Carbon::createFromFormat('d-m-Y', $request->date)->format('Y-m-d');
+                $date = Carbon::createFromFormat('m/d/Y', $request->date)->format('Y-m-d');
             } catch (\Exception $e) {
                 return response()->json(['error' => 'Invalid date format'], 400);
             }

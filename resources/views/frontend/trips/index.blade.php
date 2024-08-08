@@ -1,5 +1,15 @@
 <x-frontend.layout.master>
 
+    <div class="site-breadcrumb" style="background: url('{{ asset('frontend-assets/img/breadcrumb/01.jpg') }}')">
+        <div class="container">
+            <h2 class="breadcrumb-title">{{ $_GET['pickup'] ?? '' }} - {{ $_GET['dropoff'] ?? '' }}</h2>
+            <ul class="breadcrumb-menu">
+                <li><a href="index-2.html">Home</a></li>
+                <li><span>Finding Rides</span></li>
+            </ul>
+        </div>
+    </div>
+
     <section class="promo-sec" style="background: url('{{ asset('frontend-assets/images/promo-bg.jpg') }}')no-repeat center center / cover;">
         <div class="container">
             <x-trip.ride-search-section/>
