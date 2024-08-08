@@ -1,7 +1,7 @@
 <x-frontend.layout.master>
     <link rel="stylesheet" href="{{asset('frontend-assets/css/wizard-form.css')}}">
     <section class="promo-sec"
-             style="background: url('frontend-assets/images/promo-bg.jpg')no-repeat center center / cover;">
+             style="background: url('{{ asset('frontend-assets/images/promo-bg.jpg')}}')no-repeat center center / cover;">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
@@ -72,7 +72,7 @@
                                 <div class="form-group col-lg-6">
                                     <label>Full Name: <span>*</span></label>
                                     <input type="text" name="full_Name" placeholder="Full Name"
-                                        class="form-control required">
+                                        class="form-control  required">
                                 </div>
                                 <div class="form-group col-lg-6">
                                     <label>Mobile Number: <span>*</span></label>
@@ -128,7 +128,7 @@
                                     <input type="text" name="aadher_number" placeholder="Aadher Number" class="form-control required">
                                 </div>
                                  <div class="form-group col-lg-6">
-                                    <label>Upload front side of Aadhar Card: <span>*</span></label>
+                                    <label>Upload Front side of Aadhar Card: <span>*</span></label>
                                     <input class="input file" type="file" name="aadhar_image_front" aria-label="File browser" accept="image*/, .jpg, .png, .bmp, .heif, .svg" required>
                                 </div>
                                 <div class="form-group col-lg-6">

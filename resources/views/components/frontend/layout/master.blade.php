@@ -1,84 +1,53 @@
 <!DOCTYPE html>
-<html lang="zxx">
+<html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>{{ $title ?? 'Travel India' }}</title>
-    <meta name="csrf-token" content="{{ csrf_token() }}">
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content>
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="apple-touch-icon" href="images/favicon.html">
-    <link rel="shortcut icon" href="images/favicon.ico">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Epilogue:wght@600;700&amp;family=Sora:wght@400;500;700&amp;display=swap"
-        rel="stylesheet">
+    <meta name="keywords" content>
 
-    <link rel="stylesheet" href="{{asset('frontend-assets/font-awesome/css/all.min.css')}}">
+    <title>Travel India</title>
 
-    <link rel="stylesheet" href="{{asset('frontend-assets/css/swiper-bundle.min.css')}}">
-    <link rel="stylesheet" href="{{asset('frontend-assets/css/nice-select2.css')}}">
-    <link rel="stylesheet" href="{{asset('frontend-assets/css/venobox.min.css')}}">
+    <link rel="icon" type="image/x-icon" href="{{asset('frontend-assets/img/logo/favicon.png')}}">
+
+    <link rel="stylesheet" href="{{asset('frontend-assets/css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{asset('frontend-assets/css/all-fontawesome.min.css')}}">
+    <link rel="stylesheet" href="{{asset('frontend-assets/css/animate.min.css')}}">
+    <link rel="stylesheet" href="{{asset('frontend-assets/css/magnific-popup.min.css')}}">
+    <link rel="stylesheet" href="{{asset('frontend-assets/css/owl.carousel.min.css')}}">
+    <link rel="stylesheet" href="{{asset('frontend-assets/css/jquery-ui.min.css')}}">
+    <link rel="stylesheet" href="{{asset('frontend-assets/css/jquery.timepicker.min.css')}}">
+    <link rel="stylesheet" href="{{asset('frontend-assets/css/nice-select.min.css')}}">
     <link rel="stylesheet" href="{{asset('frontend-assets/css/style.css')}}">
-    <link rel="stylesheet" href="{{ asset('frontend-assets/datetime-picker/jquery.datetimepicker.min.css') }}"/>
-    <link rel="stylesheet" href="{{ asset('frontend-assets/css/custom-style.css') }}"/>
-    {{ $styles ?? '' }}
 </head>
-<body>
+
+<body class="">
 <div class="site-layout">
     <x-frontend.layout.header/>
     {{ $slot }}
     <x-frontend.layout.footer/>
 </div>
 
-<div class="back-top"><i class="fa-solid fa-chevron-up"></i></div>
-<script src="{{asset('frontend-assets/js/jquery-3.7.1.min.js')}}"></script>
-<script src="{{asset('frontend-assets/js/bootstrap.bundle.min.js')}}"></script>
-<script src="{{asset('frontend-assets/js/swiper-bundle.min.js')}}"></script>
-<script src="{{asset('frontend-assets/js/purecounter_vanilla.js')}}"></script>
-<script src="{{asset('frontend-assets/js/venobox.min.js')}}"></script>
-<script src="{{asset('frontend-assets/js/nice-select2.js')}}"></script>
-<script src="{{asset('frontend-assets/js/custom.js')}}"></script>
-<script src="{{ asset('frontend-assets/datetime-picker/jquery.datetimepicker.full.min.js') }}"></script>
-<script>
-    jQuery('#datetimepicker').datetimepicker();
-    jQuery.datetimepicker.setLocale('en');
-    // set default date
-    jQuery('#datetimepicker').datetimepicker({
-        format: 'Y-m-d H:i',
-        value: new Date(),
-        minDate: new Date(),
-        step: 15
-    });
 
-    // datepicker
-    jQuery('#datepicker').datetimepicker({
-        timepicker: false,
-        format: 'd-m-Y',
-        value: new Date(),
-        minDate: new Date(),
-    });
-
-    // timepicker
-    // Function to get query parameter by name
-    function getQueryParameterByName(name) {
-        const urlParams = new URLSearchParams(window.location.search);
-        return urlParams.get(name);
-    }
-
-    // Get the time value from the query parameters
-    const timeQueryParam = getQueryParameterByName('time');
-
-    // timepicker
-    jQuery('#timepicker').datetimepicker({
-        datepicker: false,
-        format: 'H:i',
-        value: timeQueryParam ? timeQueryParam : new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
-        step: 15
-    });
-
-</script>
-{{ $scripts ?? '' }}
+<a href="#" id="scroll-top"><i class="far fa-arrow-up"></i></a>
+    <script src="{{asset('frontend-assets/js/jquery-3.6.0.min.js')}}"></script>
+    <script src="{{asset('frontend-assets/js/modernizr.min.js')}}"></script>
+    <script src="{{asset('frontend-assets/js/bootstrap.bundle.min.js')}}"></script>
+    <script src="{{asset('frontend-assets/js/imagesloaded.pkgd.min.js')}}"></script>
+    <script src="{{asset('frontend-assets/js/jquery.magnific-popup.min.js')}}"></script>
+    <script src="{{asset('frontend-assets/js/isotope.pkgd.min.js')}}"></script>
+    <script src="{{asset('frontend-assets/js/jquery.appear.min.js')}}"></script>
+    <script src="{{asset('frontend-assets/js/jquery.easing.min.js')}}"></script>
+    <script src="{{asset('frontend-assets/js/owl.carousel.min.js')}}"></script>
+    <script src="{{asset('frontend-assets/js/counter-up.js')}}"></script>
+    <script src="{{asset('frontend-assets/js/jquery-ui.min.js')}}"></script>
+    <script src="{{asset('frontend-assets/js/jquery.timepicker.min.js')}}"></script>
+    <script src="{{asset('frontend-assets/js/jquery.nice-select.min.js')}}"></script>
+    <script src="{{asset('frontend-assets/js/wow.min.js')}}"></script>
+    <script src="{{asset('frontend-assets/js/main.js')}}"></script>
 </body>
 
 </html>
