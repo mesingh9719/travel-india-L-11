@@ -19,17 +19,18 @@
                             data-bs-target="#main_nav" aria-expanded="false" aria-label="Toggle navigation">
                             <span class="navbar-toggler-mobile-icon"><i class="far fa-bars"></i></span>
                         </button>
+                        
                     </div>
                     <div class="collapse navbar-collapse justify-content-center" id="main_nav">
                         <ul class="navbar-nav">
                             <li class="nav-item"><a class="nav-link {{ request()->is('/') ? 'active' : '' }}" href="{{ route('index') }}">Home</a></li>
-                            <li class="nav-item"><a class="nav-link" href="about.html">Services</a></li>
-                            <li class="nav-item"><a class="nav-link" href="about.html">About us</a></li>
-                            <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#about">About us</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{{url('contact/create')}}">Contact</a></li>
                         </ul>
                         <div class="nav-right">
                             <div class="nav-right-btn mt-2">
-                                <a href="#" class="theme-btn">Login</a>
+                                <a href="{{url('login')}}" class="theme-btn">Login</a>
                             </div>
                             <div class="nav-right-btn mt-2">
                                 <a href="{{url('register/create')}}" class="theme-btn">Register</a>

@@ -6,6 +6,7 @@ use App\Http\Controllers\Frontend\TripController;
 use App\Http\Controllers\Frontend\UserController;
 use App\Http\Controllers\Frontend\RideController;
 use App\Http\Controllers\Frontend\RegistrationController;
+use App\Http\Controllers\Frontend\ContactController;
 
 use Illuminate\Support\Facades\Route;
 
@@ -38,6 +39,8 @@ Route::get('/ride-request',[RideController::class,"rideRequest"])->name('ride.re
 Route::get('/ride-detail',[RideController::class,"rideDetail"])->name('ride.detail');
 Route::get('/ride-requests-list',[RideController::class,"rideRequestsList"])->name('ride.requests.list');
 
+//contact-us route
+Route::resource('contact', ContactController::class);
 //End frontend route
 
 

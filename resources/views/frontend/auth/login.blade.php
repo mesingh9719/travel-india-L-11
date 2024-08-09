@@ -1,49 +1,84 @@
 <x-frontend.layout.master>
-
-    <section class="promo-sec" style="background: url('{{ asset('frontend-assets/images/promo-bg.jpg') }}')no-repeat center center / cover;">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="promo-wrap text-center">
-                        <h2 class="fw-7 text-white text-uppercase">Login</h2>
-                        <nav aria-label="breadcrumb w-75 mx-auto">
-                            <ol class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="#">Home</a></li>
-                                <li class="breadcrumb-item active" aria-current="page">Login</li>
-                            </ol>
-                        </nav>
-                    </div>
-                </div>
+    <main class="main">
+        <div class="site-breadcrumb" style="background: url('{{ asset('frontend-assets/img/breadcrumb/01.jpg') }}')">
+            <div class="container">
+                <h2 class="breadcrumb-title">Login</h2>
+                <ul class="breadcrumb-menu">
+                    <li><a href="index-2.html">Home</a></li>
+                    <li class="active">Login</li>
+                </ul>
             </div>
         </div>
-    </section>
 
+        <div class="book-ride py-120">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-10 mx-auto">
+                        <div class="booking-form">
+                            <div class="book-ride-head">
+                                <h4 class="booking-title">Owner/Driver Login</h4>
+                            </div>
 
-    <main class="main sec-padding my-account">
-        <div class="container">
-            <div class="row g-0 ct-bg">
-                <div class="col-lg-6 bg-cover" style="background-image: url('{{ asset('frontend-assets/images/reg-svg.svg') }}');">
-                </div>
-                <div class="col-lg-6">
-                    <div class="signup-form">
-                        <h2 class="sub-title border-bottom pb-4">Login</h2>
-
-                        <div class="tab-content pt-4" id="pills-tabContent">
-                            <div class="tab-pane fade show active" id="pills-rider" role="tabpanel"
-                                 aria-labelledby="pills-rider-tab">
-                                <form action="#">
-                                    <div class="mb-3">
-                                        <label for="mobile" class="form-label">Mobile</label>
-                                        <input class="form-control" type="number" name="mobile" placeholder="Mobile *">
+                            <div class="content mb-4">
+                                <!--content inner-->
+                                <div class="content__inner">
+                                    <div class="container">
+                                        <!--content title-->
                                     </div>
-                                    <button class="btn btn-primary mt-3">Send OTP</button>
-                                    <p>Create an account? <a href="{{ route('register.create') }}">Sign Up</a></p>
-                                </form>
+                                    <div class="container">
+                                        <div class="row">
+                                            <div class="col-lg-6">
+                                                <div class="signup-form">
+                                                    <!-- <h2 class="sub-title border-bottom pb-4">Login</h2> -->
+
+                                                    <div class="tab-content pt-4" id="pills-tabContent">
+                                                        <div class="tab-pane fade show  active" id="pills-rider"
+                                                            role="tabpanel" aria-labelledby="pills-rider-tab">
+                                                            <div class="text-center">
+                                                                <img src="{{asset('frontend-assets/img/logo/logo.png')}}"
+                                                                    width="200px">
+                                                            </div>
+                                                            <form action="#">
+                                                                <div class="mb-3">
+                                                                    <label for="mobile"
+                                                                        class="form-label">Mobile</label>
+                                                                    <input class="form-control" type="number"
+                                                                        name="mobile" placeholder="Mobile *">
+                                                                </div>
+                                                                <button class="btn btn-warning mt-3">Send OTP</button>
+                                                                <p>Create an account? <a
+                                                                        href="{{ route('register.create') }}">Sign
+                                                                        Up</a>
+                                                                </p>
+                                                            </form>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <div class="about-left wow fadeInLeft" data-wow-delay=".25s"
+                                                    style="visibility: visible; animation-delay: 0.25s; animation-name: fadeInLeft;">
+                                                    <div class="about-img">
+                                                        <img src="{{asset('frontend-assets/img/about/02.jpg')}}" alt="">
+                                                    </div>
+                                                    <div class="about-experience">
+                                                        <div class="about-experience-icon">
+                                                            <img src="assets/img/icon/taxi-booking.svg" alt="">
+                                                        </div>
+                                                        <b>30 Years Of <br> Quality Service</b>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+        </div>
     </main>
+
 </x-frontend.layout.master>

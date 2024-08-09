@@ -12,7 +12,6 @@
     <title>Travel India</title>
 
     <link rel="icon" type="image/x-icon" href="{{asset('frontend-assets/img/logo/favicon.png')}}">
-
     <link rel="stylesheet" href="{{asset('frontend-assets/css/bootstrap.min.css')}}">
     <link rel="stylesheet" href="{{asset('frontend-assets/css/all-fontawesome.min.css')}}">
     <link rel="stylesheet" href="{{asset('frontend-assets/css/animate.min.css')}}">
@@ -50,6 +49,7 @@
     <script src="{{asset('frontend-assets/js/wow.min.js')}}"></script>
     <script src="{{asset('frontend-assets/js/main.js')}}"></script>
 {{ $js ?? '' }}
+
 </body>
 
 </html>

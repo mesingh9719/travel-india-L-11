@@ -47,7 +47,7 @@
         <x-trip.ride-search-section/>
 
 
-        <div class="about-area py-120">
+        <div class="about-area py-120" id="about">
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-lg-6">
@@ -99,7 +99,7 @@
         </div>
 
 
-        <div class="service-area bg py-120">
+        <div class="service-area bg py-120" id="services">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-6 mx-auto">
