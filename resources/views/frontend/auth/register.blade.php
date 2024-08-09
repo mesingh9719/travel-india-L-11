@@ -1,8 +1,9 @@
 <x-frontend.layout.master>
-
-    <link rel="stylesheet" href="{{asset('frontend-assets/css/wizard-form.css')}}">
+    <x-slot:style>
+        <link rel="stylesheet" href="{{asset('frontend-assets/css/wizard-form.css')}}">
+    </x-slot:style>
     <main class="main">
-        <div class="site-breadcrumb" style="background: url(assets/img/breadcrumb/01.jpg)">
+        <div class="site-breadcrumb" style="background: url('{{ asset('frontend-assets/img/breadcrumb/01.jpg') }}')">
             <div class="container">
                 <h2 class="breadcrumb-title">Register</h2>
                 <ul class="breadcrumb-menu">

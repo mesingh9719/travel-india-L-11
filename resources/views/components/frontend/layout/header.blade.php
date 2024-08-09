@@ -29,10 +29,10 @@
                         </ul>
                         <div class="nav-right">
                             <div class="nav-right-btn mt-2">
-                                <a href="#" class="theme-btn"><span class="fas fa-taxi"></span>Book A Taxi</a>
+                                <a href="#" class="theme-btn">Login</a>
                             </div>
-                            <div class="sidebar-btn">
-                                <button type="button" class="nav-right-link"><i class="far fa-bars-filter"></i></button>
+                            <div class="nav-right-btn mt-2">
+                                <a href="{{url('register/create')}}" class="theme-btn">Register</a>
                             </div>
                         </div>
                     </div>
