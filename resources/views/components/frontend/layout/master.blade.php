@@ -48,6 +48,7 @@
     <script src="{{asset('frontend-assets/js/jquery.nice-select.min.js')}}"></script>
     <script src="{{asset('frontend-assets/js/wow.min.js')}}"></script>
     <script src="{{asset('frontend-assets/js/main.js')}}"></script>
+{{ $js ?? '' }}
 </body>
 
 </html>
