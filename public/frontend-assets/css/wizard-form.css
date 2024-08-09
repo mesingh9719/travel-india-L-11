@@ -1,18 +1,4 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  body {
-    font-family: 'Poppins', sans-serif;
-    font-size: 16px;
-    color: #2c2c2c;
-  }
-  body a {
-    color: inherit;
-    text-decoration: none;
-  }
+/* 
   
   .header__btn {
     transition-property: all;
@@ -56,12 +42,12 @@
     margin-bottom: 40px;
     font-size: 20px;
     text-align: center;
-  }
+  } */
   
-  .content__title--m-sm {
+  /* .content__title--m-sm {
     margin-bottom: 10px;
   }
-  
+   */
   .multisteps-form__progress {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
@@ -124,7 +110,7 @@
     display: none;
   }
   .multisteps-form__progress-btn.js-active {
-    color: #007bff;
+    color: #ffb300;
   }
   .multisteps-form__progress-btn.js-active:before {
     -webkit-transform: translateX(-50%) scale(1.2);
