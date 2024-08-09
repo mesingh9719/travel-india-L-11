@@ -19,10 +19,9 @@
 
     <main class="main sec-padding">
         <div class="container">
-            <div>
-                <h2 class="sub-title border-bottom pb-4">Available Rides </h2>
-                <p class="text-muted">{{ $trips->count() }} rides available with the selected criteria.</p>
-                <h4 class="text-muted text-capitalize">{{ $_GET['pickup'] ?? '' }} - {{ $_GET['dropoff'] ?? '' }}</h4>
+            <div class="mt-4 pt-2">
+                <h2 class="sub-title border-bottom pb-4 d-flex justify-content-between text-capitalize"><div>Available Rides</div> <div>{{ $_GET['pickup'] ?? '' }} - {{ $_GET['dropoff'] ?? '' }}</div></h2>
+                <p class="text-muted pt-2 pb-2 ">{{ $trips->count() }} rides available with the selected criteria.</p>
             </div>
             <div class="row">
                 <div class="col-xl-8">

@@ -7,14 +7,14 @@
                     <div class="col-lg-4">
                         <div class="form-group">
                             <label>Pick Up Location</label>
-                            <input type="text" class="form-control" placeholder="Type Location" name="pickup">
+                            <input type="text" class="form-control" placeholder="Type Location" name="pickup" value="{{ $_GET['pickup'] ?? '' }}">
                             <i class="far fa-location-dot"></i>
                         </div>
                     </div>
                     <div class="col-lg-4">
                         <div class="form-group">
                             <label>Drop Off Location</label>
-                            <input type="text" class="form-control" placeholder="Type Location" name="dropoff">
+                            <input type="text" class="form-control" placeholder="Type Location" name="dropoff" value="{{ $_GET['dropoff'] ?? '' }}">
                             <i class="far fa-location-dot"></i>
                         </div>
                     </div>

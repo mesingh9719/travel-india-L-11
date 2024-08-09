@@ -22,6 +22,7 @@
     <link rel="stylesheet" href="{{asset('frontend-assets/css/jquery.timepicker.min.css')}}">
     <link rel="stylesheet" href="{{asset('frontend-assets/css/nice-select.min.css')}}">
     <link rel="stylesheet" href="{{asset('frontend-assets/css/style.css')}}">
+    <link rel="stylesheet" href="{{asset('frontend-assets/css/custom-style.css')}}">
     {{ $style ?? '' }}
 </head>
 
