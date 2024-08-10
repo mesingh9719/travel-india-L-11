@@ -29,7 +29,7 @@
                         </ul>
                         <div class="nav-right">
                             <div class="nav-right-btn mt-2">
-                                <a href="#" class="theme-btn">Login</a>
+                                <a href="#" class="theme-btn" data-bs-toggle="modal" data-bs-target="#loginModal">Login</a>
                             </div>
                             <div class="nav-right-btn mt-2">
                                 <a href="{{url('register/create')}}" class="theme-btn">Register</a>
@@ -50,3 +50,4 @@
             </nav>
         </div>
     </header>
+<x-login-modal/>

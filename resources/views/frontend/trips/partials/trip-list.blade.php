@@ -41,7 +41,7 @@
                 </div>
                 <div class="col-lg-2">
                     <div class="text-center">
-                        <h3 class="text-primary font-weight-bold mb-0"> ₹ {{ $trip->price ?? '' }}</h3>
+                        <h3 class="font-weight-bold mb-0"> ₹ {{ $trip->price ?? '' }}</h3>
                     </div>
                 </div>
             </div>
