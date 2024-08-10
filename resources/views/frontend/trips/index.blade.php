@@ -22,7 +22,7 @@
             <div class="row">
                 <div class="col-xl-8 mx-auto">
                     <div class="mt-4 pt-2">
-                        <h2 class="sub-title border-bottom pb-4 d-flex justify-content-between text-capitalize"><div>Available Rides</div> <div class="text-warning">{{ $_GET['pickup'] ?? '' }} - {{ $_GET['dropoff'] ?? '' }}</div></h2>
+                        <h2 class="sub-title border-bottom pb-4 d-flex justify-content-between text-capitalize"><div>Available Rides</div> <div class="text-primary">{{ $_GET['pickup'] ?? '' }} - {{ $_GET['dropoff'] ?? '' }}</div></h2>
                         <p class="text-muted pt-2 pb-2 ">{{ $trips->count() }} rides available with the selected criteria.</p>
                     </div>
                     <div class="car-listings">
