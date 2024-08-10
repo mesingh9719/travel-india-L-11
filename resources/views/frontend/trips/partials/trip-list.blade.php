@@ -46,7 +46,7 @@
                 </div>
             </div>
         </div>
-        <div class="card-footer">
+        <div class="card-footer border-0">
             <div class="d-flex justify-content-between">
                 <div>
                     <a href="#" class="btn btn-warning price_negotiate" data-id="{{ $trip->id }}">Negotiate Price</a>
