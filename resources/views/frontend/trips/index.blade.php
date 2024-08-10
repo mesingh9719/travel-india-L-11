@@ -19,12 +19,12 @@
 
     <main class="main sec-padding">
         <div class="container">
-            <div class="mt-4 pt-2">
-                <h2 class="sub-title border-bottom pb-4 d-flex justify-content-between text-capitalize"><div>Available Rides</div> <div>{{ $_GET['pickup'] ?? '' }} - {{ $_GET['dropoff'] ?? '' }}</div></h2>
-                <p class="text-muted pt-2 pb-2 ">{{ $trips->count() }} rides available with the selected criteria.</p>
-            </div>
             <div class="row">
-                <div class="col-xl-8">
+                <div class="col-xl-8 mx-auto">
+                    <div class="mt-4 pt-2">
+                        <h2 class="sub-title border-bottom pb-4 d-flex justify-content-between text-capitalize"><div>Available Rides</div> <div class="text-warning">{{ $_GET['pickup'] ?? '' }} - {{ $_GET['dropoff'] ?? '' }}</div></h2>
+                        <p class="text-muted pt-2 pb-2 ">{{ $trips->count() }} rides available with the selected criteria.</p>
+                    </div>
                     <div class="car-listings">
                         @include('frontend.trips.partials.trip-list')
                         <div class="pager mt-5">
@@ -37,20 +37,6 @@
                             <a href="#" class="next-page"><i class="fa fa-angle-right"></i></a>
                         </div>
                     </div>
-                </div>
-                <div class="col-xl-4">
-                    <aside class="sidebar">
-
-                        <div class="widget">
-                            <h3 class="widget-title">Service Category</h3>
-                            <ul>
-                                <li><a href="#">ride sharing</a></li>
-                                <li><a href="#">Family Trip</a></li>
-                                <li><a href="#">shuttle trip</a></li>
-                                <li><a href="#">Intercity service</a></li>
-                            </ul>
-                        </div>
-                    </aside>
                 </div>
             </div>
         </div>
