@@ -29,7 +29,8 @@ class RegisterController extends BaseController
             $validator = $request->validated();
             $validator['password'] = bcrypt(Str::random(8));
             // Handling file uploads
-            $fileFields = ['aadhar_image_front', 'aadhar_image_back', 'dl_image', 'profile_image', 'rc_image', 'voter_id_front', 'voter_id_back'];
+
+            $fileFields = ['pan_image', 'aadhar_image_front','aadhar_image_back', 'dl_image', 'profile_image', 'rc_image'];
             $uploadedFiles = CommonHelper::handleFileUploads($request, $fileFields);
 
             $userData = array_merge($validator, $uploadedFiles);

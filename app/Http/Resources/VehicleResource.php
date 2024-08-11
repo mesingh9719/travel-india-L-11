@@ -32,6 +32,7 @@ class VehicleResource extends JsonResource
             'vehicle_color' => $this->vehicle_color,
             'vehicle_permit_image' => $this->vehicle_permit_image,
             'vehicle_permit_number' => $this->vehicle_permit_number,
+           
         ];
     }
 }

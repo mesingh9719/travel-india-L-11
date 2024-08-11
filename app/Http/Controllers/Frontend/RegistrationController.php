@@ -4,64 +4,63 @@ namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Http;
-use Illuminate\Support\Facades\Route;
+use App\Models\User;
+use App\Models\BankDetail;
+use Illuminate\View\View;
+use Illuminate\Http\RedirectResponse;
 use App\Http\Requests\User\RegistrationRequest;
-use App\Http\Controllers\Api\RegisterController as UserService;
-use App\Http\Controllers\Frontend\RedirectResponse;
+use App\Http\Requests\User\VehicleRequestStore;
+use App\Http\Requests\BankDetailsRequestStore;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Str;
+use Illuminate\Http\JsonResponse;
+use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\DB;
+use App\Helpers\CommonHelper;
 class RegistrationController extends Controller
 {
-    protected $userservice;
+  
 
     // Dependency Injection via Constructor
-    public function __construct(UserService $userservice)
-    {
-        $this->userservice = $userservice;
-    }
+   
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $data = $this->userservice->index();
-        return json_encode($data);
+        
     }
 
     /**
      * Show the form for creating a new resource.
      */
     public function create()
-    {
-            return view('frontend.auth.register'); 
+    { 
+        return view('frontend.auth.register'); 
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(RegistrationRequest $request)
-    { 
-        DB::beginTransaction();
-        try {
-            $validator = $request->validated();
-            $validator['password'] = bcrypt(Str::random(8));
-            // Handling file uploads
-            $fileFields = ['aadhar_image_front', 'aadhar_image_back', 'dl_image', 'profile_image', 'rc_image', 'voter_id_front', 'voter_id_back'];
-            $uploadedFiles = CommonHelper::handleFileUploads($request, $fileFields);
-
-            $userData = array_merge($validator, $uploadedFiles);
-            $user = User::create($userData);
-
-            // DB::commit();
-            $token = $user->createToken('MyApp')->plainTextToken;
-            // return (new UserResource($user))->additional(['token' => $token]);
-            return redirect()->route('register.create')->with('status', 'Item created successfully!');
-        } catch (\Exception $e) {
-            DB::rollback();
-            // if something goes wrong
-            return redirect()->route('register.create')->with('status', 'Went Something Wrong!'.$e->getMessage());
-           
-        }
-       
+    public function store(VehicleRequestStore $vehiclerequeststore, BankDetailsRequestStore $bankdetailsrequeststore,RegistrationRequest $request)
+    {   
+ 
+        
+        $userValidator = $request->validated();
+        $bankdetailValidator =$bankdetailsrequeststore->validated();
+        $vehicleValidstor  = $vehiclerequeststore->validated();
+        $userValidator['password'] = bcrypt(Str::random(8));
+        $fileFields = ['pan_image', 'aadhar_image_front','aadhar_image_back', 'dl_image', 'profile_image'];
+        $uploadedFiles = CommonHelper::handleFileUploads($request, $fileFields);
+        $userData = array_merge($userValidator, $uploadedFiles);
+        // \DB::connection()->enableQueryLog();
+        $user = User::create($userData);
+        $bank =['user_id' => $user->id];
+        $bankdetails = array_merge($bankdetailValidator, $bank);
+        $user = BankDetail::create($bankdetails);
+        $queries = \DB::getQueryLog();
+        // dd($queries);
+        return back()->with('success', 'User created successfully.');
 
     }
 

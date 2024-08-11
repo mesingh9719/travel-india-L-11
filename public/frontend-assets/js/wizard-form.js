@@ -112,11 +112,12 @@ const setFormHeight = () => {
 
 //STEPS BAR CLICK FUNCTION
 DOMstrings.stepsBar.addEventListener('click', e => {
-
+   
     //check if click target is a step button
     const eventTarget = e.target;
 
     if (!eventTarget.classList.contains(`${DOMstrings.stepsBtnClass}`)) {
+       
         return;
     }
 
@@ -132,9 +133,7 @@ DOMstrings.stepsBar.addEventListener('click', e => {
 
 //PREV/NEXT BTNS CLICK
 DOMstrings.stepsForm.addEventListener('click', e => {
-
     const eventTarget = e.target;
-
     //check if we clicked on `PREV` or NEXT` buttons
     if (!(eventTarget.classList.contains(`${DOMstrings.stepPrevBtnClass}`) || eventTarget.classList.contains(`${DOMstrings.stepNextBtnClass}`))) {
         return;
@@ -148,9 +147,7 @@ DOMstrings.stepsForm.addEventListener('click', e => {
     //set active step and active panel onclick
     if (eventTarget.classList.contains(`${DOMstrings.stepPrevBtnClass}`)) {
         activePanelNum--;
-
     } else {
-
         activePanelNum++;
 
     }
@@ -186,14 +183,11 @@ const setAnimationType = newType => {
 //get checkbox value
 
 function getCheckboxValue() {
-
     // Get the checkbox element
     var checkbox = document.getElementById('same_as_business');
     var business = document.getElementById('business_address').value;
     // Check if the checkbox is checked
     if (checkbox.checked) {
-        console.log('Checkbox is checked');
-        console.log('Value:', checkbox.value);
         var business = document.getElementById('home_address').value = business;
     } else {
         var business = document.getElementById('home_address').value = "";
@@ -214,11 +208,11 @@ $(document).ready(function () {
             <div><div class="row dynamic_field" id="dynamic_field${i}">
                 <div class="form-group col-lg-5">
                     <label>RC Number:<span>*</span></label>
-                    <input type="text" name="rc_number[]" placeholder="RC Number" class="form-control required">
+                    <input type="text" name="rc_number[]" placeholder="RC Number" class="form-control">
                 </div>
                 <div class="form-group col-lg-5">
                     <label>Upload RC:<span>*</span></label>
-                    <input class="form-control" type="file" name="rc_image[]" aria-label="File browser" accept="image/*, .jpg, .png, .bmp, .heif, .svg" required>
+                    <input class="form-control" type="file" name="rc_image_front[]" aria-label="File browser" accept="image/*, .jpg, .png, .bmp, .heif, .svg">
                 </div>
                 <div class="form-group col-lg-2 mt-4">
                     <button type="button" name="remove" id="${i}" class="btn btn-danger btn_remove mt-4" style="background: #333931;">X</button>
@@ -261,3 +255,7 @@ $(document).ready(function () {
 
     });
 });
+
+
+
+

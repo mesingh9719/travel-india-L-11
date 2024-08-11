@@ -23,27 +23,26 @@ class RegistrationRequest extends FormRequest
      */
     public function rules(): array
     {
+        
         return [
             'user_type_id' => 'required|exists:user_types,id',
-            'first_name' => 'required|string',
-            'last_name' => 'required|string',
-            'mobile' => 'required|string|min:10|max:10|unique:users,mobile',
-            'email' => 'required|email|unique:users',
-            'whatsapp_number'=>'required|string|min:10|max:10|unique:users,whatsapp_number',
+            'full_name' => 'required|string',
+            'mobile' => 'required|min:10|max:10|unique:users,mobile',
+            // 'alternate_Mobile'=>'required',
+            'business_name'=>'required',
+            'business_address'=>'required',
+            'home_address'=>'required',
+            'pan_number'=>'required',
+            'aadhar_number'=> 'required',
             'dl_number'=>'required',
             'gst_number'=>'required',
-            'pan_number'=>'required',
-            'aadhar_number'=>'required',
-            'aadhar_image_front'=> 'required|image|mimes:jpeg,png,jpg,gif,pdf|max:2048',
+            // 'rc_number'=>'required',
+            'pan_image'=> 'required|image|mimes:jpeg,png,jpg,gif,pdf|max:2048',
+            'aadhar_image_front'=>'required|image|mimes:jpeg,png,jpg,gif,pdf|max:2048',
             'aadhar_image_back'=>'required|image|mimes:jpeg,png,jpg,gif,pdf|max:2048',
-            'profile_image'=>'required|image|mimes:jpeg,png,jpg,gif,pdf|max:2048',
             'dl_image'=>'required|image|mimes:jpeg,png,jpg,gif,pdf|max:2048',
-            'rc_number'=>'required',
-            'rc_image'=>'required|image|mimes:jpeg,png,jpg,gif,pdf|max:2048',
-            'father_name'=>'required',
-            'address'=>'required',
-            'dob'=>'required',
-            'gender'=>'required',
+            'profile_image'=>'required|image|mimes:jpeg,png,jpg,gif,pdf|max:2048',
+            // 'rc_image'=>'required|image|mimes:jpeg,png,jpg,gif,pdf|max:2048'
         ];
     }
 

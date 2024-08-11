@@ -11,7 +11,6 @@ use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 use Spatie\Activitylog\Traits\LogsActivity;
 use Spatie\Activitylog\LogOptions;
-
 class User extends Authenticatable 
 {
     use HasFactory, Notifiable, HasApiTokens, LogsActivity;
@@ -23,8 +22,6 @@ class User extends Authenticatable
      */
     protected $fillable = [
         "user_type_id",
-        "first_name",
-        "last_name",
         "mobile",
         "email",
         "whatsapp_number",
@@ -44,6 +41,11 @@ class User extends Authenticatable
         "profile_image",
         'voter_id_front',
         'voter_id_back',
+        'full_name', 
+        'alternate_Mobile',
+        'business_name',
+        'business_address',
+        'home_address'
     ];
 
     /**
@@ -84,6 +86,11 @@ class User extends Authenticatable
     public function vehicles(): HasMany
     {
         return $this->hasMany(Vehicle::class);
+    }
+
+    public function bankDetails()
+    {
+        return $this->hasOne(BankDetails::class);
     }
 
 }

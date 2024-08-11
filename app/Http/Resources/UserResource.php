@@ -14,7 +14,6 @@ class UserResource extends JsonResource
      */
     public function toArray(Request $request): array
     {
-       
         return [
             'id' => $this->id,
             'first_name' => $this->first_name,
@@ -36,6 +35,8 @@ class UserResource extends JsonResource
             'address' => $this->address,
             'dob' => $this->dob,
             'gender' => $this->gender,
+            'vehicles' => CommentResource::collection($this->whenLoaded('vehicles')),
+            'bankDetails' => CommentResource::collection($this->whenLoaded('bankDetails')),
         ];
     }
 }

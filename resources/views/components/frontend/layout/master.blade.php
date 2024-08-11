@@ -25,14 +25,12 @@
     <link rel="stylesheet" href="{{asset('frontend-assets/css/custom-style.css')}}">
     {{ $style ?? '' }}
 </head>
-
-<body class="">
+<body>
 <div class="site-layout">
     <x-frontend.layout.header/>
     {{ $slot }}
     <x-frontend.layout.footer/>
 </div>
-
 
 <a href="#" id="scroll-top"><i class="far fa-arrow-up"></i></a>
     <script src="{{asset('frontend-assets/js/jquery-3.6.0.min.js')}}"></script>
@@ -51,6 +49,7 @@
     <script src="{{asset('frontend-assets/js/wow.min.js')}}"></script>
     <script src="{{asset('frontend-assets/js/main.js')}}"></script>
 {{ $js ?? '' }}
+
 </body>
 
 </html>
