@@ -32,7 +32,7 @@
                             class="badge bg-primary badge-primary ml-10-px">Make {{ $trip->vehicle->vehicle_model ?? '' }}</span>
                     </div>
                 </div>
-                <div class="col-lg-2 text-center">
+                <div class="col-lg-2 text-center driver_info" data-id="{{ $trip->user->id }}">
                     <img src="{{ asset('images/'.$trip->user->profile_image ?? '') }}" alt="car"
                          class="img-fluid rounded-circle trip-listing-img">
                     <div class="mt-2">
@@ -49,7 +49,23 @@
         <div class="card-footer border-0">
             <div class="d-flex justify-content-between">
                 <div>
-                    <a href="#" class="btn btn-warning price_negotiate" data-id="{{ $trip->id }}">Negotiate Price</a>
+                    <table>
+                        <tr>
+                            <td>
+                                @if(!auth()->check())
+                                    <a href="#" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#loginModal">Negotiate Price</a>
+                                @else
+                                    <a href="#" class="btn btn-warning price_negotiate" data-id="{{ $trip->id }}">Negotiate Price</a>
+                                @endif
+                            </td>
+                            <td class="price_input_container display-hide pl-10-px">
+                                <input type="text" class="form-control price_input" data-id="{{ $trip->id }}" placeholder="Enter Price">
+                            </td>
+                            <td class="price_submit_container display-hide pl-10-px">
+                                <button class="btn btn-success price_submit" data-id="{{ $trip->id }}">Submit</button>
+                            </td>
+                        </tr>
+                    </table>
                 </div>
                 <div>
                     <a href="{{ route('trip.show', $trip->id) }}" class="btn btn-primary book_now_btn"
@@ -59,5 +75,6 @@
         </div>
     </div>
 @endforeach
+
 
 

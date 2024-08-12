@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
@@ -12,9 +13,9 @@ class UserController extends Controller
     }
 
     // public function register(){
-    //     return view('frontend.auth.register'); 
+    //     return view('frontend.auth.register');
     // }
-    
+
     public function login(){
         return view('frontend.auth.login');
     }
@@ -29,5 +30,21 @@ class UserController extends Controller
 
     public function profileEdit(){
         return view('frontend.users.profile-edit');
+    }
+
+    public function driverInfo($id){
+        $driver = User::find($id);
+
+        if ($driver){
+            return response()->json([
+                'status' => 'success',
+                'data' => $driver
+            ]);
+        }else{
+            return response()->json([
+                'status' => 'error',
+                'message' => 'Driver not found'
+            ]);
+        }
     }
 }

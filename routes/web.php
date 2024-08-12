@@ -38,6 +38,8 @@ Route::get('/ride-request',[RideController::class,"rideRequest"])->name('ride.re
 Route::get('/ride-detail',[RideController::class,"rideDetail"])->name('ride.detail');
 Route::get('/ride-requests-list',[RideController::class,"rideRequestsList"])->name('ride.requests.list');
 
+
+Route::get('driver-info/{id}',[UserController::class,"driverInfo"])->name('driver.info');
 //End frontend route
 
 

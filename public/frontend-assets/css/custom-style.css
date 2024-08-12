@@ -40,3 +40,15 @@
     color: #007bff; /* Change this to your desired color */
     transition: color 0.3s ease; /* Smooth color transition */
 }
+
+.display-hide{
+    display: none;
+}
+
+.pl-10-px{
+    padding-left: 10px;
+}
+
+.driver-image-modal{
+    width: 200px;
+}
