@@ -43,6 +43,8 @@ Route::get('/ride-requests-list',[RideController::class,"rideRequestsList"])->na
 
 //contact-us route
 Route::resource('contact', ContactController::class);
+
+Route::get('driver-info/{id}',[UserController::class,"driverInfo"])->name('driver.info');
 //End frontend route
 
 
