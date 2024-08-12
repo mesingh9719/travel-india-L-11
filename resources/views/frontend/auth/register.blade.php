@@ -16,6 +16,7 @@
         <div class="book-ride py-120">
             <div class="container">
                 <div class="row">
+                    
                     <div class="col-md-10 mx-auto">
                         <div class="booking-form">
                             <div class="book-ride-head">
@@ -29,6 +30,7 @@
                                         <!--content title-->
                                     </div>
                                     <div class="container">
+                                        
                                         <!--multisteps-form-->
                                         <div class="multisteps-form overflow-visible">
                                             <!--progress bar-->
@@ -90,15 +92,18 @@
                                                                                 placeholder="Your Name">
                                                                             <i class="far fa-user"></i>
                                                                         </div>
+                                                                        <span id="nameError" class="error"></span>
                                                                     </div>
                                                                     <div class="col-lg-6">
                                                                         <div class="form-group">
                                                                             <label>Phone Number</label>
                                                                             <input type="text" class="form-control"
                                                                                 name="mobile"
+                                                                                id="mobile"
                                                                                 placeholder="Your Phone">
                                                                             <i class="far fa-phone"></i>
                                                                         </div>
+                                                                        <span id="mobileError" class="error"></span>
                                                                     </div>
                                                                     <div class="col-lg-6">
                                                                         <div class="form-group">
@@ -117,6 +122,7 @@
                                                                                 placeholder="Business Name">
                                                                             <i class="fas fa-building"></i>
                                                                         </div>
+                                                                        <span id="businessError" class="error"></span>
                                                                     </div>
                                                                     <div class="col-lg-12">
                                                                         <div class="form-group">
@@ -151,9 +157,8 @@
                                                                 </div>
                                                                 <div class="button-row d-flex mt-4 justify-content-end">
                                                                     <button
-                                                                        class="btn  btn-warning ml-auto js-btn-next nav-right-btn mt-2"
-                                                                        type="button" title="Next" id="next1">Next <i
-                                                                            class="fas fa-arrow-right"></i></button>
+                                                                        class="btn  btn-warning ml-auto js-btn-next nav-right-btn mt-2 Next_id"
+                                                                        type="button" title="Next" >Next <i class="fas fa-arrow-right"></i></button>
 
                                                                 </div>
                                                             </div>

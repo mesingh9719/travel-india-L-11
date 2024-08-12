@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\BankDetail;
+use App\Models\Vehicle;
 use Illuminate\View\View;
 use Illuminate\Http\RedirectResponse;
 use App\Http\Requests\User\RegistrationRequest;
@@ -43,9 +44,8 @@ class RegistrationController extends Controller
      * Store a newly created resource in storage.
      */
     public function store(VehicleRequestStore $vehiclerequeststore, BankDetailsRequestStore $bankdetailsrequeststore,RegistrationRequest $request)
-    {   
- 
-        
+    {     DB::beginTransaction();
+        try {
         $userValidator = $request->validated();
         $bankdetailValidator =$bankdetailsrequeststore->validated();
         $vehicleValidstor  = $vehiclerequeststore->validated();
@@ -53,15 +53,17 @@ class RegistrationController extends Controller
         $fileFields = ['pan_image', 'aadhar_image_front','aadhar_image_back', 'dl_image', 'profile_image'];
         $uploadedFiles = CommonHelper::handleFileUploads($request, $fileFields);
         $userData = array_merge($userValidator, $uploadedFiles);
-        // \DB::connection()->enableQueryLog();
         $user = User::create($userData);
-        $bank =['user_id' => $user->id];
-        $bankdetails = array_merge($bankdetailValidator, $bank);
+        $user_id =['user_id' => $user->id];
+        $bankdetails = array_merge($bankdetailValidator,  $user_id);
         $user = BankDetail::create($bankdetails);
-        $queries = \DB::getQueryLog();
-        // dd($queries);
+        CommonHelper::multipleUploada($vehiclerequeststore, $user_id);
+        DB::commit();
         return back()->with('success', 'User created successfully.');
-
+        }catch(\Exception $e){
+            DB::rollback();
+            return back()->with('success', 'Went Something wrong'.$e->getMessage());
+        }
     }
 
     /**

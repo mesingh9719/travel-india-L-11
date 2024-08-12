@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\File;
 use App\Helpers\CommonHelper;
 use App\Http\Requests\User\RegistrationRequest;
 use App\Http\Resources\UserResource;
+use App\Models\Vehicle;
 class CommonHelper
 {
     public static function handleFileUploads(Request $request, array $fileFields): array
@@ -34,5 +35,29 @@ class CommonHelper
         $uniqueName = $filename.'_'.time().'.'.$extension;
         $img->move($path, $uniqueName);
         return $uniqueName;
+    }
+
+
+
+    public static function multipleUploada($request, $user_id){
+        if ($request->hasFile('rc_image_front')) {
+            $files = $request->file('rc_image_front');
+            $filePaths = [];
+            foreach ($files as $key => $file) {
+                if ($file->isValid()) {
+                    $fileName = time() . '-' . uniqid() . '.' . $file->getClientOriginalExtension();
+                    $filePath = $file->storeAs('public/images', $fileName); // Store in storage/app/public/uploads
+                    $filePaths[] =  $fileName;
+                }
+                   Vehicle::create([
+                    'user_id' => $user_id['user_id'],
+                    'vehicle_type_id' => 1,
+                    'vehicle_number' => '',
+                    'vehicle_model' => '',
+                    'rc_image_front' =>  $fileName, 
+                    'rc_number' => $request->rc_number[$key]// Ensure this value is appropriate
+                ]);
+            }
+        }
     }
 }

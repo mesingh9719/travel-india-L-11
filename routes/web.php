@@ -10,7 +10,9 @@ use App\Http\Controllers\Frontend\ContactController;
 
 use Illuminate\Support\Facades\Route;
 
-
+Route::get('register-test', function(){
+return view('frontend.auth.register_test');
+});
 //Frontend route
 Route::get('/',[HomeController::class,"index"])->name('index');
 
