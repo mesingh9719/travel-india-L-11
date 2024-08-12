@@ -91,10 +91,10 @@
                                                                     </div>
                                                                     <div class="col-lg-6">
                                                                         <div class="form-group">
-                                                                            <label>Full Name</label>
+                                                                            <label>Full Name <span class="error">*</span></label>
                                                                             <input type="text" class="form-control"
                                                                                 name="full_name"
-                                                                                id="full_name"
+                                                                                id="full_name"  value="{{ old('full_name') }}
                                                                                 placeholder="Your Name">
                                                                             <i class="far fa-user"></i>
                                                                         </div>
@@ -102,10 +102,11 @@
                                                                     </div>
                                                                     <div class="col-lg-6">
                                                                         <div class="form-group">
-                                                                            <label>Phone Number</label>
+                                                                            <label>Phone Number <span class="error">*</span></label>
                                                                             <input type="text" class="form-control"
                                                                                 name="mobile"
                                                                                 id="mobile"
+                                                                                value="{{ old('mobile') }}
                                                                                 placeholder="Your Phone">
                                                                             <i class="far fa-phone"></i>
                                                                         </div>
@@ -117,13 +118,14 @@
                                                                             <input type="text" class="form-control"
                                                                                 placeholder="Alternate Mobile Number"
                                                                                 name="alternate_Mobile"
+                                                                                  value="{{ old('mobile') }}
                                                                                 id="alternate_Mobile">
                                                                             <i class="far fa-phone"></i>
                                                                         </div>
                                                                     </div>
                                                                     <div class="col-lg-6">
                                                                         <div class="form-group">
-                                                                            <label>Business Name</label>
+                                                                            <label>Business Name <span class="error">*</span></label>
                                                                             <input type="text" class="form-control"
                                                                                 name="business_name"
                                                                                 placeholder="Business Name">
@@ -133,7 +135,7 @@
                                                                     </div>
                                                                     <div class="col-lg-12">
                                                                         <div class="form-group">
-                                                                            <label>Business Address</label>
+                                                                            <label>Business Address <span class="error">*</span></label>
                                                                             <textarea class="form-control" rows="2"
                                                                                 name="business_address"
                                                                                 id="business_address"
@@ -153,7 +155,7 @@
                                                                     </div>
                                                                     <div class="col-lg-12">
                                                                         <div class="form-group">
-                                                                            <label>Home Address</label>
+                                                                            <label>Home Address <span class="error">*</span></label>
                                                                             <textarea class="form-control" rows="2"
                                                                                 name="home_address" id="home_address"
                                                                                 placeholder="Enter your Home Address"></textarea>
@@ -185,6 +187,7 @@
                                                                                 <label>Pan Number</label>
                                                                                 <input type="text" class="form-control"
                                                                                     name="pan_number"
+                                                                                     value="{{ old('pan_number') }}
                                                                                     placeholder="pan Number">
 
                                                                             </div>
