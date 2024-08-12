@@ -62,7 +62,7 @@ class RegistrationController extends Controller
         return back()->with('success', 'User created successfully.');
         }catch(\Exception $e){
             DB::rollback();
-            return back()->with('success', 'Went Something wrong'.$e->getMessage());
+            return back()->with('error', 'Went Something wrong'.$e->getMessage());
         }
     }
 

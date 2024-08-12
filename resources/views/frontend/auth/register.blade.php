@@ -59,7 +59,13 @@
                                                             <div class="alert alert-success" role="alert"> 
                                                                 {{ $value }}
                                                             </div>
-                                                        @endsession
+                                                @endsession
+                                                @session('error')
+                                                            <div class="alert alert-danger" role="alert"> 
+                                                                {{ $value }}
+                                                            </div>
+                                                @endsession
+                                                
                                                     
                                                         <!-- Way 1: Display All Error Messages -->
                                                         @if ($errors->any())
