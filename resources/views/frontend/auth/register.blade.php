@@ -110,7 +110,8 @@
                                                                             <label>Alternate Mobile Number</label>
                                                                             <input type="text" class="form-control"
                                                                                 placeholder="Alternate Mobile Number"
-                                                                                name="alternate_Mobile_Number">
+                                                                                name="alternate_Mobile"
+                                                                                id="alternate_Mobile">
                                                                             <i class="far fa-phone"></i>
                                                                         </div>
                                                                     </div>

@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::table('users', function (Blueprint $table) {
             
             $table->string('full_name')->nullable()->after('plan_id');
-            $table->integer('alternate_Mobile')->nullable()->after('full_name');
+            $table->string('alternate_Mobile')->nullable()->after('full_name');
             $table->string('business_name')->nullable()->after('alternate_Mobile');
             $table->longText('business_address')->nullable()->after('business_name');
             $table->longText('home_address')->nullable()->after('business_address');
