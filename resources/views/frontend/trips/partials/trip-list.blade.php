@@ -8,14 +8,15 @@
         <div class="card-body">
             <div class="row align-items-center">
                 <div class="col-lg-2 text-center">
-                    <img src="{{ asset('frontend-assets-11/images/car1.jpg') }}" alt="car"
+                    <img src="{{ asset('frontend-assets/img/taxi/car1.jpg') }}" alt="car"
                          class="img-fluid rounded-circle trip-listing-img">
                     <div class="mt-2">
                         <b class="text-capitalize">{{ $trip->vehicle->vehicle_name ?? '' }}</b>
                     </div>
                 </div>
                 <div class="col-lg-6 text-center text-capitalize">
-                    <h4 class="font-weight-bold mb-2 pickup_drop">{{ $trip->start_trip ?? '' }} - {{ $trip->end_trip ?? '' }}</h4>
+                    <h4 class="font-weight-bold mb-2 pickup_drop">{{ $trip->start_trip ?? '' }}
+                        - {{ $trip->end_trip ?? '' }}</h4>
                     <div class="font-weight-700 font-size-14px mt-2">
                         <span>
                             <i class="far fa-calendar-alt"></i> {{ \Carbon\Carbon::parse($trip->date)->format('d-m-Y') }}
@@ -53,13 +54,17 @@
                         <tr>
                             <td>
                                 @if(!auth()->check())
-                                    <a href="#" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#loginModal">Negotiate Price</a>
+                                    {{--                                    <a href="#" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#loginModal">Negotiate Price</a>--}}
+                                    <a href="#" class="btn btn-warning price_negotiate" data-id="{{ $trip->id }}">Negotiate
+                                        Price</a>
                                 @else
-                                    <a href="#" class="btn btn-warning price_negotiate" data-id="{{ $trip->id }}">Negotiate Price</a>
+                                    <a href="#" class="btn btn-warning price_negotiate" data-id="{{ $trip->id }}">Negotiate
+                                        Price</a>
                                 @endif
                             </td>
                             <td class="price_input_container display-hide pl-10-px">
-                                <input type="text" class="form-control price_input" data-id="{{ $trip->id }}" placeholder="Enter Price">
+                                <input type="text" class="form-control price_input" data-id="{{ $trip->id }}"
+                                       placeholder="Enter Price">
                             </td>
                             <td class="price_submit_container display-hide pl-10-px">
                                 <button class="btn btn-success price_submit" data-id="{{ $trip->id }}">Submit</button>

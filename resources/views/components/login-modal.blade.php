@@ -6,7 +6,7 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="text-center mb-4">
-                    <img src="{{ asset('frontend-assets-11/images/ti-temp-logo.png') }}" alt="logo" class="img-fluid" style="max-width: 150px;">
+                    <img src="{{ asset('images/ti-temp-logo.png1722407367.png') }}" alt="logo" class="img-fluid" style="max-width: 150px;">
                 </div>
                 <h4 class="sub-title border-bottom pb-3 mb-4 text-center" style="color: #333; font-size: 1.5rem;">Login</h4>
                 <p class="text-center" style="color: #6c757d; font-size: 1rem; margin-bottom: 20px;">
