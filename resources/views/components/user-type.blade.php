@@ -1,4 +1,4 @@
-<div class="form-group">
+<div class="form-group required">
     <label for="user_type" class="text-dark">User Type</label>
     <select name="user_type_id" id="user_type" class="form-control custom-input">
         <option value="">Select User Type</option>

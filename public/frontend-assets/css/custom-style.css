@@ -52,3 +52,8 @@
 .driver-image-modal{
     width: 200px;
 }
+
+.form-group.required label:after {
+    content: "*";
+    color: red;
+}
