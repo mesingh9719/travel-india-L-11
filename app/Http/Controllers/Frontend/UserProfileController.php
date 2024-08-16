@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Frontend;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class OwnerProfileController extends Controller
+class UserProfileController extends Controller
 {
     /**
      * Display a listing of the resource.

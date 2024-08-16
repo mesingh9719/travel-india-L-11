@@ -7,8 +7,8 @@ use App\Http\Controllers\Frontend\UserController;
 use App\Http\Controllers\Frontend\RideController;
 use App\Http\Controllers\Frontend\RegistrationController;
 use App\Http\Controllers\Frontend\ContactController;
-use App\Http\Controllers\Frontend\OwnerDriverDashboardController;
-use App\Http\Controllers\Frontend\OwnerProfileController;
+use App\Http\Controllers\Frontend\UserDashboardController;
+use App\Http\Controllers\Frontend\UserProfileController;
 use App\Http\Controllers\Frontend\TotalBookingsController;
 use App\Http\Controllers\Frontend\CancelBookingsController;
 use App\Http\Controllers\Frontend\PaymentHistoryController;
@@ -51,8 +51,8 @@ Route::get('/ride-requests-list',[RideController::class,"rideRequestsList"])->na
 Route::resource('contact', ContactController::class);
 Route::get('driver-info/{id}',[UserController::class,"driverInfo"])->name('driver.info');
 //Owner or Driver Dashboard routes
-Route::resource('/dashboard', OwnerDriverDashboardController::class);
-Route::resource('/profile', OwnerProfileController::class);
+Route::resource('/dashboard', UserDashboardController::class);
+Route::resource('/profile', UserProfileController::class);
 Route::resource('/total-bookings', TotalBookingsController::class);
 Route::resource('/cancel-bookings', CancelBookingsController::class);
 Route::resource('/payment-history', PaymentHistoryController::class);

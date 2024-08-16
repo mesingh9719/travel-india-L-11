@@ -5,15 +5,14 @@ namespace App\Http\Controllers\Frontend;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class OwnerDriverDashboardController extends Controller
+class UserDashboardController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $breadcrumbs = \Breadcrumbs::render('page','HomePage');
-       return view('frontend.users.dashboard',  compact('page', 'breadcrumbs'));
+        return view('frontend.users.dashboard');
     }
 
     /**
