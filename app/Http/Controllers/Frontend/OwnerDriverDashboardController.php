@@ -12,7 +12,8 @@ class OwnerDriverDashboardController extends Controller
      */
     public function index()
     {
-       return view('frontend.users.dashboard');
+        $breadcrumbs = \Breadcrumbs::render('page','HomePage');
+       return view('frontend.users.dashboard',  compact('page', 'breadcrumbs'));
     }
 
     /**
