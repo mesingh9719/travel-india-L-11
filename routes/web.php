@@ -7,6 +7,12 @@ use App\Http\Controllers\Frontend\UserController;
 use App\Http\Controllers\Frontend\RideController;
 use App\Http\Controllers\Frontend\RegistrationController;
 use App\Http\Controllers\Frontend\ContactController;
+use App\Http\Controllers\Frontend\OwnerDriverDashboardController;
+use App\Http\Controllers\Frontend\OwnerProfileController;
+use App\Http\Controllers\Frontend\TotalBookingsController;
+use App\Http\Controllers\Frontend\CancelBookingsController;
+use App\Http\Controllers\Frontend\PaymentHistoryController;
+use App\Http\Controllers\Frontend\UserSettingsController;
 
 use Illuminate\Support\Facades\Route;
 
@@ -43,10 +49,17 @@ Route::get('/ride-requests-list',[RideController::class,"rideRequestsList"])->na
 
 //contact-us route
 Route::resource('contact', ContactController::class);
-
 Route::get('driver-info/{id}',[UserController::class,"driverInfo"])->name('driver.info');
-//End frontend route
+//Owner or Driver Dashboard routes
+Route::resource('/dashboard', OwnerDriverDashboardController::class);
+Route::resource('/profile', OwnerProfileController::class);
+Route::resource('/total-bookings', TotalBookingsController::class);
+Route::resource('/cancel-bookings', CancelBookingsController::class);
+Route::resource('/payment-history', PaymentHistoryController::class);
+Route::resource('/user-setting', UserSettingsController::class);
 
+//End Owner or Driver Dashboard routes
+//End frontend route
 
 
 include __DIR__.'/admin.php';
