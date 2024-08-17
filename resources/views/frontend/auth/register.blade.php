@@ -85,8 +85,7 @@
                                                         @csrf
                                                         <!--single form panel-->
                                                         <div class="multisteps-form__panel p-4 rounded bg-white js-active step"
-                                                            id="step1" "
-                                                        data-animation=" slideHorz">
+                                                            id="step1" data-animation=" slideHorz">
 
                                                             <div class="multisteps-form__content">
                                                                 <div class="row">
@@ -95,7 +94,7 @@
                                                                         <span id="userTypeError" class="error"></span>
                                                                     </div>
                                                                     <div class="col-lg-6">
-                                                                        <div class="form-group required">
+                                                                        <div class="form-group required mb-2">
                                                                             <label>Full Name</label>
                                                                             <input type="text" class="form-control"
                                                                                 name="full_name" id="full_name"
@@ -105,7 +104,7 @@
                                                                         <span id="nameError" class="error"></span>
                                                                     </div>
                                                                     <div class="col-lg-6">
-                                                                        <div class="form-group required">
+                                                                        <div class="form-group required mb-2">
                                                                             <label>Phone Number</label>
                                                                             <input type="text" class="form-control"
                                                                                 name="mobile" id="mobileNumber"
@@ -115,7 +114,7 @@
                                                                         <span id="mobileError" class="error"></span>
                                                                     </div>
                                                                     <div class="col-lg-6">
-                                                                        <div class="form-group">
+                                                                        <div class="form-group mb-2">
                                                                             <label>Alternate Mobile Number</label>
                                                                             <input type="text" class="form-control"
                                                                                 placeholder="Alternate Mobile Number"
@@ -127,7 +126,7 @@
                                                                             class="error"></span>
                                                                     </div>
                                                                     <div class="col-lg-12">
-                                                                        <div class="form-group">
+                                                                        <div class="form-group mb-2">
                                                                             <label>Business Name</label>
                                                                             <input type="text" class="form-control"
                                                                                 name="business_name"
@@ -135,9 +134,9 @@
                                                                             <i class="fas fa-building"></i>
                                                                         </div>
                                                                         <span id="businessError" class="error"></span>
-                                                                    </div>    
+                                                                    </div>
                                                                     <div class="col-lg-4">
-                                                                        <div class="form-group">
+                                                                        <div class="form-group mb-2">
                                                                             <label for="state">State</label>
                                                                             <input type="text" id="business_state" name="business_state"
                                                                                 class="form-control"
@@ -146,26 +145,26 @@
                                                                         <span id="businameStateError" class="error"></span>
                                                                     </div>
                                                                     <div class="col-lg-4">
-                                                                        <div class="form-group">
+                                                                        <div class="form-group mb-2">
                                                                             <label for="city">City:</label>
                                                                             <input type="text" id="business_city" name="business_city"
                                                                                 class="form-control" placeholder="Business City">
                                                                         </div>
                                                                         <span id="businameCityError" class="error"></span>
                                                                     </div>
-                                                                
+
                                                                     <div class="col-lg-4">
-                                                                        <div class="form-group">
+                                                                        <div class="form-group mb-2">
                                                                             <label for="zip">ZIP Code:</label>
                                                                             <input type="text" id="business_zip" name="business_zip"
                                                                                 class="form-control" placeholder="Business zip Code">
                                                                         </div>
                                                                         <span id="businameZipError" class="error"></span>
                                                                     </div>
-                                                                    
+
 
                                                                     <div class="col-lg-12">
-                                                                        <div class="form-group">
+                                                                        <div class="form-group mb-2">
                                                                             <label>Business Address</label>
                                                                             <textarea class="form-control" rows="2"
                                                                                 name="business_address"
@@ -174,7 +173,7 @@
                                                                         </div>
                                                                     </div>
                                                                     <div class="col-lg-12">
-                                                                        <div class="form-check">
+                                                                        <div class="form-check mb-2">
                                                                             <input class="form-check-input"
                                                                                 type="checkbox" id="same_as_business"
                                                                                 onchange="getCheckboxValue()">
@@ -185,7 +184,7 @@
                                                                         </div>
                                                                     </div>
                                                                     <div class="col-lg-4">
-                                                                        <div class="form-group required">
+                                                                        <div class="form-group required mb-2">
                                                                             <label for="state">State</label>
                                                                             <input type="text" id="home_state" name="home_state"
                                                                                 class="form-control"placeholder="State">
@@ -193,25 +192,25 @@
                                                                         <span id="stateError" class="error"></span>
                                                                     </div>
                                                                     <div class="col-lg-4">
-                                                                        <div class="form-group required">
+                                                                        <div class="form-group required mb-2">
                                                                             <label for="city">City</label>
                                                                             <input type="text" id="home_city" name="home_city"
                                                                                 class="form-control"placeholder="City">
                                                                         </div>
                                                                         <span id="cityError" class="error"></span>
                                                                     </div>
-                                                                
+
                                                                     <div class="col-lg-4">
-                                                                        <div class="form-group required">
+                                                                        <div class="form-group required mb-2">
                                                                             <label for="zip">ZIP Code</label>
                                                                             <input type="text" id="home_zip" name="home_zip"
                                                                                 class="form-control"placeholder="ZIP Code">
                                                                         </div>
                                                                         <span id="zipError" class="error"></span>
                                                                     </div>
-                                                                    
+
                                                                     <div class="col-lg-12">
-                                                                        <div class="form-group required">
+                                                                        <div class="form-group required mb-2">
                                                                             <label>Home Address</label>
                                                                             <textarea class="form-control" rows="2"
                                                                                 name="home_address" id="home_address"
@@ -243,7 +242,7 @@
                                                                     <div class="row">
 
                                                                         <div class="col-lg-6">
-                                                                            <div class="form-group">
+                                                                            <div class="form-group mb-2">
                                                                                 <label>Pan Number</label>
                                                                                 <input type="text" class="form-control"
                                                                                     name="pan_number" id="pan_number"
@@ -253,7 +252,7 @@
 
                                                                         </div>
                                                                         <div class="col-lg-6">
-                                                                            <div class="form-group required">
+                                                                            <div class="form-group required mb-2">
                                                                                 <label>Upload Pan card</label>
                                                                                 <input type="file" class="form-control"
                                                                                     name="pan_image" id="pan_image"
@@ -263,47 +262,46 @@
                                                                                 class="error"></span>
                                                                         </div>
 
-                                                                        <div class="col-lg-12">
-                                                                            <div class="form-group required">
+                                                                        <div class="col-lg-4">
+                                                                            <div class="form-group required mb-2">
                                                                                 <label>Aadhar Number</label>
                                                                                 <input type="text" class="form-control"
-                                                                                    name="aadhar_number"
-                                                                                    id="aadhar_number"
-                                                                                    placeholder="Aadhar Number">
+                                                                                       name="aadhar_number"
+                                                                                       id="aadhar_number"
+                                                                                       placeholder="Aadhar Number">
                                                                             </div>
                                                                             <span id="aadharError" class="error"></span>
                                                                         </div>
 
 
-                                                                        <div class="col-lg-6">
-                                                                            <div class="form-group required">
-                                                                                <label>Upload front of Aadhar</label>
+                                                                        <div class="col-lg-4">
+                                                                            <div class="form-group required mb-2">
+                                                                                <label>Aadhar Front</label>
                                                                                 <input type="file" class="form-control"
-                                                                                    name="aadhar_image_front"
-                                                                                    id="aadhar_image_front"
-                                                                                    placeholder="pan Number">
+                                                                                       name="aadhar_image_front"
+                                                                                       id="aadhar_image_front"
+                                                                                       placeholder="pan Number">
 
                                                                             </div>
                                                                             <span id="aadharfrontError"
-                                                                                class="error"></span>
+                                                                                  class="error"></span>
                                                                         </div>
-                                                                        <div class="col-lg-6">
-                                                                            <div class="form-group required">
-                                                                                <label>Upload back and back of
-                                                                                    Aadhar</label>
+                                                                        <div class="col-lg-4">
+                                                                            <div class="form-group required mb-2">
+                                                                                <label>Aadhar Back</label>
                                                                                 <input type="file" class="form-control"
-                                                                                    name="aadhar_image_back"
-                                                                                    id="aadhar_image_back"
-                                                                                    placeholder="pan Number">
+                                                                                       name="aadhar_image_back"
+                                                                                       id="aadhar_image_back"
+                                                                                       placeholder="pan Number">
 
                                                                             </div>
                                                                             <span id="aadharbackError"
-                                                                                class="error"></span>
+                                                                                  class="error"></span>
                                                                         </div>
 
 
                                                                         <div class="col-lg-6">
-                                                                            <div class="form-group required">
+                                                                            <div class="form-group required mb-2">
                                                                                 <label>DL Number</label>
                                                                                 <input type="text" class="form-control"
                                                                                     name="dl_number" id="dl_number"
@@ -313,7 +311,7 @@
                                                                             <span id="dlError" class="error"></span>
                                                                         </div>
                                                                         <div class="col-lg-6">
-                                                                            <div class="form-group required">
+                                                                            <div class="form-group required mb-2">
                                                                                 <label>Upload Driving
                                                                                     License</label>
                                                                                 <input type="file" class="form-control"
@@ -323,7 +321,7 @@
                                                                                 class="error"></span>
                                                                         </div>
                                                                         <div class="col-lg-6">
-                                                                            <div class="form-group">
+                                                                            <div class="form-group mb-2">
                                                                                 <label>GST Number</label>
                                                                                 <input type="text" class="form-control"
                                                                                     name="gst_number"
@@ -332,7 +330,7 @@
                                                                             </div>
                                                                         </div>
                                                                         <div class="col-lg-6">
-                                                                            <div class="form-group">
+                                                                            <div class="form-group mb-2">
                                                                                 <label>Upload Profile Picture</label>
                                                                                 <input type="file" class="form-control"
                                                                                     name="profile_image">
@@ -363,7 +361,7 @@
 
                                                             <div class="multisteps-form__content">
                                                                 <div class="row" id="dynamic_field">
-                                                                    <div class="form-group col-lg-5 required"><label>RC
+                                                                    <div class="form-group col-lg-5 required mb-2"><label>RC
                                                                             Number</label><input type="text"
                                                                             name="rc_number[]" placeholder="RC Number"
                                                                             class="form-control rc_number">
@@ -371,7 +369,7 @@
                                                                         <span id="rcError0" class="error rc_number_error"></span>
                                                                     </div>
                                                                     <!-- <span id="rcError" class="error"></span> -->
-                                                                    <div class="form-group col-lg-5 required">
+                                                                    <div class="form-group col-lg-5 required mb-2">
                                                                         <label>Upload
                                                                             RC</label><input class="form-control rc_image"
                                                                             type="file" name="rc_image_front[]"

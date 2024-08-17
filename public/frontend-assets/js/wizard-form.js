@@ -272,9 +272,9 @@ $(document).ready(function() {
 
     const validateAadharNumber = () => {
         let aadharNumber = $(DOMstrings.aadharNumberInput).val().trim();
-        aadharNumber = aadharNumber.replace(/\D/g, '').slice(0, 10); // Remove non-digits and limit to 10 digits
+        aadharNumber = aadharNumber.replace(/\D/g, '').slice(0, 12); // Remove non-digits and limit to 10 digits
         $(DOMstrings.aadharNumberInput).val(aadharNumber); // Update input value
-        const phonePattern = /^[0-9]{10}$/;
+        const phonePattern = /^[0-9]{12}$/;
         if (aadharNumber === '') {
             $(DOMstrings.aadharError).text('Aadhar Number is required.');
             return false;
