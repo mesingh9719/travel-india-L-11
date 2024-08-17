@@ -243,43 +243,69 @@ $(document).ready(function() {
         return dlFileStaus;
     }
 
+    function vehicleDetailsValidation() {
+        let isValid = true;
 
-    const validateRCNumber = () => {
-        let status = true;
-        $('input[name="rc_number[]"]').each(function(index, element) {
-            const rcNumberPattern = /^[A-Za-z0-9]{6,12}$/;
-            if ($(this).val() === '') {
-                $(DOMstrings.rcError + index).text('RC Number is required');
-                status = false;
-            } else {
-                $(DOMstrings.rcError + index).text('');
-                status = true;
-            }
-            return status;
-        });
+        // Clear all previous error messages
+        $('.rc_number_error, .rc_image_error').text('');
 
-        return status;
-
-    }
-
-    const validateRCImage = () => {
-        let fileStatus = true;
-        $('input[name="rc_image_front[]"]').each(function(index, element) {
-            if (element.type === 'file') {
-                const files = element.files;
-                if (files.length > 0) {
-                    $(DOMstrings.rcimagefrontError + index).text('');
-                    fileStatus = true;
-                } else {
-                    $(DOMstrings.rcimagefrontError + index).text('DL File is required');
-                    console.log("upload File name");
-                    fileStatus = false;
-                }
+        // Validate all RC Numbers
+        $('.rc_number').each(function() {
+            const rcNumber = $(this).val();
+            const errorSpan = $(this).siblings('.rc_number_error');
+            if (rcNumber.trim() === '') {
+                errorSpan.text('RC Number is required.');
+                isValid = false;
             }
         });
-        return fileStatus;
 
+        // Validate all RC Images
+        $('.rc_image').each(function() {
+            const fileInput = $(this)[0].files.length;
+            const errorSpan = $(this).siblings('.rc_image_error');
+            if (fileInput === 0) {
+                errorSpan.text('RC Image is required.');
+                isValid = false;
+            }
+        });
+
+        return isValid;
     }
+
+    let fieldCount = 0;
+
+    $("#add").click(function() {
+        fieldCount++;
+        const newField = `
+            <div class="row dynamic_field" id="dynamic_field${fieldCount}">
+                <div class="form-group col-lg-5 required">
+                    <label>RC Number</label>
+                    <input type="text" name="rc_number[]" placeholder="RC Number" class="form-control rc_number">
+                     <span class="error rc_number_error"></span>
+                </div>
+                <div class="form-group col-lg-5 required">
+                    <label>Upload RC</label>
+                    <input class="form-control rc_image" type="file" name="rc_image_front[]" accept="image/*, .jpg, .png, .bmp, .heif, .svg">
+                     <span class="error rc_image_error"></span>
+                </div>
+                <div class="form-group col-lg-2 mt-4">
+                    <button type="button" name="remove" id="${fieldCount}" class="btn btn-danger btn_remove mt-4" style="background: #333931;">X</button>
+                </div>
+            </div>`;
+        $('#dynamic_field').after(newField);
+        adjustFormHeight(getActivePanel());
+    });
+
+    $(document).on('click', '.btn_remove', function() {
+        $(this).closest('.dynamic_field').remove();
+        adjustFormHeight(getActivePanel());
+    });
+
+
+
+    $(document).on('keyup change', '.rc_number, .rc_image', function() {
+        vehicleDetailsValidation();
+    });
 
     // Validate fields on real-time input
     $(DOMstrings.fullNameInput).on('input', validateFullName);
@@ -293,8 +319,6 @@ $(document).ready(function() {
     $(DOMstrings.aadharImageBack).on('change', validateAaadharCardBackImage);
     $(DOMstrings.dlNumberInput).on('input', validateDLNumber);
     $(DOMstrings.dlimageInput).on('change', validateDLImage);
-    $(DOMstrings.rcNumberInput).on('input', validateRCNumber);
-    $('input[name="rc_image_front[]"]').on('change', validateRCImage);
 
 
     // Steps bar click function
@@ -330,9 +354,7 @@ $(document).ready(function() {
             const isValidPanImage = validatePanCardImage();
             if (!isValidPan || !isValidAadhar || !isValidDL || !isValidDLImage || !isValidAadharback || !isValidAadharfront || !isValidPanImage) return;
         } else if (event.target.classList.contains(DOMstrings.stepNextBtnClass) && panelIndex == 3) {
-            const isValidRC = validateRCNumber();
-            const isValidRCImages = validateRCImage();
-            if (!isValidRC || !isValidRCImages) return;
+            if (!vehicleDetailsValidation()) return;
         }
         setActiveStep(panelIndex);
         setActivePanel(panelIndex);
@@ -345,37 +367,6 @@ $(document).ready(function() {
 
     initializeFormHeight();
     $(window).on('resize', initializeFormHeight);
-
-    // Dynamic field addition/removal
-    let fieldCount = 0;
-
-    $("#add").click(function() {
-        fieldCount++;
-        const newField = `
-            <div><div class="row dynamic_field" id="dynamic_field${fieldCount}">
-                <div class="form-group col-lg-5 required">
-                    <label>RC Number</label>
-                    <input type="text" name="rc_number[]" placeholder="RC Number" class="form-control rc_number">
-                     <span id="rcError${fieldCount}" class="error"></span>
-                </div>
-                <div class="form-group col-lg-5 required">
-                    <label>Upload RC</label>
-                    <input class="form-control rc_image" type="file" name="rc_image_front[]" accept="image/*, .jpg, .png, .bmp, .heif, .svg">
-                     <span id="rcimagefrontError${fieldCount}" class="error"></span>
-                </div>
-                <div class="form-group col-lg-2 mt-4">
-                    <button type="button" name="remove" id="${fieldCount}" class="btn btn-danger btn_remove mt-4" style="background: #333931;">X</button>
-                </div>
-            </div></div>`;
-        $('#dynamic_field').after(newField);
-        adjustFormHeight(getActivePanel());
-    });
-
-    $(document).on('click', '.btn_remove', function() {
-        const fieldId = $(this).attr("id");
-        $(`#dynamic_field${fieldId}`).remove();
-        adjustFormHeight(getActivePanel());
-    });
 });
 
 
