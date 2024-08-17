@@ -1,4 +1,4 @@
-$(document).ready(function () {
+$(document).ready(function() {
     // DOM elements
     const DOMstrings = {
         stepsBtnClass: 'multisteps-form__progress-btn',
@@ -16,7 +16,24 @@ $(document).ready(function () {
         userTypeError: '#userTypeError',
         alternatePhoneNumberError: '#alternateMobileError',
         nameError: '#nameError',
-        mobileError: '#mobileError'
+        mobileError: '#mobileError',
+        panNumberinput: '#pan_number',
+        panError: '#panError',
+        panImageInput: '#pan_image',
+        panImageError: '#panImageError',
+        aadharNumberInput: '#aadhar_number',
+        aadharError: '#aadharError',
+        aadharImageFront: '#aadhar_image_front',
+        aadharfrontError: '#aadharfrontError',
+        aadharImageBack: '#aadhar_image_back',
+        aadharbackError: '#aadharbackError',
+        dlNumberInput: '#dl_number',
+        dlError: '#dlError',
+        dlimageInput: '#dl_image',
+        dlImageError: '#dlImageError',
+        rcNumberInput: 'rc_number',
+        rcError: "#rcError",
+        rcimagefrontError: '#rcimagefrontError',
     };
 
     // Utility functions
@@ -89,13 +106,10 @@ $(document).ready(function () {
         }
     };
 
-
-
     const validatePhoneNumber = () => {
         let phoneNumber = $(DOMstrings.phoneNumberInput).val().trim();
         phoneNumber = phoneNumber.replace(/\D/g, '').slice(0, 10); // Remove non-digits and limit to 10 digits
         $(DOMstrings.phoneNumberInput).val(phoneNumber); // Update input value
-
         const phonePattern = /^[0-9]{10}$/;
         if (phoneNumber === '') {
             $(DOMstrings.mobileError).text('Phone Number is required.');
@@ -123,11 +137,165 @@ $(document).ready(function () {
         }
     }
 
+    const validatepan_number = () => {
+        let validatepan_number = $(DOMstrings.panNumberinput).val().trim();
+        $(DOMstrings.panNumberinput).val(validatepan_number);
+        const panRegex = /^[A-Z]{5}[0-9]{4}[A-Z]{1}$/;
+        if (validatepan_number == "") {
+            $(DOMstrings.panError).text('Pan Number is required.');
+            return false;
+        } else if (!panRegex.test(validatepan_number)) {
+            $(DOMstrings.panError).text('Invalid PAN number.');
+            return false;
+        } else {
+            $(DOMstrings.panError).text('');
+            return true;
+        }
+    }
+
+    const validateAadharNumber = () => {
+        let aadharNumber = $(DOMstrings.aadharNumberInput).val().trim();
+        aadharNumber = aadharNumber.replace(/\D/g, '').slice(0, 10); // Remove non-digits and limit to 10 digits
+        $(DOMstrings.aadharNumberInput).val(aadharNumber); // Update input value
+        const phonePattern = /^[0-9]{10}$/;
+        if (aadharNumber === '') {
+            $(DOMstrings.aadharError).text('Aadhar Number is required.');
+            return false;
+        } else if (!phonePattern.test(aadharNumber)) {
+            $(DOMstrings.aadharError).text('Invalid Aadhar Number. It must be 12 digits.');
+            return false;
+        } else {
+            $(DOMstrings.aadharError).text('');
+            return true;
+        }
+    };
+
+    const validatePanCardImage = () => {
+        let dlFileStaus = true;
+        const fileInput = $(DOMstrings.panImageInput)[0];
+        const files = fileInput.files;
+        if (files.length > 0) {
+            $(DOMstrings.panImageError).text('');
+            dlFileStaus = true;
+        } else {
+            $(DOMstrings.panImageError).text("Please Upload Your Pan.");
+            dlFileStaus = false;
+        }
+        return dlFileStaus;
+    }
+    const validateAaadharCardFrontImage = () => {
+        let dlFileStaus = true;
+        const fileInput = $(DOMstrings.aadharImageFront)[0];
+        const files = fileInput.files;
+        if (files.length > 0) {
+            $(DOMstrings.aadharfrontError).text('');
+            dlFileStaus = true;
+        } else {
+            $(DOMstrings.aadharfrontError).text("Please  Upload Your Front page of Aadhar.");
+            dlFileStaus = false;
+        }
+        return dlFileStaus;
+    }
+
+
+    const validateAaadharCardBackImage = () => {
+        let dlFileStaus = true;
+        const fileInput = $(DOMstrings.aadharImageBack)[0];
+        const files = fileInput.files;
+        if (files.length > 0) {
+            // Display the file names
+            $(DOMstrings.aadharbackError).text('');
+            dlFileStaus = true;
+        } else {
+            $(DOMstrings.aadharbackError).text("Please Upload Your Back page of Aadhar.");
+            dlFileStaus = false;
+        }
+        return dlFileStaus;
+    }
+
+    const validateDLNumber = () => {
+        let dlNumber = $(DOMstrings.dlNumberInput).val().trim();
+        $(DOMstrings.dlNumberInput).val(dlNumber); // Update input value
+        const dlPattern = /^[A-Za-z0-9]{10}$/;
+        if (dlNumber === '') {
+            $(DOMstrings.dlError).text('DL Number is required.');
+            return false;
+        } else if (!dlPattern.test(dlNumber)) {
+            $(DOMstrings.dlError).text('Invalid DL Number. It must be 10 digits.');
+            return false;
+        } else {
+            $(DOMstrings.dlError).text('');
+            return true;
+        }
+    };
+
+    const validateDLImage = () => {
+        let dlFileStaus = true;
+        const fileInput = $(DOMstrings.dlimageInput)[0];
+        const files = fileInput.files;
+        if (files.length > 0) {
+            $(DOMstrings.dlImageError).text('');
+            dlFileStaus = true;
+        } else {
+            $(DOMstrings.dlImageError).text("Please Upload DL.");
+            dlFileStaus = false;
+        }
+        return dlFileStaus;
+    }
+
+
+    const validateRCNumber = () => {
+        let status = true;
+        $('input[name="rc_number[]"]').each(function(index, element) {
+            const rcNumberPattern = /^[A-Za-z0-9]{6,12}$/;
+            if ($(this).val() === '') {
+                $(DOMstrings.rcError + index).text('RC Number is required');
+                status = false;
+            } else {
+                $(DOMstrings.rcError + index).text('');
+                status = true;
+            }
+            return status;
+        });
+
+        return status;
+
+    }
+
+    const validateRCImage = () => {
+        let fileStatus = true;
+        $('input[name="rc_image_front[]"]').each(function(index, element) {
+            if (element.type === 'file') {
+                const files = element.files;
+                if (files.length > 0) {
+                    $(DOMstrings.rcimagefrontError + index).text('');
+                    fileStatus = true;
+                } else {
+                    $(DOMstrings.rcimagefrontError + index).text('DL File is required');
+                    console.log("upload File name");
+                    fileStatus = false;
+                }
+            }
+        });
+        return fileStatus;
+
+    }
+
     // Validate fields on real-time input
     $(DOMstrings.fullNameInput).on('input', validateFullName);
     $(DOMstrings.phoneNumberInput).on('input', validatePhoneNumber);
     $(DOMstrings.alternatePhoneNumberInput).on('input', validateAlternatePhoneNumber);
     $(DOMstrings.userTypeInput).on('change', userTypeValidation);
+    $(DOMstrings.panNumberinput).on('input', validatepan_number);
+    $(DOMstrings.panImageInput).on('change', validatePanCardImage);
+    $(DOMstrings.aadharNumberInput).on('input', validateAadharNumber);
+    $(DOMstrings.aadharImageFront).on('change', validateAaadharCardFrontImage);
+    $(DOMstrings.aadharImageBack).on('change', validateAaadharCardBackImage);
+    $(DOMstrings.dlNumberInput).on('input', validateDLNumber);
+    $(DOMstrings.dlimageInput).on('change', validateDLImage);
+    $(DOMstrings.rcNumberInput).on('input', validateRCNumber);
+    $('input[name="rc_image_front[]"]').on('change', validateRCImage);
+
 
     // Steps bar click function
     DOMstrings.stepsBar.addEventListener('click', (event) => {
@@ -142,20 +310,30 @@ $(document).ready(function () {
     DOMstrings.stepsForm.addEventListener('click', (event) => {
         if (!event.target.classList.contains(DOMstrings.stepPrevBtnClass) && !event.target.classList.contains(DOMstrings.stepNextBtnClass)) return;
 
-        // Validate on "Next" button click
-        if (event.target.classList.contains(DOMstrings.stepNextBtnClass)) {
+        const currentPanel = findParent(event.target, DOMstrings.stepFormPanelClass);
+        let panelIndex = Array.from(DOMstrings.stepFormPanels).indexOf(currentPanel);
+
+        panelIndex += event.target.classList.contains(DOMstrings.stepPrevBtnClass) ? -1 : 1;
+        if (event.target.classList.contains(DOMstrings.stepNextBtnClass) && panelIndex == 1) {
             const isValidName = validateFullName();
             const isValidPhone = validatePhoneNumber();
             const isValidAlternatePhone = validateAlternatePhoneNumber();
             const isValidUserType = userTypeValidation();
             if (!isValidName || !isValidPhone || !isValidAlternatePhone || !isValidUserType) return;
+        } else if (event.target.classList.contains(DOMstrings.stepNextBtnClass) && panelIndex == 2) {
+            const isValidPan = validatepan_number();
+            const isValidAadhar = validateAadharNumber();
+            const isValidDL = validateDLNumber();
+            const isValidDLImage = validateDLImage();
+            const isValidAadharfront = validateAaadharCardFrontImage();
+            const isValidAadharback = validateAaadharCardBackImage();
+            const isValidPanImage = validatePanCardImage();
+            if (!isValidPan || !isValidAadhar || !isValidDL || !isValidDLImage || !isValidAadharback || !isValidAadharfront || !isValidPanImage) return;
+        } else if (event.target.classList.contains(DOMstrings.stepNextBtnClass) && panelIndex == 3) {
+            const isValidRC = validateRCNumber();
+            const isValidRCImages = validateRCImage();
+            if (!isValidRC || !isValidRCImages) return;
         }
-
-        const currentPanel = findParent(event.target, DOMstrings.stepFormPanelClass);
-        let panelIndex = Array.from(DOMstrings.stepFormPanels).indexOf(currentPanel);
-
-        panelIndex += event.target.classList.contains(DOMstrings.stepPrevBtnClass) ? -1 : 1;
-
         setActiveStep(panelIndex);
         setActivePanel(panelIndex);
     });
@@ -169,19 +347,21 @@ $(document).ready(function () {
     $(window).on('resize', initializeFormHeight);
 
     // Dynamic field addition/removal
-    let fieldCount = 1;
+    let fieldCount = 0;
 
-    $("#add").click(function () {
+    $("#add").click(function() {
         fieldCount++;
         const newField = `
             <div><div class="row dynamic_field" id="dynamic_field${fieldCount}">
-                <div class="form-group col-lg-5">
-                    <label>RC Number:<span>*</span></label>
-                    <input type="text" name="rc_number[]" placeholder="RC Number" class="form-control">
+                <div class="form-group col-lg-5 required">
+                    <label>RC Number</label>
+                    <input type="text" name="rc_number[]" placeholder="RC Number" class="form-control rc_number">
+                     <span id="rcError${fieldCount}" class="error"></span>
                 </div>
-                <div class="form-group col-lg-5">
-                    <label>Upload RC:<span>*</span></label>
-                    <input class="form-control" type="file" name="rc_image_front[]" accept="image/*, .jpg, .png, .bmp, .heif, .svg">
+                <div class="form-group col-lg-5 required">
+                    <label>Upload RC</label>
+                    <input class="form-control rc_image" type="file" name="rc_image_front[]" accept="image/*, .jpg, .png, .bmp, .heif, .svg">
+                     <span id="rcimagefrontError${fieldCount}" class="error"></span>
                 </div>
                 <div class="form-group col-lg-2 mt-4">
                     <button type="button" name="remove" id="${fieldCount}" class="btn btn-danger btn_remove mt-4" style="background: #333931;">X</button>
@@ -191,9 +371,23 @@ $(document).ready(function () {
         adjustFormHeight(getActivePanel());
     });
 
-    $(document).on('click', '.btn_remove', function () {
+    $(document).on('click', '.btn_remove', function() {
         const fieldId = $(this).attr("id");
         $(`#dynamic_field${fieldId}`).remove();
         adjustFormHeight(getActivePanel());
     });
 });
+
+
+//select address same as business address
+function getCheckboxValue() {
+    // Get the checkbox element
+    var checkbox = document.getElementById('same_as_business');
+    var business = document.getElementById('business_address').value;
+    // Check if the checkbox is checked
+    if (checkbox.checked) {
+        var business = document.getElementById('home_address').value = business;
+    } else {
+        var business = document.getElementById('home_address').value = "";
+    }
+}

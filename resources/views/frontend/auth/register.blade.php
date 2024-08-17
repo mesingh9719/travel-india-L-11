@@ -195,68 +195,80 @@
                                                                         <label>Pan Number</label>
                                                                         <input type="text" class="form-control"
                                                                                name="pan_number"
+                                                                               id="pan_number"
                                                                                placeholder="pan Number">
-
                                                                     </div>
+                                                                    <span id="panError" class="error"></span>
+                                                                    
                                                                 </div>
                                                                 <div class="col-lg-6">
-                                                                    <div class="form-group">
+                                                                    <div class="form-group required">
                                                                         <label>Upload Pan card</label>
                                                                         <input type="file" class="form-control"
                                                                                name="pan_image"
+                                                                               id="pan_image"
                                                                                placeholder="pan Number">
-
                                                                     </div>
-
+                                                                    <span id="panImageError" class="error"></span>
                                                                 </div>
 
                                                                 <div class="col-lg-6">
-                                                                    <div class="form-group">
+                                                                    <div class="form-group required">
                                                                         <label>Aadhar Number</label>
                                                                         <input type="text" class="form-control"
                                                                                name="aadhar_number"
+                                                                                id="aadhar_number"
                                                                                placeholder="Aadhar Number">
                                                                     </div>
+                                                                    <span id="aadharError" class="error"></span>
                                                                 </div>
 
 
                                                                 <div class="col-lg-6">
-                                                                    <div class="form-group">
+                                                                    <div class="form-group required">
                                                                         <label>Upload front of Aadhar</label>
                                                                         <input type="file" class="form-control"
                                                                                name="aadhar_image_front"
+                                                                                id="aadhar_image_front"
                                                                                placeholder="pan Number">
 
                                                                     </div>
+                                                                    <span id="aadharfrontError" class="error"></span>
                                                                 </div>
                                                                 <div class="col-lg-6">
-                                                                    <div class="form-group">
+                                                                    <div class="form-group required">
                                                                         <label>Upload back and back of
                                                                             Aadhar</label>
                                                                         <input type="file" class="form-control"
                                                                                name="aadhar_image_back"
+                                                                               id="aadhar_image_back"
                                                                                placeholder="pan Number">
 
                                                                     </div>
+                                                                    <span id="aadharbackError" class="error"></span>
                                                                 </div>
 
 
                                                                 <div class="col-lg-6">
-                                                                    <div class="form-group">
+                                                                    <div class="form-group required">
                                                                         <label>DL Number</label>
                                                                         <input type="text" class="form-control"
                                                                                name="dl_number"
+                                                                                id="dl_number"
                                                                                placeholder="DL Number">
                                                                     </div>
+
+                                                                    <span id="dlError" class="error"></span>
                                                                 </div>
                                                                 <div class="col-lg-6">
-                                                                    <div class="form-group">
+                                                                    <div class="form-group required">
                                                                         <label>Upload Driving
                                                                             License</label>
                                                                         <input type="file" class="form-control"
-                                                                               name="dl_image">
-
+                                                                               name="dl_image"
+                                                                               id="dl_image">
                                                                     </div>
+                                                                    <span id="dlImageError" class="error"></span>
                                                                 </div>
                                                                 <div class="col-lg-6">
                                                                     <div class="form-group">
@@ -299,17 +311,23 @@
 
                                                     <div class="multisteps-form__content">
                                                         <div class="row" id="dynamic_field">
-                                                            <div class="form-group col-lg-5"><label>RC
-                                                                    Number:<span>*</span></label><input
+                                                            <div class="form-group col-lg-5 required"><label>RC
+                                                                    Number</label><input
                                                                     type="text" name="rc_number[]"
                                                                     placeholder="RC Number"
-                                                                    class="form-control"></div>
-                                                            <div class="form-group col-lg-5"><label>Upload
-                                                                    RC:<span>*</span></label><input
+                                                                    class="form-control rc_number">
+                                                                    
+                                                                    <span id="rcError0" class="error"></span>
+                                                                </div>
+                                                                <!-- <span id="rcError" class="error"></span> -->
+                                                            <div class="form-group col-lg-5 required"><label>Upload
+                                                                    RC</label><input
                                                                     class="form-control" type="file"
                                                                     name="rc_image_front[]" aria-label="File browser"
-                                                                ></div>
-                                                            <div class="form-group col-lg-2 mt-4">
+                                                                >
+                                                                <span id="rcimagefrontError0" class="error"></span>
+                                                            </div>
+                                                            <div class="form-group col-lg-2 mt-4 required">
                                                                 <button type="button" name="add" id="add"
                                                                         class="btn btn-warning mt-4">+
                                                                 </button>
