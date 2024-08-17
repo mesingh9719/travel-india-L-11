@@ -44,7 +44,8 @@ class RegistrationController extends Controller
      * Store a newly created resource in storage.
      */
     public function store(VehicleRequestStore $vehiclerequeststore, BankDetailsRequestStore $bankdetailsrequeststore,RegistrationRequest $request)
-    {     DB::beginTransaction();
+    {     
+        DB::beginTransaction();
         try {
         $userValidator = $request->validated();
         $bankdetailValidator =$bankdetailsrequeststore->validated();

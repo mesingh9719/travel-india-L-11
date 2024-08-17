@@ -263,7 +263,7 @@
                                                                                 class="error"></span>
                                                                         </div>
 
-                                                                        <div class="col-lg-6">
+                                                                        <div class="col-lg-12">
                                                                             <div class="form-group required">
                                                                                 <label>Aadhar Number</label>
                                                                                 <input type="text" class="form-control"
@@ -368,16 +368,16 @@
                                                                             name="rc_number[]" placeholder="RC Number"
                                                                             class="form-control rc_number">
 
-                                                                        <span id="rcError0" class="error"></span>
+                                                                        <span id="rcError0" class="error rc_number_error"></span>
                                                                     </div>
                                                                     <!-- <span id="rcError" class="error"></span> -->
                                                                     <div class="form-group col-lg-5 required">
                                                                         <label>Upload
-                                                                            RC</label><input class="form-control"
+                                                                            RC</label><input class="form-control rc_image"
                                                                             type="file" name="rc_image_front[]"
-                                                                            aria-label="File browser">
+                                                                            aria-label="File browser" accept="image/*, .jpg, .png, .bmp, .heif, .svg">
                                                                         <span id="rcimagefrontError0"
-                                                                            class="error"></span>
+                                                                            class="error rc_image_error"></span>
                                                                     </div>
                                                                     <div class="form-group col-lg-2 mt-4 required">
                                                                         <button type="button" name="add" id="add"

@@ -440,8 +440,6 @@ $(document).ready(function() {
     $(DOMstrings.aadharImageBack).on('change', validateAaadharCardBackImage);
     $(DOMstrings.dlNumberInput).on('input', validateDLNumber);
     $(DOMstrings.dlimageInput).on('change', validateDLImage);
-    $('input[name="rc_image_front[]"]').on('change', validateRCImage);
-    $('input[name="rc_number[]"]').on('input', validateRCNumber);
     $(DOMstrings.businessCityInput).on('input', validateBusinessCity);
     $(DOMstrings.businessZipInput).on('input', validateBusinessZip);
     $(DOMstrings.businessStateInput).on('input', validateBusinessState);
@@ -463,7 +461,6 @@ $(document).ready(function() {
 
         const currentPanel = findParent(event.target, DOMstrings.stepFormPanelClass);
         let panelIndex = Array.from(DOMstrings.stepFormPanels).indexOf(currentPanel);
-
         panelIndex += event.target.classList.contains(DOMstrings.stepPrevBtnClass) ? -1 : 1;
         if (event.target.classList.contains(DOMstrings.stepNextBtnClass) && panelIndex == 1) {
             const isValidName = validateFullName();
@@ -478,6 +475,7 @@ $(document).ready(function() {
             const isValidBusinessZip = validateBusinessZip();
             const isValidBusinessState = validateBusinessState();
             const isValidBusinessAddress = validateBusinessAddress();
+
             if (!isValidName || !isValidPhone || !isValidHomeState || !isValidHomeCity || !isValidHomeZip || !isValidHomeAddress || !isValidAlternatePhone || !isValidUserType || !isValidBusinessCity || !isValidBusinessZip || !isValidBusinessState || !isValidBusinessAddress) return;
         } else if (event.target.classList.contains(DOMstrings.stepNextBtnClass) && panelIndex == 2) {
             const isValidPan = validatepan_number();
@@ -509,7 +507,7 @@ $(document).ready(function() {
 function getCheckboxValue() {
     // Get the checkbox element
     const checkbox = document.getElementById('same_as_business');
-    const business = ['business_address', 'businame_state', 'business_city', 'business_zip'];
+    const business = ['business_address', 'business_state', 'business_city', 'business_zip'];
     const home = ['home_address', 'home_state', 'home_city', 'home_zip'];
     // Check if the checkbox is checked
     if (checkbox.checked) {

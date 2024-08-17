@@ -22,11 +22,11 @@ class BankDetailsRequestStore extends FormRequest
     public function rules(): array
     {
         return [
-                'account_holder_name'=>'required',
-                'account_number'=>'required',
-                'ifsc_code'=>'required',
-                'bank_name'=>'required',
-                'branch_name'=>'required',
+                'account_holder_name'=>'nullable',
+                'account_number'=>'nullable',
+                'ifsc_code'=>'nullable',
+                'bank_name'=>'nullable',
+                'branch_name'=>'nullable',
         ];
     }
 }
