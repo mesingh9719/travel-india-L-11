@@ -34,6 +34,22 @@ $(document).ready(function() {
         rcNumberInput: 'rc_number',
         rcError: "#rcError",
         rcimagefrontError: '#rcimagefrontError',
+        homeStateInput: '#home_state',
+        stateError: '#stateError',
+        homeCityInput: '#home_city',
+        cityError: '#cityError',
+        homeZipInput: '#home_zip',
+        zipError: '#zipError',
+        homeAddressInput: '#home_address',
+        addressError: '#addressError',
+        businessStateInput: '#business_state',
+        businessStateError: '#businessStateError',
+        businessCityInput: '#business_city',
+        businessCityError: '#businessCityError',
+        businessZipInput: '#business_zip',
+        businessZipError: '#businessZipError',
+        businessAddressInput: '#business_address',
+        businessAddressError: '#businessAddressError'
     };
 
     // Utility functions
@@ -153,6 +169,107 @@ $(document).ready(function() {
         }
     }
 
+    const validateBusinessState = () => {
+        const businessState = $(DOMstrings.businessStateInput).val();
+        if (businessState != '' && !/^[a-zA-Z\s]+$/.test(businessState)) {
+            $(DOMstrings.businessStateError).text('State Name can only contain letters and spaces.');
+            return false;
+        } else {
+            $(DOMstrings.businessStateError).text('');
+            return true;
+        }
+    };
+
+    const validateBusinessCity = () => {
+
+        const businessCity = $(DOMstrings.businessCityInput).val();
+        if (businessCity != '' && !/^[a-zA-Z\s]+$/.test(businessCity)) {
+            $(DOMstrings.businessCityError).text('City Name can only contain letters and spaces.');
+            return false;
+        } else {
+            $(DOMstrings.businessCityError).text('');
+            return true;
+        }
+    }
+
+    const validateBusinessZip = () => {
+        const businesszip = $(DOMstrings.businessZipInput).val();
+        if (businesszip != '' && !/^\d+(\.\d+)?$/.test(businesszip)) {
+            $(DOMstrings.businessZipError).text('Invalid Zip Code. It must be Number.');
+            return false;
+        } else {
+            $(DOMstrings.businessZipError).text('');
+            return true;
+        }
+    }
+
+
+    const validateBusinessAddress = () => {
+        const businessAddress = $(DOMstrings.businessAddressInput).val();
+        if (businessAddress != '' && businessAddress.length > 150) {
+            $(DOMstrings.businessAddressError).text('Address must be 150 characters or less..');
+            return false;
+        } else {
+            $(DOMstrings.businessAddressError).text('');
+            return true;
+        }
+    }
+    const validateHomeState = () => {
+        const homeState = $(DOMstrings.homeStateInput).val().trim();
+        if (homeState === '') {
+            $(DOMstrings.stateError).text('State is required.');
+            return false;
+        } else if (!/^[a-zA-Z\s]+$/.test(homeState)) {
+            $(DOMstrings.stateError).text('State Name can only contain letters and spaces.');
+            return false;
+        } else {
+            $(DOMstrings.stateError).text('');
+            return true;
+        }
+    }
+
+    const validateHomeCity = () => {
+        const homeCity = $(DOMstrings.homeCityInput).val().trim();
+        if (homeCity === '') {
+            $(DOMstrings.cityError).text('City is required.');
+            return false;
+        } else if (!/^[a-zA-Z\s]+$/.test(homeCity)) {
+            $(DOMstrings.cityError).text('City Name can only contain letters and spaces.');
+            return false;
+        } else {
+            $(DOMstrings.cityError).text('');
+            return true;
+        }
+    };
+
+    const validateHomeZip = () => {
+        const homezip = $(DOMstrings.homeZipInput).val().trim();
+        if (homezip === '') {
+            $(DOMstrings.zipError).text('Zip Code is required.');
+            return false;
+        } else if (!/^\d+(\.\d+)?$/.test(homezip)) {
+            $(DOMstrings.zipError).text('Invalid Zip Code. It must be Number.');
+            return false;
+        } else {
+            $(DOMstrings.zipError).text('');
+            return true;
+        }
+    };
+    const validateHomeAddress = () => {
+        const homeAddress = $(DOMstrings.homeAddressInput).val().trim();
+
+        if (homeAddress === '') {
+            $(DOMstrings.addressError).text('Address is required.');
+            return false;
+        } else if (homeAddress.length > 150) {
+            $(DOMstrings.addressError).text('Address must be 150 characters or less..');
+            return false;
+        } else {
+            $(DOMstrings.addressError).text('');
+            return true;
+        }
+    };
+
     const validateAadharNumber = () => {
         let aadharNumber = $(DOMstrings.aadharNumberInput).val().trim();
         aadharNumber = aadharNumber.replace(/\D/g, '').slice(0, 10); // Remove non-digits and limit to 10 digits
@@ -168,7 +285,7 @@ $(document).ready(function() {
             $(DOMstrings.aadharError).text('');
             return true;
         }
-    };
+    }
 
     const validatePanCardImage = () => {
         let dlFileStaus = true;
@@ -286,6 +403,10 @@ $(document).ready(function() {
     $(DOMstrings.phoneNumberInput).on('input', validatePhoneNumber);
     $(DOMstrings.alternatePhoneNumberInput).on('input', validateAlternatePhoneNumber);
     $(DOMstrings.userTypeInput).on('change', userTypeValidation);
+    $(DOMstrings.homeStateInput).on('input', validateHomeState);
+    $(DOMstrings.homeCityInput).on('input', validateHomeCity);
+    $(DOMstrings.homeZipInput).on('input', validateHomeZip);
+    $(DOMstrings.homeAddressInput).on('input', validateHomeAddress);
     $(DOMstrings.panNumberinput).on('input', validatepan_number);
     $(DOMstrings.panImageInput).on('change', validatePanCardImage);
     $(DOMstrings.aadharNumberInput).on('input', validateAadharNumber);
@@ -293,8 +414,12 @@ $(document).ready(function() {
     $(DOMstrings.aadharImageBack).on('change', validateAaadharCardBackImage);
     $(DOMstrings.dlNumberInput).on('input', validateDLNumber);
     $(DOMstrings.dlimageInput).on('change', validateDLImage);
-    $(DOMstrings.rcNumberInput).on('input', validateRCNumber);
     $('input[name="rc_image_front[]"]').on('change', validateRCImage);
+    $('input[name="rc_number[]"]').on('input', validateRCNumber);
+    $(DOMstrings.businessCityInput).on('input', validateBusinessCity);
+    $(DOMstrings.businessZipInput).on('input', validateBusinessZip);
+    $(DOMstrings.businessStateInput).on('input', validateBusinessState);
+    $(DOMstrings.businessAddressInput).on('input', validateBusinessAddress);
 
 
     // Steps bar click function
@@ -319,7 +444,15 @@ $(document).ready(function() {
             const isValidPhone = validatePhoneNumber();
             const isValidAlternatePhone = validateAlternatePhoneNumber();
             const isValidUserType = userTypeValidation();
-            if (!isValidName || !isValidPhone || !isValidAlternatePhone || !isValidUserType) return;
+            const isValidHomeState = validateHomeState();
+            const isValidHomeCity = validateHomeCity();
+            const isValidHomeZip = validateHomeZip();
+            const isValidHomeAddress = validateHomeAddress();
+            const isValidBusinessCity = validateBusinessCity();
+            const isValidBusinessZip = validateBusinessZip();
+            const isValidBusinessState = validateBusinessState();
+            const isValidBusinessAddress = validateBusinessAddress();
+            if (!isValidName || !isValidPhone || !isValidHomeState || !isValidHomeCity || !isValidHomeZip || !isValidHomeAddress || !isValidAlternatePhone || !isValidUserType || !isValidBusinessCity || !isValidBusinessZip || !isValidBusinessState || !isValidBusinessAddress) return;
         } else if (event.target.classList.contains(DOMstrings.stepNextBtnClass) && panelIndex == 2) {
             const isValidPan = validatepan_number();
             const isValidAadhar = validateAadharNumber();
@@ -382,12 +515,25 @@ $(document).ready(function() {
 //select address same as business address
 function getCheckboxValue() {
     // Get the checkbox element
-    var checkbox = document.getElementById('same_as_business');
-    var business = document.getElementById('business_address').value;
+    const checkbox = document.getElementById('same_as_business');
+    const business = ['business_address', 'businame_state', 'business_city', 'business_zip'];
+    const home = ['home_address', 'home_state', 'home_city', 'home_zip'];
     // Check if the checkbox is checked
     if (checkbox.checked) {
-        var business = document.getElementById('home_address').value = business;
+        for (let i = 0; i < business.length; i++) {
+            const businessElement = document.getElementById(business[i]);
+            const homeElement = document.getElementById(home[i]);
+            if (businessElement && homeElement) {
+                homeElement.value = businessElement.value;
+            } else {
+                console.error(`Element with ID "${business[i]}" or "${home[i]}" not found.`);
+            }
+        }
+
     } else {
-        var business = document.getElementById('home_address').value = "";
+        document.getElementById('home_address').value = "";
+        document.getElementById('home_state').value = "";
+        document.getElementById('home_city').value = "";
+        document.getElementById('home_zip').value = "";
     }
 }

@@ -12,7 +12,7 @@
                                 <div class="dashboard-widget dashboard-widget-color-1">
                                     <div class="dashboard-widget-info">
                                         <h1>05</h1>
-                                        <span>Upcoming Booking</span>
+                                        <span>Upcoming Booking </span>
                                     </div>
                                     <div class="dashboard-widget-icon">
                                         <i class="fal fa-list"></i>

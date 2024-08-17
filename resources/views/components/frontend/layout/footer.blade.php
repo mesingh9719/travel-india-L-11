@@ -15,7 +15,7 @@
                                 <li><a href="tel:+21236547898"><i class="far fa-phone"></i>+2 123 654 7898</a></li>
                                 <li><i class="far fa-map-marker-alt"></i>25/B Milford Road, New York</li>
                                 <li><a
-                                        href="https://live.themewild.com/cdn-cgi/l/email-protection#3851565e57785d40595548545d165b5755"><i
+                                        href="#"><i
                                             class="far fa-envelope"></i><span class="__cf_email__"
                                             data-cfemail="caa3a4aca58aafb2aba7baa6afe4a9a5a7">[email&#160;protected]</span></a>
                                 </li>
