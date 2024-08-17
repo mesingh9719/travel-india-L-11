@@ -20,8 +20,9 @@
                 <div class="collapse navbar-collapse justify-content-center" id="main_nav">
                     <ul class="navbar-nav">
                         <li class="nav-item"><a class="nav-link {{ request()->is('/') ? 'active' : '' }}" href="{{ route('index') }}">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#about">About us</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#services">Packages</a></li>
                         <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#about">About us</a></li>
                         <li class="nav-item"><a class="nav-link" href="{{url('contact/create')}}">Contact</a></li>
                     </ul>
                     <div class="nav-right">
