@@ -61,3 +61,16 @@
 .mb-2{
     margin-bottom: 0.5rem;
 }
+
+.pr-3{
+    padding-right: 0.75rem;
+}
+.mr-2{
+    margin-right: 0.5rem;
+}
+
+.passenger-img{
+    height: 70px ;
+    width: 70px;
+    border-radius: 50%;
+}
