@@ -4,8 +4,10 @@ namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
 use App\Models\Trip;
+use App\Models\VehicleType;
 use App\Services\TripFilterService;
 use Illuminate\Http\Request;
+
 
 class TripController extends Controller
 {
@@ -33,4 +35,6 @@ class TripController extends Controller
         $trip = Trip::find($id);
         return view('frontend.trips.trip-detail',compact('trip'));
     }
+
+
 }

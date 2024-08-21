@@ -39,7 +39,7 @@
                                                         <td>
                                                             <div class="table-list-info">
                                                                 <a href="#">
-                                                                    <img src="assets/img/taxi/01.png" alt>
+                                                                    <img src="{{asset('frontend-assets/img/taxi/01.png')}}" alt>
                                                                     <div class="table-list-content">
                                                                         <h6>Mercedes Benz Taxi</h6>
                                                                         <span>Booking ID: #123456</span>
@@ -64,7 +64,7 @@
                                                         <td>
                                                             <div class="table-list-info">
                                                                 <a href="#">
-                                                                    <img src="assets/img/taxi/01.png" alt>
+                                                                    <img src="{{asset('frontend-assets/img/taxi/01.png')}}" alt>
                                                                     <div class="table-list-content">
                                                                         <h6>Mercedes Benz Taxi</h6>
                                                                         <span>Booking ID: #123456</span>
@@ -89,7 +89,7 @@
                                                         <td>
                                                             <div class="table-list-info">
                                                                 <a href="#">
-                                                                    <img src="assets/img/taxi/01.png" alt>
+                                                                    <img src="{{asset('frontend-assets/img/taxi/01.png')}}" alt>
                                                                     <div class="table-list-content">
                                                                         <h6>Mercedes Benz Taxi</h6>
                                                                         <span>Booking ID: #123456</span>
@@ -114,7 +114,7 @@
                                                         <td>
                                                             <div class="table-list-info">
                                                                 <a href="#">
-                                                                    <img src="assets/img/taxi/01.png" alt>
+                                                                    <img src="{{asset('frontend-assets/img/taxi/01.png')}}" alt>
                                                                     <div class="table-list-content">
                                                                         <h6>Mercedes Benz Taxi</h6>
                                                                         <span>Booking ID: #123456</span>
@@ -139,7 +139,7 @@
                                                         <td>
                                                             <div class="table-list-info">
                                                                 <a href="#">
-                                                                    <img src="assets/img/taxi/01.png" alt>
+                                                                    <img src="{{asset('frontend-assets/img/taxi/01.png')}}" alt>
                                                                     <div class="table-list-content">
                                                                         <h6>Mercedes Benz Taxi</h6>
                                                                         <span>Booking ID: #123456</span>

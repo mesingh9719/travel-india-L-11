@@ -13,17 +13,26 @@ use App\Http\Controllers\Frontend\TotalBookingsController;
 use App\Http\Controllers\Frontend\CancelBookingsController;
 use App\Http\Controllers\Frontend\PaymentHistoryController;
 use App\Http\Controllers\Frontend\UserSettingsController;
+use App\Http\Controllers\Frontend\DriverTripController;
+use App\Http\Controllers\Frontend\VehicleController;
+use App\Http\Controllers\Frontend\DLController;
 
 use Illuminate\Support\Facades\Route;
 
-Route::get('register-test', function(){
-return view('frontend.auth.register_test');
-});
+
 //Frontend route
 Route::get('/',[HomeController::class,"index"])->name('index');
-
 Route::get('/trip',[TripController::class,"trip"])->name('trip');
 Route::get('/trip-detail/{id}',[TripController::class,"tripDetail"])->name('trip.detail');
+
+//Driver trip route
+Route::get('/add-trip',[DriverTripController::class,"create"])->name('add.trip');
+Route::get('trip-list', [DriverTripController::class, 'index'])->name('trip.list');
+
+//dl route
+Route::resource('/driving-license', DLController::class);
+//vehicle route
+Route::resource('/vehicle', VehicleController::class);
 
 //about us
 Route::get('/about-us',[HomeController::class,"aboutUs"])->name('about.us');

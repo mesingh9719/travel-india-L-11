@@ -43,6 +43,7 @@ class RegistrationRequest extends FormRequest
             "home_state" =>'required',
             "home_city" => 'required',
             "home_zip" =>'required',
+            "same_as_business" =>'nullable',
             // 'rc_number'=>'required',
             'pan_image'=> 'required|image|mimes:jpeg,png,jpg,gif,pdf|max:2048',
             'aadhar_image_front'=>'required|image|mimes:jpeg,png,jpg,gif,pdf|max:2048',

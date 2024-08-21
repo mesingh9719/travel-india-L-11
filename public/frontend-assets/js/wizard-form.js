@@ -397,7 +397,7 @@ $(document).ready(function() {
             <div class="row dynamic_field" id="dynamic_field${fieldCount}">
                 <div class="form-group col-lg-5 required">
                     <label>RC Number</label>
-                    <input type="text" name="rc_number[]" placeholder="RC Number" class="form-control rc_number">
+                    <input type="text" name="rc_number[]" placeholder="RC Number" class="form-control rc_number"  maxlength="15">
                      <span class="error rc_number_error"></span>
                 </div>
                 <div class="form-group col-lg-5 required">
