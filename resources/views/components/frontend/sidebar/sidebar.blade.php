@@ -6,8 +6,8 @@
                 <button type="button" class="profile-img-btn"><i class="far fa-camera"></i></button>
                 <input type="file" class="profile-img-file">
             </div>
-            <h5>Antoni Jonson</h5>
-            <p>99098767894</p>
+            <h5>{{ auth()->user()->full_name ?? '' }}</h5>
+            <p>{{ auth()->user()->mobile ?? '' }}</p>
         </div>
         <ul class="user-profile-sidebar-list">
             <li><a  class="{{ request()->routeIs('dashboard.index') ? 'active' : '' }}" href="{{route('dashboard.index')}}"><i class="far fa-gauge-high"></i> Dashboard</a></li>
