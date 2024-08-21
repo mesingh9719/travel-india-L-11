@@ -3,7 +3,7 @@
     <select name="user_type_id" id="user_type" class="form-control custom-input">
         <option value="">Select User Type</option>
             @foreach($userTypes as $userType)
-                <option value="{{ $userType->id }}">{{ $userType->name }}</option>
+                <option value="{{ $userType->id }}"   {{ old('options') == $userType->id ? 'selected' : '' }}>{{ $userType->name }}</option>
             @endforeach
     </select>
 </div>

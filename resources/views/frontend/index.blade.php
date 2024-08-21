@@ -17,7 +17,7 @@
                         <li>
                             <h6>Email</h6>
                             <a
-                                href="https://live.themewild.com/cdn-cgi/l/email-protection#0c65626a634c69746d617c6069226f6361"><i
+                                href="#"><i
                                     class="far fa-envelope"></i><span class="__cf_email__"
                                     data-cfemail="5f363139301f3a273e322f333a713c3032">[email&#160;protected]</span></a>
                         </li>
