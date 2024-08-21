@@ -34,7 +34,7 @@ Route::get('/trip-detail/{id}',[TripController::class,"tripDetail"])->name('trip
 
 //Driver trip route
 Route::get('/add-trip',[DriverTripController::class,"create"])->name('add.trip');
-Route::get('trip-list', [DriverTripController::class, 'index'])->name('trip.list');
+Route::get('/trip-list', [DriverTripController::class, 'index'])->name('trip.list');
 
 //dl route
 Route::resource('/driving-license', DLController::class);
