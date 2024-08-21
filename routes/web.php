@@ -16,11 +16,15 @@ use App\Http\Controllers\Frontend\UserSettingsController;
 
 use Illuminate\Support\Facades\Route;
 
-Route::get('register-test', function(){
-return view('frontend.auth.register_test');
-});
 //Frontend route
 Route::get('/',[HomeController::class,"index"])->name('index');
+Route::resource('/register', RegistrationController::class);
+
+// auth users
+Route::group(['middleware' => 'auth'], function () {
+    Route::resource('/dashboard', UserDashboardController::class);
+});
+
 
 Route::get('/trip',[TripController::class,"trip"])->name('trip');
 Route::get('/trip-detail/{id}',[TripController::class,"tripDetail"])->name('trip.detail');
@@ -35,7 +39,7 @@ Route::get('/submit-car-for-rent',[CarContoller::class,"submitCarForRent"])->nam
 Route::get('/submit-route',[CarContoller::class,"submitRoute"])->name('submit.route');
 
 //User routes
-Route::resource('/register', RegistrationController::class);
+
 Route::get('/login',[UserController::class,"login"])->name('login');
 Route::get('/user-profile',[UserController::class,"userProfile"])->name('user.profile');
 Route::get('/profile-balance',[UserController::class,"profileBalance"])->name('profile.balance');
@@ -51,7 +55,7 @@ Route::get('/ride-requests-list',[RideController::class,"rideRequestsList"])->na
 Route::resource('contact', ContactController::class);
 Route::get('driver-info/{id}',[UserController::class,"driverInfo"])->name('driver.info');
 //Owner or Driver Dashboard routes
-Route::resource('/dashboard', UserDashboardController::class);
+
 Route::resource('/profile', UserProfileController::class);
 Route::resource('/total-bookings', TotalBookingsController::class);
 Route::resource('/cancel-bookings', CancelBookingsController::class);

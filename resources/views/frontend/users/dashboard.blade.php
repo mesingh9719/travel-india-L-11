@@ -1,7 +1,6 @@
 <x-frontend.layout.master>
 <main class="main">
-<x-frontend.banner.banner />
-    <div class="user-profile py-120">
+    <div class="user-profile mt-4 mb-4">
         <div class="container">
             <div class="row">
             <x-frontend.sidebar.sidebar />
@@ -42,138 +41,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <div class="user-profile-card">
-                                    <h4 class="user-profile-card-title">Upcoming Booking</h4>
-                                    <div class="table-responsive">
-                                        <table class="table text-nowrap">
-                                            <thead>
-                                                <tr>
-                                                    <th>Cab Info</th>
-                                                    <th>Journey Date</th>
-                                                    <th>Drop Off Location</th>
-                                                    <th>Price</th>
-                                                    <th>Status</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <td>
-                                                        <div class="table-list-info">
-                                                            <a href="#">
-                                                                <img src="({{asset('frontend-assets/img/taxi/01.png')}}" alt>
-                                                                <div class="table-list-content">
-                                                                    <h6>Mercedes Benz Taxi</h6>
-                                                                    <span>Booking ID: #123456</span>
-                                                                </div>
-                                                            </a>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <span>24 February, 2023</span>
-                                                        <p>03:15 PM</p>
-                                                    </td>
-                                                    <td>
-                                                        77 Sunshine Strip, Harlingen
-                                                    </td>
-                                                    <td>$650</td>
-                                                    <td><span class="badge badge-primary">Upcoming</span></td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        <div class="table-list-info">
-                                                            <a href="#">
-                                                                <img src="({{asset('frontend-assets/img/taxi/01.png')}}" alt>
-                                                                <div class="table-list-content">
-                                                                    <h6>Mercedes Benz Taxi</h6>
-                                                                    <span>Booking ID: #123456</span>
-                                                                </div>
-                                                            </a>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <span>24 February, 2023</span>
-                                                        <p>03:15 PM</p>
-                                                    </td>
-                                                    <td>
-                                                        77 Sunshine Strip, Harlingen
-                                                    </td>
-                                                    <td>$650</td>
-                                                    <td><span class="badge badge-primary">Upcoming</span></td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        <div class="table-list-info">
-                                                            <a href="#">
-                                                                <img src="({{asset('frontend-assets/img/taxi/01.png')}}" alt>
-                                                                <div class="table-list-content">
-                                                                    <h6>Mercedes Benz Taxi</h6>
-                                                                    <span>Booking ID: #123456</span>
-                                                                </div>
-                                                            </a>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <span>24 February, 2023</span>
-                                                        <p>03:15 PM</p>
-                                                    </td>
-                                                    <td>
-                                                        77 Sunshine Strip, Harlingen
-                                                    </td>
-                                                    <td>$650</td>
-                                                    <td><span class="badge badge-primary">Upcoming</span></td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        <div class="table-list-info">
-                                                            <a href="#">
-                                                                <img src="({{asset('frontend-assets/img/taxi/01.png')}}" alt>
-                                                                <div class="table-list-content">
-                                                                    <h6>Mercedes Benz Taxi</h6>
-                                                                    <span>Booking ID: #123456</span>
-                                                                </div>
-                                                            </a>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <span>24 February, 2023</span>
-                                                        <p>03:15 PM</p>
-                                                    </td>
-                                                    <td>
-                                                        77 Sunshine Strip, Harlingen
-                                                    </td>
-                                                    <td>$650</td>
-                                                    <td><span class="badge badge-primary">Upcoming</span></td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        <div class="table-list-info">
-                                                            <a href="#">
-                                                                <img src="({{asset('frontend-assets/img/taxi/01.png')}}" alt>
-                                                                <div class="table-list-content">
-                                                                    <h6>Mercedes Benz Taxi</h6>
-                                                                    <span>Booking ID: #123456</span>
-                                                                </div>
-                                                            </a>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <span>24 February, 2023</span>
-                                                        <p>03:15 PM</p>
-                                                    </td>
-                                                    <td>
-                                                        77 Sunshine Strip, Harlingen
-                                                    </td>
-                                                    <td>$650</td>
-                                                    <td><span class="badge badge-primary">Upcoming</span></td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                       <x-frontend.dashboard-bookings/>
                     </div>
                 </div>
             </div>

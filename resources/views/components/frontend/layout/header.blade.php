@@ -26,12 +26,19 @@
                         <li class="nav-item"><a class="nav-link" href="{{url('contact/create')}}">Contact</a></li>
                     </ul>
                     <div class="nav-right">
-                        <div class="nav-right-btn mt-2">
-                            <a href="#" class="theme-btn" data-bs-toggle="modal" data-bs-target="#loginModal">Login</a>
-                        </div>
-                        <div class="nav-right-btn mt-2">
-                            <a href="{{url('register/create')}}" class="theme-btn">Register</a>
-                        </div>
+                       @if(auth()->check())
+                           <a href="#" class="nav-link">{{auth()->user()->name}}</a>
+                            <div class="nav-right-btn mt-2">
+                                <a href="{{url('logout')}}" class="theme-btn">Logout</a>
+                            </div>
+                       @else
+                            <div class="nav-right-btn mt-2">
+                                <a href="#" class="theme-btn" data-bs-toggle="modal" data-bs-target="#loginModal">Login</a>
+                            </div>
+                            <div class="nav-right-btn mt-2">
+                                <a href="{{url('register/create')}}" class="theme-btn">Register</a>
+                            </div>
+                       @endif
                     </div>
                 </div>
 
