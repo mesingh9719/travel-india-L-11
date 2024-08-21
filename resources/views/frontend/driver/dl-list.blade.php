@@ -13,7 +13,7 @@
                             <div class="row">
                                 <div class="col-lg-12">
                                     <div class="user-profile-card">
-                                        <h6 class="user-profile-card-title">Vehicle List</h6>
+                                        <h6 class="user-profile-card-title">Driving License List</h6>
                                         <div class="user-profile-form p-4">
                                             <div class="row">
                                                 <div class="col-lg-12 d-flex justify-content-end mb-2">
@@ -26,7 +26,7 @@
                                                         <th>ID</th>
                                                         <th>DL Number</th>     
                                                         <th>DL Image</th>                                                     <th>RC Image</th>
-                                                        <th>Action</th>
+                                                        
                                                     </tr>
                                                 </thead>
                                                 <tbody>
@@ -107,9 +107,9 @@
         $(document).ready(function() {
             // Sample data
             var data = [
-                { "id": 1, "dl_number": "DL-05-AB1234", "dl_image": '<img src="{{asset('frontend-assets/img/download/rc_image.jpg')}}" width="80px" alt>', "action":'<a href="{{route('vehicle.create')}}" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#exampleModal">  <i class="fas fa-edit"></i> </a>' },
-                { "id": 2, "dl_number": "KA-01-CD5678", "dl_image": '<img src="{{asset('frontend-assets/img/download/rc_image.jpg')}}" width="80px" alt>', "action":'<a href="{{route('vehicle.create')}}" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#exampleModal"> <i class="fas fa-edit"></i> </a>' },
-                { "id": 3, "dl_number": "KA-01-CD5678", "dl_image": '<img src="{{asset('frontend-assets/img/download/rc_image.jpg')}}" width="80px" alt>', "action":'<a href="{{route('vehicle.create')}}" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#exampleModal"> <i class="fas fa-edit"></i> </a>' }
+                { "id": 1, "dl_number": "D123-4567-8901-2345", "dl_image": '<img src="{{asset('frontend-assets/img/download/dl_image.jpg')}}" width="80px" alt>', "action":'<a href="{{route('vehicle.create')}}" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#exampleModal">  <i class="fas fa-edit"></i> </a>' },
+                { "id": 2, "dl_number": "D234-5678-9012-3456", "dl_image": '<img src="{{asset('frontend-assets/img/download/dl_image.jpg')}}" width="80px" alt>', "action":'<a href="{{route('vehicle.create')}}" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#exampleModal"> <i class="fas fa-edit"></i> </a>' },
+                { "id": 3, "dl_number": "D345-6789-0123-4567", "dl_image": '<img src="{{asset('frontend-assets/img/download/dl_image.jpg')}}" width="80px" alt>', "action":'<a href="{{route('vehicle.create')}}" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#exampleModal"> <i class="fas fa-edit"></i> </a>' }
                                 // Add more data as needed
             ];
 
@@ -118,8 +118,8 @@
                 data: data,
                 columns: [
                     { data: 'id', title: 'ID' },
-                    { data: 'dl_number', title: 'RC Number' },
-                    { data: 'dl_image', title: 'RC Image'},
+                    { data: 'dl_number', title: 'DL Number' },
+                    { data: 'dl_image', title: 'DL Image'},
                     { data: 'action', title: 'Action' }
                 ]
             });
