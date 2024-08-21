@@ -16,7 +16,7 @@
                                         <div class="user-profile-form p-4">
                                             <div class="row">
                                                 <div class="col-lg-12 d-flex justify-content-end mb-2">
-                                                    <a href="{{route('driving-license.create')}}" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#exampleModal">+ Vehicle</a>
+                                                    <a href="{{route('driving-license.create')}}" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#exampleModal">+ Driving License</a>
                                                 </div>
                                             </div>
                                             <table id="example" class="display">
