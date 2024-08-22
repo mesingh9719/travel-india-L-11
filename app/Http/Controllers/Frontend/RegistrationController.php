@@ -38,11 +38,9 @@ class RegistrationController extends Controller
             $user_id = ['user_id' => $user->id];
             $bankdetails = array_merge($bankdetailValidator, $user_id);
             $bankdetails = BankDetail::create($bankdetails);
-            CommonHelper::multipleUploada($vehiclerequeststore, $user_id);
+            CommonHelper::multipleUpload($vehiclerequeststore, $user_id);
             DB::commit();
-
             Auth::login($user);
-
             return redirect()->route('dashboard.index')->with('success', 'Registration Successful');
 
         } catch (\Exception $e) {

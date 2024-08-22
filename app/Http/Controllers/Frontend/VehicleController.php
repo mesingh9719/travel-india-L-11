@@ -1,24 +1,55 @@
 <?php
 
 namespace App\Http\Controllers\Frontend;
-
+use App\Services\VehicleTable;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Helpers\CommonHelper;
+use Auth;
+use App\Http\Requests\User\VehicleRequestStore;
+use App\Http\Requests\User\StoreVehicleImageRequest;
+use App\Models\ImageVehicle;
+use App\Models\Vehicle;
+
 class VehicleController extends Controller
 {
+
+    protected $vehicleTable;
+
+    // Constructor Injection
+    public function __construct(VehicleTable $vehicleTable)
+    {
+        $this->vehicleTable = $vehicleTable;
+    }
+
     /**
      * Display a listing of the resource.
      */
-    public function index()
-    {
-        $data = [
-            ['id' => 1, 'name' => 'John Doe', 'email' => 'john@example.com'],
-            ['id' => 2, 'name' => 'Jane Smith', 'email' => 'jane@example.com'],
-            ['id' => 3, 'name' => 'Sam Brown', 'email' => 'sam@example.com'],
-        ];
-        return view('frontend.ride.vehicle-list');
+    public function index(Request $request)
+    {   
+        // $vehicles = $this->vehicleTable->getVehicles();
+        // dd($vehicles);
+
+            $vehicles = Vehicle::query();
+            $vehicles = $this->vehicleTable->filter($request, $vehicles);
+            $vehicles = $vehicles->latest()->paginate(2);
+    
+            if ($request->ajax()) {
+                return response()->json([
+                    'jobsHtml' => view('frontend.ride.rc-list', compact('vehicles'))->render(),
+                    'paginationHtml' => view('frontend.ride.pagination', compact('vehicles'))->render(),
+                    'hasMorePages' => $vehicles->hasMorePages(),
+                    'currentPage' => $vehicles->currentPage(),
+                    'lastPage' => $vehicles->lastPage(),
+                ]);
+            }
+    
+            return view('frontend.ride.vehicle-list', compact('vehicles'));
     }
+    
+
+        // return view('frontend.ride.vehicle-list');
+    
 
     /**
      * Show the form for creating a new resource.
@@ -33,32 +64,47 @@ class VehicleController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(VehicleRequestStore $vehiclerequeststore, StoreVehicleImageRequest $storevehicleimagerequest)
     {
-        // dd($request->file('file') );
-        // Validate the request
-        $request->validate([
-            'file.*' => 'required|file|mimes:jpg,jpeg,png,gif|max:2048', // Validate each file
-            // 'outside_pictures.*' => 'required|file|mimes:jpg,jpeg,png,gif|max:2048', // Validate each file
-        ]);
-
-        // Initialize an array to store file paths
+      
+        $user_id = Auth::check() ? ['user_id'=> Auth::id()] : 2;
+       
+       if ($vehiclerequeststore['vehicle_image'] != "") {
         $filePaths = [];
-
-        // Loop through each file and store it
-        if ($request->hasFile('file')) {
-            foreach ($request->file('file') as $file) {
-                // $path = $file->store('images', 'public');
-                $path =  CommonHelper::upload($file);
-                $filePaths[] = $path;
-            }
+        $files = $vehiclerequeststore['rc_image_front']  ? $vehiclerequeststore['rc_image_front']  :'';
+        foreach ($files as $key => $file) {
+            if ($file->isValid()) {
+                $fileName = time() . '-' . uniqid() . '.' . $file->getClientOriginalExtension();
+                $filePath = $file->storeAs('public/images', $fileName); // Store in storage/app/public/uploads
+                $filePaths[] =  $fileName;
+            }   
+            Vehicle::create([
+                'user_id' => $user_id['user_id'],
+                'vehicle_type_id' => 1,
+                'vehicle_number' => '',
+                'vehicle_model' => '',
+                'rc_image_front' =>  $fileName, 
+                'rc_number' => $vehiclerequeststore['rc_number'][$key]
+            ]);
         }
+    }
 
-        // Return response
-        return response()->json([
-            'success' => true,
-            'files' => $filePaths
-        ]);
+    if ($storevehicleimagerequest['vehicle_image'] !="") {
+        $filePaths = [];
+        $files = $storevehicleimagerequest['vehicle_image'] ? $storevehicleimagerequest['vehicle_image'] :'' ;
+        foreach ($files as $key => $file) {
+            if ($file->isValid()) {
+                $fileName = time() . '-' . uniqid() . '.' . $file->getClientOriginalExtension();
+                $filePath = $file->storeAs('public/images', $fileName); // Store in storage/app/public/uploads
+                $filePaths[] =  $fileName;
+            }   
+            ImageVehicle::create([
+                'user_id' => $user_id['user_id'],
+                'vehicle_image' =>  $fileName
+            ]); 
+        }
+    }
+        return redirect()->route('vehicle.index')->with('success', 'Vehicle Added Successfully!');
     }
 
     /**

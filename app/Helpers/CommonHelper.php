@@ -8,6 +8,7 @@ use App\Helpers\CommonHelper;
 use App\Http\Requests\User\RegistrationRequest;
 use App\Http\Resources\UserResource;
 use App\Models\Vehicle;
+use Auth;
 class CommonHelper
 {
     public static function handleFileUploads(Request $request, array $fileFields): array
@@ -39,7 +40,7 @@ class CommonHelper
 
 
 
-    public static function multipleUploada($request, $user_id){
+    public static function multipleUpload($request, $user_id){
         if ($request->hasFile('rc_image_front')) {
             $files = $request->file('rc_image_front');
             $filePaths = [];
@@ -60,4 +61,33 @@ class CommonHelper
             }
         }
     }
+
+
+
+    
+        // Function to handle file uploads and model creation
+        public static function handleFileUploadFromDashboard($files, $modelClass, $additionalData = [], $fileColumn = null) {
+            $userId =['userId'=> Auth::check() ? Auth::id() : 2];
+            $filePaths = [];
+            foreach ($files as $key => $file) {
+                if ($file->isValid()) {
+                    $fileName = time() . '-' . uniqid() . '.' . $file->getClientOriginalExtension();
+                    $file->storeAs('public/images', $fileName); // Store in storage/app/public/images
+                    $filePaths[] = $fileName;
+
+                    // Prepare data for model creation
+                    $data = array_merge([
+                        'user_id' => $userId['userId']
+                    ], $additionalData);
+
+                    if ($fileColumn) {
+                        $data[$fileColumn] = $fileName;
+                    }
+
+                    $modelClass::create($data);
+                }
+            }
+            return $filePaths;
+        }
 }
+

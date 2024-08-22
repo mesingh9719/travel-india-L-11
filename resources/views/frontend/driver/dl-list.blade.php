@@ -16,16 +16,19 @@
                                         <div class="user-profile-form p-4">
                                             <div class="row">
                                                 <div class="col-lg-12 d-flex justify-content-end mb-2">
-                                                    <a href="{{route('driving-license.create')}}" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#exampleModal">+ Driving License</a>
+                                                    <a href="{{route('driving-license.create')}}"
+                                                        class="btn btn-warning" data-bs-toggle="modal"
+                                                        data-bs-target="#exampleModal">+ Driving License</a>
                                                 </div>
                                             </div>
                                             <table id="example" class="display">
                                                 <thead>
                                                     <tr>
                                                         <th>ID</th>
-                                                        <th>DL Number</th>     
-                                                        <th>DL Image</th>                                                     <th>RC Image</th>
-                                                        
+                                                        <th>DL Number</th>
+                                                        <th>DL Image</th>
+                                                        <th>RC Image</th>
+
                                                     </tr>
                                                 </thead>
                                                 <tbody>
@@ -46,58 +49,57 @@
 
     </main>
 
-<!-- Button trigger modal -->
+    <!-- Button trigger modal -->
 
 
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-md">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalLabel">Add Driving License</h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-        <div class="modal-body">
-            <div class="container">
-                            <form action="{{ route('driving-license.store') }}" method="POST" enctype="multipart/form-data">
-                                    @csrf
-                                    <div class="row">
-                                    <div class="col-md-6">
-                                            <div class="form-group">
-                                                <label>DL Number</label>
-                                                <input type="text" class="form-control" id="rc_number"
-                                                    name="dl_number" value=""
-                                                    placeholder="Driving License Number" required>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <div class="form-group">
-                                                <label>DL Image</label>
-                                                <input type="file" class="form-control" id="rc_image"
-                                                    name="dl_image"
-                                                    placeholder="RC Number" required>
-                                            </div>
-                                        </div>
-                                        
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-md">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Add Driving License</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="container">
+                        <form action="{{ route('driving-license.store') }}" method="POST" enctype="multipart/form-data">
+                            @csrf
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>DL Number</label>
+                                        <input type="text" class="form-control" id="rc_number" name="dl_number" value=""
+                                            placeholder="Driving License Number" required>
                                     </div>
-                                    <br />
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                        <button type="button" class="btn btn-warning">Save changes</button>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>DL Image</label>
+                                        <input type="file" class="form-control" id="rc_image" name="dl_image"
+                                            placeholder="RC Number" required>
                                     </div>
-                                </form>
-                   
+                                </div>
+
+                            </div>
+                            <br />
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-warning">Save changes</button>
+                            </div>
+                        </form>
+
+                    </div>
                 </div>
             </div>
+
         </div>
-     
     </div>
-  </div>
-</div>
+    </div>
 
     <x-slot:js>
-            <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
-    <script>
+
+    <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+        <script>
         $(document).ready(function() {
             // Sample data
             var data = [
@@ -118,8 +120,6 @@
                 ]
             });
         });
-        
-
-    </script>
+        </script>
     </x-slot:js>
 </x-frontend.layout.master>
