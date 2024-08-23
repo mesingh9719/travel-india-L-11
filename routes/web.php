@@ -38,6 +38,7 @@ Route::get('/trip-list', [DriverTripController::class, 'index'])->name('trip.lis
 
 //dl route
 Route::resource('/driving-license', DLController::class);
+Route::get('dl/data', [DLController::class, 'getData'])->name('dl.data');
 //vehicle route
 Route::resource('/vehicle', VehicleController::class);
 

@@ -23,6 +23,7 @@
     <link rel="stylesheet" href="{{asset('frontend-assets/css/nice-select.min.css')}}">
     <link rel="stylesheet" href="{{asset('frontend-assets/css/style.css')}}">
     <link rel="stylesheet" href="{{asset('frontend-assets/css/custom-style.css')}}">
+    <link href="https://cdn.datatables.net/1.11.4/css/dataTables.bootstrap5.min.css" rel="stylesheet">
     {{ $style ?? '' }}
 </head>
 <body>
@@ -48,6 +49,7 @@
     <script src="{{asset('frontend-assets/js/jquery.nice-select.min.js')}}"></script>
     <script src="{{asset('frontend-assets/js/wow.min.js')}}"></script>
     <script src="{{asset('frontend-assets/js/main.js')}}"></script>
+    <script src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.min.js" defer></script>
 
 {{ $js ?? '' }}
 

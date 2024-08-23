@@ -5385,3 +5385,53 @@ body.rtl-mode .price-wrapper {
         margin-top: 80px;
     }
 }
+
+.dataTables_wrapper .dataTables_paginate .paginate_button {
+    padding: 0.3em 1em;
+    margin: 0.2em;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button:hover {
+    background-color: #ddd;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button.current {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button.disabled {
+    cursor: not-allowed;
+    background-color: #e9ecef;
+}
+
+
+/* Adjust the width of the table container */
+
+.dataTables_wrapper {
+    overflow-x: auto;
+}
+
+
+/* Ensure that table is responsive */
+
+table.dataTable {
+    width: 100% !important;
+    max-width: 100% !important;
+}
+
+
+/* Optional: Adjust the width of table columns for smaller screens */
+
+@media (max-width: 768px) {
+    table.dataTable thead th {
+        font-size: 12px;
+    }
+    table.dataTable tbody td {
+        font-size: 10px;
+    }
+}

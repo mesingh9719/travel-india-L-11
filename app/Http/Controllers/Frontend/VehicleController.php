@@ -10,10 +10,12 @@ use App\Http\Requests\User\VehicleRequestStore;
 use App\Http\Requests\User\StoreVehicleImageRequest;
 use App\Models\ImageVehicle;
 use App\Models\Vehicle;
-
+use App\Models\DLVerify;
+use DataTables;
+use DB;
+use Yajra\DataTables\Html\Builder as HtmlBuilder;
 class VehicleController extends Controller
 {
-
     protected $vehicleTable;
 
     // Constructor Injection
@@ -26,29 +28,21 @@ class VehicleController extends Controller
      * Display a listing of the resource.
      */
     public function index(Request $request)
-    {   
-        // $vehicles = $this->vehicleTable->getVehicles();
-        // dd($vehicles);
-
-            $vehicles = Vehicle::query();
-            $vehicles = $this->vehicleTable->filter($request, $vehicles);
-            $vehicles = $vehicles->latest()->paginate(2);
-    
+    {    $url =url('/');
             if ($request->ajax()) {
-                return response()->json([
-                    'jobsHtml' => view('frontend.ride.rc-list', compact('vehicles'))->render(),
-                    'paginationHtml' => view('frontend.ride.pagination', compact('vehicles'))->render(),
-                    'hasMorePages' => $vehicles->hasMorePages(),
-                    'currentPage' => $vehicles->currentPage(),
-                    'lastPage' => $vehicles->lastPage(),
-                ]);
+                $data = Vehicle::query();
+                return Datatables::of($data)
+                        ->addIndexColumn()       
+                        ->addColumn('action', function($row){
+                                $btn = '<button class="btn btn-primary selectDriveModal" onclick="assign_driver(id);" id="'.$row->id.'">Assign Driver</button>';
+                                return $btn;
+                        })
+                        ->rawColumns(['action'])
+                        ->make(true);
             }
-    
-            return view('frontend.ride.vehicle-list', compact('vehicles'));
+            $dlData =DLVerify::all();
+            return view('frontend.ride.vehicle-list', compact('dlData'));
     }
-    
-
-        // return view('frontend.ride.vehicle-list');
     
 
     /**
@@ -66,45 +60,46 @@ class VehicleController extends Controller
      */
     public function store(VehicleRequestStore $vehiclerequeststore, StoreVehicleImageRequest $storevehicleimagerequest)
     {
-      
-        $user_id = Auth::check() ? ['user_id'=> Auth::id()] : 2;
-       
-       if ($vehiclerequeststore['vehicle_image'] != "") {
-        $filePaths = [];
-        $files = $vehiclerequeststore['rc_image_front']  ? $vehiclerequeststore['rc_image_front']  :'';
-        foreach ($files as $key => $file) {
-            if ($file->isValid()) {
-                $fileName = time() . '-' . uniqid() . '.' . $file->getClientOriginalExtension();
-                $filePath = $file->storeAs('public/images', $fileName); // Store in storage/app/public/uploads
-                $filePaths[] =  $fileName;
-            }   
-            Vehicle::create([
-                'user_id' => $user_id['user_id'],
-                'vehicle_type_id' => 1,
-                'vehicle_number' => '',
-                'vehicle_model' => '',
-                'rc_image_front' =>  $fileName, 
-                'rc_number' => $vehiclerequeststore['rc_number'][$key]
-            ]);
+        DB::beginTransaction();
+        try {
+            $user_id = Auth::check() ? ['user_id'=> Auth::id()] : ['user_id'=> 2];
+        if ($vehiclerequeststore['vehicle_image'] != "") {
+            $filePaths = [];
+            $files = $vehiclerequeststore['rc_image_front']  ? $vehiclerequeststore['rc_image_front']  :'';
+            foreach ($files as $key => $img) {
+                if ($img->isValid()) {
+                    $rcImage = CommonHelper::upload($img);
+                }   
+                Vehicle::create([
+                    'user_id' => $user_id['user_id'],
+                    'vehicle_type_id' => 1,
+                    'vehicle_number' => '',
+                    'vehicle_model' => '',
+                    'rc_image_front' =>  $rcImage, 
+                    'rc_number' => $vehiclerequeststore['rc_number'][$key]
+                ]);
+            }
         }
-    }
+        if ($storevehicleimagerequest['vehicle_image'] !="") {
+            $filePaths = [];
+            $files = $storevehicleimagerequest['vehicle_image'] ? $storevehicleimagerequest['vehicle_image'] :'' ;
+            foreach ($files as $key => $img) {
+                if ($img->isValid()) {
+                    $vehicleImage =CommonHelper::upload($img);
+                }   
+                ImageVehicle::create([
+                    'user_id' => $user_id['user_id'],
+                    'vehicle_image' => $vehicleImage
+                ]); 
+            }
+        }
+            DB::commit();
+            return redirect()->route('vehicle.index')->with('success', 'Vehicle Added Successfully!');
 
-    if ($storevehicleimagerequest['vehicle_image'] !="") {
-        $filePaths = [];
-        $files = $storevehicleimagerequest['vehicle_image'] ? $storevehicleimagerequest['vehicle_image'] :'' ;
-        foreach ($files as $key => $file) {
-            if ($file->isValid()) {
-                $fileName = time() . '-' . uniqid() . '.' . $file->getClientOriginalExtension();
-                $filePath = $file->storeAs('public/images', $fileName); // Store in storage/app/public/uploads
-                $filePaths[] =  $fileName;
-            }   
-            ImageVehicle::create([
-                'user_id' => $user_id['user_id'],
-                'vehicle_image' =>  $fileName
-            ]); 
+        } catch (\Exception $e) {
+            DB::rollback();
+            return back()->with('error', 'Went Something wrong' . $e->getMessage());
         }
-    }
-        return redirect()->route('vehicle.index')->with('success', 'Vehicle Added Successfully!');
     }
 
     /**
@@ -137,5 +132,10 @@ class VehicleController extends Controller
     public function destroy(string $id)
     {
         //
+    }
+
+
+    public function assignDriver(){
+
     }
 }

@@ -11,10 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('image_vehicles', function (Blueprint $table) {
+        Schema::create('d_l_verifies', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->index()->constrained()->onDelete('cascade');
-            $table->text('vehicle_image')->nullable();
+            $table->string('dl_number')->nullable();
+            $table->text('dl_image')->nullable();
             $table->timestamps();
         });
     }
@@ -24,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('image_vehicles');
+        Schema::dropIfExists('d_l_verifies');
     }
 };
