@@ -5435,3 +5435,8 @@ table.dataTable {
         font-size: 10px;
     }
 }
+
+.btn-responsive {
+    white-space: normal !important;
+    word-wrap: break-word;
+}

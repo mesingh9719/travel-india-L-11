@@ -1,20 +1,21 @@
-$(document).ready(function () {
-    $('.dl-table').DataTable({
+$(document).ready(function() {
+    $('.vehicle-table').DataTable({
         processing: true,
         serverSide: true,
         ajax: "/vehicle",
         columns: [
-            {data: 'id', name: 'id'},
-            {data: 'rc_number', name: 'rc_number'},
+            { data: 'id', name: 'id' },
+            { data: 'rc_number', name: 'rc_number' },
             {
-                data: 'rc_image_front', name: 'rc_image_front',
-                "render": function (data, type, full, meta) {
+                data: 'rc_image_front',
+                name: 'rc_image_front',
+                "render": function(data, type, full, meta) {
                     var img = baseUrl + '/';
                     return '<img src="' + img + data + '" width="80" />';
                 },
 
             },
-            {data: 'action', name: 'action', orderable: false, searchable: false},
+            { data: 'action', name: 'action', orderable: false, searchable: false },
         ],
 
         responsive: true,
@@ -34,9 +35,9 @@ function assign_driver(id) {
 
 // Array of file input IDs and corresponding elements to show/hide
 const fileInputIds = [
-    {fileInputId: 'vehicle_image_1', targetId: 'vehicle_2'},
-    {fileInputId: 'vehicle_image_2', targetId: 'vehicle_3'},
-    {fileInputId: 'vehicle_image_3', targetId: 'vehicle_4'}
+    { fileInputId: 'vehicle_image_1', targetId: 'vehicle_2' },
+    { fileInputId: 'vehicle_image_2', targetId: 'vehicle_3' },
+    { fileInputId: 'vehicle_image_3', targetId: 'vehicle_4' }
 ];
 
 // Function to handle showing and hiding elements based on file input
@@ -51,10 +52,10 @@ function handleFileChange(event, targetId) {
 }
 
 // Attach event listeners to each file input
-fileInputIds.forEach(({fileInputId, targetId}) => {
+fileInputIds.forEach(({ fileInputId, targetId }) => {
     const fileInput = document.getElementById(fileInputId);
     if (fileInput) {
-        fileInput.addEventListener('change', function (event) {
+        fileInput.addEventListener('change', function(event) {
             handleFileChange(event, targetId);
         });
     } else {

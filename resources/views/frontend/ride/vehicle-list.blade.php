@@ -24,7 +24,7 @@
                     {{ $value }}
                 </div>
                 @endsession
-                <table class="table table-bordered dl-table responsive nowrap">
+                <table class="table table-bordered vehicle-table responsive nowrap">
                     <thead>
                     <tr>
                         <th>No</th>

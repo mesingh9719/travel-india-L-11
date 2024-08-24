@@ -55,7 +55,7 @@ class DLController extends Controller
                 $dl =array_merge($dlValidator, $user_id, $uploadedFiles);
                 DLVerify::create($dl);
                 DB::commit();
-                return redirect()->route('driving-license.index')->with('success', 'Driving Licence  Added Successfully!');
+                return redirect()->route('driving-license.index')->with('success', 'Driving Licence Added Successfully!');
             } catch (\Exception $e) {
                 DB::rollback();
                 return back()->with('error', 'Went Something wrong' . $e->getMessage());
