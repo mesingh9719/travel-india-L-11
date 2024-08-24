@@ -1,7 +1,6 @@
 <x-frontend.layout.master>
     <main class="main">
-        <x-frontend.banner.banner/>
-        <div class="user-profile py-120">
+        <div class="user-profile mt-4 mb-4">
             <div class="container">
                 <div class="row">
                     <x-frontend.sidebar.sidebar/>

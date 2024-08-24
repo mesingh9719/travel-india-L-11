@@ -6,7 +6,7 @@
                     <h4 class="font-weight-bold">Vehicle List</h4>
                 </div>
                 <div>
-                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addNewVehicleModal">Add New
+                    <button class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#addNewVehicleModal">Add New
                         Vehicle
                     </button>
                 </div>
