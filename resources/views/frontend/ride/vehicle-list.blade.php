@@ -46,8 +46,6 @@
                                                     </table>
                                                 </div>
                                             </div>
-
-
                                             <div id="pagination-links">
                                                 <!-- Pagination links will be inserted here via AJAX -->
                                             </div>
@@ -55,7 +53,6 @@
                                         <h6 class="user-profile-card-title"></h6>
                                     </div>
                                 </div>
-
                             </div>
                         </div>
                     </div>

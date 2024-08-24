@@ -46,9 +46,7 @@ class CommonHelper
             $filePaths = [];
             foreach ($files as $key => $file) {
                 if ($file->isValid()) {
-                    $fileName = time() . '-' . uniqid() . '.' . $file->getClientOriginalExtension();
-                    $filePath = $file->storeAs('public/images', $fileName); // Store in storage/app/public/uploads
-                    $filePaths[] =  $fileName;
+                    $fileName =self::upload($file);
                 }
                    Vehicle::create([
                     'user_id' => $user_id['user_id'],
@@ -65,29 +63,6 @@ class CommonHelper
 
 
     
-        // Function to handle file uploads and model creation
-        public static function handleFileUploadFromDashboard($files, $modelClass, $additionalData = [], $fileColumn = null) {
-            $userId =['userId'=> Auth::check() ? Auth::id() : 2];
-            $filePaths = [];
-            foreach ($files as $key => $file) {
-                if ($file->isValid()) {
-                    $fileName = time() . '-' . uniqid() . '.' . $file->getClientOriginalExtension();
-                    $file->storeAs('public/images', $fileName); // Store in storage/app/public/images
-                    $filePaths[] = $fileName;
-
-                    // Prepare data for model creation
-                    $data = array_merge([
-                        'user_id' => $userId['userId']
-                    ], $additionalData);
-
-                    if ($fileColumn) {
-                        $data[$fileColumn] = $fileName;
-                    }
-
-                    $modelClass::create($data);
-                }
-            }
-            return $filePaths;
-        }
+      
 }
 
