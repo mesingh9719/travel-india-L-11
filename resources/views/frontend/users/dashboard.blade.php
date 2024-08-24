@@ -47,7 +47,7 @@
             </div>
         </div>
     </div>
-
+<x-frontend.add-ride-modal/>
 </main>
 
 </x-frontend.layout.master>
