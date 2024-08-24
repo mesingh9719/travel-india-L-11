@@ -3,7 +3,7 @@
         <div class="card-header bg-white">
             <div class="d-flex justify-content-between align-items-center">
                 <div>
-                    <h4 class="font-weight-bold">Upcoming Booking</h4>
+                    <h4 class="font-weight-bold">Current Ride</h4>
                 </div>
                 <div>
                     <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addRideModal">Add New Ride</button>
@@ -55,14 +55,15 @@
                             <div>
                                 <h5 class="font-weight-bold mb-1">John Doe</h5>
                                 <p class="mb-0">
-                                    <i class="far fa-phone"></i> 9876543210
+                                    <i class="far fa-phone"></i> 98******
                                 </p>
                             </div>
                             <div>
                                 <h4 class="text-success font-weight-bold">₹ 2,000</h4>
-                                <p class="font-weight-bold text-secondary mb-1 font-size-14px font-weight-700">Amount Offered by Passenger</p>
+                                <p class="font-weight-bold text-secondary mb-1 font-size-14px font-weight-700">Negotiated Amount</p>
                             </div>
                             <div>
+                                <button class="btn btn-warning mr-2">Negotiate</button>
                                 <button class="btn btn-success mr-2">Accept</button>
                                 <button class="btn btn-outline-danger">Decline</button>
                             </div>

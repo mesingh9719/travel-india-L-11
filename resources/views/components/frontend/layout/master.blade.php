@@ -23,6 +23,8 @@
     <link rel="stylesheet" href="{{asset('frontend-assets/css/nice-select.min.css')}}">
     <link rel="stylesheet" href="{{asset('frontend-assets/css/style.css')}}">
     <link rel="stylesheet" href="{{asset('frontend-assets/css/custom-style.css')}}">
+    <link href="{{ asset('frontend-assets/css/dropzone.min.css') }}" rel="stylesheet"/>
+    <link rel="stylesheet" href="{{ asset('frontend-assets/css/jquery.dataTables.min.css') }}">
     {{ $style ?? '' }}
 </head>
 <body>
@@ -48,7 +50,8 @@
     <script src="{{asset('frontend-assets/js/jquery.nice-select.min.js')}}"></script>
     <script src="{{asset('frontend-assets/js/wow.min.js')}}"></script>
     <script src="{{asset('frontend-assets/js/main.js')}}"></script>
-
+    <script src="{{ asset('frontend-assets/js/dropzone.min.js') }}"/>
+    <script src="{{ asset('frontend-assets/js/jquery.dataTables.min.js') }}"/>
 {{ $js ?? '' }}
 
 </body>
