@@ -378,7 +378,7 @@
 
                                                                             </div>
                                                                             <div class="d-flex  mt-3">
-                                                                                <p id="myButton"
+                                                                                <p id="camara"
                                                                                     class="btn btn-warning d-inline mr-2"
                                                                                     style="display:block">
                                                                                     <i class="fa fa-camera"
