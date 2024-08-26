@@ -563,12 +563,13 @@ document.addEventListener('DOMContentLoaded', () => {
         captureButton.addEventListener('click', () => {
             if (video.srcObject) {
                 const stream = video.srcObject;
-                stream.getTracks().forEach(track => track.stop()); // Stop all tracks
+                video.pause(); // Pause the video
+                video.currentTime = 0; // Reset video time
+                video.classList.add('hideVideo'); // Optionally hide the video
+                stream.getTracks().forEach(track => track.stop()); // Stop all tracks   
             }
 
-            video.pause(); // Pause the video
-            video.currentTime = 0; // Reset video time
-            video.classList.add('hideVideo'); // Optionally hide the video
+           
 
             // Capture image from video
             context.drawImage(video, 0, 0, canvas.width, canvas.height);
