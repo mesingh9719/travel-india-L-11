@@ -1,75 +1,73 @@
 <x-frontend.dashboard-layout>
-    <div class="user-profile-wrapper">
-        <div class="row">
-            <div class="col-lg-7">
-                <div class="user-profile-card">
-                    <h4 class="user-profile-card-title">Profile Info</h4>
-                    <div class="user-profile-form">
-                        <form action="#">
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label>First Name</label>
-                                        <input type="text" class="form-control" value="Antoni" placeholder="First Name">
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label>Last Name</label>
-                                        <input type="text" class="form-control" value="Jonson" placeholder="Last Name">
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label>Email</label>
-                                        <input type="text" class="form-control" value="antoni@example.com"
-                                            placeholder="Email">
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label>Phone</label>
-                                        <input type="text" class="form-control" value="+2 134 562 458"
-                                            placeholder="Phone">
-                                    </div>
-                                </div>
-                                <div class="col-md-12">
-                                    <div class="form-group">
-                                        <label>Address</label>
-                                        <input type="text" class="form-control" value="New York, USA"
-                                            placeholder="Address">
-                                    </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="user-profile-card">
+                <h4 class="user-profile-card-title">Profile Info</h4>
+                @session('success')
+                    <div class="alert alert-success" role="alert">
+                        {{ $value }}
+                    </div>
+                    @endsession
+                    @session('error')
+                    <div class="alert alert-danger" role="alert">
+                        {{ $value }}
+                    </div>
+                @endsession
+                <div class="user-profile-form">
+                    <form action="{{route('profile.update', 2)}}" method="POST">
+                    @csrf
+                    @method('PATCH')
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Full Name</label>
+                                    <input type="text" class="form-control" name="full_name" value="{{ $profile->full_name ?? '' }}" placeholder="Full Name">
                                 </div>
                             </div>
-                            <button type="button" class="theme-btn my-3"><span class="far fa-user"></span> Save
-                                Changes</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-5">
-                <div class="user-profile-card">
-                    <h4 class="user-profile-card-title">Change Password</h4>
-                    <div class="col-lg-12">
-                        <div class="user-profile-form">
-                            <form action="#">
+                            <div class="col-md-6">
                                 <div class="form-group">
-                                    <label>Old Password</label>
-                                    <input type="password" class="form-control" placeholder="Old Password">
+                                    <label>Phone</label>
+                                    <input type="text" class="form-control" name="mobile" value="{{ $profile->mobile ?? '' }}" placeholder="Mobile">
                                 </div>
+                            </div>
+                            <div class="col-md-6">
                                 <div class="form-group">
-                                    <label>New Password</label>
-                                    <input type="password" class="form-control" placeholder="New Password">
+                                    <label>Alternate Mobile</label>
+                                    <input type="text" class="form-control" name="alternate_Mobile" value="{{ $profile->alternate_Mobile ?? '' }}" placeholder="Alternate Mobile">
                                 </div>
+                            </div>
+                            <div class="col-md-6">
                                 <div class="form-group">
-                                    <label>Re-Type Password</label>
-                                    <input type="password" class="form-control" placeholder="Re-Type Password">
+                                    <label>State</label>
+                                    <input type="text" class="form-control" name="home_state" value="{{ $profile->home_state ?? '' }}" placeholder="State">
                                 </div>
-                                <button type="button" class="theme-btn my-3"><span class="far fa-key"></span> Change
-                                    Password</button>
-                            </form>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>City</label>
+                                    <input type="text" class="form-control" name="home_city" value="{{ $profile->home_city ?? '' }}" placeholder="City">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Zip Code</label>
+                                    <input type="text" class="form-control" name="home_zip" value="{{ $profile->home_zip ?? '' }}" placeholder="Zip Code">
+                                </div>
+                            </div>
+                            <div class="col-lg-12">
+                                <div class="form-group required mb-2">
+                                    <label>Home Address</label>
+                                    <textarea class="form-control" rows="2"
+                                        name="home_address" id="home_address"
+                                        placeholder="Enter your Home Address" maxlength="200">{{ $profile->home_address ?? '' }}</textarea>
+                                </div>
+                                <span id="addressError"
+                                    class="error"></span>
+                            </div>
                         </div>
-                    </div>
+                        <button type="submit" class="theme-btn my-3"><span class="far fa-user"></span> Save
+                            Changes</button>
+                    </form>
                 </div>
             </div>
         </div>

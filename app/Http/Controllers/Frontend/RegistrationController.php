@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\DB;
 use App\Helpers\CommonHelper;
+use Illuminate\Support\Facades\File;
 
 class RegistrationController extends Controller
 {
@@ -31,9 +32,12 @@ class RegistrationController extends Controller
             $bankdetailValidator = $bankdetailsrequeststore->validated();
             $vehicleValidstor = $vehiclerequeststore->validated();
             $userValidator['password'] = bcrypt(Str::random(8));
-            $fileFields = ['pan_image', 'aadhar_image_front', 'aadhar_image_back', 'dl_image', 'profile_image'];
+            $fileFields = ['pan_image', 'aadhar_image_front', 'aadhar_image_back', 'dl_image'];
             $uploadedFiles = CommonHelper::handleFileUploads($request, $fileFields);
-            $userData = array_merge($userValidator, $uploadedFiles);
+            $imageData = $request->input('profile_image');
+            $profileImage = CommonHelper::profileImage($imageData);
+            $profileData =['profile_image' => $profileImage];
+            $userData = array_merge($userValidator, $uploadedFiles, $profileData);
             $user = User::create($userData);
             $user_id = ['user_id' => $user->id];
             $bankdetails = array_merge($bankdetailValidator, $user_id);

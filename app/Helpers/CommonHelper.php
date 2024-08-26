@@ -60,9 +60,20 @@ class CommonHelper
         }
     }
 
+    public static function profileImage($profileImageData){
+        $profileImageData = str_replace('data:image/png;base64,', '', $profileImageData);
+        $profileImageData = str_replace(' ', '+', $profileImageData);
+        $profileImage = base64_decode($profileImageData);
+        $profileFileName = 'profile_image_' . time() . '.png';
+        $path = public_path('images/' . $profileFileName);
+        if (!File::exists(public_path('images'))) {
+            File::makeDirectory(public_path('images'), 0755, true);
+        }
+        // Save the image to the public directory
+        file_put_contents($path, $profileImage);
+        return  $profileFileName;
 
+    }
 
-    
-      
 }
 

@@ -528,3 +528,54 @@ function getCheckboxValue() {
         document.getElementById('home_zip').value = "";
     }
 }
+
+
+//Camara function 
+    
+        document.addEventListener('DOMContentLoaded', function() {
+        var button = document.getElementById('myButton');
+       
+        button.onclick = function() {
+        button.style.display ='none';
+        const open_content ='<video class="d-inline" id="video"></video><canvas class="d-inline" id="canvas"></canvas>';
+        const open_camara =document.getElementById('open_camara');
+        open_camara.innerHTML= open_content;
+        const video = document.getElementById('video');
+        const canvas = document.getElementById('canvas');
+        video.classList.add('captureImage');
+        canvas.classList.add('captureImage');
+        const context = canvas.getContext('2d');
+        const captureButton = document.getElementById('capture');
+        captureButton.onclick = function(){
+            if (video) {
+                video.autoplay = false;
+                video.classList.add('hideVideo');
+                video.pause(); // Pause the video
+                video.currentTime = 0;
+               // Attempting to hide the element
+            } else {
+                console.error('Element not found');
+            }
+          
+        }
+        const imageDataInput = document.getElementById('imageData');
+
+        video.style.display = 'block';
+        // Access webcam
+        navigator.mediaDevices.getUserMedia({ video: true })
+        .then(stream => {
+        video.srcObject = stream;
+        video.play();
+        })
+        .catch(err => {
+        console.error("Error accessing webcam: ", err);
+        });
+
+        // Capture image
+        captureButton.addEventListener('click', () => {
+        context.drawImage(video, 0, 0, canvas.width, canvas.height);
+        const dataURL = canvas.toDataURL('image/png');
+        imageDataInput.value = dataURL;
+        });
+        };
+        });

@@ -190,4 +190,19 @@
   .error { color: red; font-size: 0.9em; }
 
 
+  .captureImage{
+    border: 2px solid #ffb300;
+    border-radius: 5%;
+    margin-inline-end: 10px;
+    width:140px;
+    height:80px;
+}
+
+
+.hideVideo{
+  display: none !important; /* This could override the inline style */
+}
+   
+
+
   

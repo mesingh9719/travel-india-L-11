@@ -4,7 +4,8 @@ namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-
+use App\Models\User;
+use App\Helpers\CommonHelper;
 class UserProfileController extends Controller
 {
     /**
@@ -12,7 +13,8 @@ class UserProfileController extends Controller
      */
     public function index()
     {
-        return view('frontend.users.profile');
+        $profile =User::find(2);
+        return view('frontend.users.profile', compact('profile'));
     }
 
     /**
@@ -52,7 +54,21 @@ class UserProfileController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $profile = User::findOrFail($id);
+        $file = $request->file('profile');
+        if($file !=""){
+            $profileImage = CommonHelper::upload($file);
+            $image = ['profile_image'=>$profileImage];
+            $profile->update($image);
+            return redirect()->route('profile.index')
+            ->with('success', 'Profile updated successfully!');
+        }else{
+            $profile->update($request->only(['full_name', 'mobile', 'alternate_mobile', 'home_state', 'home_city', 'home_zip', 'home_address']));
+            return redirect()->route('profile.index')
+            ->with('success', 'Profile updated successfully!');
+        }
+        
+       
     }
 
     /**

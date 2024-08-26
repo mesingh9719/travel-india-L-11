@@ -2,9 +2,14 @@
     <div class="user-profile-sidebar">
         <div class="user-profile-sidebar-top">
             <div class="user-profile-img">
+                <form id="uploadForm" action="{{ route('profile.update', 2) }}" method="POST" enctype="multipart/form-data">
+                @csrf
+                @method('PATCH')
                 <img src="{{asset('frontend-assets/img/account/user.jpg')}}" alt>
                 <button type="button" class="profile-img-btn"><i class="far fa-camera"></i></button>
-                <input type="file" class="profile-img-file">
+                <input type="file" class="profile-img-file" name="profile" id="profile" onchange="uploadFile()">
+                <div id="response"></div>
+            </form>
             </div>
             <h5>Antoni Jonson</h5>
             <p>99098767894</p>
