@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Frontend\Auth\UserAuthController;
 use App\Http\Controllers\Frontend\CarContoller;
 use App\Http\Controllers\Frontend\HomeController;
 use App\Http\Controllers\Frontend\TripController;
@@ -23,9 +24,16 @@ use Illuminate\Support\Facades\Route;
 Route::get('/',[HomeController::class,"index"])->name('index');
 Route::resource('/register', RegistrationController::class);
 
+Route::middleware(['guest'])->group(function () {
+    Route::post('/send-otp',[UserAuthController::class,"sendOtp"])->name('login.send-otp');
+    Route::post('/verify-otp',[UserAuthController::class,"verifyOtp"])->name('login.verify-otp');
+});
+
 // auth users
 Route::group(['middleware' => 'auth'], function () {
     Route::resource('/dashboard', UserDashboardController::class);
+
+    Route::post('/logout', [UserAuthController::class, 'logout'])->name('logout');
 });
 
 

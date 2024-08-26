@@ -29,7 +29,10 @@
                        @if(auth()->check())
                            <a href="#" class="nav-link">{{auth()->user()->name}}</a>
                             <div class="nav-right-btn mt-2">
-                                <a href="{{url('logout')}}" class="theme-btn">Logout</a>
+                                <form action="{{ route('logout') }}" method="post">
+                                    @csrf
+                                    <button type="submit" class="theme-btn">Logout</button>
+                                </form>
                             </div>
                        @else
                             <div class="nav-right-btn mt-2">
