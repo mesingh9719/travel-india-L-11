@@ -1,7 +1,7 @@
 <x-frontend.dashboard-layout>
     <div class="user-profile-wrapper">
         <div class="row">
-            <div class="col-lg-7">
+            <div class="col-lg-12">
                 <div class="user-profile-card">
                     <h4 class="user-profile-card-title">Profile Info</h4>
                     <div class="user-profile-form">
@@ -44,31 +44,6 @@
                             <button type="button" class="theme-btn my-3"><span class="far fa-user"></span> Save
                                 Changes</button>
                         </form>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-5">
-                <div class="user-profile-card">
-                    <h4 class="user-profile-card-title">Change Password</h4>
-                    <div class="col-lg-12">
-                        <div class="user-profile-form">
-                            <form action="#">
-                                <div class="form-group">
-                                    <label>Old Password</label>
-                                    <input type="password" class="form-control" placeholder="Old Password">
-                                </div>
-                                <div class="form-group">
-                                    <label>New Password</label>
-                                    <input type="password" class="form-control" placeholder="New Password">
-                                </div>
-                                <div class="form-group">
-                                    <label>Re-Type Password</label>
-                                    <input type="password" class="form-control" placeholder="Re-Type Password">
-                                </div>
-                                <button type="button" class="theme-btn my-3"><span class="far fa-key"></span> Change
-                                    Password</button>
-                            </form>
-                        </div>
                     </div>
                 </div>
             </div>
