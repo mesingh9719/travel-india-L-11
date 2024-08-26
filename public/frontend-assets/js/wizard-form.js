@@ -531,44 +531,23 @@ function getCheckboxValue() {
 
 
 //Camara function 
+document.addEventListener('DOMContentLoaded', () => {
+    const button = document.getElementById('camara');
+    const openCamara = document.getElementById('open_camara');
+    const captureButton = document.getElementById('capture');
+    const imageDataInput = document.getElementById('imageData');
     
-document.addEventListener('DOMContentLoaded', function() {
-    var button = document.getElementById('camara');
-    
-    button.onclick = function() {
-        // Hide the button
-        button.style.display = 'none';
-
+    button.onclick = () => {
         // Create and insert video and canvas elements
-        const open_content = `
-            <video class="d-inline" id="video"></video>
-            <canvas class="d-inline" id="canvas"></canvas>
+        openCamara.innerHTML = `
+            <video class="d-inline captureImage" id="video" autoplay></video>
+            <canvas class="d-inline captureImage" id="canvas"></canvas>
         `;
-        const open_camara = document.getElementById('open_camara');
-        open_camara.innerHTML = open_content;
 
         // Get references to the video and canvas elements
         const video = document.getElementById('video');
         const canvas = document.getElementById('canvas');
         const context = canvas.getContext('2d');
-        const captureButton = document.getElementById('capture');
-        const imageDataInput = document.getElementById('imageData');
-
-        // Add class to video and canvas
-        video.classList.add('captureImage');
-        canvas.classList.add('captureImage');
-
-        // Handle capture button click
-        captureButton.onclick = function() {
-            
-            if (video) {
-                video.pause(); 
-                video.classList.add('hideVideo');
-                // Optionally, hide the video element
-            } else {
-                console.error('Element not found');
-            }
-        };
 
         // Start webcam access
         navigator.mediaDevices.getUserMedia({ video: true })
@@ -580,8 +559,18 @@ document.addEventListener('DOMContentLoaded', function() {
                 console.error("Error accessing webcam: ", err);
             });
 
-        // Capture image from video and set as input value
+        // Capture and stop video
         captureButton.addEventListener('click', () => {
+            if (video.srcObject) {
+                const stream = video.srcObject;
+                stream.getTracks().forEach(track => track.stop()); // Stop all tracks
+            }
+
+            video.pause(); // Pause the video
+            video.currentTime = 0; // Reset video time
+            video.classList.add('hideVideo'); // Optionally hide the video
+
+            // Capture image from video
             context.drawImage(video, 0, 0, canvas.width, canvas.height);
             const dataURL = canvas.toDataURL('image/png');
             imageDataInput.value = dataURL;
