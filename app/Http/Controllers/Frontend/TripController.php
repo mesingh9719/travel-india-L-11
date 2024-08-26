@@ -18,7 +18,7 @@ class TripController extends Controller
         $this->tripFilterService = $tripFilterService;
     }
 
-    public function trip(Request $request){
+    public function findRide(Request $request){
         $trips = Trip::query();
         $trips = $this->tripFilterService->filter($trips, $request);
 

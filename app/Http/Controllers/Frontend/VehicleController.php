@@ -36,18 +36,7 @@ class VehicleController extends Controller
         }
         $dlData = DLVerify::all();
 
-        return view('frontend.ride.vehicle-list', compact('dlData'));
-    }
-
-
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        $images = [];
-
-        return view('frontend.ride.add-vehicle', compact('images'));
+        return view('frontend.vehicles.index', compact('dlData'));
     }
 
     /**

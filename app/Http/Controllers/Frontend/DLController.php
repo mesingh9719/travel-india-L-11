@@ -17,7 +17,7 @@ class DLController extends Controller
      */
     public function index(Request $request)
     {
-           
+
         if ($request->ajax()) {
             $data = DLVerify::query();
             return Datatables::of($data)
@@ -95,11 +95,4 @@ class DLController extends Controller
         //
     }
 
-    public function getData(Request $request)
-    {
-        
-     
-          
-        // return view('frontend.driver.dl-list');
-    }
 }

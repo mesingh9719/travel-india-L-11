@@ -20,7 +20,7 @@ class ContactController extends Controller
      */
     public function create()
     {
-        return view('Frontend.contact-us');
+        return view('frontend.contact-us');
     }
 
     /**
