@@ -53,45 +53,60 @@
 @if(!auth()->check())
     <script>
         $(document).ready(function () {
+            const miniLoader = '<div class="miniLoaderContainer"><img src="{{ asset('frontend-assets/img/loaders/mini-loader.gif') }}" alt="Loading..."/> </div>';
+            const errorMsg = $('#loginErrorMsg');
+
+            function showLoader(button) {
+                button.hide();
+                button.after(miniLoader);
+            }
+
+            function hideLoader(button) {
+                $('.miniLoaderContainer').remove();
+                button.show();
+            }
+
+            function handleError(response) {
+                let errorMessage = 'Something went wrong. Please try again.';
+                if (response.status === 404 || response.status === 400 || response.status === 500) {
+                    errorMessage = response.responseJSON?.message ?? errorMessage;
+                }
+                errorMsg.show().text(errorMessage);
+            }
+
             $('#sendOtpButton').click(function () {
-                let mobile = $('#mobile').val().trim();
-                let errorMsg = $('#loginErrorMsg');
+                const mobile = $('#mobile').val().trim();
 
                 if (mobile.length === 10 && $.isNumeric(mobile)) {
+                    showLoader($(this));
+
                     $.ajax({
                         url: '{{ route('login.send-otp') }}',
                         headers: {
                             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                         },
                         type: 'POST',
-                        data: {
-                            mobile: mobile
-                        },
+                        data: { mobile: mobile },
                         success: function (response) {
-                            if (response.success) {
+                            if (response && response.success) {
                                 $('#mobileField').hide();
                                 $('#otpField').show();
-                                $('#sendOtpButton').hide();
-                                $('#verifyOtpButton').show();
                                 $('.login_description').hide();
                                 $('.login_title').hide();
                                 $('.otp_description').show();
                                 $('.otp_verification').show();
                                 errorMsg.hide().text('');
                             } else {
-                                errorMsg.show().text(response.message);
+                                handleError(response);
                             }
                         },
                         error: function (response) {
-                            let errorMessage = 'Something went wrong. Please try again.';
-
-                            if (response.status === 404) {
-                                errorMessage = response.responseJSON.message ?? errorMessage;
-                            } else if (response.status === 400) {
-                                errorMessage = response.responseJSON.message ?? errorMessage;
+                            handleError(response);
+                        },
+                        complete: function (response) {
+                            if (response && response.responseJSON.success) {
+                                hideLoader($('#verifyOtpButton'));
                             }
-
-                            errorMsg.show().text(errorMessage);
                         }
                     });
                 } else {
@@ -100,8 +115,10 @@
             });
 
             $('#verifyOtpButton').click(function () {
-                let mobile = $('#mobile').val();
-                let otp = $('#otp').val();
+                const mobile = $('#mobile').val();
+                const otp = $('#otp').val();
+
+                showLoader($(this));
 
                 $.ajax({
                     url: '{{ route('login.verify-otp') }}',
@@ -109,30 +126,24 @@
                         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                     },
                     type: 'POST',
-                    data: {
-                        mobile: mobile,
-                        otp: otp
-                    },
+                    data: { mobile: mobile, otp: otp },
                     success: function (response) {
-                        if (response.success) {
+                        if (response && response.success) {
                             window.location.href = response.redirect;
                         } else {
-                            alert(response.message);
+                            handleError(response);
                         }
                     },
                     error: function (response) {
-                        let errorMessage = response.responseJSON?.message ?? 'Something went wrong. Please try again.';
-
-                        if (response.status === 404 || response.status === 400) {
-                            alert(errorMessage);
-                        } else {
-                            alert('An unexpected error occurred. Please try again.');
-                        }
+                        handleError(response);
+                    },
+                    complete: function () {
+                        hideLoader($('#verifyOtpButton'));
                     }
                 });
             });
-
         });
+
     </script>
 @endif
 {{ $js ?? '' }}
