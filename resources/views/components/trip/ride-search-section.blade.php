@@ -2,7 +2,7 @@
     <div class="container">
         <div class="booking-form">
             <h4 class="booking-title">Find Your Ride</h4>
-            <form action="{{ route('trip') }}" method="GET">
+            <form action="{{ route('find-ride') }}" method="GET">
                 <div class="row">
                     <div class="col-lg-4">
                         <div class="form-group">

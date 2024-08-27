@@ -17,7 +17,7 @@ class DLController extends Controller
      */
     public function index(Request $request)
     {
-           
+
         if ($request->ajax()) {
             $data = DLVerify::query()
                     ->where('user_id', Auth::id())
@@ -97,11 +97,4 @@ class DLController extends Controller
         //
     }
 
-    public function getData(Request $request)
-    {
-        
-     
-          
-        // return view('frontend.driver.dl-list');
-    }
 }
