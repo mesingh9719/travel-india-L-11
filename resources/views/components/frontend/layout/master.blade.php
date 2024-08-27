@@ -102,6 +102,7 @@
                         },
                         error: function (response) {
                             handleError(response);
+                            hideLoader($('#sendOtpButton'));
                         },
                         complete: function (response) {
                             if (response && response.responseJSON.success) {
@@ -110,7 +111,7 @@
                         }
                     });
                 } else {
-                    alert('Please enter a valid 10-digit mobile number.');
+                    errorMsg.show().text('Please enter a valid mobile number.');
                 }
             });
 
