@@ -187,9 +187,8 @@
                                                                             <textarea class="form-control" rows="2"
                                                                                 name="business_address"
                                                                                 id="business_address"
-                                                                                value="{{ old('business_address') }}"
                                                                                 placeholder="Enter your Business Address"
-                                                                                maxlength="200"></textarea>
+                                                                                maxlength="200">{{ old('business_address') }}</textarea>
                                                                         </div>
                                                                     </div>
                                                                     <div class="col-lg-12">
@@ -245,14 +244,11 @@
                                                                             <label>Home Address</label>
                                                                             <textarea class="form-control" rows="2"
                                                                                 name="home_address" id="home_address"
-                                                                                value="{{ old('home_address') }}"
                                                                                 placeholder="Enter your Home Address"
-                                                                                maxlength="200"></textarea>
+                                                                                maxlength="200">{{ old('home_address') }}</textarea>
                                                                         </div>
                                                                         <span id="addressError" class="error"></span>
                                                                     </div>
-
-
                                                                 </div>
                                                                 <div class="button-row d-flex mt-4 justify-content-end">
                                                                     <button
@@ -317,7 +313,6 @@
                                                                                 <input type="file" class="form-control"
                                                                                     name="aadhar_image_front"
                                                                                     id="aadhar_image_front"
-                                                                                    value="{{ old('aadhar_image_front') }}"
                                                                                     placeholder="pan Number">
                                                                             </div>
                                                                             <span id="aadharfrontError"
@@ -329,7 +324,6 @@
                                                                                 <input type="file" class="form-control"
                                                                                     name="aadhar_image_back"
                                                                                     id="aadhar_image_back"
-                                                                                    value="{{ old('aadhar_image_back') }}"
                                                                                     placeholder="pan Number">
 
                                                                             </div>

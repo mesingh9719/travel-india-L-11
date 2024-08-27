@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Helpers\CommonHelper;
+use Illuminate\Support\Facades\Auth;
 class UserProfileController extends Controller
 {
     /**
@@ -13,7 +14,7 @@ class UserProfileController extends Controller
      */
     public function index()
     {
-        $profile =User::find(2);
+        $profile =User::find(Auth::id());
         return view('frontend.users.profile', compact('profile'));
     }
 
@@ -63,7 +64,7 @@ class UserProfileController extends Controller
             return redirect()->route('profile.index')
             ->with('success', 'Profile updated successfully!');
         }else{
-            $profile->update($request->only(['full_name', 'mobile', 'alternate_mobile', 'home_state', 'home_city', 'home_zip', 'home_address']));
+            $profile->update($request->only(['full_name', 'mobile', 'alternate_Mobile', 'home_state', 'home_city', 'home_zip', 'home_address']));
             return redirect()->route('profile.index')
             ->with('success', 'Profile updated successfully!');
         }

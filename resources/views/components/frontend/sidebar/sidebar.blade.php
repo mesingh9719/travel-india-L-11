@@ -11,8 +11,8 @@
                 <div id="response"></div>
             </form>
             </div>
-            <h5>Antoni Jonson</h5>
-            <p>99098767894</p>
+            <h5>{{Auth::user()->full_name}}</h5>
+            <p>{{Auth::user()->mobile}}</p>
         </div>
         <ul class="user-profile-sidebar-list">
             <li><a  class="{{ request()->routeIs('dashboard.index') ? 'active' : '' }}" href="{{route('dashboard.index')}}"><i class="far fa-gauge-high"></i> Dashboard</a></li>

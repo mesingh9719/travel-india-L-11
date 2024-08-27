@@ -14,7 +14,7 @@
                     </div>
                 @endsession
                 <div class="user-profile-form">
-                    <form action="{{route('profile.update', 2)}}" method="POST">
+                    <form action="{{route('profile.update', Auth::id())}}" method="POST">
                     @csrf
                     @method('PATCH')
                         <div class="row">

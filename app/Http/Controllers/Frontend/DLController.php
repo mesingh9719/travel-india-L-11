@@ -19,7 +19,9 @@ class DLController extends Controller
     {
            
         if ($request->ajax()) {
-            $data = DLVerify::query();
+            $data = DLVerify::query()
+                    ->where('user_id', Auth::id())
+                    ->get();
             return Datatables::of($data)
                     ->addIndexColumn()
                     ->addColumn('action', function($row){

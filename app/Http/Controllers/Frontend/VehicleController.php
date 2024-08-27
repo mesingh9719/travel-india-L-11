@@ -24,7 +24,10 @@ class VehicleController extends Controller
     public function index(Request $request)
     {
         if ($request->ajax()) {
-            $data = Vehicle::query();
+            $data = Vehicle::query()
+                    ->where('user_id', Auth::id())
+                    ->get();
+
             return Datatables::of($data)
                 ->addIndexColumn()
                 ->addColumn('action', function ($row) {
