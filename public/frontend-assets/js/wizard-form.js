@@ -458,7 +458,6 @@ $(document).ready(function() {
     // Prev/Next buttons click
     DOMstrings.stepsForm.addEventListener('click', (event) => {
         if (!event.target.classList.contains(DOMstrings.stepPrevBtnClass) && !event.target.classList.contains(DOMstrings.stepNextBtnClass)) return;
-
         const currentPanel = findParent(event.target, DOMstrings.stepFormPanelClass);
         let panelIndex = Array.from(DOMstrings.stepFormPanels).indexOf(currentPanel);
         panelIndex += event.target.classList.contains(DOMstrings.stepPrevBtnClass) ? -1 : 1;
@@ -475,7 +474,6 @@ $(document).ready(function() {
             const isValidBusinessZip = validateBusinessZip();
             const isValidBusinessState = validateBusinessState();
             const isValidBusinessAddress = validateBusinessAddress();
-
             if (!isValidName || !isValidPhone || !isValidHomeState || !isValidHomeCity || !isValidHomeZip || !isValidHomeAddress || !isValidAlternatePhone || !isValidUserType || !isValidBusinessCity || !isValidBusinessZip || !isValidBusinessState || !isValidBusinessAddress) return;
         } else if (event.target.classList.contains(DOMstrings.stepNextBtnClass) && panelIndex == 2) {
             const isValidPan = validatepan_number();
@@ -541,14 +539,12 @@ document.addEventListener('DOMContentLoaded', () => {
         // Create and insert video and canvas elements
         openCamara.innerHTML = `
             <video class="d-inline captureImage" id="video" autoplay></video>
-            <canvas class="d-inline captureImage" id="canvas"></canvas>
+            <canvas class="d-inline captureImage hideVideo" id="canvas"></canvas>
         `;
-
         // Get references to the video and canvas elements
         const video = document.getElementById('video');
         const canvas = document.getElementById('canvas');
         const context = canvas.getContext('2d');
-
         // Start webcam access
         navigator.mediaDevices.getUserMedia({ video: true })
             .then(stream => {
@@ -566,6 +562,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 video.pause(); // Pause the video
                 video.currentTime = 0; // Reset video time
                 video.classList.add('hideVideo'); // Optionally hide the video
+                canvas.classList.remove('hideVideo');
                 stream.getTracks().forEach(track => track.stop()); // Stop all tracks   
             }
             // Capture image from video

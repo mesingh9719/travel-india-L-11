@@ -270,7 +270,7 @@
                                                                     <div class="row">
 
                                                                         <div class="col-lg-6">
-                                                                            <div class="form-group mb-2">
+                                                                            <div class="form-group required mb-2">
                                                                                 <label>Pan Number</label>
                                                                                 <input type="text" class="form-control"
                                                                                     name="pan_number" id="pan_number"
@@ -368,10 +368,10 @@
                                                                         <div class="col-lg-6 mt-3">
                                                                             <label>Upload Profile Picture</label>
                                                                             <br />
-                                                                            <div class="d-flex  mt-3" id="open_camara">
+                                                                            <div class="d-flex  mt-2" id="open_camara">
 
                                                                             </div>
-                                                                            <div class="d-flex  mt-3">
+                                                                            <div class="d-flex  mt-2">
                                                                                 <p id="camara"
                                                                                     class="btn btn-warning d-inline mr-2"
                                                                                     style="display:block">
