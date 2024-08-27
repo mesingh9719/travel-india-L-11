@@ -4,7 +4,7 @@ $(document).ready(function() {
         serverSide: true,
         ajax: "/vehicle",
         columns: [
-            { data: 'id', name: 'id' },
+            { data: 'DT_RowIndex', name: 'DT_RowIndex', orderable: false, searchable: false },
             { data: 'rc_number', name: 'rc_number' },
             {
                 data: 'rc_image_front',

@@ -90,7 +90,7 @@
             serverSide: true,
             ajax: "{{ route('driving-license.index') }}",
             columns: [
-                {data: 'id', name: 'id'},
+                { data: 'DT_RowIndex', name: 'DT_RowIndex', orderable: false, searchable: false },
                 { data: 'dl_number', name: 'dl_number' },
                 { data: 'dl_image', name: 'dl_image',
                     "render": function (data, type, full, meta) {

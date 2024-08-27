@@ -568,9 +568,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 video.classList.add('hideVideo'); // Optionally hide the video
                 stream.getTracks().forEach(track => track.stop()); // Stop all tracks   
             }
-
-           
-
             // Capture image from video
             context.drawImage(video, 0, 0, canvas.width, canvas.height);
             const dataURL = canvas.toDataURL('image/png');
