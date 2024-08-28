@@ -354,7 +354,7 @@
                                                                             <span id="dlImageError"
                                                                                 class="error"></span>
                                                                         </div>
-                                                                        <div class="col-lg-6">
+                                                                        <div class="col-lg-4">
                                                                             <div class="form-group mb-2">
                                                                                 <label>GST Number</label>
                                                                                 <input type="text" class="form-control"
@@ -365,8 +365,8 @@
 
                                                                             </div>
                                                                         </div>
-                                                                        <div class="col-lg-6 mt-3">
-                                                                            <label>Upload Profile Picture</label>
+                                                                        <div class="col-lg-3 mt-2">
+                                                                            <label>Capture Selfie<span class="text-danger">*</span></label>
                                                                             <br />
                                                                             <div class="d-flex  mt-2" id="open_camara">
 
@@ -382,9 +382,19 @@
                                                                                     class="btn btn-warning d-inline">
                                                                                     Capture</p>
                                                                             </div>
-                                                                            <input type="hidden" name="profile_image"
+                                                                            <input type="hidden" name="selfie_image"
                                                                                 id="imageData">
-
+                                                                                <span id="selfieImageError"
+                                                                                class="error"></span>
+                                                                        </div>
+                                                                        <div class="col-lg-5 mt-2 hideVideo" id="profile_image_id">
+                                                                            <div class="form-group required mb-2">
+                                                                                <label>Profile Picture</label>
+                                                                                <input type="file" class="form-control"
+                                                                                    name="profile_image" id="profile_image">
+                                                                            </div>
+                                                                            <span id="profileImageError"
+                                                                                class="error"></span>
                                                                         </div>
                                                                     </div>
                                                                     <div

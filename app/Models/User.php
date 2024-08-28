@@ -46,7 +46,8 @@ class User extends Authenticatable
         "business_zip",
         "home_state",
         "home_city",
-        "home_zip"
+        "home_zip",
+        "selfie_image"
     ];
 
     /**

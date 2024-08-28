@@ -1721,7 +1721,7 @@ label {
 .booking-form .form-control {
     padding: 14px 50px 14px 20px;
     border-radius: 12px;
-    font-size: 18px;
+    font-size: 14px;
     box-shadow: none;
     color: var(--body-text-color);
 }
@@ -5434,7 +5434,14 @@ table.dataTable {
     table.dataTable tbody td {
         font-size: 10px;
     }
+
+    .book-ride .booking-form {
+        padding: 10px;
+    }
+
 }
+
+
 
 .btn-responsive {
     white-space: normal !important;

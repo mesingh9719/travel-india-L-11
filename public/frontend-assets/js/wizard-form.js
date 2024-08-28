@@ -49,7 +49,12 @@ $(document).ready(function() {
         businessZipInput: '#business_zip',
         businessZipError: '#businessZipError',
         businessAddressInput: '#business_address',
-        businessAddressError: '#businessAddressError'
+        businessAddressError: '#businessAddressError',
+        selfieImageInput: '#imageData',
+        selfieImageError: '#selfieImageError',
+        profileImageInput:'#profile_image',
+        profileImageError:'#profileImageError',
+
     };
 
     // Utility functions
@@ -121,7 +126,6 @@ $(document).ready(function() {
             return true;
         }
     };
-
     const validatePhoneNumber = () => {
         let phoneNumber = $(DOMstrings.phoneNumberInput).val().trim();
         phoneNumber = phoneNumber.replace(/\D/g, '').slice(0, 10); // Remove non-digits and limit to 10 digits
@@ -202,7 +206,6 @@ $(document).ready(function() {
             return true;
         }
     }
-
 
     const validateBusinessAddress = () => {
         const businessAddress = $(DOMstrings.businessAddressInput).val();
@@ -360,6 +363,30 @@ $(document).ready(function() {
         return dlFileStaus;
     }
 
+    const validateselfieImage = () => {
+        const selfieImage = $(DOMstrings.selfieImageInput).val();
+        if (selfieImage ==='') {
+            $(DOMstrings.selfieImageError).text('Selfie is required.');
+            return false;
+        } else {
+            $(DOMstrings.selfieImageError).text('');
+            return true;
+        }
+    };
+
+    const validateprofileImage = () => {
+        let profileImageFileStaus = true;
+        const profileImage = $(DOMstrings.profileImageInput)[0];
+        const files = profileImage.files;
+        if (files.length > 0) {
+            $(DOMstrings.profileImageError).text('');
+            profileImageFileStaus = true;
+        } else {
+            $(DOMstrings.profileImageError).text("Please Upload Profile Picture.");
+            profileImageFileStaus = false;
+        }
+        return profileImageFileStaus;
+    }
     function vehicleDetailsValidation() {
         let isValid = true;
 
@@ -444,7 +471,9 @@ $(document).ready(function() {
     $(DOMstrings.businessZipInput).on('input', validateBusinessZip);
     $(DOMstrings.businessStateInput).on('input', validateBusinessState);
     $(DOMstrings.businessAddressInput).on('input', validateBusinessAddress);
-
+    $(DOMstrings.selfieImageInput).on('input', validateselfieImage);
+    $(DOMstrings.profileImageInput).on('change', validateprofileImage);
+   
 
     // Steps bar click function
     DOMstrings.stepsBar.addEventListener('click', (event) => {
@@ -457,11 +486,13 @@ $(document).ready(function() {
 
     // Prev/Next buttons click
     DOMstrings.stepsForm.addEventListener('click', (event) => {
+       
         if (!event.target.classList.contains(DOMstrings.stepPrevBtnClass) && !event.target.classList.contains(DOMstrings.stepNextBtnClass)) return;
         const currentPanel = findParent(event.target, DOMstrings.stepFormPanelClass);
         let panelIndex = Array.from(DOMstrings.stepFormPanels).indexOf(currentPanel);
         panelIndex += event.target.classList.contains(DOMstrings.stepPrevBtnClass) ? -1 : 1;
         if (event.target.classList.contains(DOMstrings.stepNextBtnClass) && panelIndex == 1) {
+           
             const isValidName = validateFullName();
             const isValidPhone = validatePhoneNumber();
             const isValidAlternatePhone = validateAlternatePhoneNumber();
@@ -474,6 +505,7 @@ $(document).ready(function() {
             const isValidBusinessZip = validateBusinessZip();
             const isValidBusinessState = validateBusinessState();
             const isValidBusinessAddress = validateBusinessAddress();
+            adjustFormHeight(getActivePanel());
             if (!isValidName || !isValidPhone || !isValidHomeState || !isValidHomeCity || !isValidHomeZip || !isValidHomeAddress || !isValidAlternatePhone || !isValidUserType || !isValidBusinessCity || !isValidBusinessZip || !isValidBusinessState || !isValidBusinessAddress) return;
         } else if (event.target.classList.contains(DOMstrings.stepNextBtnClass) && panelIndex == 2) {
             const isValidPan = validatepan_number();
@@ -483,7 +515,10 @@ $(document).ready(function() {
             const isValidAadharfront = validateAaadharCardFrontImage();
             const isValidAadharback = validateAaadharCardBackImage();
             const isValidPanImage = validatePanCardImage();
-            if (!isValidPan || !isValidAadhar || !isValidDL || !isValidDLImage || !isValidAadharback || !isValidAadharfront || !isValidPanImage) return;
+            const isValidselfie =validateselfieImage(); 
+            const isValidprofile =validateprofileImage()
+            adjustFormHeight(getActivePanel());
+            if (!isValidPan || !isValidAadhar || !isValidDL || !isValidDLImage || !isValidAadharback || !isValidAadharfront || !isValidPanImage || !isValidselfie || !isValidprofile) return;
         } else if (event.target.classList.contains(DOMstrings.stepNextBtnClass) && panelIndex == 3) {
             if (!vehicleDetailsValidation()) return;
         }
@@ -491,8 +526,56 @@ $(document).ready(function() {
         setActivePanel(panelIndex);
     });
 
-    // Initial and resize form height adjustment
-    const initializeFormHeight = () => {
+   
+    //add camara functinality
+    const button = document.getElementById('camara');
+    const openCamara = document.getElementById('open_camara');
+    const captureButton = document.getElementById('capture');
+    const imageDataInput = document.getElementById('imageData');
+    const profileInput = document.getElementById('profile_image_id');
+    button.onclick = () => {
+        // Create and insert video and canvas elements
+        openCamara.innerHTML = `
+            <video class="d-inline captureImage" id="video" autoplay></video>
+            <canvas class="d-inline captureImage hideVideo" id="canvas"></canvas>
+        `;
+        adjustFormHeight(getActivePanel());
+        // Get references to the video and canvas elements
+        const video = document.getElementById('video');
+        const canvas = document.getElementById('canvas');
+        const context = canvas.getContext('2d');
+        // Start webcam access
+        navigator.mediaDevices.getUserMedia({ video: true })
+            .then(stream => {
+                video.srcObject = stream;
+                video.play();
+            })
+            .catch(err => {
+                console.error("Error accessing webcam: ", err);
+            });
+
+        // Capture and stop video
+        captureButton.addEventListener('click', () => {
+            if (video.srcObject) {
+                const stream = video.srcObject;
+                video.pause(); // Pause the video
+                video.currentTime = 0; // Reset video time
+                video.classList.add('hideVideo'); // Optionally hide the video
+                canvas.classList.remove('hideVideo');
+                profileInput.classList.remove('hideVideo');
+                adjustFormHeight(getActivePanel());
+                stream.getTracks().forEach(track => track.stop()); // Stop all tracks   
+            }
+            // Capture image from video
+            context.drawImage(video, 0, 0, canvas.width, canvas.height);
+            const dataURL = canvas.toDataURL('image/png');
+            imageDataInput.value = dataURL;
+        });
+    };
+    //End camara functinality
+
+     // Initial and resize form height adjustment
+     const initializeFormHeight = () => {
         adjustFormHeight(getActivePanel());
     };
 
@@ -500,7 +583,7 @@ $(document).ready(function() {
     $(window).on('resize', initializeFormHeight);
 });
 
-
+    //add camara functinality
 //select address same as business address
 function getCheckboxValue() {
     // Get the checkbox element
@@ -529,46 +612,5 @@ function getCheckboxValue() {
 
 
 //Camara function 
-document.addEventListener('DOMContentLoaded', () => {
-    const button = document.getElementById('camara');
-    const openCamara = document.getElementById('open_camara');
-    const captureButton = document.getElementById('capture');
-    const imageDataInput = document.getElementById('imageData');
-    
-    button.onclick = () => {
-        // Create and insert video and canvas elements
-        openCamara.innerHTML = `
-            <video class="d-inline captureImage" id="video" autoplay></video>
-            <canvas class="d-inline captureImage hideVideo" id="canvas"></canvas>
-        `;
-        // Get references to the video and canvas elements
-        const video = document.getElementById('video');
-        const canvas = document.getElementById('canvas');
-        const context = canvas.getContext('2d');
-        // Start webcam access
-        navigator.mediaDevices.getUserMedia({ video: true })
-            .then(stream => {
-                video.srcObject = stream;
-                video.play();
-            })
-            .catch(err => {
-                console.error("Error accessing webcam: ", err);
-            });
 
-        // Capture and stop video
-        captureButton.addEventListener('click', () => {
-            if (video.srcObject) {
-                const stream = video.srcObject;
-                video.pause(); // Pause the video
-                video.currentTime = 0; // Reset video time
-                video.classList.add('hideVideo'); // Optionally hide the video
-                canvas.classList.remove('hideVideo');
-                stream.getTracks().forEach(track => track.stop()); // Stop all tracks   
-            }
-            // Capture image from video
-            context.drawImage(video, 0, 0, canvas.width, canvas.height);
-            const dataURL = canvas.toDataURL('image/png');
-            imageDataInput.value = dataURL;
-        });
-    };
-});
+

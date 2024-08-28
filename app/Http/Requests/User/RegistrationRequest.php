@@ -49,7 +49,8 @@ class RegistrationRequest extends FormRequest
             'aadhar_image_front'=>'required|image|mimes:jpeg,png,jpg,gif,pdf|max:2048',
             'aadhar_image_back'=>'required|image|mimes:jpeg,png,jpg,gif,pdf|max:2048',
             'dl_image'=>'required|image|mimes:jpeg,png,jpg,gif,pdf|max:2048',
-            'profile_image'=>'nullable',
+            'profile_image'=>'required',
+            'selfie_image'=>'required',
             // 'rc_image'=>'required|image|mimes:jpeg,png,jpg,gif,pdf|max:2048'
         ];
     }

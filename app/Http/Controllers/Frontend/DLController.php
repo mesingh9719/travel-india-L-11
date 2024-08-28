@@ -17,18 +17,22 @@ class DLController extends Controller
      */
     public function index(Request $request)
     {
-
         if ($request->ajax()) {
             $data = DLVerify::query()
                     ->where('user_id', Auth::id())
                     ->get();
-            return Datatables::of($data)
+                    return Datatables::of($data)
                     ->addIndexColumn()
+                    ->addColumn('dlImage', function($row){
+                        $url =asset("/images/".$row->dl_image);
+                            $img= '<img src="'.$url.'" width="70px">';
+                            return $img;
+                    })
                     ->addColumn('action', function($row){
-                            $btn = '<a href="javascript:void(0)" class="edit btn btn-primary btn-sm">Edit</a>';
+                            $btn = '<a href="javascript:void(0)" class="edit btn btn-primary btn-sm">In-progress</a>';
                             return $btn;
                     })
-                    ->rawColumns(['action'])
+                    ->rawColumns(['dlImage', 'action'])
                     ->make(true);
         }
         return view('frontend.driver.dl-list');
