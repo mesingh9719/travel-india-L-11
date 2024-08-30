@@ -15,8 +15,8 @@
                     </div>
                 </div>
                 <div class="col-lg-6 text-center text-capitalize">
-                    <h4 class="font-weight-bold mb-2 pickup_drop">{{ $trip->start_trip ?? '' }}
-                        - {{ $trip->end_trip ?? '' }}</h4>
+                    <h4 class="font-weight-bold mb-2 pickup_drop">{{ $trip->pickup_location ?? '' }}
+                        - {{ $trip->drop_location ?? '' }}</h4>
                     <div class="font-weight-700 font-size-14px mt-2">
                         <span>
                             <i class="far fa-calendar-alt"></i> {{ \Carbon\Carbon::parse($trip->date)->format('d-m-Y') }}
@@ -55,10 +55,10 @@
                             <td>
                                 @if(!auth()->check())
                                     {{--                                    <a href="#" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#loginModal">Negotiate Price</a>--}}
-                                    <a href="#" class="btn btn-warning price_negotiate" data-id="{{ $trip->id }}">Negotiate
+                                    <a href="#" class="btn btn-warning btn-sm price_negotiate" data-id="{{ $trip->id }}">Negotiate
                                         Price</a>
                                 @else
-                                    <a href="#" class="btn btn-warning price_negotiate" data-id="{{ $trip->id }}">Negotiate
+                                    <a href="#" class="btn btn-warning btn-sm price_negotiate" data-id="{{ $trip->id }}">Negotiate
                                         Price</a>
                                 @endif
                             </td>
@@ -67,16 +67,17 @@
                                        placeholder="Enter Price">
                             </td>
                             <td class="price_submit_container display-hide pl-10-px">
-                                <button class="btn btn-success price_submit" data-id="{{ $trip->id }}">Submit</button>
+                                <button class="btn btn-success btn-sm price_submit" data-id="{{ $trip->id }}">Submit</button>
                             </td>
                         </tr>
                     </table>
                 </div>
                 <div>
-                    <a href="{{ route('trip.show', $trip->id) }}" class="btn btn-primary book_now_btn"
+                    <a href="{{ route('trip.show', $trip->id) }}" class="btn btn-primary btn-sm book_now_btn"
                        data-id="{{ $trip->id }}">Book Now</a>
                 </div>
             </div>
+          
         </div>
     </div>
 @endforeach

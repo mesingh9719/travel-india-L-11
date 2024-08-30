@@ -26,8 +26,8 @@ class RegistrationController extends Controller
      */
     public function store(VehicleRequestStore $vehiclerequeststore, BankDetailsRequestStore $bankdetailsrequeststore, RegistrationRequest $request)
     {
-        // DB::beginTransaction();
-        // try {
+        DB::beginTransaction();
+        try {
             $userValidator = $request->validated();
             $bankdetailValidator = $bankdetailsrequeststore->validated();
             $vehicleValidstor = $vehiclerequeststore->validated();
@@ -43,13 +43,13 @@ class RegistrationController extends Controller
             $bankdetails = array_merge($bankdetailValidator, $user_id);
             $bankdetails = BankDetail::create($bankdetails);
             CommonHelper::multipleUpload($vehiclerequeststore, $user_id);
-            // DB::commit();
+            DB::commit();
             Auth::login($user);
             return redirect()->route('dashboard.index')->with('success', 'Registration Successful');
 
-        // } catch (\Exception $e) {
-        //     DB::rollback();
-        //     return back()->with('error', 'Went Something wrong' . $e->getMessage());
-        // }
+        } catch (\Exception $e) {
+            DB::rollback();
+            return back()->with('error', 'Went Something wrong' . $e->getMessage());
+        }
     }
 }

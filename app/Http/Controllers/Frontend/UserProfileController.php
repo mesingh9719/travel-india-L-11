@@ -55,8 +55,9 @@ class UserProfileController extends Controller
      */
     public function update(Request $request, string $id)
     {
+        
         $profile = User::findOrFail($id);
-        $file = $request->file('profile');
+        $file = $request->file('image');
         if($file !=""){
             $profileImage = CommonHelper::upload($file);
             $image = ['profile_image'=>$profileImage];

@@ -2,12 +2,16 @@
     <div class="user-profile-sidebar">
         <div class="user-profile-sidebar-top">
             <div class="user-profile-img">
-                <form id="uploadForm" action="{{ route('profile.update', 2) }}" method="POST" enctype="multipart/form-data">
+                <form id="uploadForm" action="{{ route('profile.update', Auth::id()) }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 @method('PATCH')
-                <img src="{{asset('frontend-assets/img/account/user.jpg')}}" alt>
-                <button type="button" class="profile-img-btn"><i class="far fa-camera"></i></button>
-                <input type="file" class="profile-img-file" name="profile" id="profile" onchange="uploadFile()">
+                @php
+                $userProfile = isset(Auth::user()->profile_image)?'images/'.Auth::user()->profile_image:'frontend-assets/img/account/user.jpg';
+                @endphp
+                <img src="{{asset($userProfile)}}" alt>
+                <!-- <button type="button" class="profile-img-btn"><i class="far fa-camera"></i></button>
+                <input type="file" class="profile-img-file" name="image" id="profile">
+                <input type="hidden" id="userId" value="{{Auth::id()}}"> -->
                 <div id="response"></div>
             </form>
             </div>

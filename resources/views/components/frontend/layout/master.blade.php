@@ -146,6 +146,12 @@
 
     </script>
 @endif
+
+<script>
+    
+
+</script>
+
 {{ $js ?? '' }}
 
 </body>

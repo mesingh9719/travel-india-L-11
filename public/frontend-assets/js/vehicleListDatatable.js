@@ -11,7 +11,7 @@ $(document).ready(function() {
                 name: 'rc_image_front',
                 "render": function(data, type, full, meta) {
                     var img = baseUrl + '/';
-                    return '<img src="' + img + data + '" width="80" />';
+                    return '<img src="' + img + data + '" width="50" class="rounded-2" />';
                 },
 
             },

@@ -18,14 +18,12 @@ class DLController extends Controller
     public function index(Request $request)
     {
         if ($request->ajax()) {
-            $data = DLVerify::query()
-                    ->where('user_id', Auth::id())
-                    ->get();
+            $data = Auth::user()->dlVerifies;
                     return Datatables::of($data)
                     ->addIndexColumn()
                     ->addColumn('dlImage', function($row){
                         $url =asset("/images/".$row->dl_image);
-                            $img= '<img src="'.$url.'" width="70px">';
+                            $img= '<img src="'.$url.'" width="50px" class="rounded-2">';
                             return $img;
                     })
                     ->addColumn('action', function($row){

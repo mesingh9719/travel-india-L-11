@@ -24,10 +24,7 @@ class VehicleController extends Controller
     public function index(Request $request)
     {
         if ($request->ajax()) {
-            $data = Vehicle::query()
-                    ->where('user_id', Auth::id())
-                    ->get();
-
+            $data =Auth::user()->vehicles;
             return Datatables::of($data)
                 ->addIndexColumn()
                 ->addColumn('action', function ($row) {
@@ -37,8 +34,7 @@ class VehicleController extends Controller
                 ->rawColumns(['action'])
                 ->make(true);
         }
-        $dlData = DLVerify::all();
-
+        $dlData = Auth::user()->dlVerifies;
         return view('frontend.vehicles.index', compact('dlData'));
     }
 

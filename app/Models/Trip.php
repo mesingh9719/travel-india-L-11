@@ -17,12 +17,13 @@ class Trip extends Model
     [
         'user_id',
         'vehicle_id',
-        'start_trip',
-        'end_trip',
+        'pickup_location',
+        'drop_location',
         'start_latitude_longitude',
         'end_latitude_longitude',
         'date',
-        'time'
+        'time',
+        'price'
     ];
 
     public function vehicle(): BelongsTo

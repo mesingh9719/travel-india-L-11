@@ -17,35 +17,25 @@ use App\Http\Controllers\Frontend\DLController;
 
 use Illuminate\Support\Facades\Route;
 
-// Frontend Routes
+//Frontend Routes
 Route::get('/', [HomeController::class, "index"])->name('index');
-
 Route::resource('/register', RegistrationController::class);
-
 Route::middleware(['guest'])->group(function () {
     Route::post('/send-otp', [UserAuthController::class, "sendOtp"])->name('login.send-otp');
-
     Route::post('/verify-otp', [UserAuthController::class, "verifyOtp"])->name('login.verify-otp');
 });
 
 // auth users
 Route::group(['middleware' => 'auth'], function () {
     Route::resource('/dashboard', UserDashboardController::class);
-
     Route::resource('/driving-license', DLController::class);
-
     Route::resource('/vehicle', VehicleController::class);
-
+    Route::post('/add-trip', [TripController::class, 'addTrip'])->name('add.trip');
     Route::resource('/profile', UserProfileController::class);
-
     Route::resource('/total-bookings', TotalBookingsController::class);
-
     Route::resource('/cancel-bookings', CancelBookingsController::class);
-
     Route::resource('/payment-history', PaymentHistoryController::class);
-
     Route::resource('/user-setting', UserSettingsController::class);
-
     Route::post('/logout', [UserAuthController::class, 'logout'])->name('logout');
 });
 

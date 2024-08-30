@@ -9,11 +9,11 @@ class TripFilterService
     public function filter($trips, $request)
     {
         if ($request->has('pickup') && $request->pickup) {
-            $trips = $trips->where('start_trip', 'like', '%' . $request->pickup . '%');
+            $trips = $trips->where('pickup_location', 'like', '%' . $request->pickup . '%');
         }
 
         if ($request->has('dropoff') && $request->dropoff) {
-            $trips = $trips->where('end_trip', 'like', '%' . $request->dropoff . '%');
+            $trips = $trips->where('drop_location', 'like', '%' . $request->dropoff . '%');
         }
 
         if ($request->has('date') && $request->date) {

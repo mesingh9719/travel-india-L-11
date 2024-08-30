@@ -5447,3 +5447,26 @@ table.dataTable {
     white-space: normal !important;
     word-wrap: break-word;
 }
+
+
+@media (min-width: 300px) and (max-width: 700px){
+    .theme-btn {
+        font-size: 10px;
+        color: var(--color-dark);
+        padding: 7px 11px;
+        transition: all 0.5s;
+        text-transform: uppercase;
+        position: relative;
+        border-radius: 50px;
+        font-weight: 600;
+        letter-spacing: .5px;
+        cursor: pointer;
+        text-align: center;
+        overflow: hidden;
+        border: none;
+        background: var(--theme-color);
+        box-shadow: var(--box-shadow);
+        z-index: 1;
+        margin-left: -15px;
+    }
+  }

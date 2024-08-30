@@ -18,6 +18,9 @@ return Application::configure(basePath: dirname(__DIR__))
             'admin.guest' => AdminGuestMiddleware::class,
             'admin.auth' => AdminAuthMiddleware::class,
         ]);
+
+        $middleware->redirectGuestsTo('/');
+     
     })
     ->withExceptions(function (Exceptions $exceptions) {
         //

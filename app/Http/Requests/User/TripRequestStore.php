@@ -22,14 +22,15 @@ class TripRequestStore extends FormRequest
     public function rules(): array
     {
         return [
-            'user_id' => 'required|exists:users,id',
-            'vehicle_id' => 'required|exists:vehicles,id',
-            'start_trip'=>'required',
-            'end_trip'=>'required',
-            'start_latitude'=>'required',
-            'start_longitude'=>'required',
-            'end_latitude'=>'required',
-            'end_longitude'=>'required',
+            'user_id' => 'nullable|exists:users,id',
+            'vehicle_id' => 'nullable|exists:vehicles,id',
+            'pickup_location'=>'required',
+            'drop_location'=>'required',
+            'price'=>'required',
+            'start_latitude'=>'nullable',
+            'start_longitude'=>'nullable',
+            'end_latitude'=>'nullable',
+            'end_longitude'=>'nullable',
             'date'=>'required',
             'time'=>'required',
         ];

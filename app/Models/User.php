@@ -11,6 +11,7 @@ use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 use Spatie\Activitylog\Traits\LogsActivity;
 use Spatie\Activitylog\LogOptions;
+use App\Models\DLVerify;
 class User extends Authenticatable 
 {
     use HasFactory, Notifiable, HasApiTokens, LogsActivity;
@@ -93,6 +94,11 @@ class User extends Authenticatable
     public function bankDetails()
     {
         return $this->hasOne(BankDetails::class);
+    }
+
+    public function dlVerifies()
+    {
+        return $this->hasMany(DLVerify::class);
     }
 
 }
