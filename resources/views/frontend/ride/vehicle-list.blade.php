@@ -30,6 +30,7 @@
                         <th>No</th>
                         <th>RC Number</th>
                         <th>RC Image</th>
+                        <th>verification</th>
                         <th width="100px">Action</th>
                     </tr>
                     </thead>

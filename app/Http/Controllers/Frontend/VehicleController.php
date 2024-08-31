@@ -28,10 +28,13 @@ class VehicleController extends Controller
             return Datatables::of($data)
                 ->addIndexColumn()
                 ->addColumn('action', function ($row) {
-                    $btn = '<button class="btn btn-primary selectDriveModal" onclick="assign_driver(id);" id="' . $row->id . '">Assign Driver</button>';
-                    return $btn;
+                    return '
+                    <button type="button" class="btn btn-sm btn-default" onclick="customAction(' . $row->id . ')">In-prograss</button>
+                    <button class="btn btn-primary btn-sm selectDriveModal" onclick="assign_driver(id);" id="' . $row->id . '">Assign Driver</button>
+                    <button type="button" class="btn btn-sm btn-success" onclick="anotherAction(' . $row->id . ')">Edit</button>
+                    <button type="button" class="btn btn-sm btn-danger" onclick="deleteRow(' . $row->id . ')">Delete</button>';
                 })
-                ->rawColumns(['action'])
+                ->rawColumns(['verification','action'])
                 ->make(true);
         }
         $dlData = Auth::user()->dlVerifies;
