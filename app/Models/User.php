@@ -6,12 +6,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 use Spatie\Activitylog\Traits\LogsActivity;
 use Spatie\Activitylog\LogOptions;
-class User extends Authenticatable 
+class User extends Authenticatable
 {
     use HasFactory, Notifiable, HasApiTokens, LogsActivity;
 
@@ -36,7 +37,7 @@ class User extends Authenticatable
         "profile_image",
         "vter_id_front",
         "voter_id_back",
-        "full_name", 
+        "full_name",
         "alternate_Mobile",
         "business_name",
         "business_address",
@@ -87,6 +88,11 @@ class User extends Authenticatable
     public function vehicles(): HasMany
     {
         return $this->hasMany(Vehicle::class);
+    }
+
+    public function assignedVehicle(): HasOne
+    {
+        return $this->hasOne(Vehicle::class, 'assigned_to');
     }
 
     public function bankDetails()

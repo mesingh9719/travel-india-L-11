@@ -48,6 +48,9 @@
         </div>
     </div>
 <x-frontend.add-ride-modal/>
-</main>
 
+</main>
+<x-slot:js>
+
+</x-slot:js>
 </x-frontend.layout.master>
