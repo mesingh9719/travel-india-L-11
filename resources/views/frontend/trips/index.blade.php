@@ -105,8 +105,7 @@
                                 // Populate the modal with detailed driver information
                                 modalContent.html(`
                         <div class="text-center"> <img src="${profileImage}" class="img-fluid mb-3 driver-image-modal" alt="Driver Image">
-                        <h5>${driver.first_name} ${driver.last_name}</h5>
-                        <p><strong>Mobile:</strong> ${driver.mobile}</p>
+                        <h5>${driver.full_name}</h5>
                                                       </div>`);
                             } else {
                                 modalContent.html('<p class="text-danger">Failed to load driver information.</p>');

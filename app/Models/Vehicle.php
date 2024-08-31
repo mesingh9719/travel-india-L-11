@@ -39,5 +39,10 @@ class Vehicle extends Model
     {
         return $this->belongsTo(VehicleType::class);
     }
-    
+
+    public function assignedTo(): BelongsTo
+    {
+        return $this->belongsTo(User::class, 'assigned_to');
+    }
+
 }

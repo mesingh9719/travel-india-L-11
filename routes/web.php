@@ -1,20 +1,20 @@
 <?php
 
 use App\Http\Controllers\Frontend\Auth\UserAuthController;
+use App\Http\Controllers\Frontend\CancelBookingsController;
+use App\Http\Controllers\Frontend\DLController;
+use App\Http\Controllers\Frontend\DriverTripController;
 use App\Http\Controllers\Frontend\HomeController;
+use App\Http\Controllers\Frontend\PaymentHistoryController;
+use App\Http\Controllers\Frontend\RegistrationController;
+use App\Http\Controllers\Frontend\RideController;
+use App\Http\Controllers\Frontend\TotalBookingsController;
 use App\Http\Controllers\Frontend\TripController;
 use App\Http\Controllers\Frontend\UserController;
-use App\Http\Controllers\Frontend\RegistrationController;
 use App\Http\Controllers\Frontend\UserDashboardController;
 use App\Http\Controllers\Frontend\UserProfileController;
-use App\Http\Controllers\Frontend\TotalBookingsController;
-use App\Http\Controllers\Frontend\CancelBookingsController;
-use App\Http\Controllers\Frontend\PaymentHistoryController;
 use App\Http\Controllers\Frontend\UserSettingsController;
-use App\Http\Controllers\Frontend\DriverTripController;
 use App\Http\Controllers\Frontend\VehicleController;
-use App\Http\Controllers\Frontend\DLController;
-
 use Illuminate\Support\Facades\Route;
 
 //Frontend Routes
@@ -29,6 +29,9 @@ Route::middleware(['guest'])->group(function () {
 Route::group(['middleware' => 'auth'], function () {
     Route::resource('/dashboard', UserDashboardController::class);
     Route::resource('/driving-license', DLController::class);
+
+    Route::resource('/rides', RideController::class);
+
     Route::resource('/vehicle', VehicleController::class);
     Route::post('/add-trip', [TripController::class, 'addTrip'])->name('add.trip');
     Route::resource('/profile', UserProfileController::class);

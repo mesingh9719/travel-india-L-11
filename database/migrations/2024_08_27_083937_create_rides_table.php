@@ -11,16 +11,17 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('trips', function (Blueprint $table) {
+        Schema::create('rides', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->index()->constrained()->onDelete('cascade');
             $table->foreignId('vehicle_id')->index()->constrained();
-            $table->longText('start_trip')->nullable();
-            $table->longText('end_trip')->nullable();
-            $table->json('start_latitude_longitude')->nullable();
-            $table->json('end_latitude_longitude')->nullable();
-            $table->date('date')->nullable();
-            $table->string('time')->nullable();
+            $table->longText('pickup_location')->nullable();
+            $table->longText('drop_location')->nullable();
+            $table->json('pickup_coordinates')->nullable();
+            $table->json('drop_coordinates')->nullable();
+            $table->date('pickup_date')->nullable();
+            $table->string('pickup_time')->nullable();
+            $table->string('amount');
             $table->string('trip_status')->default(true);
             $table->timestamps();
         });
@@ -31,6 +32,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('trips');
+        Schema::dropIfExists('rides');
     }
 };
