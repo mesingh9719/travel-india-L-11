@@ -20,7 +20,7 @@
         </div>
         <ul class="user-profile-sidebar-list">
             <li><a  class="{{ request()->routeIs('dashboard.index') ? 'active' : '' }}" href="{{route('dashboard.index')}}"><i class="far fa-gauge-high"></i> Dashboard</a></li>
-            <li><a class="{{ request()->routeIs('add.trip') ? 'active' : '' }}" href="{{route('add.trip')}}"><i class="far fa-map"></i>Rides</a></li>
+            <li><a class="{{ request()->routeIs('show.ride') ? 'active' : '' }}" href="{{route('show.ride')}}"><i class="far fa-map"></i>Rides</a></li>
             <li><a class="{{ request()->routeIs('vehicle.index') ? 'active' : '' }}" href="{{route('vehicle.index')}}"><i class="far fa-car"></i>Vehicles</a></li>
             <li><a class="{{ request()->routeIs('driving-license.index') ? 'active' : '' }}" href="{{route('driving-license.index')}}"><i class="far fa-user-group"></i>Drivers</a></li>
 

@@ -15,6 +15,7 @@ use App\Http\Controllers\Frontend\UserDashboardController;
 use App\Http\Controllers\Frontend\UserProfileController;
 use App\Http\Controllers\Frontend\UserSettingsController;
 use App\Http\Controllers\Frontend\VehicleController;
+use App\Http\Controllers\UserRoleController;
 use Illuminate\Support\Facades\Route;
 
 //Frontend Routes
@@ -25,6 +26,13 @@ Route::middleware(['guest'])->group(function () {
     Route::post('/verify-otp', [UserAuthController::class, "verifyOtp"])->name('login.verify-otp');
 });
 
+
+
+
+
+Route::get('/user-roles', [UserRoleController::class, 'index'])->name('user.roles.index');
+Route::post('/assign-role', [UserRoleController::class, 'assignRole'])->name('assign.role');
+
 // auth users
 Route::group(['middleware' => 'auth'], function () {
     Route::resource('/dashboard', UserDashboardController::class);
@@ -33,7 +41,9 @@ Route::group(['middleware' => 'auth'], function () {
     Route::resource('/rides', RideController::class);
 
     Route::resource('/vehicle', VehicleController::class);
-    Route::post('/add-trip', [TripController::class, 'addTrip'])->name('add.trip');
+    Route::post('/add-ride', [TripController::class, 'addRide'])->name('add.ride');
+    Route::get('/show-ride', [TripController::class, 'show'])->name('show.ride');
+    
     Route::resource('/profile', UserProfileController::class);
     Route::resource('/total-bookings', TotalBookingsController::class);
     Route::resource('/cancel-bookings', CancelBookingsController::class);
@@ -45,7 +55,7 @@ Route::group(['middleware' => 'auth'], function () {
 
 Route::get('/find-ride', [TripController::class, "findRide"])->name('find-ride');
 
-Route::get('/add-trip', [DriverTripController::class, "create"])->name('add.trip');
+// Route::get('/add-trip', [DriverTripController::class, "create"])->name('add.trip');
 
 Route::get('driver-info/{id}', [UserController::class, "driverInfo"])->name('driver.info');
 

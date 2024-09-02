@@ -30,6 +30,10 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
 
         // plans
         Route::resource('plans', PlanController::class);
+        
+        //role and permission
+        Route::get('/user-roles', [UserRoleController::class, 'index'])->name('user.roles.index');
+        Route::post('/assign-role', [UserRoleController::class, 'assignRole'])->name('assign.role');
 
         //settings
         Route::get('general-settings',[GeneralSettingController::class,"index"])->name('general-settings');

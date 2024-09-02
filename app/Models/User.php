@@ -13,9 +13,10 @@ use Laravel\Sanctum\HasApiTokens;
 use Spatie\Activitylog\Traits\LogsActivity;
 use Spatie\Activitylog\LogOptions;
 use App\Models\DLVerify;
+use Silber\Bouncer\Database\HasRolesAndAbilities;
 class User extends Authenticatable 
 {
-    use HasFactory, Notifiable, HasApiTokens, LogsActivity;
+    use HasFactory, Notifiable, HasApiTokens, LogsActivity, HasRolesAndAbilities;
 
     /**
      * The attributes that are mass assignable.

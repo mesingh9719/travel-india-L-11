@@ -1,7 +1,7 @@
 <!-- Add New Ride Modal -->
 <div class="modal fade" id="addRideModal" tabindex="-1" aria-labelledby="addRideModalLabel" aria-hidden="true">
     <div class="modal-dialog">
-    <form action="{{route('add.trip')}}" method="post">
+    <form action="{{route('add.ride')}}" method="post">
         @csrf
         <div class="modal-content">
             <div class="modal-header">
@@ -33,7 +33,7 @@
                                 <label>Date </label>
                                 <input type="date"
                                        class="form-control date-picker hasDatepicker"
-                                       placeholder="MM/DD/YY" name="date" id="date" name="date"
+                                       placeholder="MM/DD/YY" name="pickup_date" id="pickup_date" name="date"
                                        value="{{old('date')}}" placeholder="Enter trip Date">
                             </div>
                         </div>
@@ -41,7 +41,7 @@
                             <div class="form-group required mb-3">
                                 <label>Time </label>
                                 <input type="time" class="form-control" id="date"
-                                       name="time" value="{{old('time')}}"
+                                       name="pickup_time" value="{{old('pickup_time')}}"
                                        placeholder="Enter trip Time" required>
 
                             </div>
@@ -49,8 +49,8 @@
                         <div class="col-md-6">
                             <div class="form-group required mb-0">
                                 <label for="vehicle_id" class="form-label">Amount </label>
-                                <input type="text" class="form-control" id="price"
-                                       name="price" placeholder="Enter Amount"
+                                <input type="text" class="form-control" id="amount"
+                                       name="amount" placeholder="Enter Amount"
                                        required>
                             </div>
                         </div>

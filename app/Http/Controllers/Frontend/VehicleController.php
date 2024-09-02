@@ -23,6 +23,7 @@ class VehicleController extends Controller
      */
     public function index(Request $request)
     {
+
         if ($request->ajax()) {
             $data =Auth::user()->vehicles;
             return Datatables::of($data)
@@ -46,45 +47,54 @@ class VehicleController extends Controller
      */
     public function store(VehicleRequestStore $vehiclerequeststore, StoreVehicleImageRequest $storevehicleimagerequest)
     {
-        DB::beginTransaction();
-        try {
-            $user_id = Auth::check() ? ['user_id' => Auth::id()] : ['user_id' => 2];
-            if ($vehiclerequeststore['vehicle_image'] != "") {
-                $filePaths = [];
-                $files = $vehiclerequeststore['rc_image_front'] ? $vehiclerequeststore['rc_image_front'] : '';
-                foreach ($files as $key => $img) {
-                    if ($img->isValid()) {
-                        $rcImage = CommonHelper::upload($img);
+      $user = \App\Models\User::find(1);
+    // Dump and die to check if the user can 'add vehicle'
+    // dd($user->can('add vehicle'));
+    // Conditional check if user can 'manage vehicle'
+    if ($user->can('add vehicle')) {
+            DB::beginTransaction();
+            try {
+                $user_id = Auth::check() ? ['user_id' => Auth::id()] : ['user_id' => 2];
+                if ($vehiclerequeststore['vehicle_image'] != "") {
+                    $filePaths = [];
+                    $files = $vehiclerequeststore['rc_image_front'] ? $vehiclerequeststore['rc_image_front'] : '';
+                    foreach ($files as $key => $img) {
+                        if ($img->isValid()) {
+                            $rcImage = CommonHelper::upload($img);
+                        }
+                        Vehicle::create([
+                            'user_id' => $user_id['user_id'],
+                            'vehicle_type_id' => 1,
+                            'vehicle_number' => '',
+                            'vehicle_model' => '',
+                            'rc_image_front' => $rcImage,
+                            'rc_number' => $vehiclerequeststore['rc_number'][$key]
+                        ]);
                     }
-                    Vehicle::create([
-                        'user_id' => $user_id['user_id'],
-                        'vehicle_type_id' => 1,
-                        'vehicle_number' => '',
-                        'vehicle_model' => '',
-                        'rc_image_front' => $rcImage,
-                        'rc_number' => $vehiclerequeststore['rc_number'][$key]
-                    ]);
                 }
-            }
-            if ($storevehicleimagerequest['vehicle_image'] != "") {
-                $filePaths = [];
-                $files = $storevehicleimagerequest['vehicle_image'] ? $storevehicleimagerequest['vehicle_image'] : '';
-                foreach ($files as $key => $img) {
-                    if ($img->isValid()) {
-                        $vehicleImage = CommonHelper::upload($img);
+                if ($storevehicleimagerequest['vehicle_image'] != "") {
+                    $filePaths = [];
+                    $files = $storevehicleimagerequest['vehicle_image'] ? $storevehicleimagerequest['vehicle_image'] : '';
+                    foreach ($files as $key => $img) {
+                        if ($img->isValid()) {
+                            $vehicleImage = CommonHelper::upload($img);
+                        }
+                        ImageVehicle::create([
+                            'user_id' => $user_id['user_id'],
+                            'vehicle_image' => $vehicleImage
+                        ]);
                     }
-                    ImageVehicle::create([
-                        'user_id' => $user_id['user_id'],
-                        'vehicle_image' => $vehicleImage
-                    ]);
                 }
-            }
-            DB::commit();
-            return redirect()->route('vehicle.index')->with('success', 'Vehicle Added Successfully!');
+                DB::commit();
+                return redirect()->route('vehicle.index')->with('success', 'Vehicle Added Successfully!');
 
-        } catch (\Exception $e) {
-            DB::rollback();
-            return back()->with('error', 'Went Something wrong' . $e->getMessage());
+            } catch (\Exception $e) {
+                DB::rollback();
+                return back()->with('error', 'Went Something wrong' . $e->getMessage());
+            }
+        }else{
+             return redirect()->route('vehicle.index')->with('success', 'You do not have for this !');
+
         }
     }
 
