@@ -30,9 +30,6 @@ Route::middleware(['guest'])->group(function () {
 
 
 
-Route::get('/user-roles', [UserRoleController::class, 'index'])->name('user.roles.index');
-Route::post('/assign-role', [UserRoleController::class, 'assignRole'])->name('assign.role');
-
 // auth users
 Route::group(['middleware' => 'auth'], function () {
     Route::resource('/dashboard', UserDashboardController::class);
