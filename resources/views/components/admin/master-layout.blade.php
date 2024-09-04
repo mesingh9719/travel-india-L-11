@@ -42,6 +42,8 @@
     <!-- Fonts -->
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
 
+    @livewireStyles
+
 </head>
 
 <body class="layout-light side-menu">
@@ -159,7 +161,7 @@
 <script src="{{ asset('admin-assets/assets/theme_assets/js/jvectormap-init.js') }}"></script>
 <script src="{{ asset('admin-assets/assets/theme_assets/js/leaflet-init.js') }}"></script>
 <script src="{{ asset('admin-assets/assets/theme_assets/js/main.js') }}"></script>
-
+@livewireScripts
 {{ $js ?? '' }}
 <!-- endinject-->
 </body>

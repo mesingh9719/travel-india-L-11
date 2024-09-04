@@ -125,11 +125,6 @@ class RolePermissionController extends Controller
         $ability = Bouncer::ability()->get();
         $permissionsSelected = \DB::table('permissions')->join('modules', 'modules.id', '=', 'permissions.module_id')->get()->toArray();
 
-// $getPermission = $permissionsSelected
-
-        dd($permissionsSelected);
-
-
        
         return view('admin.assignments.index', compact('role', 'ability', 'module', 'permissionsSelected'));
     }
