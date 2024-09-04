@@ -28,16 +28,21 @@
                                 <select class="form-select" id="roleSelect" wire:model="selectedRole" wire:change="loadPermissionsForRole">
                                     <option value="">Select a role</option>
                                     @forelse ($roles as $role)
-                                        <option value="{{ $role->id }}">{{ $role->name }}</option>
+                                        <option value="{{ $role->id }}">{{ ucfirst($role->name) }}</option>
                                     @empty
                                         <option value="">No items found</option>
                                     @endforelse
                                 </select>
+                                @error('selectedRole') 
+                                <span class="text-danger">{{ $message }}</span>
+                            @enderror
                             </div>
 
                             @if(!empty($selectedRoleName))
                                 <h5 class="mb-3">Permissions for {{ $selectedRoleName }}</h5>
-                                <button type="button" class="btn btn-secondary mb-3" wire:click="grantAllPermissions">Grant All Permissions</button>
+                                <button type="button" class="btn {{ $this->areAllPermissionsSelected() ? 'btn-danger' : 'btn-secondary' }} mb-3" wire:click="toggleAllPermissions">
+                                    {{ $this->areAllPermissionsSelected() ? 'Revoke All Permissions' : 'Grant All Permissions' }}
+                                </button>
                             @endif
 
                             <table class="table table-bordered" id="permissions-table">

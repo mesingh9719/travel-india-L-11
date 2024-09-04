@@ -26,6 +26,12 @@ class CreateAndUpdate extends Component
 
     public function save()
     {
+        $this->validate([
+            'selectedRole' => 'required',
+        ], [
+            'selectedRole.required' => 'Please select a role before submitting.',
+        ]);
+        
         if (!empty($this->selectedRole) && !empty($this->permissions)) {
             $role = Role::find($this->selectedRole);
             if ($role) {
@@ -85,16 +91,34 @@ class CreateAndUpdate extends Component
         }
     }
 
-    public function grantAllPermissions()
-    {
-        $modules = Module::all(); // Fetch all modules
-        $allPermissions = Ability::all(); // Fetch all permissions
+    public function toggleAllPermissions()
+{
+    $modules = Module::all(); // Fetch all modules
+    $allPermissions = Ability::all(); // Fetch all abilities
 
-        foreach ($modules as $module) {
-            foreach ($allPermissions as $permission) {
-                $this->permissions[$module->id][$permission->id] = true;
+    $allSelected = $this->areAllPermissionsSelected();
+
+    foreach ($modules as $module) {
+        foreach ($allPermissions as $permission) {
+            $this->permissions[$module->id][$permission->id] = !$allSelected;
+        }
+    }
+}
+
+public function areAllPermissionsSelected()
+{
+    $modules = Module::all();
+    $allPermissions = Ability::all();
+
+    foreach ($modules as $module) {
+        foreach ($allPermissions as $permission) {
+            if (empty($this->permissions[$module->id][$permission->id])) {
+                return false;
             }
         }
     }
+
+    return true;
+}
 
 }
