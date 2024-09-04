@@ -20,7 +20,7 @@
                         @endif
                         <form action="{{ route('admin.roles.assignments.show') }}" method="POST">
                        	@csrf
-                
+                        
                         <div class="mb-3">
 				            <label for="roleSelect" class="form-label">Role</label>
 
@@ -37,32 +37,35 @@
                             <thead>
                                 <tr>
                                     <th>Name</th>
-                                   @foreach($permissions as $permission)
-                                    <th>{{$permission->title}}</th>
+                                   @foreach($ability as $abilitys)
+                                    <th>{{$abilitys->title}}</th>
                                     @endforeach
                                 </tr>
                             </thead>
                             <tbody>
+                            	
                             	@forelse ($module as $modules)
 								    <tr>
-                                    <td>{{ $modules->name }}<input type="hidden" name="module_id[]" value="{{$modules->id}}"></td>
+                                    <td>{{ $modules->name}}<input type="hidden" name="module_id[]" value="{{$modules->id}}"></td>
 
-                                    @foreach($permissions as $permission)
+                                    @foreach($ability as $key => $abilitys)
                                     <td>
 									<div class="form-check">
-							            <input class="form-check-input" type="checkbox" id="checkbox1" name="permissions_id[]" value="{{$permission->id}}" >
+							            <input class="form-check-input" type="checkbox" id="checkbox1" name="permissions_id[]" value="{{$abilitys->id}}" {{ in_array($ability->id, array_column($permissionsSelected, 'ability_id')) ? 'checked' : '' }}> 
 							            <label class="form-check-label" for="checkbox1">
-							                {{ $permission->name }}
+							                {{ $abilitys->name }}
 							            </label>
 							        </div>
                                     </td>
+                                 
                                     @endforeach
-
+                                     
                                 </tr>
 								@empty
 								    <!-- Handle empty state -->
 								   <option value="1">No items found</option>
 								@endforelse
+
                             	
                             </tbody>
                         </table>
@@ -83,3 +86,4 @@
 
 </x-slot:js>
 </x-admin.master-layout>
+}}

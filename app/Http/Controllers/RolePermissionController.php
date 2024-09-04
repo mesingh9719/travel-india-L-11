@@ -122,9 +122,16 @@ class RolePermissionController extends Controller
     {
         $role = Bouncer::role()->get();
         $module =\App\Models\Module::all();
-        $permissions = Bouncer::ability()->get();
-        $permissionsChecked = \DB::table('permissions')->get();
-        return view('admin.assignments.index', compact('role', 'permissions', 'module', 'permissionsChecked'));
+        $ability = Bouncer::ability()->get();
+        $permissionsSelected = \DB::table('permissions')->join('modules', 'modules.id', '=', 'permissions.module_id')->get()->toArray();
+
+// $getPermission = $permissionsSelected
+
+        dd($permissionsSelected);
+
+
+       
+        return view('admin.assignments.index', compact('role', 'ability', 'module', 'permissionsSelected'));
     }
 
     // Assign permissions to a role
