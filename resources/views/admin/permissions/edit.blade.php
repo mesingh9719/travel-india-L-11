@@ -1,7 +1,5 @@
 <x-admin.master-layout pageTitle="Permission" pageSubTitle="Edit Permission">
     <div class="row">
-        <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
-    
         <div class="col-lg-12">
             <div class="card">
                 <div class="card-header">
@@ -14,21 +12,17 @@
                 </div>
 
                 <div class="card-body">
-                    <div class="table-responsive table-responsive--dynamic">
-                        @if(session('success'))
-                            <div class="alert alert-success">
-                                {{ session('success') }}
-                            </div>
-                        @endif
-                              <h1>Edit Permission</h1>
-                            <form action="{{ route('admin.permissions.update', $permission->id) }}" method="POST">
-                                @csrf
-                                @method('PUT')
+                    <div class="table-responsive table-responsive--dynamic">  
+                        <form action="{{ route('admin.permissions.update', $permission->id) }}" method="POST">
+                            @csrf
+                            @method('PUT')  
+                            <div class="mb-2 col-lg-4">
                                 <label for="name">Permission Name:</label>
-                                <input type="text" id="name" name="name" value="{{ $permission->name }}" required>
-                                <button type="submit" class="btn btn-primary">Update Permission</button>
-                            </form>               
-                        </div>
+                                <input type="text" class="form-control" id="name"  name="name" value="{{ $permission->name }}" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Update Permission</button>
+                        </form>               
+                    </div>
                 </div>
             </div>
         </div>

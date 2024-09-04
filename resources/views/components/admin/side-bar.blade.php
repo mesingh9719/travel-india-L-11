@@ -55,14 +55,20 @@
                 </li>
                  <li>
                     <a href="{{ route('admin.roles.index') }}" class="{{ request()->is('admin/roles*') ? 'active' : '' }}">
-                        <span class="nav-icon uil uil-package"></span>
+                     <span class="nav-icon uil uil-user"></span>
                         <span class="menu-text">Roles</span>
                     </a>
                 </li>
                    <li>
                     <a href="{{ route('admin.permissions.index') }}" class="{{ request()->is('admin/permissions*') ? 'active' : '' }}">
-                        <span class="nav-icon uil uil-package"></span>
+                        <span class="nav-icon uil uil-lock"></span>
                         <span class="menu-text">Permissions</span>
+                    </a>
+                </li>
+                 <li>
+                    <a href="{{ route('admin.assign') }}" class="{{ request()->is('admin/assign*') ? 'active' : '' }}">
+                     <span class="nav-icon uil uil-unlock"></span>
+                        <span class="menu-text">Permissions Assign to Role</span>
                     </a>
                 </li>
                 <li class="menu-title mt-30">
