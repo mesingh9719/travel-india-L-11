@@ -46,6 +46,10 @@
                             </tbody>
                         </table>
                     </div>
+                     <!-- Pagination Links -->
+                    <div class="d-flex justify-content-end">
+                    {{ $permissions->links('vendor.pagination.custom') }}
+                </div>
                 </div>
             </div>
         </div>

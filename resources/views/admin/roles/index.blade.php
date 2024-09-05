@@ -5,7 +5,7 @@
                 <div class="card-header">
                     <div class="d-flex justify-content-between align-items-center w-100">
                         <h4 class="card-title mb-0">All Roles</h4>
-                        <a href="{{ route('admin.roles.create') }}" class="btn btn-success">Create New Role</a>
+                        <a href="{{ route('admin.roles.create') }}" class="btn btn-primary">Create New Role</a>
                     </div>
                 </div>
 

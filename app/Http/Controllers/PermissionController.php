@@ -4,12 +4,12 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Silber\Bouncer\BouncerFacade as Bouncer;
-
+use Illuminate\Support\Facades\DB;
 class PermissionController extends Controller
 {
     public function index()
     {
-        $permissions = Bouncer::ability()->get();
+        $permissions = Bouncer::ability()->paginate(10);
         return view('admin.permissions.index', compact('permissions'));
     }
 

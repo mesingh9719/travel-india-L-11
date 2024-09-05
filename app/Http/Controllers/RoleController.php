@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Silber\Bouncer\BouncerFacade as Bouncer;
-use DB;
+use Illuminate\Support\Facades\DB;
 class RoleController extends Controller
 {
     public function index()
