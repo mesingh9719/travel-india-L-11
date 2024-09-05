@@ -118,14 +118,10 @@
             text-align: center;
         }
         .margin-top_custom{
-            margin-top:10px;
+            margin:10px;
         }
    
-  }
-
-
-  @media (min-width: 300px) and (max-width: 700px){
-    .theme-btn {
+        .theme-btn {
         font-size: 10px;
         color: var(--color-dark);
         padding: 7px 11px;
@@ -142,5 +138,5 @@
         background: var(--theme-color);
         box-shadow: var(--box-shadow);
         z-index: 1;
-    }
+        }   
   }

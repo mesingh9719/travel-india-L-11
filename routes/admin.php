@@ -29,8 +29,10 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
 
         //Vehicles
         Route::resource('vehicles', VehicleController::class);
-        Route::get('vehicle-types',[VehicleController::class,"vehicleTypes"])->name('vehicle-types');
+        Route::get('filter', [VehicleController::class, 'fetchData'])->name('vehicle.filter');
         
+        Route::get('vehicle-types',[VehicleController::class,"vehicleTypes"])->name('vehicle-types');
+
         //plans
         Route::resource('plans', PlanController::class);
 

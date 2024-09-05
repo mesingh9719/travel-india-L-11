@@ -29,13 +29,19 @@ class VehicleController extends Controller
             return Datatables::of($data)
                 ->addIndexColumn()
                 ->addColumn('action', function ($row) {
-                    return '
-                    <button type="button" class="btn btn-sm btn-default" onclick="customAction(' . $row->id . ')">In-prograss</button>
-                    <button class="btn btn-primary btn-sm selectDriveModal" onclick="assign_driver(id);" id="' . $row->id . '">Assign Driver</button>
-                    <button type="button" class="btn btn-sm btn-success" onclick="anotherAction(' . $row->id . ')">Edit</button>
-                    <button type="button" class="btn btn-sm btn-danger" onclick="deleteRow(' . $row->id . ')">Delete</button>';
+                   
+                    $html = '<button type="button" class="btn btn-sm btn-warning m-1" onclick="customAction(' . $row->id . ')">' . ucfirst($row->status) . '</button>';
+
+                   if ($row->status == 'pending' || $row->status == 'rejected') {
+                        $html .= '<button class="btn btn-primary btn-sm selectDriveModal" onclick="assign_driver(' . $row->id . ');" id="' . $row->id . '" disabled>Assign Driver</button>';
+                    } else {
+                        $html .= '<button class="btn btn-primary btn-sm selectDriveModal" onclick="assign_driver(' . $row->id . ');" id="' . $row->id . '">Assign Driver</button>';
+                    }
+
+                     return $html;
+                                  
                 })
-                ->rawColumns(['verification','action'])
+                ->rawColumns(['action'])
                 ->make(true);
         }
         $dlData = Auth::user()->dlVerifies;
@@ -47,11 +53,8 @@ class VehicleController extends Controller
      */
     public function store(VehicleRequestStore $vehiclerequeststore, StoreVehicleImageRequest $storevehicleimagerequest)
     {
-      $user = \App\Models\User::find(1);
-    // Dump and die to check if the user can 'add vehicle'
-    // dd($user->can('add vehicle'));
-    // Conditional check if user can 'manage vehicle'
-    if ($user->can('add vehicle')) {
+      // $user = \App\Models\User::find(1);
+      //   if ($user->can('add vehicle')) {
             DB::beginTransaction();
             try {
                 $user_id = Auth::check() ? ['user_id' => Auth::id()] : ['user_id' => 2];
@@ -92,10 +95,10 @@ class VehicleController extends Controller
                 DB::rollback();
                 return back()->with('error', 'Went Something wrong' . $e->getMessage());
             }
-        }else{
-             return redirect()->route('vehicle.index')->with('success', 'You do not have for this !');
+        // }else{
+        //      return redirect()->route('vehicle.index')->with('success', 'You do not have for this !');
 
-        }
+        // }
     }
 
     /**
@@ -135,4 +138,6 @@ class VehicleController extends Controller
     {
 
     }
+
+
 }

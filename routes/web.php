@@ -31,7 +31,7 @@ Route::middleware(['guest'])->group(function () {
 
 
 // auth users
-Route::group(['middleware' => 'auth'], function () {
+    Route::group(['middleware' => 'auth'], function () {
     Route::resource('/dashboard', UserDashboardController::class);
     Route::resource('/driving-license', DLController::class);
 
@@ -40,7 +40,6 @@ Route::group(['middleware' => 'auth'], function () {
     Route::resource('/vehicle', VehicleController::class);
     Route::post('/add-ride', [TripController::class, 'addRide'])->name('add.ride');
     Route::get('/show-ride', [TripController::class, 'show'])->name('show.ride');
-    
     Route::resource('/profile', UserProfileController::class);
     Route::resource('/total-bookings', TotalBookingsController::class);
     Route::resource('/cancel-bookings', CancelBookingsController::class);

@@ -9,6 +9,7 @@ use App\Http\Requests\User\RegistrationRequest;
 use App\Http\Resources\UserResource;
 use App\Models\Vehicle;
 use Auth;
+use Illuminate\Support\Facades\Http;
 class CommonHelper
 {
     public static function handleFileUploads(Request $request, array $fileFields): array
@@ -73,6 +74,29 @@ class CommonHelper
         file_put_contents($path, $profileImage);
         return  $profileFileName;
 
+    }
+
+
+
+    public  static function rcApi($rcNumber ='GJ01JT0459'){
+
+        $response = Http::withHeaders([
+            'Content-Type' => 'application/json',
+            'x-rapidapi-host' => 'rto-vehicle-information-verification-india.p.rapidapi.com',
+            'x-rapidapi-key' => 'Sign Up for Key',
+        ])->post('https://rto-vehicle-information-verification-india.p.rapidapi.com/api/v1/rc/vehicleinfo', [
+            'reg_no' => $rcNumber,
+            'consent' => 'Y',
+            'consent_text' => 'I hear by declare my consent agreement for fetching my information via AITAN Labs API',
+        ]);
+
+        if ($response->failed()) {
+            // Handle the error
+            echo "HTTP Error: " . $response->status();
+        } else {
+            // Handle the response
+            echo $response->body();
+        }
     }
 
 }
