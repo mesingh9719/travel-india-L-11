@@ -19,10 +19,10 @@
                     </a>
                     <ul>
                         <li class="">
-                            <a href="inbox.html">Drivers</a>
+                            <a href="{{route('admin.drivers.index')}}">Drivers</a>
                         </li>
                         <li class="">
-                            <a href="read-email.html">Owners</a>
+                            <a href="{{route('admin.users.index')}}">Owners</a>
                         </li>
                         <li class="">
                             <a href="read-email.html">Passengers</a>

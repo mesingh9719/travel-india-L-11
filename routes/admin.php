@@ -8,6 +8,7 @@ use App\Http\Controllers\Admin\PaymentController;
 use App\Http\Controllers\Admin\PlanController;
 use App\Http\Controllers\Admin\UsersController;
 use App\Http\Controllers\Admin\VehicleController;
+use App\Http\Controllers\Admin\DLController;
 use App\Http\Controllers\Frontend\UserController;
 use App\Http\Controllers\UserRoleController;
 use App\Http\Controllers\RoleController;
@@ -28,11 +29,14 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
         Route::resource('users', UsersController::class);
 
         //Vehicles
-        Route::resource('vehicles', VehicleController::class);
-        Route::get('filter', [VehicleController::class, 'fetchData'])->name('vehicle.filter');
-        
         Route::get('vehicle-types',[VehicleController::class,"vehicleTypes"])->name('vehicle-types');
+        Route::resource('vehicles', VehicleController::class);
+        Route::get('vehicles/filter', [VehicleController::class, 'fetchData'])->name('vehicles.filter');
 
+        //Driver
+         Route::resource('drivers', DLController::class);
+         Route::get('drivers/filter', [VehicleController::class, 'ajaxRequest'])->name('drivers.filter');
+        
         //plans
         Route::resource('plans', PlanController::class);
 

@@ -26,7 +26,7 @@
                                 </div>
                             </div>
                             <div class="col-md-5 mb-2 d-flex justify-content-end">
-                                <input type="text" name="rc_number" id="rc_number" class="form-control m-1" placeholder="Search by name" value="{{ request()->get('name') }}">
+                                <input type="text" name="filter" id="filter" class="form-control m-1" placeholder="Search by name" value="{{ request()->get('name') }}">
                             </div>
                             <div class="col-md-2 mb-2 d-flex justify-content-end">
                                 <button type="submit" class="btn btn-primary m-1">Filter</button>
@@ -44,8 +44,55 @@
         </div>
     </div>
 
-  <x-slot:js>
-     <script src="{{ asset('frontend-assets/js/vehicleListDatatable.js') }}"></script>
+    <x-slot:js>
+
+     <script type="text/javascript">
+         
+        $(document).ready(function() {
+            // Function to handle form submission and AJAX request
+            function fetchData() {
+                $.ajax({
+                    url: '{{route("admin.vehicles.index")}}',
+                    type: 'GET',
+                    data: $('#filter-form').serialize(),
+                    success: function(data) {
+                        $('#table-container').html(data.html);
+                        $('#pagination-container').html(data.pagination);
+                    }
+                });
+            }
+
+            // Fetch data on form submit
+            $('#filter-form').on('submit', function(event) {
+                event.preventDefault();
+                fetchData();
+            });
+
+            // Fetch data on pagination click
+            $(document).on('click', '.pagination a', function(event) {
+                event.preventDefault();
+                var url = $(this).attr('href');
+                $.ajax({
+                    url: url,
+                    type: 'GET',
+                    data: $('#filter-form').serialize(),
+                    success: function(data) {
+                        $('#table-container').html(data.html);
+                        $('#pagination-container').html(data.pagination);
+                    }
+                });
+            });
+
+            // Reset filters
+            $('#reset-filters').on('click', function() {
+                $('#filter-form')[0].reset();
+                fetchData();
+            });
+
+            // Initial data fetch
+            fetchData();
+        });
+     </script>
     </x-slot:js>
   
 </x-admin.master-layout>

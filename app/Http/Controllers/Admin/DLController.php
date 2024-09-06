@@ -3,42 +3,32 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\User;
-use App\Services\UserFilter;
 use Illuminate\Http\Request;
-
-class UsersController extends Controller
+use App\Models\DLVerify;
+class DLController extends Controller
 {
-    protected UserFilter $userFilter;
-
-    public function __construct(UserFilter $userFilter)
-    {
-        $this->userFilter = $userFilter;
-    }
     /**
      * Display a listing of the resource.
      */
     public function index(Request $request)
     {
-        $perPage = $request->input('ownerEntriesPerPage', 10); // Default to 10 if not provided
-        $query = User::query();
-        $filter = $request->get('owner_filter');
-        if ($filter) {
-            $query->where(function($q) use ($filter) {
-                $q->where('full_name', 'like', "%$filter%")
-                  ->orWhere('mobile', 'like', "%$filter%");
-            });
-        }
-        $owners = $query->paginate($perPage);
-        if ($request->ajax()) {
+       $dlVerify = DLVerify::paginate(10); 
+           if ($request->ajax()) {
+
+            $perPage = $request->input('dlEntriesPerPage'); 
+            $query = DLVerify::query();
+            $filter = $request->get('dl_filter');
+
+             if ($filter) {
+                $query->where('dl_number', 'like', "%$filter%");
+            }
+            $dlVerify =  $query->paginate($perPage);
             return response()->json([
-                'html' => view('admin.owners.owner-list', compact('owners'))->render(),
+                'html' => view('admin.drivers.dl-list', compact('dlVerify'))->render(),
             ]);
         }
-
-        return view('admin.owners.index', compact('owners'));
+        return view('admin.drivers.index', compact('dlVerify'));
     }
-
 
     /**
      * Show the form for creating a new resource.
@@ -59,9 +49,9 @@ class UsersController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(User $user)
+    public function show(string $id)
     {
-        return view('admin.users.show', compact('user'));
+        //
     }
 
     /**
@@ -87,4 +77,6 @@ class UsersController extends Controller
     {
         //
     }
+
+
 }

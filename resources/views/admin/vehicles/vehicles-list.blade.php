@@ -52,7 +52,7 @@
                 </tr>
             @empty
                 <tr>
-                    <td colspan="10">No Vehicles available.</td>
+                    <td colspan="12" class="text-center">No Vehicles available.</td>
                 </tr>
             @endforelse
         </tbody>
@@ -60,5 +60,5 @@
 <div class="dataTables_info" id="DataTables_Table_0_info" role="status" aria-live="polite">Showing {{$vehicles[0]->id?? ''}} to {{count($vehicles) ?? ''}} of {{count($vehicles) ?? ''}} entries</div>
 
     <div class="d-flex justify-content-end">
-        {{ $vehicles->links('vendor.pagination.custom') }}
+        {{ $vehicles->links('vendor.pagination.admin-custom-pagination') }}
     </div>

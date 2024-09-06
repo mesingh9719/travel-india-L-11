@@ -150,7 +150,6 @@
 <script src="{{ asset('admin-assets/assets/vendor_assets/js/slick.min.js') }}"></script>
 <script src="{{ asset('admin-assets/assets/vendor_assets/js/trumbowyg.min.js') }}"></script>
 <script src="{{ asset('admin-assets/assets/vendor_assets/js/wickedpicker.min.js') }}"></script>
-
 <script src="{{ asset('admin-assets/assets/theme_assets/js/apexmain.js') }}"></script>
 <script src="{{ asset('admin-assets/assets/theme_assets/js/charts.js') }}"></script>
 <script src="{{ asset('admin-assets/assets/theme_assets/js/drag-drop.js') }}"></script>
