@@ -75,7 +75,9 @@ class DLController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+       $dlVerify = DLVerify::findOrFail($id); // Find the dlVerify or throw a 404 error
+        $dlVerify->delete(); // Delete the dlVerify
+        return redirect()->back()->with('success', 'Driving Licence Deleted Successfully!');
     }
 
 

@@ -36,7 +36,6 @@ Route::middleware(['guest'])->group(function () {
     Route::resource('/driving-license', DLController::class);
 
     Route::resource('/rides', RideController::class);
-
     Route::resource('/vehicle', VehicleController::class);
     Route::post('/add-ride', [TripController::class, 'addRide'])->name('add.ride');
     Route::get('/show-ride', [TripController::class, 'show'])->name('show.ride');

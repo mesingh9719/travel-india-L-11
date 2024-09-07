@@ -15,8 +15,6 @@ class DLVerify extends Model
         'dl_image'
     ];
 
-
-
     public function user()
     {
         return $this->belongsTo(User::class);

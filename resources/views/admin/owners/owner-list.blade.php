@@ -14,11 +14,9 @@
             @forelse($owners as $owner)
                  <tr>
                     <td>{{ $owner->id }}</td>
-                    <td>
-                        {{ $owner->full_name}}
-                    </td>
-                     <td><img src="{{asset('images/'.$owner->profile_image)}}" width="70px"/></td>
-                      <td><img src="{{asset('images/'.$owner->selfie_image)}}" width="70px"/></td>
+                    <td>{{ $owner->full_name}}</td>
+                    <td><img src="{{asset('images/'.$owner->profile_image)}}" width="70px"/></td>
+                    <td><img src="{{asset('images/'.$owner->selfie_image)}}" width="70px"/></td>
                     <td>{{ $owner->mobile }}</td>
                     <td>{{$owner->home_address }}</td>
                     <td>
@@ -26,9 +24,15 @@
                             <a href="{{ route('admin.drivers.edit',$owner->id) }}" class="action-item" data-toggle="tooltip" title="Edit">
                                 <i class="far fa-edit text-info"></i>
                             </a>
-                             <a href="{{ route('admin.drivers.destroy',$owner->id) }}" class="action-item" data-toggle="tooltip" title="Edit">
-                                <i class="fas fa-trash-alt text-danger "></i>
+                            <a href="#" class="action-item text-danger" onclick="event.preventDefault(); document.getElementById('delete-form-{{ $owner->id }}').submit();" data-toggle="tooltip" title="Delete">
+                                <i class="fas fa-trash-alt"></i>
                             </a>
+
+                            <form id="delete-form-{{ $owner->id }}" action="{{ route('admin.drivers.destroy', $owner->id) }}" method="POST" style="display: none;">
+                                @csrf
+                                @method('DELETE')
+                            </form>
+
                        </div>
                     </td>
                 </tr>

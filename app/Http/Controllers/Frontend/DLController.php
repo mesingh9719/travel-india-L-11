@@ -27,7 +27,7 @@ class DLController extends Controller
                             return $img;
                     })
                     ->addColumn('action', function($row){
-                            $btn = '<a href="javascript:void(0)" class="edit btn btn-primary btn-sm">In-progress</a>';
+                            $btn = '<a href="javascript:void(0)" class="edit btn btn-warning btn-sm">In-progress</a>';
                             return $btn;
                     })
                     ->rawColumns(['dlImage', 'action'])

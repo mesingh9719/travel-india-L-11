@@ -58,5 +58,30 @@ class VehicleController extends Controller
         return view('admin.vehicles.show',compact('vehicle'));
     }
 
+
+        public function edit(string $id)
+    {
+        //
+    }
+
+    /**
+     * Update the specified resource in storage.
+     */
+    public function update(Request $request, string $id)
+    {
+        //
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     */
+    public function destroy(string $id)
+    {
+        $vehicle = Vehicle::findOrFail($id); // Find the vehicle or throw a 404 error
+        $vehicle->delete(); // Delete the vehicle
+        return redirect()->back()->with('success', 'Vehicle Deleted Successfully!');
+
+    }
+
   
 }

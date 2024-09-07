@@ -35,6 +35,11 @@
                         </div>
                     </form>
                     <div class="table-responsive table-responsive-dynamic">
+                        @if (session('success'))
+                            <div class="alert alert-success">
+                                {{ session('success') }}
+                            </div>
+                        @endif
                     <div id="owner-table-container">
                         @include('admin.owners.owner-list')
                     </div>

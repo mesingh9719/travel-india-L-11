@@ -5,6 +5,7 @@
                     <th scope="col">Owner</th>
                     <th scope="col">DL Number</th>
                     <th scope="col">DL Picture</td>
+                    <th scope="col">Approval</td>
                     <th>Action</th>
             </tr>
         </thead>
@@ -17,6 +18,11 @@
                     </td>
                     <td>{{ $dlVerifies->dl_number }}</td>
                     <td><img src="{{asset('images/'.$dlVerifies->dl_image)}}" width="70px"/></td>
+                    <td>
+                        <a href="{{ route('admin.drivers.edit',$dlVerifies->id) }}" class="action-item btn btn-warning" data-toggle="tooltip" title="Approved">  
+                            Pending
+                        </a>
+                    </td>
                     <td>
                        <div class="actions">
                             <a href="{{ route('admin.drivers.edit',$dlVerifies->id) }}" class="action-item" data-toggle="tooltip" title="Edit">
