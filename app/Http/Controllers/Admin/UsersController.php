@@ -69,7 +69,18 @@ class UsersController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $table = 'users'; // Your table name
+        $columns = Schema::getColumnListing($table);
+
+        // Fetch column types
+        $columnTypes = [];
+        $columnRemoved = ['id', 'assigned_to', 'fuel_type', 'rc_image_back', 'is_verified', 'created_at', 'updated_at', 'status'];
+        $columns =array_diff($columns, $columnRemoved);
+        foreach ($columns as $column) {
+            $columnTypes[$column] = Schema::getColumnType($table, $column); // Laravel 8 and later
+        }
+
+        return view('admin.owner.edit-form', compact('columns', 'columnTypes'));
     }
 
     /**

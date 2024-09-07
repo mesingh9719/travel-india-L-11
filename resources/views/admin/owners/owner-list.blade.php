@@ -15,9 +15,9 @@
                  <tr>
                     <td>{{ $owner->id }}</td>
                     <td>{{ $owner->full_name}}</td>
+                    <td>{{ $owner->mobile }}</td>
                     <td><img src="{{asset('images/'.$owner->profile_image)}}" width="70px"/></td>
                     <td><img src="{{asset('images/'.$owner->selfie_image)}}" width="70px"/></td>
-                    <td>{{ $owner->mobile }}</td>
                     <td>{{$owner->home_address }}</td>
                     <td>
                        <div class="actions">

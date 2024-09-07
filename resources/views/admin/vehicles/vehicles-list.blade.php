@@ -26,9 +26,7 @@
                     </td>
 
                     <td><img src="{{asset('images/'.$vehicle->rc_image_front)}}" width="70px"/></td>
-                    <td>
-                        {{ $vehicle->vehicleType->name ?? '' }}
-                    </td>
+                    <td>{{ $vehicle->vehicleType->name ?? '' }}</td>
                     <td>{{ $vehicle->brand }}</td>
                     <td>{{ $vehicle->vehicle_model }}</td>
                     <td>{{ $vehicle->rc_number }}</td>

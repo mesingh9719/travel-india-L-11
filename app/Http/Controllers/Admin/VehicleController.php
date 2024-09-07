@@ -8,6 +8,8 @@ use App\Models\VehicleType;
 use App\Services\VehicleFilter;
 use Illuminate\Http\Request;
 use App\Helpers\CommonHelper;
+use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Schema\ColumnDefinition;
 
 class VehicleController extends Controller
 {
@@ -61,7 +63,19 @@ class VehicleController extends Controller
 
         public function edit(string $id)
     {
-        //
+        $vehicles =Vehicle::findOrFail($id);
+        $table = 'vehicles'; // Your table name
+        $columns = Schema::getColumnListing($table);
+
+        // Fetch column types
+        $columnTypes = [];
+        $columnRemoved = ['id', 'user_id', 'vehicle_type_id', 'assigned_to', 'fuel_type', 'rc_image_back', 'is_verified', 'created_at', 'updated_at', 'status'];
+        $columns =array_diff($columns, $columnRemoved);
+        foreach ($columns as $column) {
+            $columnTypes[$column] = Schema::getColumnType($table, $column); // Laravel 8 and later
+        }
+
+        return view('admin.vehicles.edit-form', compact('columns', 'columnTypes'));
     }
 
     /**

@@ -10,7 +10,7 @@
                     </div>
                 </div>
                 <div class="card-body">
-                              <form method="GET" id="filter-form">
+                    <form method="GET" id="filter-form">
                         <div class="row d-flex">
                             <div class="col-md-5 mb-2 justify-content-start">
                                 <div class="dataTables_length" id="DataTables_Table_0_length">
